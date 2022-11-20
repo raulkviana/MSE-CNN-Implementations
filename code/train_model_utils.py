@@ -335,7 +335,7 @@ def right_size(CUs):
 
 def compute_top_k_accuracy(pred_vector, gt_vector, topk):
     """
-        @brief Computes the confusion matrix
+        @brief Computes the top k accuracy score
 
         @param [in] predicted: List of predictions made by the model with probabilities for each split (pytorch tensor)
         @param [in] ground_truth: List of the ground-truths with single value (pytorch tensor)
@@ -357,6 +357,21 @@ def compute_top_k_accuracy(pred_vector, gt_vector, topk):
 
     # Compute accuracy
     res = res / n_entries  
+        
+    return res
+
+def compute_num_splits_sent(pred_lst):
+    """
+        @brief Computes the num of splits that would be sent to the encoder
+
+        @param [in] predicted: List of predictions made by the model with probabilities values
+        @param [out] res: Mean of number of splits sent
+    """
+    # Initialize variables
+    n_entries = len(pred_lst)
+    
+    temp  = [len(p) for p in pred_lst]
+    res = sum(temp)/n_entries
         
     return res
 

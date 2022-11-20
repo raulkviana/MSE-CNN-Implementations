@@ -2,4 +2,4 @@
 Code database with the implementation of MSE-CNN. 
 
 
-![msecnn](msecnn_model.png "MSE-CNN")
+![alt text](msecnn_model.png "MSE-CNN")

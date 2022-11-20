@@ -3666,6 +3666,95 @@ class CUDatasetStg4ComplV5(CUDatasetStg_v5):
         return info_lst
 
 
+# Custom dataset for the stage oriented pickle file and it's multi batch
+class CUDatasetStg3ComplV5(CUDatasetStg_v5):
+    """
+    - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
+    - JF recommendations
+    - For stage 4
+    """
+
+    def __init__(self, files_path, channel=0):
+        """
+        Args:
+            files_path (string): Path to the files with annotations.
+            root_dir (string): Directory with all the images.
+            channel: Channel to get for the dataset (0:Luma, 1:Chroma)
+        """
+        super(CUDatasetStg3ComplV5, self).__init__(files_path, channel)
+
+    def get_sample(self, entry):
+        """
+        Args:
+            entry (int): An instance from the labels.
+            img_path (string): Yuv image path
+            f_size (dict): Size of the frame
+            POC (int): Picture order count
+
+            out: lst -  CTU | RD_for_specific_stage | cu_left_of_stg_1 | cu_top_of_stg_1 | cu_left_for_specific_stage | cu_top_for_specific_stage |  split_for_specific_stage
+        """
+
+        # Initialize variable
+        info_lst = []
+        color_ch = entry[8]
+
+        if color_ch == self.channel:
+            # Add Real CU
+            CU_Y = entry[7]
+
+            # Add dimension
+            CU_Y = torch.unsqueeze(CU_Y, 0)
+
+            # Convert to float
+            CU_Y = CU_Y.to(dtype=torch.float32)
+
+            # CU positions within frame
+            cu_pos = torch.reshape(torch.tensor(entry[2]), (-1, 2))
+            cu_pos_stg2 = torch.reshape(torch.tensor(entry[1]), (-1, 2))
+
+            # CU sizes within frame
+            cu_size = torch.reshape(torch.tensor(entry[4]), (-1, 2))
+            cu_size_stg2 = torch.reshape(torch.tensor(entry[3]), (-1, 2))
+
+            # Best split for CU
+            split = entry[6]
+            split_stg2 = entry[5]
+
+            # Rate distortion costs
+            RDs = torch.reshape(torch.tensor(entry[0]), (-1, 6))
+
+            # Other information
+            POC = entry[9]
+            pic_name = entry[10]
+            orig_pos_x = entry[11][1]
+            orig_pos_y = entry[11][0]
+            orig_size_h = entry[12][1]
+            orig_size_w = entry[12][0]
+
+            # Save values
+            info_lst.append(CU_Y)
+            info_lst.append(cu_pos_stg2)
+            info_lst.append(cu_pos)
+            info_lst.append(cu_size_stg2)
+            info_lst.append(cu_size)
+            info_lst.append(split_stg2)
+            info_lst.append(split)
+            info_lst.append(RDs)
+            # Other data
+            info_lst.append(orig_pos_x)
+            info_lst.append(orig_pos_y)
+            info_lst.append(orig_size_h)
+            info_lst.append(orig_size_w)
+            info_lst.append(POC)
+            info_lst.append(pic_name)
+
+        else:
+            raise Exception("This can not happen! This CU color channel should be " + str(self.channel) + "Try generating the labels and obtain just a specific color channel (see dataset_utils)!")
+
+        return info_lst
+
+
+
 def resize(img, scale_percent):
     """
     Resizes a BGR image
