@@ -70,7 +70,7 @@ This innovation makes it possible to split CUs in different rectangle forms. Spl
 a vertical binary tree (VBT) or a horizontal binary tree (HBT).
 
 The association of BT and TT is named a multi-type tree (MTT). The introduction of BT and TT partitions enables the creation of various new types of forms, with heights and widths that can be a combination between 128, 64, 32, 16, 8 and 4. The increased number of possible CUs boosts the ability of the codec to fragment
-an image more efficiently, allowing better predictions and higher compressing abilities.
+an image more efficiently, allowing better predictions and higher compressing abilities. Although this standard now have these advantages, as a downside it takes longer to encode.
 
 <div align="center">
   <img src="imgs/partitioning_image.png" />
