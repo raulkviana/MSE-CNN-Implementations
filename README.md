@@ -3,7 +3,6 @@ Code database with a implementation of MSE-CNN [1] and also with the dataset use
 
 <!--------- Put demo here ----------->
 
-## Table of Contents
 - [MSE-CNN Implementation](#mse-cnn-implementation)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
