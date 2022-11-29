@@ -4,7 +4,6 @@ Code database with a implementation of MSE-CNN [1] and also with the dataset use
 <!--------- Put demo here ----------->
 
 - [MSE-CNN Implementation](#mse-cnn-implementation)
-  - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Theorectical Background](#theorectical-background)
     - [Partitioning in VVC](#partitioning-in-vvc)
