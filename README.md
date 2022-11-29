@@ -242,7 +242,7 @@ Results with weighted average for F1-score, recall and precision.
 | train_model_utils.py | Usefull functions to be used during training or evaluation of the artificial neural network |
 | utils.py | Other functions that are usefull not directly to the model but for the code implementation itself |
 
-## Installation of the dependencies
+## Installation of dependencies
 
 In order to run this project, it is needed to first install of the libraries used in it. For this please follow the below steps:
 1. Create a virtual environment to do install the libraries; follow this [link](https://www.geeksforgeeks.org/creating-python-virtual-environment-windows-linux/) in case you don't know how to do it; you possibly need to install [pip](https://www.makeuseof.com/tag/install-pip-for-python/), if you don't have it installed
