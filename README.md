@@ -186,21 +186,21 @@ Results with weighted average for F1-score, recall and precision.
 
 #### Stages 2 and 3
 <div align="center">
-  <img src="imgs/conf_mat_val_stg2.png" />
-  <img src="imgs/conf_mat_val_v2_stg3.png" />
+  <img src="imgs/conf_mat_val_stg2.png" width=300 />
+  <img src="imgs/conf_mat_val_v2_stg3.png" width=300 />
   <p>Confusion matrix results in with the testing data in stages 2 and 3</p>
 </div>
 
 #### Stages 4 and 5
 <div align="center">
-  <img src="imgs/conf_mat_val_stg4.png" />
-  <img src="imgs/conf_mat_val_stg5.png" />
+  <img src="imgs/conf_mat_val_stg4.png" width=300 />
+  <img src="imgs/conf_mat_val_stg5.png" width=300 />
   <p>Confusion matrix results in with the testing data in stages 4 and 5</p>
 </div>
 
 #### Stage 6
 <div align="center">
-  <img src="imgs/conf_mat_val_stg6.png" />
+  <img src="imgs/conf_mat_val_stg6.png" width=300 />
   <p>Confusion matrix results in with the testing data in stage 6</p>
 </div>
 
@@ -213,12 +213,6 @@ Results with weighted average for F1-score, recall and precision.
 | Bitrate | 3810.192 kbps | 4069.392 kbps | 6.80% |
 | Y-PSNR | 35.7927 dB  | 35.5591 dB | -0.65% |
 | Complexity | 1792.88 s  | 1048.95 s | -41.49% |
-
-In the above Table, it is possible to see that the Y-PSNR loss (objective quality measure for
-the luma channel) was 0.65%, while the complexity reduction decreased by 41.49%. Additionally,
-a 6.80% increase in bitrate was attained. It is vital to remember that these values compare the
-results achieved only with the encoder to those obtained with the encoder integrated with the
-model.
 
 ## Relevant Folders and files
 
