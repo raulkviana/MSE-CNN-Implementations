@@ -135,18 +135,22 @@ Concerning the second member of the MSE-CNN loss function, this constituent give
 
 $$L_{RD} = \frac{1}{N}\sum_{n=1}^N \sum_{m\varepsilon Partitions}\hat{y}_{n, m}\frac{r_{n, m}}{r_{n, min}}-1$$
 
-In the above equation, the RD costs $r_{n, m}$ uses the same notation for "n" and "m" as the previous equation. Regarding $r_{n ,min}$, it is the minimal RD cost for the nth CU among all split modes and $\frac{r_{n, m}}{r_{n, min}} - 1$ is a normalised RD cost. As a relevant note, $r_{n, min}$ is equal to the RD cost of the best partition mode. Consequently, the result of $\hat{y}_{n, m}\frac{r_{n, m}}{r_{n, min}}-1$ ensures that CU's partitions with greater erroneously predicted probability values ($\hat{y}_{n, m}$) or greater RD cost values ($r_{n, m}$) are more penalised. In $\frac{r_{n, m}}{r_{n, min}} - 1$, the ideal partition has a normalised RD cost of zero, but the other partitions do not. Therefore, the only way for the loss to equal zero is if the probability for all other modes also equals zero. Consequently, the learning algorithm must assign a greater probability to the optimal split mode while reducing the probabilities for the rest. **Experimentally it was verified that this function wasn't able to contribute to the training of the MSE-CNN, this contradicted the remarks made in [1]**.
+In the above equation, the RD costs $r_{n, m}$ uses the same notation for "n" and "m" as the previous equation. Regarding $r_{n ,min}$, it is the minimal RD cost for the nth CU among all split modes and 
+$$\frac{r_{n, m}}{r_{n, min}} - 1$$
+is a normalised RD cost. As a relevant note, $r_{n, min}$ is equal to the RD cost of the best partition mode. Consequently, the result of
+$$\hat{y}_{n, m}\frac{r_{n, m}}{r_{n, min}}-1$$ 
+ ensures that CU's partitions with greater erroneously predicted probability values or greater RD cost values $r_{n, m}$ are more penalised. In $\frac{r_{n, m}}{r_{n, min}} - 1$, the ideal partition has a normalised RD cost of zero, but the other partitions do not. Therefore, the only way for the loss to equal zero is if the probability for all other modes also equals zero. Consequently, the learning algorithm must assign a greater probability to the optimal split mode while reducing the probabilities for the rest. **Experimentally it was verified that this function wasn't able to contribute to the training of the MSE-CNN, this contradicted the remarks made in [1]**.
 
 #### Training
 
-The strategy used to train the MSE-CNN was very similar to the one used in [1]. The first parts of the model to be trained were the first and second stages, in which 64x64 CUs were passed through the second depth. Afterwards, transfer learning was used to pass certain coefficients of the second stage to the third. Then, the third stage was trained with 32x32 CUs flowing through it. After this step, a similar process was done to the following stages.. It is worth noting that, beginning with stage 4, various CUs forms are at the models' input. This means that these stages were fed different kinds of CUs.  
+The strategy used to train the MSE-CNN was very similar to the one used in [1]. The first parts of the model to be trained were the first and second stages, in which 64x64 CUs were passed through the second depth. Afterwards, transfer learning was used to pass certain coefficients of the second stage to the third. Then, the third stage was trained with 32x32 CUs flowing through it. After this step, a similar process was done to the following stages. It is worth noting that, beginning with stage 4, various CUs forms are at the models' input. This means that these stages were fed different kinds of CUs.  
 
 <div align="center">
   <img src="imgs/training_steps.png" />
   <p>Training flow used</p>
 </div>
 
-At the end of training, 6 models were obtained one for each partitioning depth in the luma channel. Although models for the luma and chroma channels could be created for all the shapes of CUs that are possible, rather than just for each depth, as shown in Figure \ref{training_steps_paper}, only six were trained for the sake of assessing the model behaviour in a simpler and more understandable configuration.\par
+At the end of training, 6 models were obtained one for each partitioning depth in the luma channel. Although models for the luma and chroma channels could be created for all the shapes of CUs that are possible, rather than just for each depth, only six were trained for the sake of assessing the model behaviour in a simpler and more understandable configuration.
 
 #### Implementation remarks
 
