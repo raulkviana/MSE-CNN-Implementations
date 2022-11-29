@@ -34,7 +34,7 @@ Code database with a implementation of MSE-CNN [1] and also with the dataset use
 The emergence of new technologies that provide creative audiovisual experiences, such as 360-degree films, virtual reality, augmented reality, 4K, 8K UHD, 16K, and also with the rise of video traffic on the web, shows the current demand for video data in the modern world. Because of this tension, Versatile Video Coding (VVC) was developed due to the the necessity for the introduction of new coding standards. Despite the advancements achieved with the introduction of this standard, its complexity has increased very much. The new partitioning technique is responsible for majority of the increase in encoding time. This extended duration is linked with the optimization of the Rate-Distortion cost (RD cost). Although VVC offers higher compression rates, the complexity of its encoding is high.
 
 <div align="center">
-  <img src="imgs/Versatile_Video_Coding_logo.png" />
+  <img src="imgs/Versatile_Video_Coding_logo.png" width=400 />
   <p>VVC logo</p>
 </div>
 
@@ -146,7 +146,7 @@ $$\hat{y}_{n, m}\frac{r_{n, m}}{r_{n, min}}-1$$
 The strategy used to train the MSE-CNN was very similar to the one used in [1]. The first parts of the model to be trained were the first and second stages, in which 64x64 CUs were passed through the second depth. Afterwards, transfer learning was used to pass certain coefficients of the second stage to the third. Then, the third stage was trained with 32x32 CUs flowing through it. After this step, a similar process was done to the following stages. It is worth noting that, beginning with stage 4, various CUs forms are at the models' input. This means that these stages were fed different kinds of CUs.  
 
 <div align="center">
-  <img src="imgs/training_steps.png" />
+  <img src="imgs/training_steps.png" width=300/>
   <p>Training flow used</p>
 </div>
 
@@ -157,8 +157,8 @@ At the end of training, 6 models were obtained one for each partitioning depth i
 Due to the deterministic nature of the first stage, where CTUs are always partitioned with a QT, it was implemented together with the second stage. If it was done separately, the training for the first two stages would have to be done at the same time. Consequently, two distinct optimisers would need to be employed, which could result in unpredictable training behaviour. <br>
 
 <div align="center">
-  <img src="imgs/subnet_min_32_1.drawio.png" />
-  <img src="imgs/subnet_min_32_2.drawio.png" />
+  <img src="imgs/subnet_min_32_1.drawio.png" width=300/>
+  <img src="imgs/subnet_min_32_2.drawio.png" width=300/>
   <p>32 minimum axis size sub-networks</p>
 </div>
 
