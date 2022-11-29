@@ -1,5 +1,5 @@
 # MSE-CNN Implementation
-Code database with a implementation of MSE-CNN [1] and also with the dataset used and coefficients obtained after training. 
+Code database with an implementation of MSE-CNN [1]. Besides the code, the dataset and coefficients obtained after training are provided 
 
 <!--------- Put demo here ----------->
 
