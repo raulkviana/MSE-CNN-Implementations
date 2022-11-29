@@ -168,7 +168,7 @@ Please see this [page](RAISE_TEST/README.md) to understand better the dataset an
 
 ## Results
 
-Since it was verified that the Rate-Distortion Loss ($L_{RD}$) could contribute for better results, the metrics presented here were obtained with a model trained only with the modified cross-entropy loss.
+Since it was verified that the Rate-Distortion Loss. $L_{RD}$, could contribute for better results, the metrics presented here were obtained with a model trained only with the modified cross-entropy loss.
 
 ###  F1-score, Recall and Precision
 
