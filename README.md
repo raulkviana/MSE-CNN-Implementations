@@ -1,6 +1,9 @@
 # MSE-CNN Implementation
 Code database with an implementation of MSE-CNN [1]. Besides the code, the dataset and coefficients obtained after training are provided 
 
+![kevin's GitHub stats](https://github-readme-stats.vercel.app/api?username=raulkviana&show_icons=true&theme=radical)
+
+
 <!--------- Put demo here ----------->
 
 - [MSE-CNN Implementation](#mse-cnn-implementation)
