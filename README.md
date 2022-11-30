@@ -1,8 +1,14 @@
+![language_used](https://img.shields.io/github/languages/top/raulkviana/MSE-CNN-Implementations)
+![size](https://img.shields.io/github/repo-size/raulkviana/MSE-CNN-Implementations)
+![license](https://img.shields.io/github/license/raulkviana/MSE-CNN-Implementations)
+![status](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
+![issues](https://img.shields.io/github/issues-raw/raulkviana/MSE-CNN-Implementations)
+
+
+<!----![Jokes Card](https://readme-jokes.vercel.app/api)---->
+
 # MSE-CNN Implementation
 Code database with an implementation of MSE-CNN [1]. Besides the code, the dataset and coefficients obtained after training are provided 
-
-![kevin's GitHub stats](https://github-readme-stats.vercel.app/api?username=raulkviana&show_icons=true&theme=radical)
-
 
 <!--------- Put demo here ----------->
 
