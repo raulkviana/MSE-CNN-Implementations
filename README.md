@@ -10,13 +10,6 @@
 
 Code database with an implementation of MSE-CNN [1]. Besides the code, the dataset and coefficients obtained after training are provided 
 
-<div align="center">
-  <img src="imgs/msecnn_model.png" width=600 />
-  <p>MSE-CNN</p>
-</div>
-
-<!--------- Put demo here ----------->
-
 - [MSE-CNN Implementation](#mse-cnn-implementation)
   - [Introduction](#introduction)
   - [Theorectical Background](#theorectical-background)
@@ -37,9 +30,10 @@ Code database with an implementation of MSE-CNN [1]. Besides the code, the datas
   - [Relevant Folders and files](#relevant-folders-and-files)
     - [Folders](#folders)
     - [Files](#files)
-  - [Installation of the dependencies](#installation-of-the-dependencies)
+  - [Installation of dependencies](#installation-of-dependencies)
   - [References](#references)
 
+<!--------- Put demo here ----------->
 
 ## Introduction
 
@@ -53,6 +47,12 @@ The emergence of new technologies that provide creative audiovisual experiences,
 In light of this, the Multi-Stage Exit Convolutional 
 Neural Nework (MSE-CNN) was developed. This Deep Learning-based model is organised in a sequential structure with several stages. Each stage, which represents a different partition depth, encompasses a set of layers for extracting features from a Coding Tree Unit (CTU) and deciding how to partition it. Instead of using recursive approaches to determine the optimal way to fragment an image, this model allows VVC to estimate the most appropriate way of doing it. **This 
 work presents a model of the MSE-CNN that employs training procedures distinct from the original implementation of this network, as well as the ground-thruth to train and validate the model and an interpretation of the work done by the MSE-CNN’s original creators**.
+
+<div align="center">
+  <img src="imgs/msecnn_model.png" width=600 />
+  <p>MSE-CNN</p>
+</div>
+
 
 ## Theorectical Background
 
