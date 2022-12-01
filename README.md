@@ -7,7 +7,7 @@
 
 
 <div align="center">
-  <img src="imgs/msecnn_model.png" width=500 />
+  <img src="imgs/msecnn_model.png" />
   <p>MSE-CNN model</p>
 </div>
 
