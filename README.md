@@ -8,7 +8,7 @@
 
 <div align="center">
   <img src="imgs/msecnn_model.png" width=500 />
-  <p>VVC Complexity</p>
+  <p>MSE-CNN model</p>
 </div>
 
 <!----![Jokes Card](https://readme-jokes.vercel.app/api)---->
