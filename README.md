@@ -6,9 +6,16 @@
 ![issues](https://img.shields.io/github/issues-raw/raulkviana/MSE-CNN-Implementations)
 
 
+<div align="center">
+  <img src="imgs/msecnn_model.png" width=500 />
+  <p>VVC Complexity</p>
+</div>
+
 <!----![Jokes Card](https://readme-jokes.vercel.app/api)---->
 
-Code database with an implementation of MSE-CNN [1]. Besides the code, the dataset and coefficients obtained after training are provided 
+Code database with an implementation of MSE-CNN [1]. Besides the code, the dataset and coefficients obtained after training are provided.
+<br>
+<br>
 
 - [MSE-CNN Implementation](#mse-cnn-implementation)
   - [Introduction](#introduction)
@@ -31,6 +38,8 @@ Code database with an implementation of MSE-CNN [1]. Besides the code, the datas
     - [Folders](#folders)
     - [Files](#files)
   - [Installation of dependencies](#installation-of-dependencies)
+  - [Contributions](#contributions)
+  - [License](#license)
   - [References](#references)
 
 <!--------- Put demo here ----------->
@@ -40,19 +49,17 @@ Code database with an implementation of MSE-CNN [1]. Besides the code, the datas
 The emergence of new technologies that provide creative audiovisual experiences, such as 360-degree films, virtual reality, augmented reality, 4K, 8K UHD, 16K, and also with the rise of video traffic on the web, shows the current demand for video data in the modern world. Because of this tension, Versatile Video Coding (VVC) was developed due to the the necessity for the introduction of new coding standards. Despite the advancements achieved with the introduction of this standard, its complexity has increased very much. The new partitioning technique is responsible for majority of the increase in encoding time. This extended duration is linked with the optimization of the Rate-Distortion cost (RD cost). Although VVC offers higher compression rates, the complexity of its encoding is high.
 
 <div align="center">
-  <img src="imgs/Versatile_Video_Coding_logo.png" width=400 />
-  <p>VVC logo</p>
+  <img src="imgs/funny_memes_about_this_work/72rrr9.jpg" width=300 />
+  <p>VVC Complexity</p>
 </div>
 
 In light of this, the Multi-Stage Exit Convolutional 
-Neural Nework (MSE-CNN) was developed. This Deep Learning-based model is organised in a sequential structure with several stages. Each stage, which represents a different partition depth, encompasses a set of layers for extracting features from a Coding Tree Unit (CTU) and deciding how to partition it. Instead of using recursive approaches to determine the optimal way to fragment an image, this model allows VVC to estimate the most appropriate way of doing it. **This 
-work presents a model of the MSE-CNN that employs training procedures distinct from the original implementation of this network, as well as the ground-thruth to train and validate the model and an interpretation of the work done by the MSE-CNN’s original creators**.
+Neural Nework (MSE-CNN) was developed. This Deep Learning-based model is organised in a sequential structure with several stages. Each stage, which represents a different partition depth, encompasses a set of layers for extracting features from a Coding Tree Unit (CTU) and deciding how to partition it. Instead of using recursive approaches to determine the optimal way to fragment an image, this model allows VVC to estimate the most appropriate way of doing it. **This work presents a model of the MSE-CNN that employs training procedures distinct from the original implementation of this network, as well as the ground-thruth to train and validate the model and an interpretation of the work done by the MSE-CNN’s original creators**.
 
 <div align="center">
-  <img src="imgs/msecnn_model.png" width=600 />
-  <p>MSE-CNN</p>
+  <img src="imgs/funny_memes_about_this_work/72roie.jpg" width=400 />
+  <p>MSE-CNN benefits</p>
 </div>
-
 
 ## Theorectical Background
 
@@ -88,6 +95,11 @@ an image more efficiently, allowing better predictions and higher compressing ab
 ### MSE-CNN
 
 Multi-Stage Exit Convolutional Neural Network (MSE-CNN) is a DL model that seeks to forecast CUs in a waterfall architecture (top-down manner), it integrates . This structure takes a CTU as input, extracts features from it, splits the CU into one of at most six possible partitions (Non-split, QT, HBT, VBT, HTT, and VTT), and then sends it to the next stage. This model has CTUs as inputs in the first stage, either in the chroma or luma channel, and feature maps in the subsequent stages. Furthermore, it generates feature maps and a split decision at each level. In the event that one of the models returns the split decision as Non-Split, the partitioning of the CU is ended immediately.
+
+<div align="center">
+  <img src="imgs/msecnn_model.png" width=600 />
+  <p>MSE-CNN</p>
+</div>
 
 #### Architecture
 
@@ -228,6 +240,8 @@ Results with weighted average for F1-score, recall and precision.
 | Y-PSNR | 35.7927 dB  | 35.5591 dB | -0.65% |
 | Complexity | 1792.88 s  | 1048.95 s | -41.49% |
 
+**These results were obtained with the "medium" configuration for the multi-thresholding method.**
+
 ## Relevant Folders and files
 
 ### Folders
@@ -259,8 +273,24 @@ In order to run this project, it is needed to first install of the libraries use
 This will install all of the libraries references in the requirements.txt file.
 3. Enjoy! :)
 
+## Contributions
+
+Feel free to contact me through this [email](raudao@hotmail.com) or create either a issue or pull request to contribute to this project ^^.
+
+## License
+
+This project license is under the [**MIT License**](LICENSE).
+
 
 ## References
 [1] T. Li, M. Xu, R. Tang, Y. Chen, and Q. Xing, [“DeepQTMT: A Deep Learning Approach for
 Fast QTMT-Based CU Partition of Intra-Mode VVC,”](https://arxiv.org/abs/2006.13125) IEEE Transactions on Image Processing,
 vol. 30, pp. 5377–5390, 2021, doi: 10.1109/tip.2021.3083447.
+
+<div align="center">
+  <img src="imgs\funny_memes_about_this_work\72rukf.gif" width=450 />
+  <p>:)</p>
+</div>
+
+
+
