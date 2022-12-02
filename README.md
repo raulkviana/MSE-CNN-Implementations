@@ -100,11 +100,6 @@ an image more efficiently, allowing better predictions and higher compressing ab
 
 Multi-Stage Exit Convolutional Neural Network (MSE-CNN) is a DL model that seeks to forecast CUs in a waterfall architecture (top-down manner), it integrates . This structure takes a CTU as input, extracts features from it, splits the CU into one of at most six possible partitions (Non-split, QT, HBT, VBT, HTT, and VTT), and then sends it to the next stage. This model has CTUs as inputs in the first stage, either in the chroma or luma channel, and feature maps in the subsequent stages. Furthermore, it generates feature maps and a split decision at each level. In the event that one of the models returns the split decision as Non-Split, the partitioning of the CU is ended immediately.
 
-<div align="center">
-  <img src="imgs/msecnn_model.png" width=600 />
-  <p>MSE-CNN</p>
-</div>
-
 #### Architecture
 
 This model is composed by the following blocks:
