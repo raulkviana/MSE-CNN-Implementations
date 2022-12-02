@@ -1,3 +1,12 @@
+
+<div align="center">
+  <img src="imgs/msecnn_model.png" />
+  <!----<p>MSE-CNN model</p>--->
+</div>
+<br>
+<br>
+
+
 # MSE-CNN Implementation
 ![language_used](https://img.shields.io/github/languages/top/raulkviana/MSE-CNN-Implementations)
 ![versions](https://badgen.net/badge/python-version/3.8.10/:color?color=yellow)
@@ -5,12 +14,6 @@
 ![license](https://img.shields.io/github/license/raulkviana/MSE-CNN-Implementations)
 ![status](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
 ![issues](https://img.shields.io/github/issues-raw/raulkviana/MSE-CNN-Implementations)
-
-
-<div align="center">
-  <img src="imgs/msecnn_model.png" />
-  <p>MSE-CNN model</p>
-</div>
 
 <!----![Jokes Card](https://readme-jokes.vercel.app/api)---->
 
