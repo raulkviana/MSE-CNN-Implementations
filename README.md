@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="imgs/msecnn_model.png" />
+  <img src="imgs/msecnn_model.png" width=500 />
   <!----<p>MSE-CNN model</p>--->
 </div>
 <br>
