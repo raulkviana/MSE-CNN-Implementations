@@ -54,7 +54,7 @@ The emergence of new technologies that provide creative audiovisual experiences,
 
 <div align="center">
   <img src="imgs/funny_memes_about_this_work/72rrr9.jpg" width=300 />
-  <p>VVC Complexity</p>
+  <p>Fig. 1: VVC Complexity</p>
 </div>
 
 In light of this, the Multi-Stage Exit Convolutional 
@@ -62,7 +62,7 @@ Neural Nework (MSE-CNN) was developed. This Deep Learning-based model is organis
 
 <div align="center">
   <img src="imgs/funny_memes_about_this_work/72roie.jpg" width=400 />
-  <p>MSE-CNN benefits</p>
+  <p>Fig. 2: MSE-CNN benefits</p>
 </div>
 
 ## Theorectical Background
@@ -78,7 +78,7 @@ VVC is 128x128 and the smallest is 4x4. In VVC, a quad-tree (QT) is initially ap
 
 <div align="center">
   <img src="imgs/vvc_parti_real.png" />
-  <p>Types of partitions in VVC</p>
+  <p>Fig. 3: Types of partitions in VVC</p>
 </div>
 
 This innovation makes it possible to split CUs in different rectangle forms. Splitting a CU into:
@@ -92,7 +92,7 @@ an image more efficiently, allowing better predictions and higher compressing ab
 
 <div align="center">
   <img src="imgs/partitioning_image.png" />
-  <p>Partitioning in VVC</p>
+  <p>Fig. 4: Partitioning in VVC</p>
 </div>
 
 
@@ -109,14 +109,14 @@ from it; this is accomplished by utilising simple convolutional layers.
 
 <div align="center">
   <img src="imgs/over_con_block.drawio.png" />
-  <p>Overlapping convolution layer</p>
+  <p>Fig. 5: Overlapping convolution layer</p>
 </div>
 
 * To extract more characteristics from the data, the information is then passed through a series of convolutional layers; these layers were named Conditional Convolution. 
   
 <div align="center">
   <img src="imgs/resnet_mse.png" />
-  <p>Conditional Convolution</p>
+  <p>Fig. 6: Conditional Convolution</p>
 </div>
 
 
@@ -126,7 +126,7 @@ layers.
 
 <div align="center">
   <img src="imgs/sub_networks.png" />
-  <p>Sub-networks</p>
+  <p>Fig. 7: Sub-networks</p>
 </div>
 
 <span style="text-decoration: underline">Note</span>: For more details regarding these layers check [1]
@@ -144,7 +144,7 @@ In the above equation, $\beta$ is a real number to adjust the influence of the $
 $$L_{CEmod} = -\frac{1}{N}\sum_{n=1}^N \sum_{m\varepsilon Partitions}(\frac{1}{p_m})^\alpha y_{n, m}\log(\hat{y}_{n, m})$$
 
 <div align="center">
-  <p>In this equation "n" is the batch number, "m" is the corresponding partition (0 (Non-Split), 1 (QT), 2 (HBT), 3 (VBT), 4 (VTT), 5 (HTT)), N is the total number of batches and alpha is a parameter to configure the penalties for the less represented classes</p> 
+  <small> Eq. 1: In this equation "n" is the batch number, "m" is the corresponding partition (0 (Non-Split), 1 (QT), 2 (HBT), 3 (VBT), 4 (VTT), 5 (HTT)), N is the total number of batches and alpha is a parameter to configure the penalties for the less represented classes</small> 
 </div>
 
 <br>
@@ -168,7 +168,7 @@ The strategy used to train the MSE-CNN was very similar to the one used in [1]. 
 
 <div align="center">
   <img src="imgs/training_steps.png" width=300/>
-  <p>Training flow used</p>
+  <p>Fig. 8: Training flow used</p>
 </div>
 
 At the end of training, 6 models were obtained one for each partitioning depth in the luma channel. Although models for the luma and chroma channels could be created for all the shapes of CUs that are possible, rather than just for each depth, only six were trained for the sake of assessing the model behaviour in a simpler and more understandable configuration.
@@ -180,7 +180,7 @@ Due to the deterministic nature of the first stage, where CTUs are always partit
 <div align="center">
   <img src="imgs/subnet_min_32_1.drawio.png" width=300/>
   <img src="imgs/subnet_min_32_2.drawio.png" width=300/>
-  <p>32 minimum axis size sub-networks</p>
+  <p>Fig. 9: 32 minimum axis size sub-networks</p>
 </div>
 
 When implementing the sub-networks on code, those that were meant to cater for varying CU sizes were further implemented separately. For example, in the case of the sub-network utilised when the minimum width or height is 32, two variants of the first two layers were built. This was done because 64x32 and 32x32 CUs can flow across this block. Because of this, the first two layers were implemented separately from the entire block. Then, they were used in conjunction with the remaining layers based on the dimensions of the input CU. The same procedures were followed for the other types of sub-networks.
@@ -213,20 +213,20 @@ Results with weighted average for F1-score, recall and precision.
 <div align="center">
   <img src="imgs/conf_mat_val_stg2.png" width=300 />
   <img src="imgs/conf_mat_val_v2_stg3.png" width=300 />
-  <p>Confusion matrix results in with the testing data in stages 2 and 3</p>
+  <p>Fig. 10: Confusion matrix results in with the testing data in stages 2 and 3</p>
 </div>
 
 #### Stages 4 and 5
 <div align="center">
   <img src="imgs/conf_mat_val_stg4.png" width=300 />
   <img src="imgs/conf_mat_val_stg5.png" width=300 />
-  <p>Confusion matrix results in with the testing data in stages 4 and 5</p>
+  <p>Fig. 11: Confusion matrix results in with the testing data in stages 4 and 5</p>
 </div>
 
 #### Stage 6
 <div align="center">
   <img src="imgs/conf_mat_val_stg6.png" width=300 />
-  <p>Confusion matrix results in with the testing data in stage 6</p>
+  <p>Fig. 12: Confusion matrix results in with the testing data in stage 6</p>
 </div>
 
 
