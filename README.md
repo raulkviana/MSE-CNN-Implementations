@@ -44,6 +44,7 @@ Code database with an implementation of MSE-CNN [1]. Besides the code, the datas
   - [6. Installation of dependencies](#6-installation-of-dependencies)
   - [7. Contributions](#7-contributions)
   - [8. License](#8-license)
+  - [9. TODO](#9-todo)
   - [9. References](#9-references)
 
 <!--------- Put demo here ----------->
@@ -280,6 +281,11 @@ Feel free to contact me through this [email](raudao@hotmail.com) or create eithe
 
 This project license is under the [**MIT License**](LICENSE).
 
+## 9. TODO
+
+|Task| Description| Status (d - doing, w - waiting, f- finished)|
+|-----|-----|-----|
+| | | |
 
 ## 9. References
 [1] T. Li, M. Xu, R. Tang, Y. Chen, and Q. Xing, [“DeepQTMT: A Deep Learning Approach for
