@@ -22,33 +22,33 @@ Code database with an implementation of MSE-CNN [1]. Besides the code, the datas
 <br>
 
 - [MSE-CNN Implementation](#mse-cnn-implementation)
-  - [Introduction](#introduction)
-  - [Theorectical Background](#theorectical-background)
-    - [Partitioning in VVC](#partitioning-in-vvc)
-    - [MSE-CNN](#mse-cnn)
-      - [Architecture](#architecture)
-      - [Loss Function](#loss-function)
-      - [Training](#training)
-      - [Implementation remarks](#implementation-remarks)
-  - [Dataset](#dataset)
-  - [Results](#results)
-    - [F1-score, Recall and Precision](#f1-score-recall-and-precision)
-    - [Confusion matrices](#confusion-matrices)
-      - [Stages 2 and 3](#stages-2-and-3)
-      - [Stages 4 and 5](#stages-4-and-5)
-      - [Stage 6](#stage-6)
-    - [Y-PSNR, Complexity Reduction and Bitrate](#y-psnr-complexity-reduction-and-bitrate)
-  - [Relevant Folders and files](#relevant-folders-and-files)
-    - [Folders](#folders)
-    - [Files](#files)
-  - [Installation of dependencies](#installation-of-dependencies)
-  - [Contributions](#contributions)
-  - [License](#license)
-  - [References](#references)
+  - [1. Introduction](#1-introduction)
+  - [2. Theorectical Background](#2-theorectical-background)
+    - [2.1 Partitioning in VVC](#21-partitioning-in-vvc)
+    - [2.2 MSE-CNN](#22-mse-cnn)
+      - [2.2.1 Architecture](#221-architecture)
+      - [2.2.2 Loss Function](#222-loss-function)
+      - [2.2.3 Training](#223-training)
+      - [2.2.4 Implementation remarks](#224-implementation-remarks)
+  - [3. Dataset](#3-dataset)
+  - [4. Results](#4-results)
+    - [4.1 F1-score, Recall and Precision](#41-f1-score-recall-and-precision)
+    - [4.2 Confusion matrices](#42-confusion-matrices)
+      - [4.2.1 Stages 2 and 3](#421-stages-2-and-3)
+      - [4.2.2 Stages 4 and 5](#422-stages-4-and-5)
+      - [4.2.3 Stage 6](#423-stage-6)
+    - [4.3 Y-PSNR, Complexity Reduction and Bitrate](#43-y-psnr-complexity-reduction-and-bitrate)
+  - [5. Relevant Folders and files](#5-relevant-folders-and-files)
+    - [5.1 Folders](#51-folders)
+    - [5.2 Files](#52-files)
+  - [6. Installation of dependencies](#6-installation-of-dependencies)
+  - [7. Contributions](#7-contributions)
+  - [8. License](#8-license)
+  - [9. References](#9-references)
 
 <!--------- Put demo here ----------->
 
-## Introduction
+## 1. Introduction
 
 The emergence of new technologies that provide creative audiovisual experiences, such as 360-degree films, virtual reality, augmented reality, 4K, 8K UHD, 16K, and also with the rise of video traffic on the web, shows the current demand for video data in the modern world. Because of this tension, Versatile Video Coding (VVC) was developed due to the the necessity for the introduction of new coding standards. Despite the advancements achieved with the introduction of this standard, its complexity has increased very much. The new partitioning technique is responsible for majority of the increase in encoding time. This extended duration is linked with the optimization of the Rate-Distortion cost (RD cost). Although VVC offers higher compression rates, the complexity of its encoding is high.
 
@@ -65,9 +65,9 @@ Neural Nework (MSE-CNN) was developed. This Deep Learning-based model is organis
   <p>Fig. 2: MSE-CNN benefits</p>
 </div>
 
-## Theorectical Background
+## 2. Theorectical Background
 
-### Partitioning in VVC
+### 2.1 Partitioning in VVC
 
 The key objective of partitioning is to divide frames into pieces in a way that results in a
 reduction of the RD cost. To achieve a perfect balance of quality and bitrate, numerous image
@@ -96,11 +96,11 @@ an image more efficiently, allowing better predictions and higher compressing ab
 </div>
 
 
-### MSE-CNN
+### 2.2 MSE-CNN
 
 Multi-Stage Exit Convolutional Neural Network (MSE-CNN) is a DL model that seeks to forecast CUs in a waterfall architecture (top-down manner), it integrates . This structure takes a CTU as input, extracts features from it, splits the CU into one of at most six possible partitions (Non-split, QT, HBT, VBT, HTT, and VTT), and then sends it to the next stage. This model has CTUs as inputs in the first stage, either in the chroma or luma channel, and feature maps in the subsequent stages. Furthermore, it generates feature maps and a split decision at each level. In the event that one of the models returns the split decision as Non-Split, the partitioning of the CU is ended immediately.
 
-#### Architecture
+#### 2.2.1 Architecture
 
 This model is composed by the following blocks:
 
@@ -132,7 +132,7 @@ layers.
 <span style="text-decoration: underline">Note</span>: For more details regarding these layers check [1]
  
 
-#### Loss Function
+#### 2.2.2 Loss Function
 
 The loss developed for the MSE-CNN is the result of two other functions, as defined in the
 following expression:
@@ -162,7 +162,7 @@ $$\hat{y}_{n, m}\frac{r_{n, m}}{r_{n, min}}-1$$
 
 ensures that CU's partitions with greater erroneously predicted probability values or greater RD cost values $r_{n, m}$ are more penalised. In $\frac{r_{n, m}}{r_{n, min}} - 1$, the ideal partition has a normalised RD cost of zero, but the other partitions do not. Therefore, the only way for the loss to equal zero is if the probability for all other modes also equals zero. Consequently, the learning algorithm must assign a greater probability to the optimal split mode while reducing the probabilities for the rest. **Experimentally it was verified that this function wasn't able to contribute to the training of the MSE-CNN, this contradicted the remarks made in [1]**.
 
-#### Training
+#### 2.2.3 Training
 
 The strategy used to train the MSE-CNN was very similar to the one used in [1]. The first parts of the model to be trained were the first and second stages, in which 64x64 CUs were passed through the second depth. Afterwards, transfer learning was used to pass certain coefficients of the second stage to the third. Then, the third stage was trained with 32x32 CUs flowing through it. After this step, a similar process was done to the following stages. It is worth noting that, beginning with stage 4, various CUs forms are at the models' input. This means that these stages were fed different kinds of CUs.  
 
@@ -173,7 +173,7 @@ The strategy used to train the MSE-CNN was very similar to the one used in [1]. 
 
 At the end of training, 6 models were obtained one for each partitioning depth in the luma channel. Although models for the luma and chroma channels could be created for all the shapes of CUs that are possible, rather than just for each depth, only six were trained for the sake of assessing the model behaviour in a simpler and more understandable configuration.
 
-#### Implementation remarks
+#### 2.2.4 Implementation remarks
 
 Due to the deterministic nature of the first stage, where CTUs are always partitioned with a QT, it was implemented together with the second stage. If it was done separately, the training for the first two stages would have to be done at the same time. Consequently, two distinct optimisers would need to be employed, which could result in unpredictable training behaviour. <br>
 
@@ -187,15 +187,15 @@ When implementing the sub-networks on code, those that were meant to cater for v
 
 When the network was being trained, some of the RD costs from the input data had very high values. Consequently, the RD loss function value skyrocketed, resulting in extremely huge gradients during training. As a result, the maximum RD cost was hard coded at $10^{10}$. This amount is large enough to be more than the best partition's RD cost and small enough to address this issue. 
 
-## Dataset
+## 3. Dataset
 
 Please see this [page](RAISE_TEST/README.md) to understand better the dataset and also access it.
 
-## Results
+## 4. Results
 
 Since it was verified that the Rate-Distortion Loss. $L_{RD}$, could contribute for better results, the metrics presented here were obtained with a model trained only with the modified cross-entropy loss.
 
-###  F1-score, Recall and Precision
+### 4.1 F1-score, Recall and Precision
 
 | Stage | F1-Score | Recall | Precision |
 |-------|----------|--------|-----------|
@@ -207,23 +207,23 @@ Since it was verified that the Rate-Distortion Loss. $L_{RD}$, could contribute 
 
 Results with weighted average for F1-score, recall and precision.
 
-### Confusion matrices
+### 4.2 Confusion matrices
 
-#### Stages 2 and 3
+#### 4.2.1 Stages 2 and 3
 <div align="center">
   <img src="imgs/conf_mat_val_stg2.png" width=300 />
   <img src="imgs/conf_mat_val_v2_stg3.png" width=300 />
   <p>Fig. 10: Confusion matrix results in with the testing data in stages 2 and 3</p>
 </div>
 
-#### Stages 4 and 5
+#### 4.2.2 Stages 4 and 5
 <div align="center">
   <img src="imgs/conf_mat_val_stg4.png" width=300 />
   <img src="imgs/conf_mat_val_stg5.png" width=300 />
   <p>Fig. 11: Confusion matrix results in with the testing data in stages 4 and 5</p>
 </div>
 
-#### Stage 6
+#### 4.2.3 Stage 6
 <div align="center">
   <img src="imgs/conf_mat_val_stg6.png" width=300 />
   <p>Fig. 12: Confusion matrix results in with the testing data in stage 6</p>
@@ -231,7 +231,7 @@ Results with weighted average for F1-score, recall and precision.
 
 
 
-### Y-PSNR, Complexity Reduction and Bitrate
+### 4.3 Y-PSNR, Complexity Reduction and Bitrate
 
 | Metric | VTM-7.0 | VTM-7.0+Model | Gain |
 |-------|----------|--------|-----------|
@@ -241,9 +241,9 @@ Results with weighted average for F1-score, recall and precision.
 
 **These results were obtained with the "medium" configuration for the multi-thresholding method.**
 
-## Relevant Folders and files
+## 5. Relevant Folders and files
 
-### Folders
+### 5.1 Folders
 
 | Folder | Description |
 |--------|-------------|
@@ -253,7 +253,7 @@ Results with weighted average for F1-score, recall and precision.
 | [usefull_scripts](usefull_scripts) | Some example scripts demonstrating how to use some of the functions created can be found here |
 
 
-### Files
+### 5.2 Files
 
 | Files | Description |
 |--------|-------------|
@@ -264,7 +264,7 @@ Results with weighted average for F1-score, recall and precision.
 | train_model_utils.py | Usefull functions to be used during training or evaluation of the artificial neural network |
 | utils.py | Other functions that are usefull not directly to the model but for the code implementation itself |
 
-## Installation of dependencies
+## 6. Installation of dependencies
 
 In order to run this project, it is needed to first install of the libraries used in it. For this please follow the below steps:
 1. Create a virtual environment to do install the libraries; follow this [link](https://www.geeksforgeeks.org/creating-python-virtual-environment-windows-linux/) in case you don't know how to do it; you possibly need to install [pip](https://www.makeuseof.com/tag/install-pip-for-python/), if you don't have it installed
@@ -272,16 +272,16 @@ In order to run this project, it is needed to first install of the libraries use
 This will install all of the libraries references in the requirements.txt file.
 3. Enjoy! :)
 
-## Contributions
+## 7. Contributions
 
 Feel free to contact me through this [email](raudao@hotmail.com) or create either a issue or pull request to contribute to this project ^^.
 
-## License
+## 8. License
 
 This project license is under the [**MIT License**](LICENSE).
 
 
-## References
+## 9. References
 [1] T. Li, M. Xu, R. Tang, Y. Chen, and Q. Xing, [“DeepQTMT: A Deep Learning Approach for
 Fast QTMT-Based CU Partition of Intra-Mode VVC,”](https://arxiv.org/abs/2006.13125) IEEE Transactions on Image Processing,
 vol. 30, pp. 5377–5390, 2021, doi: 10.1109/tip.2021.3083447.
