@@ -1,11 +1,88 @@
+"""@package docstring 
+
+@file train_stg6_cus_multi_batch_v3.py 
+
+@brief Training script for the sixth stage of the MSE-CNN, for the luma channel.  
+ 
+@section libraries_train_stg6_cus_multi_batch_v3 Libraries 
+- torch
+- train_model_utils
+- constants
+- torch.utils.tensorboard
+- numpy
+- matplotlib.pyplot
+- MSECNN
+- sklearn.metrics
+- utils
+- torchvision
+- datetime
+- __future__
+- time
+- CustomDataset
+- argparse
+- torch.utils.data
+
+@section classes_train_stg6_cus_multi_batch_v3 Classes 
+- None 
+
+@section functions_train_stg6_cus_multi_batch_v3 Functions 
+- train(dataloader, model, loss_fn, optimizer, device)
+- test(dataloader, model, loss_fn, device, loss_name)
+- train_test(train_dataloader, test_dataloader, model, loss_fn, optimizer, device, epochs, lr_sch)
+- main()
+ 
+@section global_vars_train_stg6_cus_multi_batch_v3 Global Variables 
+- learning_rate
+- parser 
+- args 
+- loss_threshold 
+- batch_size 
+- qp 
+- device 
+- n_mod 
+- num_workers 
+- writer 
+- l_path_val 
+- decay
+- decay_controler
+- iterations
+- files_mod_name_stats 
+- l_path_train
+- l_path_test
+- cnt_train
+- cnt_test_train
+- cnt_test_test
+
+@section todo_train_stg6_cus_multi_batch_v3 TODO 
+- None 
+
+@section license License 
+MIT License 
+Copyright (c) 2022 Raul Kevin do Espirito Santo Viana
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+@section author_train_stg6_cus_multi_batch_v3 Author(s)
+- Created by Raul Kevin Viana
+- Last time modified is 2022-12-02 18:21:21.220860
 """
-    This script is similar to the train_32x32_cus_multi_batch_v3.py, but uses Tensorboard to log the model metrics
-    Made to train the model using cus 16x16
-"""
+
 
 # Imports
 from __future__ import print_function, division
-from sqlalchemy import true
 import torch
 from torch.utils.data import DataLoader
 from torchvision import utils
@@ -22,7 +99,6 @@ from torch.utils.tensorboard import SummaryWriter
 import datetime
 import numpy as np
 import matplotlib.pyplot as plt
-import random
 
 # Parse arguments
 parser = argparse.ArgumentParser(description=constants.script_description)
@@ -85,7 +161,7 @@ cnt_test_train = 0
 cnt_test_test = 0
 
 def train(dataloader, model, loss_fn, optimizer, device):
-    """
+    """!
         If batch size equal to 1 it's a Stochastic Gradiente Descent (SGD), otherwise it's a mini-batch gradient descent. 
         If the batch is the same as the number as the size of the dataset, it will be a Batch gradient Descent
     """

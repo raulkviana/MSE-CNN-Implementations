@@ -1,12 +1,171 @@
+"""@package docstring 
+
+@file dataset_utils.py 
+
+@brief Usefull functions to manipulate data, change and create structures 
+ 
+@section libraries_dataset_utils Libraries 
+- numba
+- os
+- shutil
+- threading
+- numpy
+- torch
+- sys
+- csv
+- pandas
+- utils
+- time
+- math
+- struct
+- pickle
+- cv2
+- re
+- sklearn.model_selection
+
+@section classes_dataset_utils Classes 
+- VideoCaptureYUV 
+
+@section functions_dataset_utils Functions 
+- bgr2yuv(matrix)
+- extract_content(f)
+- file_stats(path)
+- show_bin_content(path, num_records=100)
+- add_best_split(labels)
+- read_from_records(path, num_records)
+- process_info(content)
+- match_cu(CU, CTU, position, size)
+- find_cu(df_cu, CTU, position, size)
+- build_entry(stg1=[], stg2=[], stg3=[], stg4=[], stg5=[], stg6=[])
+- build_entry_multi_stg_x_new(CTU, CU)
+- build_entry_multi_stg_2(CTU, CUs)
+- add_cu_to_dict(cu_dict, cu)
+- transform_create_struct_faster_cycles(f, f_name, num_records)
+- transform_create_struct_faster_v2_mod(f, f_name, num_records, color_ch=0)
+- transform_create_struct_faster_v2_mod_divs(f, f_name, num_records, output_dir, n_output_file, color_ch=0)
+- transform_create_struct_faster_v3(f, f_name, num_records, output_dir, n_output_file, color_ch=0)
+- transform_create_struct_faster_v4(f, f_name, num_records, output_dir, n_output_file, color_ch=0, cu_type={"CU_w" 64, "CU_h" 64})
+- transform_create_struct_faster_v5(f, f_name, num_records, output_dir, n_output_file, color_ch=0, cu_type={"CU_w" 64, "CU_h" 64})
+- process_ctus_cus(df_ctus, df_cus)
+- process_ctus_cus_multi_stg_2(df_ctus, df_cus)
+- process_ctus_cus_multi_stg_2_new(df_ctus, df_cus)
+- process_ctus_cus_multi_stg_3_new(df_ctus, df_cus)
+- transform_create_struct_faster_while(f, f_name, num_records)
+- split(size, pos, split_mode)
+- transform_raw_dataset(dic)
+- get_files_from_folder(path, endswith=".yuv")
+- get_num_frames(path, name, width, height)
+- get_file_metadata_info(path, name)
+- get_file_metadata_info_mod(name)
+- encode_dataset(d_path="C\\Users\\Raul\\Dropbox\\Dataset",
+- compute_split_per_depth(d_path)
+- compute_split_per_depth_v2(d_path)
+- compute_split_per_depth_v3(d_path)
+- lst2csv(lst, name_of_file)
+- get_some_data_equaly(X, path_dir_l, classes, split_pos)
+- lst2csv_v2(lst_lst, n_file, n_fields)
+- csv2lst(csv_file)
+- file2lst(file)
+- lst2file(lst, name_of_file)
+- unite_labels(dir_path)
+- unite_labels_v6(dir_path_l, n_output_file="labels_pickle", color_ch=0)
+- unite_labels_v6_before(dir_path_l, n_output_file="labels_pickle")
+- unite_labels_v6_mod(dir_path_l, n_output_file="labels_pickle", color_ch=0)
+- unite_labels_v6_mod_threads(dir_path_l, n_output_file="labels_pickle", color_ch=0)
+- unite_labels_v6_multi_batch(dir_path_l, n_output_file="labels_pickle", color_ch=0, cu_type={"CU_w" 64, "CU_h" 64})
+- unite_labels_v7_multi_batch(dir_path_l, n_output_file="labels_pickle", color_ch=0, cu_type={"CU_w" 64, "CU_h" 64})
+- create_dir(output_dir)
+- labels_with_specific_cch(dir_path, cch=0)
+- read_from_records_v2(f, f_name, num_records)
+- file_stats_v2(path)
+- compute_split_proportions(path, num_cus=float('inf'))
+- compute_split_proportions_with_custom_data(custom_dataset, stage, num_cus=float('inf'))
+- compute_split_proportions_with_custom_data_multi(custom_dataset, split_pos_in_struct, num_cus=float('inf'))
+- compute_split_proportions_with_path_multi_new(path, split_pos_in_struct, num_cus=float('inf'))
+- compute_split_proportions_with_custom_data_multi_new(custom_dataset, split_pos_in_struct, num_cus=float('inf'))
+- compute_split_proportions_labels(path, num_cus=float('inf'))
+- balance_dataset(dir_path, stg, n_classes=6)
+- balance_dataset_JF(dir_path, n_classes=6)
+- balance_dataset_down(dir_path, n_classes=6)
+- balance_dataset_down_v2(dir_path)
+- balance_dataset_down_v3(dir_path)
+- balance_dataset_down_v4(dir_path)
+- balance_dataset_up(dir_path, n_classes=6)
+- balance_dataset_up_v2(dir_path)
+- balance_dataset_up_v3(dir_path)
+- gen_dataset_types(d_path, valid_percent)
+- change_struct_64x64_eval(path_dir_l)
+- change_struct_32x32_eval(path_dir_l)
+- change_struct_64x64(path_dir_l)
+- change_struct_64x64_no_dupl_v3(path_dir_l)
+- mod_64x64_threads(f, path_dir_l, right_rows, columns, new_dir)
+- change_struct_64x64_no_dupl_v2(path_dir_l)
+- change_struct_32x32(path_dir_l)
+- change_struct_32x32_no_dupl(path_dir_l)
+- change_struct_32x32_no_dupl_v2(path_dir_l)
+- change_struct_32x32_no_dupl_v3(path_dir_l)
+- mod_32x32_threads(f, path_dir_l, right_rows, columns, new_dir)
+- change_struct_32x32_no_dupl_v2_test(path_dir_l)
+- change_struct_16x16_no_dupl_v2(path_dir_l)
+- change_struct_8x8_no_dupl_v2(path_dir_l)
+- change_struct_no_dupl_stg6_v4(path_dir_l)
+- change_struct_no_dupl_stg5_v4(path_dir_l)
+- change_struct_no_dupl_stg2_v4(path_dir_l)
+- change_struct_no_dupl_stg4_v4(path_dir_l)
+- change_struct_no_dupl_stg3_v4(path_dir_l)
+- change_struct_32x16_no_dupl_v2(path_dir_l)
+- change_struct_32x8_no_dupl_v2(path_dir_l)
+- change_struct_16x8_no_dupl_v2(path_dir_l)
+- change_struct_8x4_no_dupl_v2(path_dir_l)
+- change_struct_32x4_no_dupl_v2(path_dir_l)
+- change_struct_16x4_no_dupl_v2(path_dir_l)
+- change_struct_16x16_no_dupl_v3(path_dir_l)
+- mod_16x16_threads(f, path_dir_l, right_rows, columns, new_dir)
+- change_struct_16x16(path_dir_l)
+- change_struct_no_dupl_stg_4_complexity_v4(path_dir_l)
+- change_struct_no_dupl_stg_3_complexity_v4(path_dir_l)
+- change_struct_no_dupl_stg_2_complexity_v4(path_dir_l)
+- change_struct_no_dupl_stg_6_complexity_v4(path_dir_l)
+- change_struct_no_dupl_stg_5_complexity_v4(path_dir_l)
+ 
+@section global_vars_dataset_utils Global Variables 
+- None 
+
+@section todo_dataset_utils TODO 
+- None 
+
+@section license License 
+MIT License 
+Copyright (c) 2022 Raul Kevin do Espirito Santo Viana
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+@section author_dataset_utils Author(s)
+- Created by Raul Kevin Viana
+- Last time modified is 2022-12-02 18:21:21.133389
+"""
+
+
 import os
 import math
 import struct
 import re
-import subprocess
 import time
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
 import csv
 import pandas as pd
 import pickle
@@ -18,7 +177,7 @@ from numba import jit
 from sklearn.model_selection import train_test_split
 
 def bgr2yuv(matrix):
-    """
+    """!
     @brief Converts BGR matrix to YUV matrix
 
     @param [in] matrix: BGR matrix
@@ -29,33 +188,6 @@ def bgr2yuv(matrix):
     YUV = cv2.cvtColor(matrix, cv2.COLOR_BGR2YUV_I420)  # cv2.COLOR_YUV2BGR_NV21)
 
     return YUV
-
-# class VideoCaptureYUV:  # 4:2:0
-#     def __init__(self, filename, size):
-#         self.height, self.width = size
-#         self.frame_len = int(self.width * self.height * 3 / 2)
-#         self.f = open(filename, 'rb')
-#         self.shape = (int(self.height * 1.5), self.width)
-#
-#     def read_raw(self, frame_number=None):
-#         try:
-#             if frame_number:
-#                 self.f.seek(0)
-#                 self.f.seek(frame_number * self.frame_len)
-#             raw = self.f.read(self.frame_len)
-#             yuv = np.frombuffer(raw, dtype=np.uint8)
-#             yuv = yuv.reshape(self.shape)
-#         except Exception as e:
-#             print(str(e))
-#             return False, None
-#         return True, yuv
-#
-#     def read(self):
-#         ret, yuv = self.read_raw()
-#         if not ret:
-#             return ret, yuv
-#         bgr = cv2.cvtColor(yuv, cv2.COLOR_YUV2BGR_I420)  # cv2.COLOR_YUV2BGR_NV21)
-#         return ret, bgr
 
 class VideoCaptureYUV:
     def __init__(self, filename, size):
@@ -94,7 +226,7 @@ class VideoCaptureYUV:
 Functions to manipulate the dataset
 """
 def extract_content(f):
-    """
+    """!
     @brief Extract a single record from binary file
 
     @param [in] f: File object
@@ -147,7 +279,7 @@ def extract_content(f):
     return content
 
 def file_stats(path):
-    """
+    """!
     @brief Finds out the size of the binary file and computes the number of records
 
     @param [in] path: Path where the binary file is located
@@ -167,7 +299,7 @@ def file_stats(path):
     return num_records, file_size
 
 def show_bin_content(path, num_records=100):
-    """
+    """!
     @brief Show contents of a binary file containing encoding information
 
     @param [in] path: Path where the binary file is located
@@ -201,7 +333,7 @@ def show_bin_content(path, num_records=100):
     f.close()
 
 def add_best_split(labels):
-    """
+    """!
     @brief Modifies labels by adding an extra parameter
 
     Dictionary containing all the info about the file: It's a dictionary of picture numbers, which then leads to a
@@ -238,7 +370,7 @@ def add_best_split(labels):
     return new_labels
 
 def read_from_records(path, num_records):
-    """
+    """!
     @brief Read the information/file generated by the encoder
     Dictionary containing all the info about the file: It's a dictionary of picture numbers, which then leads to a
     dictionary of the info. For example: records = {"Pic_0" :{"CU_0": {"colorChannel": 1,
@@ -301,7 +433,7 @@ def read_from_records(path, num_records):
     return records, CU_Counter
 
 def process_info(content):
-    """
+    """!
     @brief Process the raw data from the labels given by the encoder
 
     @param [in] content: Dict with the information about
@@ -335,7 +467,7 @@ def process_info(content):
     return content
 
 def match_cu(CU, CTU, position, size):
-    """
+    """!
     @brief Verifies if the CUs are the same based in their position, size and other information
 
     @param [in] CU: CU (dict with information about the CU) that will be inspected
@@ -362,7 +494,7 @@ def match_cu(CU, CTU, position, size):
     return cond_POC_fname and cond_same_pos and cond_colorch and cond_size
 
 def find_cu(df_cu, CTU, position, size):
-    """
+    """!
     @brief Verifies if the CU is in the dataframe, using the size and other information. Uses pandas' dataframe
 
     @param [in] df_cu: Dataframe with all the CUs
@@ -383,7 +515,7 @@ def find_cu(df_cu, CTU, position, size):
     return cu
 
 def build_entry(stg1=[], stg2=[], stg3=[], stg4=[], stg5=[], stg6=[]):
-    """
+    """!
     @brief Builds a entry with all information needed for each stage, and also removes unnecessary info
 
     @param [in] stg1: CU (dict with information about the CU) for stage 1
@@ -419,7 +551,7 @@ def build_entry(stg1=[], stg2=[], stg3=[], stg4=[], stg5=[], stg6=[]):
     return entry
 
 def build_entry_multi_stg_x_new(CTU, CU):
-    """
+    """!
     @brief Builds a entry with all information needed for each stage, and also removes unnecessary info. Version
            following Jose filipe recommendations
 
@@ -449,7 +581,7 @@ def build_entry_multi_stg_x_new(CTU, CU):
 
 
 def build_entry_multi_stg_2(CTU, CUs):
-    """
+    """!
     @brief Builds a entry with all information needed for each stage, and also removes unnecessary info. This version is
            multi batch oriented
 
@@ -504,7 +636,7 @@ def build_entry_multi_stg_2(CTU, CUs):
     return entry
 
 def add_cu_to_dict(cu_dict, cu):
-    """
+    """!
     @brief Adds information of a specific CU to the dictionary
 
     @param [in] cu_dict: Dictionary with information about all CUs
@@ -529,7 +661,7 @@ def add_cu_to_dict(cu_dict, cu):
 
 
 def transform_create_struct_faster_cycles(f, f_name, num_records):
-    """
+    """!
     @brief First obtains all CTUs and CUs in the file using a dictionary/dataframe, afterward organizes them in a stage
     oriented way. Removes elements from the cu list to speed up the process.
 
@@ -690,7 +822,7 @@ def transform_create_struct_faster_cycles(f, f_name, num_records):
     return structed_cus
 
 def transform_create_struct_faster_v2_mod(f, f_name, num_records, color_ch=0):
-    """
+    """!
     @brief First obtains all CTUs and CUs in the file using a dictionary/dataframe, afterward organizes them in a stage
            oriented way. Removes elements from the cu list to speed up the process. This version uses only specified color
            channel
@@ -741,7 +873,7 @@ def transform_create_struct_faster_v2_mod(f, f_name, num_records, color_ch=0):
     return structed_cus
 
 def transform_create_struct_faster_v2_mod_divs(f, f_name, num_records, output_dir, n_output_file, color_ch=0):
-    """
+    """!
     @brief First obtains all CTUs and CUs in the file using a dictionary/dataframe, afterward organizes them in a stage
            oriented way. Removes elements from the cu list to speed up the process. Uses only specified color
            channel. This versions divides info into multiple files
@@ -835,7 +967,7 @@ def transform_create_struct_faster_v2_mod_divs(f, f_name, num_records, output_di
     f.close()
 
 def transform_create_struct_faster_v3(f, f_name, num_records, output_dir, n_output_file, color_ch=0):
-    """
+    """!
     @brief First obtains all CTUs and CUs in the file using a dictionary/dataframe, afterward organizes them in a stage
            oriented way. Removes elements from the cu list to speed up the process. Uses only specified color
            channel. This version its similar to the div version, but outputs only a file
@@ -922,7 +1054,7 @@ def transform_create_struct_faster_v3(f, f_name, num_records, output_dir, n_outp
     f.close()
 
 def transform_create_struct_faster_v4(f, f_name, num_records, output_dir, n_output_file, color_ch=0, cu_type={"CU_w": 64, "CU_h": 64}):
-    """
+    """!
     @brief First obtains all CTUs and CUs in the file using a dictionary/dataframe, afterward organizes them in a stage
            oriented way. Removes elements from the cu list to speed up the process. Uses only specified color
            channel. Its similar to the div version, but outputs only a file. This version is to simplify the
@@ -1009,7 +1141,7 @@ def transform_create_struct_faster_v4(f, f_name, num_records, output_dir, n_outp
     f.close()
 
 def transform_create_struct_faster_v5(f, f_name, num_records, output_dir, n_output_file, color_ch=0, cu_type={"CU_w": 64, "CU_h": 64}):
-    """
+    """!
     @brief First obtains all CTUs and CUs in the file using a dictionary/dataframe, afterward organizes them in a stage
            oriented way. Removes elements from the cu list to speed up the process. Uses only specified color
            channel. Its similar to the div version, but outputs only a file. This version is to simplify the
@@ -1096,7 +1228,7 @@ def transform_create_struct_faster_v5(f, f_name, num_records, output_dir, n_outp
     f.close()
 
 def process_ctus_cus(df_ctus, df_cus):
-    """
+    """!
     @brief Function to create data structures to organize the CTUs and CUs
 
     @param [in] df_ctus: Dataframe with CTUs
@@ -1234,7 +1366,7 @@ def process_ctus_cus(df_ctus, df_cus):
     return structed_cus
 
 def process_ctus_cus_multi_stg_2(df_ctus, df_cus):
-    """
+    """!
     @brief Function to create data structures to organize the CTUs and CUs
 
     @param [in] df_ctus: Dataframe with CTUs
@@ -1283,7 +1415,7 @@ def process_ctus_cus_multi_stg_2(df_ctus, df_cus):
 
 
 def process_ctus_cus_multi_stg_2_new(df_ctus, df_cus):
-    """
+    """!
     @brief Function to create data structures to organize the CTUs and CUs. Version following Jose filipe recomendations
 
     @param [in] df_ctus: Dataframe with CTUs
@@ -1323,7 +1455,7 @@ def process_ctus_cus_multi_stg_2_new(df_ctus, df_cus):
     return structed_cus
 
 def process_ctus_cus_multi_stg_3_new(df_ctus, df_cus):
-    """
+    """!
     @brief Function to create data structures to organize the CTUs and CUs. Version following Jose filipe recomendations
 
     @param [in] df_ctus: Dataframe with CTUs
@@ -1375,7 +1507,7 @@ def process_ctus_cus_multi_stg_3_new(df_ctus, df_cus):
     return structed_cus
 
 def transform_create_struct_faster_while(f, f_name, num_records):
-    """
+    """!
     @brief First obtains all CTUs and CUs in the file, afterward organizes them in a stage oriented way. Removes 
     elements from the cu list to speed up the process.
 
@@ -1624,7 +1756,7 @@ def transform_create_struct_faster_while(f, f_name, num_records):
 
 
 def split(size, pos, split_mode):
-    """
+    """!
     @brief Split a CU in one of the specific modes (quad tree, binary vert tree, binary horz tree, threenary vert tree, etc)
 
     @param [in] size: Size of the CU (width, height)
@@ -1721,7 +1853,7 @@ def split(size, pos, split_mode):
     return new_positions, new_sizes
 
 def transform_raw_dataset(dic):
-    """
+    """!
     @brief Transform raw dataset (dictionary with information of all datasets) and convert it to a list of dictionaries
     * List entry: pic_name | color_ch | POC | CU_loc_left | ... | split
     CU oriented style
@@ -1755,7 +1887,7 @@ def transform_raw_dataset(dic):
     return lst_dicts
 
 def get_files_from_folder(path, endswith=".yuv"):
-    """
+    """!
     @brief This function obtains the name of all .yuv files in a given path
 
     @param [in] path: Path containing the files
@@ -1775,7 +1907,7 @@ def get_files_from_folder(path, endswith=".yuv"):
 
 
 def get_num_frames(path, name, width, height):
-    """
+    """!
     @brief Get number of frames in yuv file
 
     @param [in] path: Path containing dataset
@@ -1807,7 +1939,7 @@ def get_num_frames(path, name, width, height):
 
 
 def get_file_metadata_info(path, name):
-    """
+    """!
     @brief Retrieves information about the YUV file info (framerate, width and height and number of frames )
 
     @param [in] path: Path containing dataset
@@ -1900,7 +2032,7 @@ def get_file_metadata_info(path, name):
         return file_info
 
 def get_file_metadata_info_mod(name):
-    """
+    """!
     @brief Retrieves information about the YUV file info (framerate, width and height )
 
     @param [in] path: Path containing dataset
@@ -1992,7 +2124,7 @@ def get_file_metadata_info_mod(name):
 def encode_dataset(d_path="C:\\Users\\Raul\\Dropbox\\Dataset",
                    e_path="C:\\Users\\Raul\\Documents\\GitHub\\CPIV\\VTM-7.0_Data\\bin\\vs16\\msvc-19.24\\x86_64\\release",
                    ts=1, QP=32):
-    """
+    """!
     @brief This function encodes the entire dataset with in a given path
 
     @param [in] d_path: Path containing the dataset with the files to encode (this path can not contain spaces)
@@ -2052,7 +2184,7 @@ def encode_dataset(d_path="C:\\Users\\Raul\\Dropbox\\Dataset",
         os.rename("CUInfoCost.dat", new_name)
 
 def compute_split_per_depth(d_path):
-    """
+    """!
     @brief Compute the percentage and number of splits per depth of the partitiooning scheme
 
     @param [in] d_path: Path with the files containing with the cus sequences
@@ -2192,7 +2324,7 @@ def compute_split_per_depth(d_path):
 
 
 def compute_split_per_depth_v2(d_path):
-    """
+    """!
     @brief Compute the percentage and number of splits per depth of the partitiooning scheme. This version uses just dataframe
 
     @param [in] d_path: Path with the files containing with the cus sequences
@@ -2394,7 +2526,7 @@ def compute_split_per_depth_v2(d_path):
 
 
 def compute_split_per_depth_v3(d_path):
-    """
+    """!
     @brief Compute the percentage and number of splits per depth of the partitiooning scheme. This version uses just list comprehension
 
     @param [in] d_path: Path with the files containing with the cus sequences
@@ -2560,7 +2692,7 @@ def compute_split_per_depth_v3(d_path):
 
 
 def lst2csv(lst, name_of_file):
-    """
+    """!
     @brief Converts list of dictionaries to csv file
 
     @param [in] lst: List of dictionaries
@@ -2579,7 +2711,7 @@ def lst2csv(lst, name_of_file):
 
 
 def get_some_data_equaly(X, path_dir_l, classes, split_pos):
-    """
+    """!
         Gets X amount of data from files
     """
     print("Active function: get_some_data")
@@ -2631,7 +2763,7 @@ def get_some_data_equaly(X, path_dir_l, classes, split_pos):
 
 
 def lst2csv_v2(lst_lst, n_file, n_fields):
-    """
+    """!
     @brief Converts list to csv file using panda dataframe
 
     @param [in] lst: List of lists
@@ -2644,7 +2776,7 @@ def lst2csv_v2(lst_lst, n_file, n_fields):
     df.to_csv(n_file+".csv")     
 
 def csv2lst(csv_file):
-    """
+    """!
     @brief Reads csv file
 
     @param [in] csv_file: Path with the csv file
@@ -2656,7 +2788,7 @@ def csv2lst(csv_file):
     return lst
 
 def file2lst(file):
-    """
+    """!
     @brief Reads file
 
     @param [in] file: Path with the txt file
@@ -2669,7 +2801,7 @@ def file2lst(file):
     return lst
 
 def lst2file(lst, name_of_file):
-    """
+    """!
     @brief Converts list of dictionaries to file
 
     @param [in] lst: List of dictionaries
@@ -2681,7 +2813,7 @@ def lst2file(lst, name_of_file):
         pickle.dump(lst, fp)
 
 def unite_labels(dir_path):
-    """
+    """!
     @brief Unites all the labels into a giant list
 
     @param [in] dir_path: Path with all the labes (.dat files)
@@ -2708,7 +2840,7 @@ def unite_labels(dir_path):
     return all_labels
 
 def unite_labels_v6(dir_path_l, n_output_file="labels_pickle", color_ch=0):
-    """
+    """!
     @brief Unites all the labels into a giant list. This version, follows a stage oriented approach. Uses just the
            specified color channel
 
@@ -2758,7 +2890,7 @@ def unite_labels_v6(dir_path_l, n_output_file="labels_pickle", color_ch=0):
 
 
 def unite_labels_v6_before(dir_path_l, n_output_file="labels_pickle"):
-    """
+    """!
     @brief Unites all the labels into a giant list. This version, follows a stage oriented approach. Uses just the
            specified color channel
 
@@ -2807,7 +2939,7 @@ def unite_labels_v6_before(dir_path_l, n_output_file="labels_pickle"):
 
 
 def unite_labels_v6_mod(dir_path_l, n_output_file="labels_pickle", color_ch=0):
-    """
+    """!
     @brief Unites all the labels into a giant list. This version, follows a stage oriented approach. Uses just the
            specified color channel
 
@@ -2855,7 +2987,7 @@ def unite_labels_v6_mod(dir_path_l, n_output_file="labels_pickle", color_ch=0):
         transform_create_struct_faster_v3(f, f_name, step, output_dir, n_output_file, color_ch=color_ch)
 
 def unite_labels_v6_mod_threads(dir_path_l, n_output_file="labels_pickle", color_ch=0):
-    """
+    """!
     @brief Unites all the labels into a giant list. This version, follows a stage oriented approach. Uses just the
            specified color channel. Uses threads for each file to encode
 
@@ -2909,7 +3041,7 @@ def unite_labels_v6_mod_threads(dir_path_l, n_output_file="labels_pickle", color
 
 
 def unite_labels_v6_multi_batch(dir_path_l, n_output_file="labels_pickle", color_ch=0, cu_type={"CU_w": 64, "CU_h": 64}):
-    """
+    """!
     @brief Unites all the labels into a giant list. This version, follows a stage oriented approach. Uses just the
            specified color channel
 
@@ -2957,7 +3089,7 @@ def unite_labels_v6_multi_batch(dir_path_l, n_output_file="labels_pickle", color
         transform_create_struct_faster_v4(f, f_name, step, output_dir, n_output_file, color_ch=color_ch, cu_type=cu_type)
 
 def unite_labels_v7_multi_batch(dir_path_l, n_output_file="labels_pickle", color_ch=0, cu_type={"CU_w": 64, "CU_h": 64}):
-    """
+    """!
     @brief Unites all the labels into a giant list. This version, follows a stage oriented approach. Uses just the
            specified color channel. Following Jose Filipe's recommendations.
 
@@ -3006,7 +3138,7 @@ def unite_labels_v7_multi_batch(dir_path_l, n_output_file="labels_pickle", color
 
 
 def create_dir(output_dir):
-    """
+    """!
     @brief Creates a directory. If the directory already exists, it will be deleted
 
     @param [in] output_dir: Name of the directory
@@ -3022,7 +3154,7 @@ def create_dir(output_dir):
         os.mkdir(output_dir)
 
 def labels_with_specific_cch(dir_path, cch=0):
-    """
+    """!
     @brief Obtain from a group of labels in a pickle file the CUs which the color channel is 'cch'
 
     @param [in] dir_path: Path with all the labels (.txt files)
@@ -3059,7 +3191,7 @@ def labels_with_specific_cch(dir_path, cch=0):
         new_labels = []
 
 def read_from_records_v2(f, f_name, num_records):
-    """
+    """!
     @brief Read the information/file generated by the encoder. This version contains the file object. Adapted for the unite_labels_v3 function
     Dictionary containing all the info about the file: It's a dictionary of picture numbers, which then leads to a dictionary of the info.
     For example: records = {"Pic_0" :{"CU_0": {"colorChannel": 1,
@@ -3117,7 +3249,7 @@ def read_from_records_v2(f, f_name, num_records):
     return records, CU_Counter
 
 def file_stats_v2(path):
-    """
+    """!
     @brief Finds out the size of all binary files, computes the total amount of records, computes the amount of each CU
 
     @param [in] path: Path where the binary files are located
@@ -3220,8 +3352,8 @@ def file_stats_v2(path):
     return summary_dic["total"], amount_dic, summary_dic
 
 
-def compute_split_proportions(path, num_cus=float('inf')):
-    """
+def compute_split_proportions(path, num_cus=float('inf'):
+    """!
     @brief Compute the proportion of each split in the dataset
 
     @param [in] path: Path where the encoded data is located
@@ -3273,8 +3405,8 @@ def compute_split_proportions(path, num_cus=float('inf')):
 
     return pm, am
 
-def compute_split_proportions_with_custom_data(custom_dataset, stage, num_cus=float('inf')):
-    """
+def compute_split_proportions_with_custom_data(custom_dataset, stage, num_cus=float('inf'):
+    """!
     @brief Compute the proportion of each split in the dataset (Custom dataset classs)
 
     @param [in] custom_dataset: Object with custom dataset
@@ -3319,8 +3451,8 @@ def compute_split_proportions_with_custom_data(custom_dataset, stage, num_cus=fl
 
     return pm, am
 
-def compute_split_proportions_with_custom_data_multi(custom_dataset, split_pos_in_struct, num_cus=float('inf')):
-    """
+def compute_split_proportions_with_custom_data_multi(custom_dataset, split_pos_in_struct, num_cus=float('inf'):
+    """!
     @brief Compute the proportion of each split in the dataset (Custom dataset classs)
 
     @param [in] custom_dataset: Object with custom dataset
@@ -3368,8 +3500,8 @@ def compute_split_proportions_with_custom_data_multi(custom_dataset, split_pos_i
     return pm, am
 
     
-def compute_split_proportions_with_path_multi_new(path, split_pos_in_struct, num_cus=float('inf')):
-    """
+def compute_split_proportions_with_path_multi_new(path, split_pos_in_struct, num_cus=float('inf'):
+    """!
     @brief Compute the proportion of each split in the dataset (Custom dataset classs)
 
     @param [in] path: 
@@ -3421,8 +3553,8 @@ def compute_split_proportions_with_path_multi_new(path, split_pos_in_struct, num
     return pm, am
 
 
-def compute_split_proportions_with_custom_data_multi_new(custom_dataset, split_pos_in_struct, num_cus=float('inf')):
-    """
+def compute_split_proportions_with_custom_data_multi_new(custom_dataset, split_pos_in_struct, num_cus=float('inf'):
+    """!
     @brief Compute the proportion of each split in the dataset (Custom dataset classs)
 
     @param [in] custom_dataset: Object with custom dataset
@@ -3464,8 +3596,8 @@ def compute_split_proportions_with_custom_data_multi_new(custom_dataset, split_p
     return pm, am
 
 
-def compute_split_proportions_labels(path, num_cus=float('inf')):
-    """
+def compute_split_proportions_labels(path, num_cus=float('inf'):
+    """!
     @brief Compute the proportion of each split in the dataset. This version receives a path with labels already processed
 
     @param [in] path: Path where the encoded data is located
@@ -3516,7 +3648,7 @@ def compute_split_proportions_labels(path, num_cus=float('inf')):
 
 
 def balance_dataset(dir_path, stg, n_classes=6):
-    """
+    """!
     @brief Balance dataset so that the number of the classes are the same
 
     @param [in] dir_path: Path with all the labels (.txt files)
@@ -3567,7 +3699,7 @@ def balance_dataset(dir_path, stg, n_classes=6):
 
 #@jit(nopython=True)
 def balance_dataset_JF(dir_path, n_classes=6):
-    """
+    """!
     @brief Balance dataset so that the number of the classes are the same. Uses upsampling. Follows same strategy as
            the balance dataset function.
 
@@ -3623,7 +3755,7 @@ def balance_dataset_JF(dir_path, n_classes=6):
 
 #@jit(nopython=True)
 def balance_dataset_down(dir_path, n_classes=6):
-    """
+    """!
     @brief Balance dataset so that the number of the classes are the same. Uses downsampling. Different strategy that
            of the balance_dataset function.
 
@@ -3695,7 +3827,7 @@ def balance_dataset_down(dir_path, n_classes=6):
 
 #@jit(nopython=True)
 def balance_dataset_down_v2(dir_path):
-    """
+    """!
     @brief Balance dataset so that the number of the classes are the same. Uses downsampling. Different strategy that
            of the balance_dataset function. Faster version
 
@@ -3760,7 +3892,7 @@ def balance_dataset_down_v2(dir_path):
 
 
 def balance_dataset_down_v3(dir_path):
-    """
+    """!
     @brief Balance dataset so that the number of the classes are the same. Uses downsampling. Different strategy that
            of the balance_dataset function. Faster version
 
@@ -3824,7 +3956,7 @@ def balance_dataset_down_v3(dir_path):
         lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
 
 def balance_dataset_down_v4(dir_path):
-    """
+    """!
     @brief Balance dataset so that the number of the classes are the same. Uses downsampling. Different strategy that
            of the balance_dataset function. Faster version. No dicts version
 
@@ -3890,7 +4022,7 @@ def balance_dataset_down_v4(dir_path):
 
 #@jit(nopython=True)
 def balance_dataset_up(dir_path, n_classes=6):
-    """
+    """!
     @brief Balance dataset so that the number of the classes are the same. Uses upsampling. Different strategy that
            of the balance_dataset function.
 
@@ -3975,7 +4107,7 @@ def balance_dataset_up(dir_path, n_classes=6):
 
 #@jit(nopython=True)
 def balance_dataset_up_v2(dir_path):
-    """
+    """!
     @brief Balance dataset so that the number of the classes are the same. Uses upsampling. Different strategy that
            of the balance_dataset function. Faster version
 
@@ -4053,7 +4185,7 @@ def balance_dataset_up_v2(dir_path):
 
 
 def balance_dataset_up_v3(dir_path):
-    """
+    """!
     @brief Balance dataset so that the number of the classes are the same. Uses upsampling. Different strategy that
            of the balance_dataset function. Faster version
 
@@ -4131,7 +4263,7 @@ def balance_dataset_up_v3(dir_path):
 
 
 def gen_dataset_types(d_path, valid_percent):
-    """
+    """!
     @brief Generate a dataset for trainign, validating and testing. This is done by concatenating all of the data from a folder and then
            dividing it in 3 parts
 
@@ -4493,7 +4625,7 @@ def change_struct_64x64(path_dir_l):
 
 
 def change_struct_64x64_no_dupl_v3(path_dir_l):
-    """
+    """!
         This version is like the change_struct_64x64_no_dupl_v2, with threads
     """
     print("Active function: change_struct_64x64_no_dupl_v3")
@@ -4624,7 +4756,7 @@ def mod_64x64_threads(f, path_dir_l, right_rows, columns, new_dir):
 
 
 def change_struct_64x64_no_dupl_v2(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2.
     """
     print("Active function: change_struct_64x64_no_dupl_v2")
@@ -4739,7 +4871,7 @@ def change_struct_64x64_no_dupl_v2(path_dir_l):
 
 
 def change_struct_32x32(path_dir_l):
-    """
+    """!
         This version is meant to be used in to process the stage 3 data
     """
     print("Active function: change_struct_32x32")
@@ -4831,7 +4963,7 @@ def change_struct_32x32(path_dir_l):
         lst2file(mod_list, new_path)
 
 def change_struct_32x32_no_dupl(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32, but it removes possible duplicated rows.
     """
     print("Active function: change_struct_32x32_no_dupl")
@@ -4945,7 +5077,7 @@ def change_struct_32x32_no_dupl(path_dir_l):
 
 
 def change_struct_32x32_no_dupl_v2(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is smarter.
     """
     print("Active function: change_struct_32x32_no_dupl_v2")
@@ -5068,7 +5200,7 @@ def change_struct_32x32_no_dupl_v2(path_dir_l):
 
 
 def change_struct_32x32_no_dupl_v3(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but uses threads.
     """
     # Initial steps
@@ -5206,7 +5338,7 @@ def mod_32x32_threads(f, path_dir_l, right_rows, columns, new_dir):
 
 
 def change_struct_32x32_no_dupl_v2_test(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but is for verifying if everything is right
     """
     print("Active function: change_struct_32x32_no_dupl_v2_test")
@@ -5311,7 +5443,7 @@ def change_struct_32x32_no_dupl_v2_test(path_dir_l):
         lst2file(mod_list, new_path)
 
 def change_struct_16x16_no_dupl_v2(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 16x16 CUs.
     """
     # Initial steps
@@ -5443,7 +5575,7 @@ def change_struct_16x16_no_dupl_v2(path_dir_l):
 
 
 def change_struct_8x8_no_dupl_v2(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 16x16 CUs.
     """
     # Initial steps
@@ -5583,7 +5715,7 @@ def change_struct_8x8_no_dupl_v2(path_dir_l):
 
 
 def change_struct_no_dupl_stg6_v4(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 6
     """
     # Initial steps
@@ -5650,7 +5782,7 @@ def change_struct_no_dupl_stg6_v4(path_dir_l):
     print("Time Elapsed:", time.time() - t0)
 
 def change_struct_no_dupl_stg5_v4(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 5
     """
     # Initial steps
@@ -5714,7 +5846,7 @@ def change_struct_no_dupl_stg5_v4(path_dir_l):
     print("Time Elapsed:", time.time() - t0)
 
 def change_struct_no_dupl_stg2_v4(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 2
     """
     # Initial steps
@@ -5770,7 +5902,7 @@ def change_struct_no_dupl_stg2_v4(path_dir_l):
     print("Time Elapsed:", time.time() - t0)
 
 def change_struct_no_dupl_stg4_v4(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 4
     """
     # Initial steps
@@ -5832,7 +5964,7 @@ def change_struct_no_dupl_stg4_v4(path_dir_l):
 
 
 def change_struct_no_dupl_stg3_v4(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 3
     """
     # Initial steps
@@ -5891,7 +6023,7 @@ def change_struct_no_dupl_stg3_v4(path_dir_l):
 
 
 def change_struct_32x16_no_dupl_v2(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 32x16 CUs.
     """
     # Initial steps
@@ -6028,7 +6160,7 @@ def change_struct_32x16_no_dupl_v2(path_dir_l):
 
 
 def change_struct_32x8_no_dupl_v2(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 32x8 CUs.
     """
     # Initial steps
@@ -6172,7 +6304,7 @@ def change_struct_32x8_no_dupl_v2(path_dir_l):
     print("Time Elapsed:", time.time() - t0)
 
 def change_struct_16x8_no_dupl_v2(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 16x8 CUs.
     """
     # Initial steps
@@ -6317,7 +6449,7 @@ def change_struct_16x8_no_dupl_v2(path_dir_l):
 
 
 def change_struct_8x4_no_dupl_v2(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 8x4 CUs.
     """
     # Initial steps
@@ -6470,7 +6602,7 @@ def change_struct_8x4_no_dupl_v2(path_dir_l):
 
 
 def change_struct_32x4_no_dupl_v2(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 32x4 CUs.
     """
     # Initial steps
@@ -6622,7 +6754,7 @@ def change_struct_32x4_no_dupl_v2(path_dir_l):
     print("Time Elapsed:", time.time() - t0)
 
 def change_struct_16x4_no_dupl_v2(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 8x4 CUs.
     """
     # Initial steps
@@ -6776,7 +6908,7 @@ def change_struct_16x4_no_dupl_v2(path_dir_l):
 
 
 def change_struct_16x16_no_dupl_v3(path_dir_l):
-    """
+    """!
         This version is like the change_struct_16x16_no_dupl_v2, but uses threads.
     """
     # Initial Steps
@@ -6919,7 +7051,7 @@ def mod_16x16_threads(f, path_dir_l, right_rows, columns, new_dir):
     lst2file(mod_list, new_path)
 
 def change_struct_16x16(path_dir_l):
-    """
+    """!
         This version is meant to be used in to process the stage 4 data
     """
     print("Active function: change_struct_16x16")
@@ -7020,7 +7152,7 @@ def change_struct_16x16(path_dir_l):
         lst2file(mod_list, new_path)
 
 def change_struct_no_dupl_stg_4_complexity_v4(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stages 4. Here it is going to be obtained data to be used for the complexity assesment
     """
     # Initial steps
@@ -7084,7 +7216,7 @@ def change_struct_no_dupl_stg_4_complexity_v4(path_dir_l):
 
 
 def change_struct_no_dupl_stg_3_complexity_v4(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stages 3. Here it is going to be obtained data to be used for the complexity assesment
     """
     # Initial steps
@@ -7146,7 +7278,7 @@ def change_struct_no_dupl_stg_3_complexity_v4(path_dir_l):
 
 
 def change_struct_no_dupl_stg_2_complexity_v4(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stages 2. Here it is going to be obtained data to be used for the complexity assesment
     """
     # Initial steps
@@ -7205,7 +7337,7 @@ def change_struct_no_dupl_stg_2_complexity_v4(path_dir_l):
     print("Time Elapsed:", time.time() - t0)
 
 def change_struct_no_dupl_stg_6_complexity_v4(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stages 6. Here it is going to be obtained data to be used for the complexity assesment
     """
     # Initial steps
@@ -7273,7 +7405,7 @@ def change_struct_no_dupl_stg_6_complexity_v4(path_dir_l):
 
 
 def change_struct_no_dupl_stg_5_complexity_v4(path_dir_l):
-    """
+    """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stages 5. Here it is going to be obtained data to be used for the complexity assesment
     """
     # Initial steps

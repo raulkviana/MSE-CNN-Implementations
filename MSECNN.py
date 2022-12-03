@@ -1,13 +1,66 @@
+"""@package docstring 
+
+@file MSECNN.py 
+
+@brief Group of functions and classes that directly contribute for the implementation of the loss function and MSE-CNN
+ 
+@section libraries_MSECNN Libraries 
+- numba
+- torch
+- numpy
+- train_model_utils
+- math
+
+@section classes_MSECNN Classes 
+- CU 
+- CU_batch 
+- CU_batch_v2 
+- QP_half_mask 
+- MseCnnStg_1_v2 
+- MseCnnStg_x_v2 
+- LossFunctionMSE 
+- LossFunctionMSE_Ratios 
+
+@section functions_MSECNN Functions 
+- init_weights_seq(m)
+- init_weights_single(m)
+ 
+@section global_vars_MSECNN Global Variables 
+- None 
+
+@section todo_MSECNN TODO 
+- None 
+
+@section license License 
+MIT License 
+Copyright (c) 2022 Raul Kevin do Espirito Santo Viana
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+@section author_MSECNN Author(s)
+- Created by Raul Kevin Viana
+- Last time modified is 2022-12-02 18:21:21.186675
+"""
+
+
 import torch
 from torch import nn
-import matplotlib.pyplot as plt
 import math
-import cv2
 import numpy as np
-import pandas as pd
-from dataset_utils import VideoCaptureYUV
 import train_model_utils
-from numba import jit
 
 class CU:
 
@@ -55,7 +108,7 @@ class CU_batch_v2:
         return str({"f_maps": self.f_maps.shape})
 
 def init_weights_seq(m):
-    """
+    """!
     @brief Initializes a given sequential model with the Xavier Initialization (with uniform distribution)
     @param [in] m: Model to initiliaze the weights
     """
@@ -64,7 +117,7 @@ def init_weights_seq(m):
 
 
 def init_weights_single(m):
-    """
+    """!
     @brief Initializes a given layer with the Xavier Initialization (with uniform distribution)
     @param [in] m: Layer to initiliaze the weights
     """
@@ -80,7 +133,7 @@ class QP_half_mask(nn.Module):
         self.QP = QP
 
     def normalize_QP(self, QP):
-        """
+        """!
         @brief Normalize the QP value
 
         @param [in] QP: QP value not normalized
@@ -92,7 +145,7 @@ class QP_half_mask(nn.Module):
         return q_tilde
 
     def forward(self, feature_maps):
-        """
+        """!
         @brief This function implements the QP half mask operation
 
         @param [in] feature_maps: Variable with the feature maps
@@ -195,7 +248,7 @@ class MseCnnStg_1_v2(nn.Module):
         init_weights_seq(self.sub_net)
 
     def residual_unit_stg1(self, x, nr):
-        """
+        """!
         @brief Generic residual unit
 
         @param [in] x: Input of the network
@@ -231,7 +284,7 @@ class MseCnnStg_1_v2(nn.Module):
         return x
 
     def residual_unit_stg2(self, x, nr):
-        """
+        """!
         @brief Generic residual unit
 
         @param [in] x: Input of the network
@@ -267,7 +320,7 @@ class MseCnnStg_1_v2(nn.Module):
         return x
 
     def nr_calc(self, ac, ap):
-        """
+        """!
         @brief Calculate the number of residual units
 
         @param [in] ac: Minimum value of the current input axises
@@ -299,7 +352,7 @@ class MseCnnStg_1_v2(nn.Module):
         return nr
 
     def split(self, cu, coords, sizes, split):
-        """
+        """!
         @brief Splits feature maps in specific way
 
         @param [in] cu: Input to the model
@@ -343,7 +396,7 @@ class MseCnnStg_1_v2(nn.Module):
         return cu_out
 
     def forward(self, cu, sizes=None, coords=None):
-        """
+        """!
         @brief This functions propagates the input to the output
 
         @param [in] cu: Input to the model
@@ -548,7 +601,7 @@ class MseCnnStg_x_v2(MseCnnStg_1_v2):
         init_weights_seq(self.simple_conv_no_activation)
         
     def residual_unit_stg1(self, x, nr):
-        """
+        """!
         @brief Generic residual unit
 
         @param [in] x: Input of the network
@@ -558,7 +611,7 @@ class MseCnnStg_x_v2(MseCnnStg_1_v2):
         pass
 
     def residual_unit_stg2(self, x, nr):
-        """
+        """!
         @brief Generic residual unit
 
         @param [in] x: Input of the network
@@ -568,7 +621,7 @@ class MseCnnStg_x_v2(MseCnnStg_1_v2):
         pass
 
     def residual_unit(self, x, nr):
-        """
+        """!
         @brief Generic residual unit
 
         @param [in] x: Input of the network
@@ -604,7 +657,7 @@ class MseCnnStg_x_v2(MseCnnStg_1_v2):
         return x
 
     def pass_through_subnet(self, x):
-        """
+        """!
         @brief This functions propagates the it's input through a specific subnetwork depending on the shape of the input
 
         @param [in] x: Input to the model
@@ -683,7 +736,7 @@ class MseCnnStg_x_v2(MseCnnStg_1_v2):
         return logits
 
     def forward(self, cu, ap, splits, sizes=None, coords=None):
-        """
+        """!
         @brief This functions propagates the input to the output
 
         @param [in] cu: Input to the model
@@ -727,7 +780,7 @@ class LossFunctionMSE(nn.Module):
         self.last_RD = -1
 
     def get_proportion_CUs(self, labels):
-        """
+        """!
         @brief This function returns the proportion of CU's for all the types of split mode
 
         @param [in] labels: Ground truth tensor
@@ -740,7 +793,7 @@ class LossFunctionMSE(nn.Module):
         return p_m
 
     def get_min_RDs(self, RDs):
-        """
+        """!
         @brief Obtain the lowest value that isnt zero from RDs tensor
 
         @param [in] RDs: Tensor with RDs
@@ -755,7 +808,7 @@ class LossFunctionMSE(nn.Module):
         return min_RD
 
     def remove_values_lower(self, tensor, max_val, subst_val):
-        """
+        """!
         @brief Remove values from tensor that are lower than a given value
 
         @param [in] tensor: Tensor with values
@@ -770,7 +823,7 @@ class LossFunctionMSE(nn.Module):
         return tensor
 
     def remove_inf_values(self, tensor):
-        """
+        """!
         @brief Remove values from tensor that are inf and make them zeros
 
         @param [in] tensor: Tensor with values
@@ -784,7 +837,7 @@ class LossFunctionMSE(nn.Module):
         return clone_RDs
 
     def remove_zero(self, RDs):
-        """
+        """!
         @brief Substitutes the zeros values for big RD values
 
         @param [in] RDs: Tensor with RDs
@@ -798,7 +851,7 @@ class LossFunctionMSE(nn.Module):
         return clone_RDs
     
     def remove_values_above(self, RDs, max_val):
-        """
+        """!
         @brief Substitutes values above MAX_RD for the MAX_RD
 
         @param [in] RDs: Tensor with RDs
@@ -813,7 +866,7 @@ class LossFunctionMSE(nn.Module):
         return clone_RDs
 
     def forward(self, pred, labels, RD):
-        """
+        """!
         @brief This function implements the loss function
 
         @param [in] pred: Predictions made by the model
@@ -927,7 +980,7 @@ class LossFunctionMSE_Ratios(nn.Module):
         self.last_RD = -1
 
     def get_proportion_CUs(self, labels):
-        """
+        """!
         @brief This function returns the proportion of CU's for all the types of split mode
 
         @param [in] labels: Ground truth tensor
@@ -940,7 +993,7 @@ class LossFunctionMSE_Ratios(nn.Module):
         return p_m
 
     def get_min_RDs(self, RDs):
-        """
+        """!
         @brief Obtain the lowest value that isnt zero from RDs tensor
 
         @param [in] RDs: Tensor with RDs
@@ -955,7 +1008,7 @@ class LossFunctionMSE_Ratios(nn.Module):
         return min_RD
 
     def remove_values_lower(self, tensor, max_val, subst_val):
-        """
+        """!
         @brief Remove values from tensor that are lower than a given value
 
         @param [in] tensor: Tensor with values
@@ -970,7 +1023,7 @@ class LossFunctionMSE_Ratios(nn.Module):
         return tensor
 
     def remove_inf_values(self, tensor):
-        """
+        """!
         @brief Remove values from tensor that are inf and make them zeros
 
         @param [in] tensor: Tensor with values
@@ -984,7 +1037,7 @@ class LossFunctionMSE_Ratios(nn.Module):
         return clone_RDs
 
     def remove_zero(self, RDs):
-        """
+        """!
         @brief Substitutes the zeros values for big RD values
 
         @param [in] RDs: Tensor with RDs
@@ -998,7 +1051,7 @@ class LossFunctionMSE_Ratios(nn.Module):
         return clone_RDs
     
     def remove_values_above(self, RDs, max_val):
-        """
+        """!
         @brief Substitutes values above MAX_RD for the MAX_RD
 
         @param [in] RDs: Tensor with RDs
@@ -1013,7 +1066,7 @@ class LossFunctionMSE_Ratios(nn.Module):
         return clone_RDs
 
     def forward(self, pred, labels, RD):
-        """
+        """!
         @brief This function implements the loss function
 
         @param [in] pred: Predictions made by the model

@@ -1,22 +1,22 @@
 """@package docstring 
 
-@file create_labels.py 
+@file create_labels_with_channels.py 
 
-@brief Create data structures from raw data for luma channel. 
+@brief Transform raw data into sequential data structures for both luma and chroma channels 
  
-@section libraries_create_labels Libraries 
+@section libraries_create_labels_with_channels Libraries 
 - dataset_utils
 
-@section classes_create_labels Classes 
+@section classes_create_labels_with_channels Classes 
 - None 
 
-@section functions_create_labels Functions 
+@section functions_create_labels_with_channels Functions 
 - main()
  
-@section global_vars_create_labels Global Variables 
+@section global_vars_create_labels_with_channels Global Variables 
 - None 
 
-@section todo_create_labels TODO 
+@section todo_create_labels_with_channels TODO 
 - None 
 
 @section license License 
@@ -38,9 +38,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-@section author_create_labels Author(s)
+@section author_create_labels_with_channels Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2022-12-02 18:21:21.117770
+- Last time modified is 2022-12-02 18:21:21.119719
 """
 
 
@@ -52,11 +52,11 @@ def main():
     # Directory containing the .dat files with CUs informations
     #d_path = str(input("Em que path absoluto está o dataset?\n"))
     #d_path = '/mnt/c/Users/Raul/Dropbox/Dataset/Img/Example'
-    #d_path = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/labels/train"
-    d_path = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/data_for_now/valid/"
+    d_path = r"C:\Users\Raul\Dropbox\Dataset\Img\Test_place\delete_later"
 
-    #dataset_utils.unite_labels_v6(dir_path_l=d_path, n_output_file="labels_pickkklke")  # The result is saved in the same folder
-    dataset_utils.unite_labels_v6_mod(dir_path_l=d_path, n_output_file="processed_labels")  # The result is saved in the same folder
+    dataset_utils.unite_labels_v6(dir_path_l=d_path, n_output_file="labels_pickkklke")  # The result is saved in the same folder
+    dataset_utils.labels_with_specific_cch(dir_path=d_path+r"\labels_pickkklke", cch=1)  # Get chroma
+    dataset_utils.labels_with_specific_cch(dir_path=d_path+r"\labels_pickkklke", cch=0)  # Get luma
 
 if __name__ == "__main__":
     main()

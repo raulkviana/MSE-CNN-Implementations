@@ -1,5 +1,91 @@
+"""@package docstring 
+
+@file train_model_utils.py 
+
+@brief Group of functions that are supposed to be used directly in the training or evaluation scripts
+ 
+@section libraries_train_model_utils Libraries 
+- os
+- torch
+- numpy
+- dataset_utils
+- matplotlib.pyplot
+- MSECNN
+- itertools
+- sklearn.metrics
+- seaborn
+- datetime
+- math
+
+@section classes_train_model_utils Classes 
+- None 
+
+@section functions_train_model_utils Functions 
+- def split(in_CU, split_mode)
+- model_statistics(J_history, predicted, ground_truth, pred_vector, gt_vector, train_or_val="train")
+- model_statistics_v2(J_history, predicted, ground_truth, pred_vector, gt_vector,
+- compute_conf_matrix(predicted, ground_truth)
+- right_size(CUs)
+- compute_top_k_accuracy(pred_vector, gt_vector, topk)
+- compute_num_splits_sent(pred_lst)
+- compute_multi_thres_performance(pred_lst, gt_lst)
+- compute_ROC_curve(pred_vector, gt_vector, pred_num)
+- model_simple_metrics(predicted, ground_truth)
+- obtain_best_modes(rs, pred)
+- obtain_mode(pred)
+- one_hot_enc(tensor, num_classes=6)
+- split_class(in_CU, split_mode)
+- split_class_multi_batch(in_CU, split_mode)
+- split_class_multi_batch_v2_for_testing(in_CU, split_mode, pos)
+- split_class_multi_batch_v2(in_CU, split_mode)
+- nr_calc(ac, ap)
+- find_right_cu_class(fm, cu_pos)
+- find_right_cu_class_multi_batch(CUs, cus_pos)
+- def split(in_CU, split_mode)
+- print_parameters(model, optimizer)
+- save_model_parameters(dir_name, f_name, model)
+- save_model(dir_name, f_name, model, optimizer, loss, acc)
+- load_model_parameters_stg(model, path, stg, dev)
+- load_model_parameters_eval(model, path, dev)
+- load_model_parameters(model, path, dev)
+- load_model(model, optimizer, path, dev)
+- load_model_stg_12_stg_3(model, path, dev)
+- load_model_stg_3_stg_4(model, path, dev)
+- load_model_stg_4_stg_5(model, path, dev)
+- load_model_stg_5_stg_6(model, path, dev)
+- print_current_time()
+ 
+@section global_vars_train_model_utils Global Variables 
+- None
+
+@section todo_train_model_utils TODO 
+- None
+    
+@section license License 
+MIT License 
+Copyright (c) 2022 Raul Kevin do Espirito Santo Viana
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+@section author_train_model_utils Author(s)
+- Created by Raul Kevin Viana
+- Last time modified is 2022-12-02 18:21:21.208167
+"""
+
 # Imports
-from __future__ import print_function, division
 import os
 import torch
 import numpy as np
@@ -9,15 +95,12 @@ import MSECNN
 import dataset_utils
 from datetime import datetime
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, f1_score, recall_score, \
-    precision_score
+    precision_score, roc_curve, auc
 import seaborn as sns
-import constants
 from itertools import cycle
-from sklearn.metrics import roc_curve, auc, roc_auc_score, top_k_accuracy_score
-
 
 def model_statistics(J_history, predicted, ground_truth, pred_vector, gt_vector, train_or_val="train"):
-    """
+    """!
     @brief Evaluates model with metrics, such as accuracy and f1_score
 
     @param [in] J_history: Loss function values over iterations
@@ -165,7 +248,7 @@ def model_statistics(J_history, predicted, ground_truth, pred_vector, gt_vector,
 def model_statistics_v2(J_history, predicted, ground_truth, pred_vector, gt_vector,
                         f1_list, recall_list, precision_list,
                         accuracy_list, train_or_val="train"):
-    """
+    """!
     @brief Evaluates model with metrics, such as accuracy and f1_score. This version plots the
            evolution of the metrics: f1-score, recall, precision, accuracy.
 
@@ -297,7 +380,7 @@ def model_statistics_v2(J_history, predicted, ground_truth, pred_vector, gt_vect
     plt.clf()
 
 def compute_conf_matrix(predicted, ground_truth):
-    """
+    """!
         @brief Computes the confusion matrix
 
         @param [in] predicted: List of predictions made by the model with single value
@@ -324,7 +407,7 @@ def compute_conf_matrix(predicted, ground_truth):
     return map.get_figure()
 
 def right_size(CUs):
-    """
+    """!
         @brief Verify if the CU as the right size: height as to be lower than width
 
         @param [in] CUs: Feature maps
@@ -334,7 +417,7 @@ def right_size(CUs):
     return False if CUs.shape[-2] > CUs.shape[-1] else True
 
 def compute_top_k_accuracy(pred_vector, gt_vector, topk):
-    """
+    """!
         @brief Computes the top k accuracy score
 
         @param [in] predicted: List of predictions made by the model with probabilities for each split (pytorch tensor)
@@ -360,44 +443,8 @@ def compute_top_k_accuracy(pred_vector, gt_vector, topk):
         
     return res
 
-def multi_thresholding(rs, preds):
-    """
-    Accordingly, the multi-threshold values can be chosen in the
-    following strategies, ensuring the overall prediction accuracy
-    of MSE-CNN.
-
-    • Case 1 (more time saving): if the average threshold
-    (1/5) * sum(rs) >= 0.4, then τ2 ≥ τ6 ≥ τ3 ≈ τ4 ≈ τ5.
-
-    • Case 2 (better RD performance): if the average threshold
-    (1/5) * sum(rs) < 0.4, then τ2 ≥ τ4 ≈ τ3 ≈ τ5 ≥ τ6.
-
-    @brief Implementation of the multi-threshold for MSE-CNN
-
-    @param [in] rs: Constant to control the minimum amount of thr probabilities
-    @param [in] preds: Predictions made by the MSE-CNN
-    @param [out] search_RD: Vector with the information of which modes to compute the RD cost and make a decision regarding in which split to make
-    """
-
-    # rs has to be between 0 and 1
-    assert 0 < rs < 1
-
-    # Obtain maximum value for each prediction
-    y_max = torch.reshape( torch.max(preds, dim=1)[0], shape=(-1, 1))
-    # Obtain lowest possible value for each prediction
-    y_max_rs = y_max * rs
-
-    # Obtain logic truth where preds>=y_max_rs
-    search_RD_logic = preds >= y_max_rs
-
-    # Obtain the indexs that are true
-    search_RD = [[idx for idx, l2 in enumerate(l) if l2] for l in search_RD_logic.tolist()]
-
-    return search_RD
-
-
 def compute_num_splits_sent(pred_lst):
-    """
+    """!
         @brief Computes the num of splits that would be sent to the encoder
 
         @param [in] predicted: List of predictions made by the model with probabilities values
@@ -412,7 +459,7 @@ def compute_num_splits_sent(pred_lst):
     return res
 
 def compute_multi_thres_performance(pred_lst, gt_lst):
-    """
+    """!
         @brief Computes multi-threshold performance
 
         @param [in] predicted: List of predictions made by the model with integer value
@@ -431,7 +478,7 @@ def compute_multi_thres_performance(pred_lst, gt_lst):
     return res
 
 def compute_ROC_curve(pred_vector, gt_vector, pred_num):
-    """
+    """!
         @brief Computes the confusion matrix
 
         @param [in] predicted: List of predictions made by the model with single value
@@ -500,7 +547,7 @@ def compute_ROC_curve(pred_vector, gt_vector, pred_num):
     return figure
 
 def model_simple_metrics(predicted, ground_truth):
-    """
+    """!
     @brief Evaluates model with metrics 4 metrics, such as accuracy, f1_score, recall and precision
 
     @param [in] predicted: List of predictions made by the model with single value
@@ -520,7 +567,7 @@ def model_simple_metrics(predicted, ground_truth):
     return f1, recall, precision, accuracy
 
 def obtain_best_modes(rs, pred):
-    """
+    """!
     @brief Converts a prediction into a specific number that corresponds to the best way to split (non-split, quad tree,
            binary vert tree...)
 
@@ -544,7 +591,7 @@ def obtain_best_modes(rs, pred):
     return search_RD
 
 def obtain_mode(pred):
-    """
+    """!
     @brief Converts a prediction into a specific number that corresponds to the best way to split (non-split, quad tree,
            binary vert tree...)
 
@@ -558,7 +605,7 @@ def obtain_mode(pred):
 
 
 def one_hot_enc(tensor, num_classes=6):
-    """
+    """!
     @brief Implements one-hot encoding to a specific tensor with the set of split modes
 
     @param [in] tensor: Tensor with a set of split modes
@@ -571,7 +618,7 @@ def one_hot_enc(tensor, num_classes=6):
     return new_tensor
 
 def split_class(in_CU, split_mode):
-    """
+    """!
     @brief Split a CU in one of the specific modes (quad tree, binary vert tree, binary horz tree, threenary vert tree,
            etc). It does the same as the split fucntion but it expects the inserted CU to be of the class CU
 
@@ -684,7 +731,7 @@ def split_class(in_CU, split_mode):
     return out_CUs
 
 def split_class_multi_batch(in_CU, split_mode):
-    """
+    """!
     @brief Split a CU in one of the specific modes (quad tree, binary vert tree, binary horz tree, threenary vert tree,
            etc). It does the same as the split fucntion but it expects the inserted CU to be of the class CU
 
@@ -810,7 +857,7 @@ def split_class_multi_batch(in_CU, split_mode):
     return out_CUs
 
 def split_class_multi_batch_v2_for_testing(in_CU, split_mode, pos):
-    """
+    """!
     @brief Split a CU in one of the specific modes (quad tree, binary vert tree, binary horz tree, threenary vert tree,
            etc). It does the same as the split fucntion but it expects the inserted CU to be of the class CU
 
@@ -928,7 +975,7 @@ def split_class_multi_batch_v2_for_testing(in_CU, split_mode, pos):
 
 
 def split_class_multi_batch_v2(in_CU, split_mode):
-    """
+    """!
     @brief Split a CU in one of the specific modes (quad tree, binary vert tree, binary horz tree, threenary vert tree,
            etc). It does the same as the split fucntion but it expects the inserted CU to be of the class CU
 
@@ -999,7 +1046,7 @@ def split_class_multi_batch_v2(in_CU, split_mode):
     return out_CUs
 
 def nr_calc(ac, ap):
-    """
+    """!
     @brief Calculate the number of residual units
 
     @param [in] ac: Minimum value of the current input axises
@@ -1032,7 +1079,7 @@ def nr_calc(ac, ap):
 
 
 def find_right_cu_class(fm, cu_pos):
-    """
+    """!
     @brief Find the respective CU given the position of the CU
 
     @param [in] fm: Feature maps with various CUs/Feature Maps
@@ -1048,7 +1095,7 @@ def find_right_cu_class(fm, cu_pos):
     raise Exception("CU not found! This should not happen. Can not find position "+str(cu_pos) + " in " + str(fm))
 
 def find_right_cu_class_multi_batch(CUs, cus_pos):
-    """
+    """!
     @brief Find the respective CU given the position of the CU
 
     @param [in] fm: Feature maps with various CUs/Feature Maps
@@ -1181,7 +1228,7 @@ def find_right_cu_class_multi_batch(CUs, cus_pos):
 #     return out_CU
 
 def print_parameters(model, optimizer):
-    """
+    """!
     @brief Prints the parameters from the state dictionaries of the model and optimizer
 
     @param [in] model: Model that the parameters will be printed
@@ -1207,7 +1254,7 @@ def print_parameters(model, optimizer):
     print()
 
 def save_model_parameters(dir_name, f_name, model):
-    """
+    """!
     @brief Saves only the model parameters to a specific folder
 
     @param [in] dir_name: Name of the directory where the parameters will be saved
@@ -1228,7 +1275,7 @@ def save_model_parameters(dir_name, f_name, model):
 
 
 def save_model(dir_name, f_name, model, optimizer, loss, acc):
-    """
+    """!
     @brief Saves the parameters of the model and of the optimizer, and also the loss and the accuracy. These are saved
            into the folder specified by the user.
 
@@ -1260,7 +1307,7 @@ def save_model(dir_name, f_name, model, optimizer, loss, acc):
     #print("Saved PyTorch Model State to", f_name + ".tar")
 
 def load_model_parameters_stg(model, path, stg, dev):
-    """
+    """!
     @brief Loads all stages but make sure that the stage number 'stg' has the same parameters has the previous
 
     @param [in] model: Model which the parameters will be loaded
@@ -1310,7 +1357,7 @@ def load_model_parameters_stg(model, path, stg, dev):
     return model
 
 def load_model_parameters_eval(model, path, dev):
-    """
+    """!
     @brief Loads all stages, meant to be used with the eval_model script
 
     @param [in] model: Model which the parameters will be loaded
@@ -1344,7 +1391,7 @@ def load_model_parameters_eval(model, path, dev):
     return model
 
 def load_model_parameters(model, path, dev):
-    """
+    """!
     @brief Loads only the model parameters from a specified files, but it considers that if the model has more stages
            than files with the parameters, the difference of the amount is 1, this means that it's expected that the
            last stage in the model variable will have the same parameters has the penultimate.
@@ -1399,7 +1446,7 @@ def load_model_parameters(model, path, dev):
     return model
 
 def load_model(model, optimizer, path, dev):
-    """
+    """!
     @brief Loads the parameters of the model and of the optimizer. These are loaded from the folder specified by the
            user.
 
@@ -1435,7 +1482,7 @@ def load_model(model, optimizer, path, dev):
     return model, optimizer
 
 def load_model_stg_12_stg_3(model, path, dev):
-    """
+    """!
     @brief THis function makes it possible to load parameters from the first and second stage to the third
 
     @param [in] model: Model which the parameters will be loaded, with 2 models (one for the first and second stage, and another for the third stage)
@@ -1489,7 +1536,7 @@ def load_model_stg_12_stg_3(model, path, dev):
     return model
 
 def load_model_stg_3_stg_4(model, path, dev):
-    """
+    """!
     @brief This function makes it possible to load parameters from the third stage to the fourth
 
     @param [in] model: Model which the parameters will be loaded, with 2 models (one for the first and second stage, and another for the third stage)
@@ -1550,7 +1597,7 @@ def load_model_stg_3_stg_4(model, path, dev):
 
 
 def load_model_stg_4_stg_5(model, path, dev):
-    """
+    """!
     @brief This function makes it possible to load parameters from the fourth stage to the fith
 
     @param [in] model: Model which the parameters will be loaded, with 2 models (one for the first and second stage, and another for the third stage)
@@ -1633,7 +1680,7 @@ def load_model_stg_4_stg_5(model, path, dev):
 
 
 def load_model_stg_5_stg_6(model, path, dev):
-    """
+    """!
     @brief This function makes it possible to load parameters from the fourth stage to the fith
 
     @param [in] model: Model which the parameters will be loaded, with 2 models (one for the first and second stage, and another for the third stage)
@@ -1735,7 +1782,7 @@ def load_model_stg_5_stg_6(model, path, dev):
     return model
 
 def print_current_time():
-    """
+    """!
     @brief Prints current time
     """
 

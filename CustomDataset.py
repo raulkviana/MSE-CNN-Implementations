@@ -1,13 +1,99 @@
+"""@package docstring 
+
+@file CustomDataset.py 
+
+@brief This library contains usefull functions to visualise data and also Classes to store and organise data structures. 
+ 
+@section libraries_CustomDataset Libraries 
+- os
+- torch
+- warnings
+- numpy
+- dataset_utils
+- pandas
+- cv2
+- random
+- __future__
+- torch.utils.data
+- re
+
+@section classes_CustomDataset Classes 
+- CUDatasetCU 
+- CUDatasetStg 
+- CUDatasetStg_v2 
+- CUDatasetStg_v3 
+- CUDatasetStg_v3_mod 
+- CUDatasetStg_v4 
+- CUDatasetStg_v4_2 
+- CUDatasetStg_v4_3 
+- CUDatasetStg_v5 
+- CUDatasetStg_v5_eval 
+- CUDatasetStg_v5_eval_32x32 
+- CUDatasetStg_v5_32x32 
+- CUDatasetStg_v5_16x16 
+- CUDatasetStg_v5_8x8 
+- CUDatasetStg_v5_8x4 
+- CUDatasetStg4V5 
+- CUDatasetStg5V5 
+- CUDatasetStg6V5 
+- CUDatasetStgAllComplexityV5 
+- CUDatasetStg2ComplV5 
+- CUDatasetStg6ComplV5 
+- CUDatasetStg3ComplV5 
+- CUDatasetStg4ComplV5 
+- SamplerStg4 
+- SamplerStg5 
+- SamplerStg6 
+- Sampler_8x8 
+
+@section functions_CustomDataset Functions 
+- yuv2bgr(matrix)
+- bgr2yuv(matrix)
+- get_cu_old(f_path, f_size, cu_pos, cu_size, frame_number)
+- get_cu(f_path, f_size, cu_pos, cu_size, frame_number)
+- get_file_size(name)
+- resize(img, scale_percent)
+- show_CU(image, cu_size, cu_pos)
+- show_all_CUs(CUDataset, file_name, POC, cu_size)
+
+@section global_vars_CustomDataset Global Variables 
+- None 
+
+@section todo_CustomDataset TODO 
+- None 
+
+@section license License 
+MIT License 
+Copyright (c) 2022 Raul Kevin do Espirito Santo Viana
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+@section author_CustomDataset Author(s)
+- Created by Raul Kevin Viana
+- Last time modified is 2022-12-02 18:21:21.122664
+"""
+
+
 # Imports
 from __future__ import print_function, division
 import os
 import torch
 import pandas as pd
-from skimage import io, transform
 import numpy as np
-import matplotlib.pyplot as plt
-from torch.utils.data import Dataset, DataLoader
-from torchvision import transforms, utils
+from torch.utils.data import Dataset
 import cv2
 import re
 from dataset_utils import VideoCaptureYUV
@@ -18,7 +104,7 @@ import random
 #warnings.filterwarnings("ignore")
 
 def yuv2bgr(matrix):
-    """
+    """!
     @brief Converts yuv matrix to bgr matrix
 
     @param [in] matrix: Yuv matrix
@@ -32,7 +118,7 @@ def yuv2bgr(matrix):
 
 
 def bgr2yuv(matrix):
-    """
+    """!
     @brief Converts BGR matrix to YUV matrix
 
     @param [in] matrix: BGR matrix
@@ -46,7 +132,7 @@ def bgr2yuv(matrix):
 
 
 def get_cu_old(f_path, f_size, cu_pos, cu_size, frame_number):
-    """
+    """!
     @brief Get CU from image
 
     @param [in] f_path: Path of file to get the CU from
@@ -102,7 +188,7 @@ def get_cu_old(f_path, f_size, cu_pos, cu_size, frame_number):
     return CU, frame_CU, CU_Y, CU_U, CU_V
 
 def get_cu(f_path, f_size, cu_pos, cu_size, frame_number):
-    """
+    """!
     @brief Get CU from image
 
     @param [in] f_path: Path of file to get the CU from
@@ -137,7 +223,7 @@ def get_cu(f_path, f_size, cu_pos, cu_size, frame_number):
     return yuv_frame, CU_Y, CU_U, CU_V
 
 def get_file_size(name):
-    """
+    """!
     @brief Retrieves information about the YUV file info (width and height)
 
     @param [in] name: Name of the file where the file is located
@@ -228,12 +314,12 @@ def get_file_size(name):
 
 # Custom dataset for the cu oriented csv file
 class CUDatasetCU(Dataset):
-    """
+    """!
     CU dataset
     """
 
     def __init__(self, csv_file, root_dir, data_type=(128, 128)):
-        """
+        """!
         Args:
             csv_file (string): Path to the csv file with annotations.
             root_dir (string): Directory with all the images.
@@ -247,7 +333,7 @@ class CUDatasetCU(Dataset):
         self.root_dir = root_dir
 
     def get_specific_CUs(self, groundtruth, size, channel):
-        """
+        """!
         @brief Recover CUs with a specific width and height from the groundtruth
 
         @param [in] groundtruth: Labels containing information about all CUs in the dataset
@@ -374,12 +460,12 @@ class CUDatasetCU(Dataset):
 
 # Custom dataset for the stage oriented pickle file
 class CUDatasetStg(Dataset):
-    """
+    """!
     Dataset stage oriented
     """
 
     def __init__(self, file, root_dir, channel):
-        """
+        """!
         Args:
             file (string): Path to the file with annotations.
             root_dir (string): Directory with all the images.
@@ -395,7 +481,7 @@ class CUDatasetStg(Dataset):
         return len(self.CUs_info)
 
     def fill_stg(self, idx, stg_num, img_path, f_size, POC, cu_size=None):
-        """
+        """!
         Args:
             idx (int): Index of an instance from the dataset.
             stg_num (int): Number of the stage
@@ -536,12 +622,12 @@ class CUDatasetStg(Dataset):
 
 # Custom dataset for the stage oriented pickle file
 class CUDatasetStg_v2(Dataset):
-    """
+    """!
     Dataset stage oriented with capability of loading different files
     """
 
     def __init__(self, files_path, root_dir, channel=0, cu_type=None):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -568,7 +654,7 @@ class CUDatasetStg_v2(Dataset):
         return self.total_num_entries
 
     def dscv_stg(self, cu_type):
-        """
+        """!
         Args:
             cu_type (tuple): CU type to discover the most likely stage it belongs to
         """
@@ -602,7 +688,7 @@ class CUDatasetStg_v2(Dataset):
 
 
     def fill_stg(self, entry, stg_num, img_path, f_size, POC, cu_size=None):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             stg_num (int): Number of the stage
@@ -756,7 +842,7 @@ class CUDatasetStg_v2(Dataset):
         return stg
 
     def fill_stg_2(self, entry, stg_num, img_path, f_size, POC, cu_size=None):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -898,7 +984,7 @@ class CUDatasetStg_v2(Dataset):
 
 
     def obtain_files_sizes(self, files):
-        """
+        """!
         Args:
             files (lst): List containing the names of files with CUs info
         """
@@ -916,7 +1002,7 @@ class CUDatasetStg_v2(Dataset):
         return lst
 
     def select_entry(self, idx):
-        """
+        """!
         Args:
             idx (int): Index with the position to search for a specific entry
         """
@@ -1005,12 +1091,12 @@ class CUDatasetStg_v2(Dataset):
 
 # Custom dataset for the stage oriented pickle file
 class CUDatasetStg_v3(Dataset):
-    """
+    """!
     Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     """
 
     def __init__(self, files_path, root_dir, channel=0, cu_type=None):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -1037,7 +1123,7 @@ class CUDatasetStg_v3(Dataset):
         return self.total_num_entries
 
     def dscv_stg(self, cu_type):
-        """
+        """!
         Args:
             cu_type (tuple): CU type to discover the most likely stage it belongs to
         """
@@ -1070,7 +1156,7 @@ class CUDatasetStg_v3(Dataset):
             raise Exception("cu_type probably is NONE!!")
 
     def fill_stg_2(self, entry, stg_num, img_path, f_size, POC, cu_size=None):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -1250,7 +1336,7 @@ class CUDatasetStg_v3(Dataset):
         return stg_info
 
     def obtain_files_sizes(self, files):
-        """
+        """!
         Args:
             files (lst): List containing the names of files with CUs info
         """
@@ -1268,7 +1354,7 @@ class CUDatasetStg_v3(Dataset):
         return lst
 
     def select_entry(self, idx):
-        """
+        """!
         Args:
             idx (int): Index with the position to search for a specific entry
         """
@@ -1367,12 +1453,12 @@ class CUDatasetStg_v3(Dataset):
 
 # Custom dataset for the stage oriented pickle file -- used for solve imbalance datasets (It tries to find always different classes)
 class CUDatasetStg_v3_mod(Dataset):
-    """
+    """!
     Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     """
 
     def __init__(self, files_path, root_dir, channel=0, cu_type=None):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -1401,7 +1487,7 @@ class CUDatasetStg_v3_mod(Dataset):
         return self.total_num_entries
 
     def dscv_stg(self, cu_type):
-        """
+        """!
         Args:
             cu_type (tuple): CU type to discover the most likely stage it belongs to
         """
@@ -1434,7 +1520,7 @@ class CUDatasetStg_v3_mod(Dataset):
             raise Exception("cu_type probably is NONE!!")
 
     def fill_stg_2(self, entry, stg_num, img_path, f_size, POC, cu_size=None):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -1612,7 +1698,7 @@ class CUDatasetStg_v3_mod(Dataset):
 
 
     def obtain_files_sizes(self, files):
-        """
+        """!
         Args:
             files (lst): List containing the names of files with CUs info
         """
@@ -1630,7 +1716,7 @@ class CUDatasetStg_v3_mod(Dataset):
         return lst
 
     def select_entry(self, idx):
-        """
+        """!
         Args:
             idx (int): Index with the position to search for a specific entry
         """
@@ -1729,13 +1815,13 @@ class CUDatasetStg_v3_mod(Dataset):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg_v4(Dataset):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - Multi Batch
     """
 
     def __init__(self, files_path, root_dir, stg_num, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -1757,7 +1843,7 @@ class CUDatasetStg_v4(Dataset):
         return self.total_num_entries
 
     def get_sample(self, entry, stg_num, img_path, f_size, POC):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -1837,7 +1923,7 @@ class CUDatasetStg_v4(Dataset):
         return info_lst
 
     def obtain_files_sizes(self, files):
-        """
+        """!
         Args:
             files (lst): List containing the names of files with CUs info
         """
@@ -1855,7 +1941,7 @@ class CUDatasetStg_v4(Dataset):
         return lst
 
     def select_entry(self, idx):
-        """
+        """!
         Args:
             idx (int): Index with the position to search for a specific entry
         """
@@ -1917,13 +2003,13 @@ class CUDatasetStg_v4(Dataset):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg_v4_2(Dataset):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - Multi Batch
     """
 
     def __init__(self, files_path, root_dir, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -1944,7 +2030,7 @@ class CUDatasetStg_v4_2(Dataset):
         return self.total_num_entries
 
     def get_sample(self, entry, img_path, f_size, POC):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -2008,7 +2094,7 @@ class CUDatasetStg_v4_2(Dataset):
         return info_lst
 
     def obtain_files_sizes(self, files):
-        """
+        """!
         Args:
             files (lst): List containing the names of files with CUs info
         """
@@ -2026,7 +2112,7 @@ class CUDatasetStg_v4_2(Dataset):
         return lst
 
     def select_entry(self, idx):
-        """
+        """!
         Args:
             idx (int): Index with the position to search for a specific entry
         """
@@ -2087,13 +2173,13 @@ class CUDatasetStg_v4_2(Dataset):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg_v4_3(Dataset):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - Multi Batch
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -2125,7 +2211,7 @@ class CUDatasetStg_v4_3(Dataset):
         return self.total_num_entries
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -2157,7 +2243,7 @@ class CUDatasetStg_v4_3(Dataset):
         return info_lst
 
     def obtain_files_sizes(self, files):
-        """
+        """!
         Args:
             files (lst): List containing the names of files with CUs info
         """
@@ -2175,7 +2261,7 @@ class CUDatasetStg_v4_3(Dataset):
         return lst
 
     def select_entry(self, idx):
-        """
+        """!
         Args:
             idx (int): Index with the position to search for a specific entry
         """
@@ -2221,13 +2307,13 @@ class CUDatasetStg_v4_3(Dataset):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg_v5(Dataset):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -2260,7 +2346,7 @@ class CUDatasetStg_v5(Dataset):
         return self.total_num_entries
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -2313,7 +2399,7 @@ class CUDatasetStg_v5(Dataset):
         return info_lst
 
     def obtain_files_sizes(self, files):
-        """
+        """!
         Args:
             files (lst): List containing the names of files with CUs info
         """
@@ -2331,7 +2417,7 @@ class CUDatasetStg_v5(Dataset):
         return lst
 
     def select_entry(self, idx):
-        """
+        """!
         Args:
             idx (int): Index with the position to search for a specific entry
         """
@@ -2377,14 +2463,14 @@ class CUDatasetStg_v5(Dataset):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg_v5_eval(CUDatasetStg_v5):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     - For stage 2 evaluation
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -2394,7 +2480,7 @@ class CUDatasetStg_v5_eval(CUDatasetStg_v5):
         super(CUDatasetStg_v5_eval, self).__init__(files_path, channel)
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -2460,14 +2546,14 @@ class CUDatasetStg_v5_eval(CUDatasetStg_v5):
         return info_lst
 
 class CUDatasetStg_v5_eval_32x32(CUDatasetStg_v5):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     - For stage 3 evaluation
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -2477,7 +2563,7 @@ class CUDatasetStg_v5_eval_32x32(CUDatasetStg_v5):
         super(CUDatasetStg_v5_eval_32x32, self).__init__(files_path, channel)
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -2551,14 +2637,14 @@ class CUDatasetStg_v5_eval_32x32(CUDatasetStg_v5):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg_v5_32x32(CUDatasetStg_v5):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     - For stage 3
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -2568,7 +2654,7 @@ class CUDatasetStg_v5_32x32(CUDatasetStg_v5):
         super(CUDatasetStg_v5_32x32, self).__init__(files_path, channel)
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -2628,14 +2714,14 @@ class CUDatasetStg_v5_32x32(CUDatasetStg_v5):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg_v5_16x16(CUDatasetStg_v5):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     - For stage 4
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -2645,7 +2731,7 @@ class CUDatasetStg_v5_16x16(CUDatasetStg_v5):
         super(CUDatasetStg_v5_16x16, self).__init__(files_path, channel)
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -2711,14 +2797,14 @@ class CUDatasetStg_v5_16x16(CUDatasetStg_v5):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg_v5_8x8(CUDatasetStg_v5):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     - For stage 5
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -2727,7 +2813,7 @@ class CUDatasetStg_v5_8x8(CUDatasetStg_v5):
         super(CUDatasetStg_v5_8x8, self).__init__(files_path, channel)
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -2799,14 +2885,14 @@ class CUDatasetStg_v5_8x8(CUDatasetStg_v5):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg_v5_8x4(CUDatasetStg_v5):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     - For stage 5
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -2815,7 +2901,7 @@ class CUDatasetStg_v5_8x4(CUDatasetStg_v5):
         super(CUDatasetStg_v5_8x4, self).__init__(files_path, channel)
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -2893,14 +2979,14 @@ class CUDatasetStg_v5_8x4(CUDatasetStg_v5):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg4V5(CUDatasetStg_v5):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     - For stage 4
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -2909,7 +2995,7 @@ class CUDatasetStg4V5(CUDatasetStg_v5):
         super(CUDatasetStg4V5, self).__init__(files_path, channel)
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -2973,14 +3059,14 @@ class CUDatasetStg4V5(CUDatasetStg_v5):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg6V5(CUDatasetStg_v5):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     - For stage 6
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -2989,7 +3075,7 @@ class CUDatasetStg6V5(CUDatasetStg_v5):
         super(CUDatasetStg6V5, self).__init__(files_path, channel)
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
 
@@ -3059,7 +3145,7 @@ class CUDatasetStg6V5(CUDatasetStg_v5):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStgAllComplexityV5(CUDatasetStg_v5):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     - For stage all
@@ -3067,7 +3153,7 @@ class CUDatasetStgAllComplexityV5(CUDatasetStg_v5):
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -3076,7 +3162,7 @@ class CUDatasetStgAllComplexityV5(CUDatasetStg_v5):
         super(CUDatasetStgAllComplexityV5, self).__init__(files_path, channel)
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
 
@@ -3204,14 +3290,14 @@ class CUDatasetStgAllComplexityV5(CUDatasetStg_v5):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg5V5(CUDatasetStg_v5):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     - For stage 5
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -3220,7 +3306,7 @@ class CUDatasetStg5V5(CUDatasetStg_v5):
         super(CUDatasetStg5V5, self).__init__(files_path, channel)
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -3288,14 +3374,14 @@ class CUDatasetStg5V5(CUDatasetStg_v5):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg5ComplV5(CUDatasetStg_v5):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     - For stage 5
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -3304,7 +3390,7 @@ class CUDatasetStg5ComplV5(CUDatasetStg_v5):
         super(CUDatasetStg5ComplV5, self).__init__(files_path, channel)
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -3389,14 +3475,14 @@ class CUDatasetStg5ComplV5(CUDatasetStg_v5):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg2ComplV5(CUDatasetStg_v5):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     - For stage 2
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -3405,7 +3491,7 @@ class CUDatasetStg2ComplV5(CUDatasetStg_v5):
         super(CUDatasetStg2ComplV5, self).__init__(files_path, channel)
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -3473,14 +3559,14 @@ class CUDatasetStg2ComplV5(CUDatasetStg_v5):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg6ComplV5(CUDatasetStg_v5):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     - For stage 6
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -3489,7 +3575,7 @@ class CUDatasetStg6ComplV5(CUDatasetStg_v5):
         super(CUDatasetStg6ComplV5, self).__init__(files_path, channel)
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
 
@@ -3574,14 +3660,14 @@ class CUDatasetStg6ComplV5(CUDatasetStg_v5):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg4ComplV5(CUDatasetStg_v5):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     - For stage 4
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -3590,7 +3676,7 @@ class CUDatasetStg4ComplV5(CUDatasetStg_v5):
         super(CUDatasetStg4ComplV5, self).__init__(files_path, channel)
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -3668,14 +3754,14 @@ class CUDatasetStg4ComplV5(CUDatasetStg_v5):
 
 # Custom dataset for the stage oriented pickle file and it's multi batch
 class CUDatasetStg3ComplV5(CUDatasetStg_v5):
-    """
+    """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again
     - JF recommendations
     - For stage 4
     """
 
     def __init__(self, files_path, channel=0):
-        """
+        """!
         Args:
             files_path (string): Path to the files with annotations.
             root_dir (string): Directory with all the images.
@@ -3684,7 +3770,7 @@ class CUDatasetStg3ComplV5(CUDatasetStg_v5):
         super(CUDatasetStg3ComplV5, self).__init__(files_path, channel)
 
     def get_sample(self, entry):
-        """
+        """!
         Args:
             entry (int): An instance from the labels.
             img_path (string): Yuv image path
@@ -3756,7 +3842,7 @@ class CUDatasetStg3ComplV5(CUDatasetStg_v5):
 
 
 def resize(img, scale_percent):
-    """
+    """!
     Resizes a BGR image
 
     """
@@ -3766,7 +3852,7 @@ def resize(img, scale_percent):
     return cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
 
 def show_CU(image, cu_size, cu_pos):
-    """
+    """!
     Shows CU in a image
     """
 
@@ -3798,7 +3884,7 @@ def show_CU(image, cu_size, cu_pos):
 
 
 def show_all_CUs(CUDataset, file_name, POC, cu_size):
-    """
+    """!
     Shows all CUs in a image with a specific size, TO BE USED WITH THE CU ORIENTE LABELS
     """
     image_obtained = False
@@ -3841,7 +3927,7 @@ def show_all_CUs(CUDataset, file_name, POC, cu_size):
 # Batch sampler
 
 class Sampler_8x8(torch.utils.data.Sampler):
-    """ Summary
+    """! Summary
 
     Args:
         data_source (Dataset): dataset to sample from
@@ -3929,7 +4015,7 @@ class Sampler_8x8(torch.utils.data.Sampler):
 
 
 class SamplerStg6(torch.utils.data.Sampler):
-    """ Summary
+    """! Summary
 
     Args:
         data_source (Dataset): dataset to sample from
@@ -3985,7 +4071,7 @@ class SamplerStg6(torch.utils.data.Sampler):
 
 
 class SamplerStg5(torch.utils.data.Sampler):
-    """ Summary
+    """! Summary
 
     Args:
         data_source (Dataset): dataset to sample from
@@ -4039,7 +4125,7 @@ class SamplerStg5(torch.utils.data.Sampler):
 
 
 class SamplerStg4(torch.utils.data.Sampler):
-    """ Summary
+    """! Summary
 
     Args:
         data_source (Dataset): dataset to sample from
