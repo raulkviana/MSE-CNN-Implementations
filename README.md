@@ -190,7 +190,7 @@ When the network was being trained, some of the RD costs from the input data had
 
 ## 3. Dataset
 
-Please see this [page](RAISE_TEST/README.md) to understand better the dataset and also access it.
+Please see this [page](dataset_RAISE_TEST/README.md) to understand better the dataset and also access it.
 
 ## 4. Results
 
