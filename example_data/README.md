@@ -1,5 +1,4 @@
-# MSE-CNN-Implementations
-Code database with the implementation of MSE-CNN. 
+# Example data
 
+The data in this folder is used by the scripts in the [usefull_scripts](../usefull_scripts/) folder. It is composed by a file for validation and for training for each stage.
 
-![alt text](msecnn_model.png "MSE-CNN")

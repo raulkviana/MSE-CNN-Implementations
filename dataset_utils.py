@@ -158,6 +158,9 @@ SOFTWARE.
 - Last time modified is 2022-12-02 18:21:21.133389
 """
 
+# ==============================================================
+# Imports
+# ==============================================================
 
 import os
 import math
@@ -173,8 +176,11 @@ import shutil
 import threading
 import utils
 import torch
-from numba import jit
 from sklearn.model_selection import train_test_split
+
+# ==============================================================
+# Functions
+# ==============================================================
 
 def bgr2yuv(matrix):
     """!
@@ -189,42 +195,6 @@ def bgr2yuv(matrix):
 
     return YUV
 
-class VideoCaptureYUV:
-    def __init__(self, filename, size):
-        self.height, self.width = size
-        self.y_len = self.width * self.height
-        self.frame_len = int(self.y_len * 3 / 2)
-        self.f = open(filename, 'rb')
-        self.shape = (int(self.height), int(self.width))
-
-    def read_raw(self, frame_num=None):
-        try:
-            if frame_num:
-                self.f.seek(0)
-                self.f.seek(frame_num * self.frame_len)
-            raw = self.f.read(self.frame_len)
-            yuv = np.frombuffer(raw, dtype=np.uint8)
-            y = yuv[:self.y_len].reshape(self.shape)
-            uv = yuv[self.y_len:].reshape((int(self.height), int(self.width / 2)))
-            yuv = np.concatenate((y, uv), axis=1)
-            u = uv[:int(self.height/2), :]
-            v = uv[int(self.height/2):, :]
-
-        except Exception as e:
-            print(str(e))
-            return False, None
-        return True, yuv, y, u, v
-
-    def read(self):
-        ret, yuv = self.read_raw()
-        if not ret:
-            return ret, yuv
-        # bgr = cv2.cvtColor(yuv, cv2.COLOR_YUV2BGR_I420)#cv2.COLOR_YUV2BGR_NV21)
-        return ret, yuv
-
-"""
-Functions to manipulate the dataset
-"""
 def extract_content(f):
     """!
     @brief Extract a single record from binary file
@@ -7469,3 +7439,40 @@ def change_struct_no_dupl_stg_5_complexity_v4(path_dir_l):
 
     print("Time Elapsed:", time.time() - t0)
 
+
+# ==============================================================
+# Classes
+# ==============================================================
+
+class VideoCaptureYUV:
+    def __init__(self, filename, size):
+        self.height, self.width = size
+        self.y_len = self.width * self.height
+        self.frame_len = int(self.y_len * 3 / 2)
+        self.f = open(filename, 'rb')
+        self.shape = (int(self.height), int(self.width))
+
+    def read_raw(self, frame_num=None):
+        try:
+            if frame_num:
+                self.f.seek(0)
+                self.f.seek(frame_num * self.frame_len)
+            raw = self.f.read(self.frame_len)
+            yuv = np.frombuffer(raw, dtype=np.uint8)
+            y = yuv[:self.y_len].reshape(self.shape)
+            uv = yuv[self.y_len:].reshape((int(self.height), int(self.width / 2)))
+            yuv = np.concatenate((y, uv), axis=1)
+            u = uv[:int(self.height/2), :]
+            v = uv[int(self.height/2):, :]
+
+        except Exception as e:
+            print(str(e))
+            return False, None
+        return True, yuv, y, u, v
+
+    def read(self):
+        ret, yuv = self.read_raw()
+        if not ret:
+            return ret, yuv
+        # bgr = cv2.cvtColor(yuv, cv2.COLOR_YUV2BGR_I420)#cv2.COLOR_YUV2BGR_NV21)
+        return ret, yuv
