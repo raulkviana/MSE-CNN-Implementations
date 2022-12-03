@@ -55,6 +55,9 @@ SOFTWARE.
 - Last time modified is 2022-12-02 18:21:21.186675
 """
 
+# ==============================================================
+# Imports
+# ==============================================================
 
 import torch
 from torch import nn
@@ -62,50 +65,10 @@ import math
 import numpy as np
 import train_model_utils
 
-class CU:
 
-    def __init__(self, position, f_maps, ap):
-
-        self.position = position  # Position in CU in the frame
-        self.f_maps = f_maps  # CU
-        self.ap = ap  # Minimum axis of the parent CU
-
-    def __str__(self):
-        return str({"position": self.position, "f_maps": self.f_maps.shape, "ap": self.ap})
-
-    def __repr__(self):
-        return str({"position": self.position, "f_maps": self.f_maps.shape, "ap": self.ap})
-
-class CU_batch:
-
-    def __init__(self, position_list, f_maps_list, ap_list):
-
-        assert len(f_maps_list[0].shape) == 4
-        self.position_list = tuple(position_list)  # Position in CU in the frame
-        self.f_maps_list = tuple(f_maps_list)  # CU
-        self.f_maps = torch.cat(tuple(self.f_maps_list))
-        self.ap_list = tuple(ap_list)  # Minimum axis of the parent CU
-        self.data_list = []
-        for k in range(len(f_maps_list)):
-            self.data_list.append((self.f_maps_list[k], self.position_list[k], self.ap_list[k]))
-
-    def __str__(self):
-        return str({"position": self.position_list, "f_maps": self.f_maps.shape, "ap": self.ap_list})
-
-    def __repr__(self):
-        return str({"position": self.position_list, "f_maps": self.f_maps.shape, "ap": self.ap_list})
-
-class CU_batch_v2:
-
-    def __init__(self, f_maps):
-
-        self.f_maps = f_maps  # CU
-
-    def __str__(self):
-        return str({"f_maps": self.f_maps.shape})
-
-    def __repr__(self):
-        return str({"f_maps": self.f_maps.shape})
+# ==============================================================
+# Functions
+# ==============================================================
 
 def init_weights_seq(m):
     """!
@@ -124,7 +87,11 @@ def init_weights_single(m):
 
     torch.nn.init.xavier_uniform(m.weight)
 
-## QP half mask
+
+# ==============================================================
+# Classes
+# ==============================================================
+
 class QP_half_mask(nn.Module):
     def __init__(self, QP=32):
         super(QP_half_mask, self).__init__()
@@ -168,13 +135,11 @@ class QP_half_mask(nn.Module):
         return new_feature_maps
 
 # Model for stage 1
-class MseCnnStg_1_v2(nn.Module):
-
-    # This version is a combination between stage 1 and 2, JF recomendations
+class MseCnnStg1(nn.Module):
 
     def __init__(self, device="cpu", QP=32):
 
-        super(MseCnnStg_1_v2, self).__init__()
+        super(MseCnnStg1, self).__init__()
         # Initializing variables
         self.first_simple_conv = nn.Sequential(
             # nn.BatchNorm2D(1), # Consider adding normalization of the input, even knowing it's not mentioned in the paper
@@ -427,13 +392,11 @@ class MseCnnStg_1_v2(nn.Module):
         return logits, cu, ac
 
 # Model for stage 3, 4, 5 and 6
-class MseCnnStg_x_v2(MseCnnStg_1_v2):
-
-    # This version is a JF recomendations
+class MseCnnStgX(MseCnnStg1):
 
     def __init__(self, device="cpu", QP=32):
 
-        super(MseCnnStg_x_v2, self).__init__()
+        super(MseCnnStgX, self).__init__()
         # Hide not needed variables
         # Conditional convolution stg 1
         self.simple_conv_stg1 = None  # Simple convolution with activation and padding
@@ -764,9 +727,6 @@ class MseCnnStg_x_v2(MseCnnStg_1_v2):
 
         return logits, cu, ac
 
-
-
-## Loss Function
 class LossFunctionMSE(nn.Module):
     def __init__(self, use_mod_cross_entropy=True, beta=1):
         super(LossFunctionMSE, self).__init__()
@@ -964,8 +924,8 @@ class LossFunctionMSE(nn.Module):
 
         return loss, loss_CE, loss_RD
 
-
 class LossFunctionMSE_Ratios(nn.Module):
+    # This version uses penalty weights for less represented classes
     def __init__(self, pm, use_mod_cross_entropy=True, beta=1, alpha=0.5):
         super(LossFunctionMSE_Ratios, self).__init__()
         self.beta = beta
