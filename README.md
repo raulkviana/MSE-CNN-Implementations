@@ -144,7 +144,7 @@ In the above equation, $\beta$ is a real number to adjust the influence of the $
 $$L_{CEmod} = -\frac{1}{N}\sum_{n=1}^N \sum_{m\varepsilon Partitions}(\frac{1}{p_m})^\alpha y_{n, m}\log(\hat{y}_{n, m})$$
 
 <div align="center">
-  <small> Eq. 1: In this equation "n" is the batch number, "m" is the corresponding partition (0 (Non-Split), 1 (QT), 2 (HBT), 3 (VBT), 4 (VTT), 5 (HTT)), N is the total number of batches and alpha is a parameter to configure the penalties for the less represented classes</small> 
+  <sub><sup> Eq. 1: In this equation "n" is the batch number, "m" is the corresponding partition (0 (Non-Split), 1 (QT), 2 (HBT), 3 (VBT), 4 (VTT), 5 (HTT)), N is the total number of batches and alpha is a parameter to configure the penalties for the less represented classes </sup></sub> 
 </div>
 
 <br>
