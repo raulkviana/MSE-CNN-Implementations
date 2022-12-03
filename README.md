@@ -45,7 +45,7 @@ Code database with an implementation of MSE-CNN [1]. Besides the code, the datas
   - [7. Contributions](#7-contributions)
   - [8. License](#8-license)
   - [9. TODO](#9-todo)
-  - [9. References](#9-references)
+  - [10. References](#10-references)
 
 <!--------- Put demo here ----------->
 
@@ -287,7 +287,7 @@ This project license is under the [**MIT License**](LICENSE).
 |-----|-----|-----|
 | | | |
 
-## 9. References
+## 10. References
 [1] T. Li, M. Xu, R. Tang, Y. Chen, and Q. Xing, [“DeepQTMT: A Deep Learning Approach for
 Fast QTMT-Based CU Partition of Intra-Mode VVC,”](https://arxiv.org/abs/2006.13125) IEEE Transactions on Image Processing,
 vol. 30, pp. 5377–5390, 2021, doi: 10.1109/tip.2021.3083447.
