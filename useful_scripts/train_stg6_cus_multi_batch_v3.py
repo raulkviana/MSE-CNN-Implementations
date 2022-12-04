@@ -85,20 +85,25 @@ SOFTWARE.
 from __future__ import print_function, division
 import torch
 from torch.utils.data import DataLoader
-from torchvision import utils
-from torch.utils.data import DataLoader
-import MSECNN
-import CustomDataset
-import train_model_utils
 from sklearn.metrics import classification_report
-import constants
-import utils
 import time
 import argparse
 from torch.utils.tensorboard import SummaryWriter 
 import datetime
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
+# Insert the path of modules folder 
+sys.path.insert(0, "../")
+try:
+    import CustomDataset
+    import train_model_utils
+    import MSECNN
+    import constants
+    import utils
+except:
+    raise Exception("Module not found! Please verify that the main modules (CustomDataset, dataset_utils, MSECNN, train_model_utils and utils) can be found in the directory above the current one. Or just find a way of importing them.")
+
 
 # Parse arguments
 parser = argparse.ArgumentParser(description=constants.script_description)

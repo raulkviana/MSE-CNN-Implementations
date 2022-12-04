@@ -48,12 +48,27 @@ SOFTWARE.
 - Last time modified is 2022-12-02 18:21:21.097355
 """
 
-import dataset_utils
+# ==============================================================
+# Imports
+# ==============================================================
+
 import torch
-import CustomDataset
 import os
-import utils
 import shutil
+import sys
+# Insert the path of modules folder 
+sys.path.insert(0, "../")
+try:
+    import dataset_utils
+    import CustomDataset
+    import utils
+except:
+    raise Exception("Module not found! Please verify that the main modules (CustomDataset, dataset_utils, MSECNN, train_model_utils and utils) can be found in the directory above the current one. Or just find a way of importing them.")
+
+
+# ==============================================================
+# Main
+# ==============================================================
 
 def main():
     path_dir_l = r"C:\Users\Raul\Dropbox\Dataset\Img\Test_place\delete_later_2\labels_pickle"  # Path with the labels processed

@@ -44,9 +44,15 @@ SOFTWARE.
 - Last time modified is 2022-12-02 18:21:21.183212
 """
 
+import sys
+# Insert the path of modules folder 
+sys.path.insert(0, "../")
+try:
+    import dataset_utils
+    import CustomDataset
+except:
+    raise Exception("Module not found! Please verify that the main modules (CustomDataset, dataset_utils, MSECNN, train_model_utils and utils) can be found in the directory above the current one. Or just find a way of importing them.")
 
-import CustomDataset
-import dataset_utils
 
 def main():
 

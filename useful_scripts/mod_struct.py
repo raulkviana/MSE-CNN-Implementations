@@ -48,7 +48,13 @@ SOFTWARE.
 Modifies structure to the JF recommendations one: [POC, pic_name, real_CTU, split_tens, RD_tens, pos_tens]
 """
 
-import dataset_utils
+import sys
+# Insert the path of modules folder 
+sys.path.insert(0, "../")
+try:
+    import dataset_utils
+except:
+    raise Exception("Module not found! Please verify that the main modules (CustomDataset, dataset_utils, MSECNN, train_model_utils and utils) can be found in the directory above the current one. Or just find a way of importing them.")
 
 # Main Function
 def main():

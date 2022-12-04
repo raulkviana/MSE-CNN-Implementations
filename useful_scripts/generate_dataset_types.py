@@ -1,22 +1,22 @@
 """@package docstring 
 
-@file create_labels_with_channels.py 
+@file generate_dataset_types.py 
 
-@brief Transform raw data into sequential data structures for both luma and chroma channels 
+@brief Generates 3 files, one with training data, other with validation data and one with testing data 
  
-@section libraries_create_labels_with_channels Libraries 
+@section libraries_generate_dataset_types Libraries 
 - dataset_utils
 
-@section classes_create_labels_with_channels Classes 
+@section classes_generate_dataset_types Classes 
 - None 
 
-@section functions_create_labels_with_channels Functions 
+@section functions_generate_dataset_types Functions 
 - main()
  
-@section global_vars_create_labels_with_channels Global Variables 
+@section global_vars_generate_dataset_types Global Variables 
 - None 
 
-@section todo_create_labels_with_channels TODO 
+@section todo_generate_dataset_types TODO 
 - None 
 
 @section license License 
@@ -38,25 +38,27 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-@section author_create_labels_with_channels Author(s)
+@section author_generate_dataset_types Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2022-12-02 18:21:21.119719
+- Last time modified is 2022-12-02 18:21:21.181262
 """
 
-
-import dataset_utils
+import sys
+# Insert the path of modules folder 
+sys.path.insert(0, "../")
+try:
+    import dataset_utils
+except:
+    raise Exception("Module not found! Please verify that the main modules (CustomDataset, dataset_utils, MSECNN, train_model_utils and utils) can be found in the directory above the current one. Or just find a way of importing them.")
 
 
 def main():
 
-    # Directory containing the .dat files with CUs informations
-    #d_path = str(input("Em que path absoluto está o dataset?\n"))
-    #d_path = '/mnt/c/Users/Raul/Dropbox/Dataset/Img/Example'
-    d_path = r"C:\Users\Raul\Dropbox\Dataset\Img\Test_place\delete_later"
+    # Directory containing the .txt files with CUs informations
+    d_path = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/labels/valid/processed_labels/mod_with_real_CTU/mod_with_struct_change_no_dupl_64x64_v2/complexity"
+    print("Dir path:", d_path)
 
-    dataset_utils.unite_labels_v6(dir_path_l=d_path, n_output_file="labels_pickkklke")  # The result is saved in the same folder
-    dataset_utils.labels_with_specific_cch(dir_path=d_path+r"\labels_pickkklke", cch=1)  # Get chroma
-    dataset_utils.labels_with_specific_cch(dir_path=d_path+r"\labels_pickkklke", cch=0)  # Get luma
+    dataset_utils.gen_dataset_types(d_path, 0.1)
 
 if __name__ == "__main__":
     main()
