@@ -7,7 +7,6 @@
 @section libraries_CustomDataset Libraries 
 - os
 - torch
-- warnings
 - numpy
 - dataset_utils
 - cv2
@@ -33,7 +32,6 @@
 @section functions_CustomDataset Functions 
 - yuv2bgr(matrix)
 - bgr2yuv(matrix)
-- get_cu_old(f_path, f_size, cu_pos, cu_size, frame_number)
 - get_cu(f_path, f_size, cu_pos, cu_size, frame_number)
 - get_file_size(name)
 - resize(img, scale_percent)
