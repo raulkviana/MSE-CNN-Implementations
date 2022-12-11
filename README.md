@@ -196,7 +196,7 @@ Please see this [page](dataset_RAISE_TEST/README.md) to understand better the da
 
 Since it was verified that the Rate-Distortion Loss. $L_{RD}$, could contribute for better results, the metrics presented here were obtained with a model trained only with the modified cross-entropy loss.
 
-### 4.1 F1-score, Recall and Precision
+### 4.1 F1-score, Recall and Precision with test data
 
 | Stage | F1-Score | Recall | Precision |
 |-------|----------|--------|-----------|
@@ -214,25 +214,25 @@ Results with weighted average for F1-score, recall and precision.
 <div align="center">
   <img src="imgs/conf_mat_val_stg2.png" width=300 />
   <img src="imgs/conf_mat_val_v2_stg3.png" width=300 />
-  <p>Fig. 10: Confusion matrix results in with the testing data in stages 2 and 3</p>
+  <p>Fig. 10: Confusion matrix results with the testing data in stages 2 and 3</p>
 </div>
 
 #### 4.2.2 Stages 4 and 5
 <div align="center">
   <img src="imgs/conf_mat_val_stg4.png" width=300 />
   <img src="imgs/conf_mat_val_stg5.png" width=300 />
-  <p>Fig. 11: Confusion matrix results in with the testing data in stages 4 and 5</p>
+  <p>Fig. 11: Confusion matrix results with the testing data in stages 4 and 5</p>
 </div>
 
 #### 4.2.3 Stage 6
 <div align="center">
   <img src="imgs/conf_mat_val_stg6.png" width=300 />
-  <p>Fig. 12: Confusion matrix results in with the testing data in stage 6</p>
+  <p>Fig. 12: Confusion matrix results with the testing data in stage 6</p>
 </div>
 
 
 
-### 4.3 Y-PSNR, Complexity Reduction and Bitrate
+### 4.3 Y-PSNR, Complexity Reduction and Bitrate with test data
 
 | Metric | VTM-7.0 | VTM-7.0+Model | Gain |
 |-------|----------|--------|-----------|
