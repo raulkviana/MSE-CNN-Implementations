@@ -285,7 +285,7 @@ This project license is under the [**MIT License**](LICENSE).
 
 |Task| Description| Status (d - doing, w - waiting, f- finished)|
 |-----|-----|-----|
-| | | |
+| Implement code to test functions| Use a library, such as Pytest, to test some functions from the many modules developed | w |
 
 ## 10. References
 [1] T. Li, M. Xu, R. Tang, Y. Chen, and Q. Xing, [“DeepQTMT: A Deep Learning Approach for
