@@ -1,11 +1,4 @@
 
-<div align="center">
-  <img src="imgs/msecnn_model.png" width=800 />
-  <!----<p>MSE-CNN model</p>--->
-</div>
-<br>
-<br>
-
 
 # MSE-CNN Implementation
 ![versions](https://badgen.net/badge/python-version/3.8.10/:color?color=yellow)
@@ -16,6 +9,13 @@
 ![issues](https://img.shields.io/github/issues-raw/raulkviana/MSE-CNN-Implementations)
 
 <!----![Jokes Card](https://readme-jokes.vercel.app/api)---->
+
+<div align="center">
+  <img src="imgs/msecnn_model.png" width=800 />
+  <!----<p>MSE-CNN model</p>--->
+</div>
+<br>
+<br>
 
 Code database with an implementation of MSE-CNN [1]. Besides the code, the dataset and coefficients obtained after training are provided.
 <br>
