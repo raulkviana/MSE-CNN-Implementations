@@ -65,7 +65,6 @@ import math
 import numpy as np
 import train_model_utils
 
-
 # ==============================================================
 # Functions
 # ==============================================================
@@ -851,53 +850,25 @@ class LossFunctionMSE(nn.Module):
 
         # Rate distortion
         min_RDs = self.get_min_RDs(RD)  # Get minimum values of RD
-        #min_RDs = torch.log10(min_RDs)
-
-        # print("min_RDs", min_RDs)
 
         # Substitute inf RD values
         RD_mod = self.remove_inf_values(RD)
 
         # Replace zero values for a big number
         RD_mod = self.remove_zero(RD_mod)
-        #RD_mod = torch.log10(RD_mod)
 
         # Replace high values for a smaller number
         RD_mod = self.remove_values_above(RD_mod, self.MAX_RD)
 
-        # # Remove last 4 classes
-        # RD_mod = RD_mod[:,:-4]
-        # pred = pred[:,:-4]
-
         # Compute loss
         # Paper loss function
         loss_RD = torch.mul(pred, torch.sub(torch.div(RD_mod, min_RDs), 1))
-        # Modified
-        #loss_RD = -torch.mul(torch.log(pred), torch.sub(torch.div(RD_mod, min_RDs), 1))
-
-        # Proportions way of calculating loss function
-        #RD_proportions = torch.div(RD_mod, torch.reshape(torch.sum(RD_mod, dim=1), shape=(-1,1)))  # Compute RD proportions 
-        #RD_proportions_mod = torch.pow(torch.div(1, torch.sub(1, RD_proportions)), 4)  # Apply subtraction and use power of a constant for scaling 
-        #loss_RD = torch.mul(pred, RD_proportions_mod)
-        #loss_RD = -torch.mul(torch.log(pred), RD_proportions_mod)
-
-        # Normalazing with max RD value and calculate loss function
-        #RD_maxs = torch.reshape(torch.max(RD_mod, dim=1)[0], shape=(-1, 1))
-        #RD_mod2 = torch.div(RD_mod, RD_maxs)
-        #loss_RD = torch.mul(pred, RD_mod2)
-        #loss_RD = -torch.mul(torch.log(pred), RD_mod2)
-
-        # Loss functio that uses means
-        #means_losses = torch.mean(RD_mod, dim=1, keepdim=True)
-        #RD_mod1 = RD_mod.clone()
-        #RD_mod1 [RD_mod > means_losses] = 5
-        #RD_mod1 [RD_mod <= means_losses] = 0
-        #loss_RD = torch.mul(pred, RD_mod1)
 
         # Remove negative
         loss_RD = self.remove_values_lower(loss_RD, 0, 0)
 
-        # Mean loss
+        # Mean loss 
+        # TODO: Instead of limiting the loss, limit the gradients
         loss_RD = torch.sum(loss_RD, dim=1)
         loss_RD = torch.mean(loss_RD, dim=0)
         if loss_RD.item() > self.MAX_LOSS:
@@ -909,7 +880,6 @@ class LossFunctionMSE(nn.Module):
 
         # Total loss
         loss = torch.add(loss_CE, torch.mul(loss_RD, self.beta))
-        #loss = loss_RD
 
         # Exceptions
         if torch.isnan(loss):
@@ -919,7 +889,6 @@ class LossFunctionMSE(nn.Module):
             raise Exception("Loss is infinite!! Last loss was: ", str(self.last_loss))
 
         self.last_loss = loss
-        #self.last_RD = [RD, RD_mod, RD_proportions, RD_proportions_mod]
         self.last_pred = pred
 
         return loss, loss_CE, loss_RD
@@ -1052,7 +1021,6 @@ class LossFunctionMSE_Ratios(nn.Module):
 
         # Rate distortion
         min_RDs = self.get_min_RDs(RD)  # Get minimum values of RD
-        #min_RDs = torch.log10(min_RDs)
 
         # print("min_RDs", min_RDs)
 
@@ -1061,40 +1029,14 @@ class LossFunctionMSE_Ratios(nn.Module):
 
         # Replace zero values for a big number
         RD_mod = self.remove_zero(RD_mod)
-        #RD_mod = torch.log10(RD_mod)
 
         # Replace high values for a smaller number
         RD_mod = self.remove_values_above(RD_mod, self.MAX_RD)
 
-        # # Remove last 4 classes
-        # RD_mod = RD_mod[:,:-4]
-        # pred = pred[:,:-4]
-
         # Compute loss
         # Paper loss function
         loss_RD = torch.mul(pred, torch.sub(torch.div(RD_mod, min_RDs), 1))
-        # Modified
-        #loss_RD = -torch.mul(torch.log(pred), torch.sub(torch.div(RD_mod, min_RDs), 1))
-
-        # Proportions way of calculating loss function
-        #RD_proportions = torch.div(RD_mod, torch.reshape(torch.sum(RD_mod, dim=1), shape=(-1,1)))  # Compute RD proportions 
-        #RD_proportions_mod = torch.pow(torch.div(1, torch.sub(1, RD_proportions)), 4)  # Apply subtraction and use power of a constant for scaling 
-        #loss_RD = torch.mul(pred, RD_proportions_mod)
-        #loss_RD = -torch.mul(torch.log(pred), RD_proportions_mod)
-
-        # Normalazing with max RD value and calculate loss function
-        #RD_maxs = torch.reshape(torch.max(RD_mod, dim=1)[0], shape=(-1, 1))
-        #RD_mod2 = torch.div(RD_mod, RD_maxs)
-        #loss_RD = torch.mul(pred, RD_mod2)
-        #loss_RD = -torch.mul(torch.log(pred), RD_mod2)
-
-        # Loss functio that uses means
-        #means_losses = torch.mean(RD_mod, dim=1, keepdim=True)
-        #RD_mod1 = RD_mod.clone()
-        #RD_mod1 [RD_mod > means_losses] = 5
-        #RD_mod1 [RD_mod <= means_losses] = 0
-        #loss_RD = torch.mul(pred, RD_mod1)
-
+        
         # Remove negative
         loss_RD = self.remove_values_lower(loss_RD, 0, 0)
 
@@ -1110,7 +1052,6 @@ class LossFunctionMSE_Ratios(nn.Module):
 
         # Total loss
         loss = torch.add(loss_CE, torch.mul(loss_RD, self.beta))
-        #loss = loss_RD
 
         # Exceptions
         if torch.isnan(loss):
@@ -1120,7 +1061,6 @@ class LossFunctionMSE_Ratios(nn.Module):
             raise Exception("Loss is infinite!! Last loss was: ", str(self.last_loss))
 
         self.last_loss = loss
-        #self.last_RD = [RD, RD_mod, RD_proportions, RD_proportions_mod]
         self.last_pred = pred
 
         return loss, loss_CE, loss_RD

@@ -72,8 +72,7 @@ except:
 def main():
     # Path with the labels processed
     path_dir_l = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/labels/valid/processed_labels"  
-    #path_dir_l = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/labels_for_testing_32x32/train"
-    #path_dir_l = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/data_for_now/valid/processed_labels/"  
+ 
     # Path with the pictures
     path_dir_p = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/data"  
 

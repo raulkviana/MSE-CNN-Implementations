@@ -70,7 +70,6 @@ SOFTWARE.
 # IMPORTS
 # =================================================================================================
 
-from __future__ import print_function, division
 import os
 from datetime import datetime 
 import re
@@ -424,8 +423,3 @@ def update_docstring(path):
                     if "- Last time" in line:
                         temp_flag = True
                         
-
-
-
-
-

@@ -81,10 +81,6 @@ import re
 from dataset_utils import VideoCaptureYUV
 import dataset_utils
 import random
-# Ignore warnings
-#import warnings
-#warnings.filterwarnings("ignore")
-
 
 # ==============================================================
 # Functions
@@ -99,7 +95,7 @@ def yuv2bgr(matrix):
     """
 
     # Convert from yuv to bgr
-    bgr = cv2.cvtColor(matrix, cv2.COLOR_YUV2BGR_I420)  # cv2.COLOR_YUV2BGR_NV21)
+    bgr = cv2.cvtColor(matrix, cv2.COLOR_YUV2BGR_I420) 
 
     return bgr
 
@@ -112,7 +108,7 @@ def bgr2yuv(matrix):
     """
 
     # Convert from bgr to yuv
-    YUV = cv2.cvtColor(matrix, cv2.COLOR_BGR2YUV_I420)  # cv2.COLOR_YUV2BGR_NV21)
+    YUV = cv2.cvtColor(matrix, cv2.COLOR_BGR2YUV_I420) 
 
     return YUV
 

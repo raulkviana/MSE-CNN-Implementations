@@ -112,25 +112,16 @@ args = parser.parse_args()
 loss_threshold = float("-inf")
 qp = 32
 batch_size = args.batch  # No paper 32
-device = args.dev #"cuda" if torch.cuda.is_available() else "cpu"
+device = args.dev
 num_workers = args.workers
 n_mod = args.nmod
 
 # Multi-thresholding coefficients for medium mode
 rs = [0.3, 0.5]
 
-# # Parameters
-# loss_threshold = float("-inf")
-# qp = 32
-# batch_size = 32  # No paper 32
-# device = 1 #"cuda" if torch.cuda.is_available() else "cpu"
-# num_workers = 2
-# n_mod = "balh"
-
 print("Using {} device".format(device))
 # Tensorboard variable
 writer = SummaryWriter("runs/MSECNN_Eval_"+n_mod)
-
 
 # Paths
 l_path_val = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/labels/test/processed_labels/mod_with_real_CTU/mod_with_struct_change_no_dupl_stg6_v4/train_valid_test/balanced_labels_downsamp/test"#/balanced_labels_downsamp"  # For evaluation 
@@ -186,16 +177,16 @@ def test(dataloader, model, device, loss_name):
             pred_stg2, CUs, ap = model[0](CUs, cu_size_stg2, cu_pos_stg2)  # Pass CU through network
             
             # Stage 3
-            pred_stg3, CUs, ap = model[1](CUs, ap, split_stg2, cu_size_stg3, cu_pos_stg3)   # Pass CU through network --- You can also use the predicitons of the previous stage
+            pred_stg3, CUs, ap = model[1](CUs, ap, split_stg2, cu_size_stg3, cu_pos_stg3)   # Pass CU through network
 
             # Stage 4
-            pred_stg4, CUs, ap = model[2](CUs, ap, split_stg3, cu_size_stg4, cu_pos_stg4)   # Pass CU through network --- You can also use the predicitons of the previous stage
+            pred_stg4, CUs, ap = model[2](CUs, ap, split_stg3, cu_size_stg4, cu_pos_stg4)   # Pass CU through network
 
             # Stage 5
-            pred_stg5, CUs, ap = model[3](CUs, ap, split_stg4, cu_size_stg5, cu_pos_stg5)   # Pass CU through network --- You can also use the predicitons of the previous stage
+            pred_stg5, CUs, ap = model[3](CUs, ap, split_stg4, cu_size_stg5, cu_pos_stg5)   # Pass CU through network
 
             # Stage 6
-            pred, CUs, ap = model[4](CUs, ap, split_stg5, cu_size, cu_pos)   # Pass CU through network --- You can also use the predicitons of the previous stage
+            pred, CUs, ap = model[4](CUs, ap, split_stg5, cu_size, cu_pos)   # Pass CU through network
 
             # Obtain results in different format
             pred_num = train_model_utils.obtain_mode(pred)
@@ -287,23 +278,16 @@ def main():
     stg6 = MSECNN.MseCnnStg_x_v2(device=device, QP=qp).to(device)
     model = (stg1_2, stg3, stg4, stg5, stg6)
 
-    ans = 'y'#str(input('Do you want to load any existing model? Y/N \n'))
+    ans = str(input('Do you want to load any existing model? Y/N \n'))
     if ans == 'Y' or ans == 'y':
        path = "best_stg6_multi_batch_iter_100_batch_32_QP_32_beta_0.0_lr_0.0006_stg6_no_beta"
        model = train_model_utils.load_model_parameters_eval(model, path, device)
 
     # Prepare testing data, Dataset and Dataloader
-    # Prepare testing data, Dataset and Dataloader
     val_data = CustomDataset.CUDatasetStg6V5(files_path=l_path_val)
     batch_sampler_val = CustomDataset.SamplerStg6(val_data, batch_size)  # Batch Sampler
     dataloader_val = DataLoader(val_data, num_workers=num_workers, batch_sampler=batch_sampler_val)
-
-    # Compute CU proportions
-    #print("Computing CU proportions...")
-    #pm = torch.reshape(torch.tensor([0.5, 0.5, 0.00001, 0.00001, 0.00001, 0.00001]), shape=(1, -1)).to(device) # torch.reshape(torch.tensor([0.5, 0.5, 0.00001, 0.00001, 0.00001, 0.00001]), shape=(1, -1))  #torch.reshape(torch.tensor([0.70, 0.01, 0.01, 0.01, 0.01, 0.01]), shape=(1, -1)) #torch.reshape(torch.tensor([0.0009995002498750624, 0.999000499750125, 0.0000000000000000001, 0.0000000000000000001, 0.0000000000000000001, 0.0000000000000000001]), shape=(1, -1)) # Delete later #torch.reshape(torch.tensor([0.5, 0.5, 0.00001, 0.00001, 0.00001, 0.00001]), shape=(1, -1)).to(device) #torch.reshape(torch.tensor([0.0001, 0.999, 0.00001, 0.00001, 0.00001, 0.00001]), shape=(1, -1)) # torch.reshape(torch.tensor([0.5, 0.5, 0.00001, 0.00001, 0.00001, 0.00001]), shape=(1, -1))  #torch.reshape(torch.tensor([0.70, 0.01, 0.01, 0.01, 0.01, 0.01]), shape=(1, -1)) #torch.reshape(torch.tensor([0.0009995002498750624, 0.999000499750125, 0.0000000000000000001, 0.0000000000000000001, 0.0000000000000000001, 0.0000000000000000001]), shape=(1, -1)) # Delete later
-    #pm, am = dataset_utils.compute_split_proportions_with_custom_data_multi_new(train_data, -2)
-    #pm = torch.reshape(torch.tensor(list(pm.values()))+0.000000000000001, shape=(1, -1)).to(device)
-
+    
     # Train
     print("Starting training...")
     val_setup(dataloader_val, model, device)

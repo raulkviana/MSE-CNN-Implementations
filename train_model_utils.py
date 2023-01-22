@@ -93,15 +93,12 @@ import os
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
-import math
-import MSECNN
 import dataset_utils
 from datetime import datetime
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, f1_score, recall_score, \
     precision_score, roc_curve, auc
 import seaborn as sns
 from itertools import cycle
-
 
 # ==============================================================
 # Functions
@@ -121,6 +118,8 @@ def model_statistics(J_history, predicted, ground_truth, pred_vector, gt_vector,
     @param [out] recall: Recall score
     @param [out] precision: Precision score
     @param [out] accuracy: Accuracy score
+
+    Note: Deprecated
     """
 
     # Compute metrics
@@ -162,12 +161,10 @@ def model_statistics(J_history, predicted, ground_truth, pred_vector, gt_vector,
     # Draw confusion matrix
     sns.heatmap(confusion_matrix(ground_truth/total_data, predicted/total_data), annot=True, fmt='d', cmap='Blues', yticklabels=labels,
                 xticklabels=labels)
-    #disp = ConfusionMatrixDisplay(confusion_matrix=confusion_matrix(ground_truth, predicted), display_labels=labels[0:2])
-    #disp.plot()
+
     name = "confusion_matrix_" + train_or_val + ".png"
     plt.title("Confusion Matrix: " + train_or_val)
     plt.savefig(name)
-    #plt.show()
     plt.clf()
 
     # ROC Curves
@@ -209,23 +206,6 @@ def model_statistics(J_history, predicted, ground_truth, pred_vector, gt_vector,
 
     # # Plot all ROC curves
     plt.figure()
-    # plt.plot(
-    #     fpr["micro"],
-    #     tpr["micro"],
-    #     label="micro-average ROC curve (area = {0:0.2f})".format(roc_auc["micro"]),
-    #     color="deeppink",
-    #     linestyle=":",
-    #     linewidth=4,
-    # )
-
-    # plt.plot(
-    #     fpr["macro"],
-    #     tpr["macro"],
-    #     label="macro-average ROC curve (area = {0:0.2f})".format(roc_auc["macro"]),
-    #     color="navy",
-    #     linestyle=":",
-    #     linewidth=4,
-    # )
 
     lw = 2
     colors = cycle(["aqua", "darkorange", "cornflowerblue"])
@@ -246,7 +226,6 @@ def model_statistics(J_history, predicted, ground_truth, pred_vector, gt_vector,
     plt.title("Some extension of Receiver operating characteristic to multiclass")
     plt.legend(loc="lower right")
     plt.grid()
-    #plt.show()
     name = "ROC_curve" + train_or_val + ".png"
     plt.savefig(name)
     plt.clf()
@@ -292,7 +271,6 @@ def model_statistics_v2(J_history, predicted, ground_truth, pred_vector, gt_vect
     plt.grid()
     name = "Loss_" + train_or_val + ".png"
     plt.savefig(name)
-    #plt.show()
     plt.clf()
 
     # Plot confusion matrix
@@ -301,12 +279,9 @@ def model_statistics_v2(J_history, predicted, ground_truth, pred_vector, gt_vect
     # Draw confusion matrix
     sns.heatmap(confusion_matrix(ground_truth, predicted), annot=True, fmt='d', cmap='Blues', yticklabels=labels,
                 xticklabels=labels)
-    #disp = ConfusionMatrixDisplay(confusion_matrix=confusion_matrix(ground_truth, predicted), display_labels=labels[0:2])
-    #disp.plot()
     name = "confusion_matrix_" + train_or_val + ".png"
     plt.title("Confusion Matrix: " + train_or_val)
     plt.savefig(name)
-    #plt.show()
     plt.clf()
 
     # Plot metrics
@@ -321,7 +296,6 @@ def model_statistics_v2(J_history, predicted, ground_truth, pred_vector, gt_vect
     plt.title("Metrics: " + train_or_val)
     name = "metrics_evolution" + train_or_val + ".png"
     plt.savefig(name)
-    #plt.show()
     plt.clf()
 
     # ROC Curves
@@ -382,18 +356,17 @@ def model_statistics_v2(J_history, predicted, ground_truth, pred_vector, gt_vect
     plt.title("Some extension of Receiver operating characteristic to multiclass")
     plt.legend(loc="lower right")
     plt.grid()
-    #plt.show()
     name = "ROC_curve" + train_or_val + ".png"
     plt.savefig(name)
     plt.clf()
 
 def compute_conf_matrix(predicted, ground_truth):
     """!
-        @brief Computes the confusion matrix
+    @brief Computes the confusion matrix
 
-        @param [in] predicted: List of predictions made by the model with single value
-        @param [in] ground_truth: List of the ground-truths with single value
-        @param [out] accuracy: Accuracy score
+    @param [in] predicted: List of predictions made by the model with single value
+    @param [in] ground_truth: List of the ground-truths with single value
+    @param [out] accuracy: Accuracy score
     """
     # Plot confusion matrix
     labels = ["Non-Split", "QT", "HBT", "VBT", "HTT", "VTT"]
@@ -416,22 +389,22 @@ def compute_conf_matrix(predicted, ground_truth):
 
 def right_size(CUs):
     """!
-        @brief Verify if the CU as the right size: height as to be lower than width
+    @brief Verify if the CU as the right size: height as to be lower than width
 
-        @param [in] CUs: Feature maps
-        @param [out] Boolean value indicating the right size
+    @param [in] CUs: Feature maps
+    @param [out] Boolean value indicating the right size
     """
     
     return False if CUs.shape[-2] > CUs.shape[-1] else True
 
 def compute_top_k_accuracy(pred_vector, gt_vector, topk):
     """!
-        @brief Computes the top k accuracy score
+    @brief Computes the top k accuracy score
 
-        @param [in] predicted: List of predictions made by the model with probabilities for each split (pytorch tensor)
-        @param [in] ground_truth: List of the ground-truths with single value (pytorch tensor)
-        @param [in] topk: Number of best accuricies to choose
-        @param [out] accuracy: Accuracy score
+    @param [in] predicted: List of predictions made by the model with probabilities for each split (pytorch tensor)
+    @param [in] ground_truth: List of the ground-truths with single value (pytorch tensor)
+    @param [in] topk: Number of best accuricies to choose
+    @param [out] accuracy: Accuracy score
     """
     # Initialize variables
     n_entries = gt_vector.shape[0]
@@ -453,10 +426,10 @@ def compute_top_k_accuracy(pred_vector, gt_vector, topk):
 
 def compute_num_splits_sent(pred_lst):
     """!
-        @brief Computes the num of splits that would be sent to the encoder
+    @brief Computes the num of splits that would be sent to the encoder
 
-        @param [in] predicted: List of predictions made by the model with probabilities values
-        @param [out] res: Mean of number of splits sent
+    @param [in] predicted: List of predictions made by the model with probabilities values
+    @param [out] res: Mean of number of splits sent
     """
     # Initialize variables
     n_entries = len(pred_lst)
@@ -468,11 +441,11 @@ def compute_num_splits_sent(pred_lst):
 
 def compute_multi_thres_performance(pred_lst, gt_lst):
     """!
-        @brief Computes multi-threshold performance
+    @brief Computes multi-threshold performance
 
-        @param [in] predicted: List of predictions made by the model with integer value
-        @param [in] ground_truth: List of the ground-truths with single value 
-        @param [out] res: Accuracy score
+    @param [in] predicted: List of predictions made by the model with integer value
+    @param [in] ground_truth: List of the ground-truths with single value 
+    @param [out] res: Accuracy score
     """
     # Initialize variables
     n_entries = len(gt_lst)
@@ -487,12 +460,12 @@ def compute_multi_thres_performance(pred_lst, gt_lst):
 
 def compute_ROC_curve(pred_vector, gt_vector, pred_num):
     """!
-        @brief Computes ROC curve
+    @brief Computes ROC curve
 
-        @param [in] pred_vector: List of predictions vectors (one-hot encoded)
-        @param [in] gt_vector: List of the ground-truths vectors (one-hot encoded)
-        @param [in] pred_num: List of the predicitons with numbers corresponding to partitions
-        @return [out] figure: Figure with the ROC curve
+    @param [in] pred_vector: List of predictions vectors (one-hot encoded)
+    @param [in] gt_vector: List of the ground-truths vectors (one-hot encoded)
+    @param [in] pred_num: List of the predicitons with numbers corresponding to partitions
+    @return [out] figure: Figure with the ROC curve
     """
     # ROC Curves
     # Compute ROC curve and ROC area for each class
@@ -650,6 +623,7 @@ def print_parameters(model, optimizer):
     print()
     print()
 
+
 def save_model_parameters(dir_name, f_name, model):
     """!
     @brief Saves only the model parameters to a specific folder
@@ -666,9 +640,10 @@ def save_model_parameters(dir_name, f_name, model):
 
     except:
         pass
-
-    torch.save(model.state_dict(), dir_name + '/' + f_name + '.pth')
-    #print("Saved PyTorch Model State to", f_name + ".pth")
+    
+    file_path = dir_name + '/' + f_name + '.pth'
+    torch.save(model.state_dict(), file_path)
+    print("Saved PyTorch Model State to", file_path)
 
 
 def save_model(dir_name, f_name, model, optimizer, loss, acc):
@@ -699,9 +674,6 @@ def save_model(dir_name, f_name, model, optimizer, loss, acc):
         'acc': acc
     }, dir_name + '/' + f_name + '.tar')
 
-    # torch.save(model.state_dict(), dir_name+'/' + f_name + '.pth')
-
-    #print("Saved PyTorch Model State to", f_name + ".tar")
 
 def load_model_parameters_stg(model, path, stg, dev):
     """!
@@ -748,6 +720,7 @@ def load_model_parameters_stg(model, path, stg, dev):
         print("Loading model to CPU")
     
     model[stg-1].load_state_dict(m)
+
     # To avoid inconsistent inference results
     model[stg-1].eval()
 
@@ -1007,7 +980,6 @@ def load_model_stg_4_stg_5(model, path, dev):
 
     # Load Stage 1 and 2
     for k in range(len(files)):
-
         if '0' in files[k]:
             break
     
@@ -1026,7 +998,6 @@ def load_model_stg_4_stg_5(model, path, dev):
 
     # Load Stage 3
     for k in range(len(files)):
-
         if '1' in files[k]:
             break
     
@@ -1070,7 +1041,6 @@ def load_model_stg_4_stg_5(model, path, dev):
 
     # To avoid inconsistent inference results
     for m in model:
-
         m.eval()
 
     return model
@@ -1090,7 +1060,6 @@ def load_model_stg_5_stg_6(model, path, dev):
 
     # Load Stage 1 and 2
     for k in range(len(files)):
-
         if '0' in files[k]:
             break
     
@@ -1109,7 +1078,6 @@ def load_model_stg_5_stg_6(model, path, dev):
 
     # Load Stage 3
     for k in range(len(files)):
-
         if '1' in files[k]:
             break
     
@@ -1130,7 +1098,6 @@ def load_model_stg_5_stg_6(model, path, dev):
 
     # Load Stage 4
     for k in range(len(files)):
-
         if '2' in files[k]:
             break
     
@@ -1150,7 +1117,6 @@ def load_model_stg_5_stg_6(model, path, dev):
 
     # Load Stage 5
     for k in range(len(files)):
-
         if '3' in files[k]:
             break
     
@@ -1173,7 +1139,6 @@ def load_model_stg_5_stg_6(model, path, dev):
 
     # To avoid inconsistent inference results
     for m in model:
-
         m.eval()
 
     return model
@@ -1182,7 +1147,6 @@ def print_current_time():
     """!
     @brief Prints current time
     """
-
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     print("Current Time =", current_time)

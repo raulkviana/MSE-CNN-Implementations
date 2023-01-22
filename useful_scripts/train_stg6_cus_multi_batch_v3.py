@@ -82,7 +82,6 @@ SOFTWARE.
 
 
 # Imports
-from __future__ import print_function, division
 import torch
 from torch.utils.data import DataLoader
 from sklearn.metrics import classification_report
@@ -132,20 +131,6 @@ device = args.dev #"cuda" if torch.cuda.is_available() else "cpu"
 num_workers = args.workers
 n_mod = args.nmod
 
-# # Parameters
-# beta = 0.1#args.b
-# learning_rate = 0.0001#args.lr
-# loss_threshold = float("-inf")
-# QP = 32
-# batch_size = 32#args.batch  # No paper 32
-# iterations = 1#args.i  # No paper 500_000
-# decay = 0.01
-# iter_control = 35
-# decay_controler = round(iterations/iter_control)
-# device = 1#args.dev #"cuda" if torch.cuda.is_available() else "cpu"
-# num_workers = 1#args.workers
-# n_mod = "blah"
-
 print("Using {} device".format(device))
 
 # Tensorboard variable
@@ -167,8 +152,8 @@ cnt_test_test = 0
 
 def train(dataloader, model, loss_fn, optimizer, device):
     """!
-        If batch size equal to 1 it's a Stochastic Gradiente Descent (SGD), otherwise it's a mini-batch gradient descent. 
-        If the batch is the same as the number as the size of the dataset, it will be a Batch gradient Descent
+    If batch size equal to 1 it's a Stochastic Gradiente Descent (SGD), otherwise it's a mini-batch gradient descent. 
+    If the batch is the same as the number as the size of the dataset, it will be a Batch gradient Descent
     """
 
     # Initialize variable
@@ -180,7 +165,6 @@ def train(dataloader, model, loss_fn, optimizer, device):
     loss_RD_lst = []
     loss_CE_lst = []
     loss_lst = []
-
 
     model[0].eval()
     model[1].eval()
@@ -239,8 +223,6 @@ def train(dataloader, model, loss_fn, optimizer, device):
         loss.backward()
 
         # Register the losses
-        # writer.add_scalars("Losses/trainPerBatch", {"Loss": loss.item(), "Loss_CE": loss_CE.item(), 
-        #                   "Loss_RD": loss_RD.item()}, cnt_train)
         loss_lst.append(loss.item())
         loss_CE_lst.append(loss_CE.item())
         loss_RD_lst.append(loss_RD.item())
@@ -261,10 +243,6 @@ def train(dataloader, model, loss_fn, optimizer, device):
             f_name = "last_stg_"  # File name
             for k in range(len(model)):
                 train_model_utils.save_model_parameters("stg6_best_"+files_mod_name_stats, f_name + str(k), model[k])
-
-        # Delete later condition
-        # if batch_num == 10:
-        #   break
 
     # Get mean of losses
     mean_L_RD = np.array(loss_RD_lst).mean()
@@ -345,9 +323,6 @@ def test(dataloader, model, loss_fn, device, loss_name):
             loss, loss_CE, loss_RD = loss_fn(pred, Y, RDs)
 
             if loss_name == "train":
-                # Register losses
-                # writer.add_scalars("Losses/val"+loss_name+"PerBatch", {"Loss": loss.item(),
-                #                 "Loss_CE": loss_CE.item(), "Loss_RD": loss_RD.item()}, cnt_test_train)
                 loss_lst.append(loss.item())
                 loss_CE_lst.append(loss_CE.item())
                 loss_RD_lst.append(loss_RD.item())
@@ -355,8 +330,6 @@ def test(dataloader, model, loss_fn, device, loss_name):
             
             else:
                 # Register losses
-                # writer.add_scalars("Losses/val"+loss_name+"PerBatch", {"Loss": loss.item(),
-                #                 "Loss_CE": loss_CE.item(), "Loss_RD": loss_RD.item()}, cnt_test_test)
                 loss_lst.append(loss.item())
                 loss_CE_lst.append(loss_CE.item())
                 loss_RD_lst.append(loss_RD.item())
@@ -375,10 +348,6 @@ def test(dataloader, model, loss_fn, device, loss_name):
             # Print information about training
             if (i_batch+1) % 10 == 0:
                 utils.echo("Complete:{percentage:.0%}".format(percentage=i_batch / size))
-
-            # # Delete later condition
-            # if i_batch == 10:
-            #   break
     
     # Get mean of losses
     mean_L_RD = np.array(loss_RD_lst).mean()
@@ -468,7 +437,6 @@ def train_test(train_dataloader, test_dataloader, model, loss_fn, optimizer, dev
         # Confusion matrix: Training data
         writer.add_figure("confMatrix/train", conf_mat_train, t)
 
-
         # Compute metrics from validation
         f1_test, recall_test, precision_test, accuracy_test =\
              train_model_utils.model_simple_metrics(predictions_test, ground_truths_test)
@@ -557,13 +525,7 @@ def main():
     test_data = CustomDataset.CUDatasetStg6V5(files_path=l_path_test)
     batch_sampler_test = CustomDataset.SamplerStg6(test_data, batch_size)  # Batch Sampler
     dataloader_test = DataLoader(test_data, num_workers=num_workers, batch_sampler=batch_sampler_test)
-
-    # Compute CU proportions
-    # print("Computing CU proportions...")
-    # #pm = torch.reshape(torch.tensor([0.5, 0.5, 0.00001, 0.00001, 0.00001, 0.00001]), shape=(1, -1)).to(device) # torch.reshape(torch.tensor([0.5, 0.5, 0.00001, 0.00001, 0.00001, 0.00001]), shape=(1, -1))  #torch.reshape(torch.tensor([0.70, 0.01, 0.01, 0.01, 0.01, 0.01]), shape=(1, -1)) #torch.reshape(torch.tensor([0.0009995002498750624, 0.999000499750125, 0.0000000000000000001, 0.0000000000000000001, 0.0000000000000000001, 0.0000000000000000001]), shape=(1, -1)) # Delete later #torch.reshape(torch.tensor([0.5, 0.5, 0.00001, 0.00001, 0.00001, 0.00001]), shape=(1, -1)).to(device) #torch.reshape(torch.tensor([0.0001, 0.999, 0.00001, 0.00001, 0.00001, 0.00001]), shape=(1, -1)) # torch.reshape(torch.tensor([0.5, 0.5, 0.00001, 0.00001, 0.00001, 0.00001]), shape=(1, -1))  #torch.reshape(torch.tensor([0.70, 0.01, 0.01, 0.01, 0.01, 0.01]), shape=(1, -1)) #torch.reshape(torch.tensor([0.0009995002498750624, 0.999000499750125, 0.0000000000000000001, 0.0000000000000000001, 0.0000000000000000001, 0.0000000000000000001]), shape=(1, -1)) # Delete later
-    # pm, am = dataset_utils.compute_split_proportions_with_custom_data_multi_new(train_data, -2)
-    # pm = torch.reshape(torch.tensor(list(pm.values()))+0.000000000000001, shape=(1, -1)).to(device)
-
+    
     # Load Loss function
     loss_fn = MSECNN.LossFunctionMSE(beta=beta)
 

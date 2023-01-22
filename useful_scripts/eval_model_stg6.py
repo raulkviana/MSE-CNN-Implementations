@@ -66,14 +66,7 @@ SOFTWARE.
 - Last time modified is 2022-12-02 18:21:21.177352
 """
 
-
-"""
-    Evaluate model for a given dataset, returns a csv file with the results
-"""
-
-# Imports
-from __future__ import print_function, division
-import torch
+# Importsimport torch
 from torch.utils.data import DataLoader
 import argparse
 import datetime
@@ -105,8 +98,8 @@ args = parser.parse_args()
 # Parameters
 loss_threshold = float("-inf")
 qp = 32
-batch_size = args.batch # No paper 32
-device = args.dev #"cuda" if torch.cuda.is_available() else "cpu"
+batch_size = args.batch
+device = args.dev
 num_workers = args.workers
 rs = args.thres
 n_mod = args.nmod
@@ -114,17 +107,7 @@ n_mod = args.nmod
 # Get arguments
 args = parser.parse_args()
 
-# # Parameters
-# loss_threshold = float("-inf")
-# qp = 32
-# batch_size = 1  # No paper 32
-# device = 0 #"cuda" if torch.cuda.is_available() else "cpu"
-# num_workers = 2
-# thres = 0.45
-
-
 print("Using {} device".format(device))
-
 
 # Paths
 l_path_val = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/labels/valid/processed_labels/mod_with_real_CTU/complexity/test/mod_with_struct_change_no_dupl_stg_6_compl_v4"#/balanced_labels_downsamp"  # For evaluation 
@@ -268,21 +251,6 @@ def val_setup(dataloader_val, model, device):
     orig_size_w_lst = list(map(funct, orig_size_w_lst))
     POC_lst = list(map(funct, POC_lst))
 
-    # Print information about training
-    #print()
-    #print("Validation in validation data:")
-    #print(classification_report(ground_truths, predictions))
-    #print()
-
-    ## Compute metrics from validation
-    #f1_test, recall_test, precision_test, accuracy_test =\
-    #        train_model_utils.model_simple_metrics(predictions, ground_truths)
-
-    ## Compute confusion matrix
-    # conf_mat_test = train_model_utils.compute_conf_matrix(predictions, ground_truths)
-    ## Compute ROC curve
-    # ROC_test = train_model_utils.compute_ROC_curve(pred_vector, ground_truths_vector, predictions)
-    
     # Compute multi-thresholdin 
     pred_mult_thres = utils.multi_thresholding(rs, torch.tensor(pred_vector))
 
@@ -298,7 +266,6 @@ def val_setup(dataloader_val, model, device):
     lst_lst.append(pic_name_lst)
     file_name = n_mod+"_results_stg_6_thres_"+str(rs)
     fields_names = ["split_gt","split_pred", "x", "y", "height", "width", "POC", "pic_name"]
-    #fields_names = ["split_pred", "x", "y", "height", "width", "POC", "pic_name"]
     dataset_utils.lst2csv_v2(lst_lst, file_name, fields_names)
 
     end = time.time()
@@ -312,7 +279,6 @@ def val_setup(dataloader_val, model, device):
 
 
 def main():
-
     # Initialize Model
     stg1_2 = MSECNN.MseCnnStg_1_v2(device=device, QP=qp).to(device)
     stg3 = MSECNN.MseCnnStg_x_v2(device=device, QP=qp).to(device)
@@ -321,10 +287,9 @@ def main():
     stg6 = MSECNN.MseCnnStg_x_v2(device=device, QP=qp).to(device)
     model = (stg1_2, stg3, stg4, stg5, stg6)
 
-    ans = 'y'#str(input('Do you want to load any existing model? Y/N \n'))
+    ans = str(input('Do you want to load any existing model? Y/N \n'))
     if ans == 'Y' or ans == 'y':
        path = "coefficients/best_stg6_multi_batch_iter_100_batch_32_QP_32_beta_0.0_lr_0.0006_stg6_no_beta"
-       # path = input('What\'s the path of the files you want to load the model to?')
        model = train_model_utils.load_model_parameters_eval(model, path, device)
 
     # Prepare testing data, Dataset and Dataloader
@@ -332,16 +297,9 @@ def main():
     batch_sampler_val = CustomDataset.SamplerStg6(val_data, batch_size)  # Batch Sampler
     dataloader_val = DataLoader(val_data, num_workers=num_workers, batch_sampler=batch_sampler_val)
 
-    # Compute CU proportions
-    #print("Computing CU proportions...")
-    #pm = torch.reshape(torch.tensor([0.5, 0.5, 0.00001, 0.00001, 0.00001, 0.00001]), shape=(1, -1)).to(device) # torch.reshape(torch.tensor([0.5, 0.5, 0.00001, 0.00001, 0.00001, 0.00001]), shape=(1, -1))  #torch.reshape(torch.tensor([0.70, 0.01, 0.01, 0.01, 0.01, 0.01]), shape=(1, -1)) #torch.reshape(torch.tensor([0.0009995002498750624, 0.999000499750125, 0.0000000000000000001, 0.0000000000000000001, 0.0000000000000000001, 0.0000000000000000001]), shape=(1, -1)) # Delete later #torch.reshape(torch.tensor([0.5, 0.5, 0.00001, 0.00001, 0.00001, 0.00001]), shape=(1, -1)).to(device) #torch.reshape(torch.tensor([0.0001, 0.999, 0.00001, 0.00001, 0.00001, 0.00001]), shape=(1, -1)) # torch.reshape(torch.tensor([0.5, 0.5, 0.00001, 0.00001, 0.00001, 0.00001]), shape=(1, -1))  #torch.reshape(torch.tensor([0.70, 0.01, 0.01, 0.01, 0.01, 0.01]), shape=(1, -1)) #torch.reshape(torch.tensor([0.0009995002498750624, 0.999000499750125, 0.0000000000000000001, 0.0000000000000000001, 0.0000000000000000001, 0.0000000000000000001]), shape=(1, -1)) # Delete later
-    #pm, am = dataset_utils.compute_split_proportions_with_custom_data_multi_new(train_data, -2)
-    #pm = torch.reshape(torch.tensor(list(pm.values()))+0.000000000000001, shape=(1, -1)).to(device)
-
     # Train
     print("Starting training...")
     val_setup(dataloader_val, model, device)
-
 
 if __name__ == "__main__":
     main()

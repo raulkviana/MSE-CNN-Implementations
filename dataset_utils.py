@@ -167,6 +167,7 @@ import shutil
 import utils
 import torch
 from sklearn.model_selection import train_test_split
+import threading
 
 # ==============================================================
 # Classes
@@ -528,20 +529,6 @@ def build_entry(stg1=[], stg2=[], stg3=[], stg4=[], stg5=[], stg6=[]):
     # Save POC and pic name information
     POC = stg1["POC"]
     pic_name = stg1["pic_name"]
-
-    # # Remove not needed information
-    # del stg1["POC"]
-    # del stg1["pic_name"]
-    # del stg2["POC"]
-    # del stg2["pic_name"]
-    # del stg3["POC"]
-    # del stg3["pic_name"]
-    # del stg4["POC"]
-    # del stg4["pic_name"]
-    # del stg5["POC"]
-    # del stg5["pic_name"]
-    # del stg6["POC"]
-    # del stg6["pic_name"]
 
     # Build entry
     entry = {"POC": POC, "pic_name": pic_name, "stg_1": stg1, "stg_2": stg2, "stg_3": stg3, "stg_4": stg4, "stg_5": stg5,
@@ -1847,7 +1834,7 @@ def lst2csv(lst, name_of_file):
 
 def get_some_data_equaly(X, path_dir_l, classes, split_pos):
     """!
-        Gets X amount of data from files
+    Gets X amount of data from files
     """
     print("Active function: get_some_data")
 
@@ -1879,7 +1866,6 @@ def get_some_data_equaly(X, path_dir_l, classes, split_pos):
         print("Processing:", lbls_path)
 
         for c in range(classes):
-            #temp = [orig_list[k] for k in range(X) if orig_list[k][split_pos] == c]
             # Loop entries
             for k in range(X):
 
@@ -2218,9 +2204,7 @@ def file_stats_v2(path):
     # Print summary of all information
     summary_dic = {}
     for key in amount_dic.keys():
-
         for key2 in amount_dic[key].keys():
-
             try:
                 summary_dic[key2] = amount_dic[key][key2] + summary_dic[key2]
 
@@ -2235,30 +2219,15 @@ def file_stats_v2(path):
     print()
     print("In total the number of:")
     for key in summary_dic.keys():
-
         if key != "total":
             print("*", key, "is", summary_dic[key])
 
-
     print("And the total amount of CUs is:", summary_dic["total"])
-
-    # Save information into file
-    #ans = input("Do you wish to save the information into a file? (Y/N)\n")
-    #if ans == "Y" or ans == "y":
-    #    new_dict = list(summary_dic.copy().items())
-    #    new_dict.sort(reverse=False, key=lambda item: item[0])
-
-    #    with open('CU_Distribution_Summary.csv', 'w') as f:
-    #        writer = csv.writer(f)
-    #        for k, v in new_dict:
-    #            writer.writerow([k, v])
-
-    #    print("File saved in the", path,"directory with the name CU_Distribution_Summary.csv")
 
     return summary_dic["total"], amount_dic, summary_dic
 
 
-def compute_split_proportions(path, num_cus=float('inf'):
+def compute_split_proportions(path, num_cus=float('inf')):
     """!
     @brief Compute the proportion of each split in the dataset
 
@@ -2311,7 +2280,7 @@ def compute_split_proportions(path, num_cus=float('inf'):
 
     return pm, am
 
-def compute_split_proportions_with_custom_data(custom_dataset, stage, num_cus=float('inf'):
+def compute_split_proportions_with_custom_data(custom_dataset, stage, num_cus=float('inf')):
     """!
     @brief Compute the proportion of each split in the dataset (Custom dataset classs)
 
@@ -2357,7 +2326,7 @@ def compute_split_proportions_with_custom_data(custom_dataset, stage, num_cus=fl
 
     return pm, am
 
-def compute_split_proportions_with_custom_data_multi(custom_dataset, split_pos_in_struct, num_cus=float('inf'):
+def compute_split_proportions_with_custom_data_multi(custom_dataset, split_pos_in_struct, num_cus=float('inf')):
     """!
     @brief Compute the proportion of each split in the dataset (Custom dataset classs)
 
@@ -2406,7 +2375,7 @@ def compute_split_proportions_with_custom_data_multi(custom_dataset, split_pos_i
     return pm, am
 
     
-def compute_split_proportions_with_path_multi_new(path, split_pos_in_struct, num_cus=float('inf'):
+def compute_split_proportions_with_path_multi_new(path, split_pos_in_struct, num_cus=float('inf')):
     """!
     @brief Compute the proportion of each split in the dataset (Custom dataset classs)
 
@@ -2459,7 +2428,7 @@ def compute_split_proportions_with_path_multi_new(path, split_pos_in_struct, num
     return pm, am
 
 
-def compute_split_proportions_with_custom_data_multi_new(custom_dataset, split_pos_in_struct, num_cus=float('inf'):
+def compute_split_proportions_with_custom_data_multi_new(custom_dataset, split_pos_in_struct, num_cus=float('inf')):
     """!
     @brief Compute the proportion of each split in the dataset (Custom dataset classs)
 
@@ -2502,7 +2471,7 @@ def compute_split_proportions_with_custom_data_multi_new(custom_dataset, split_p
     return pm, am
 
 
-def compute_split_proportions_labels(path, num_cus=float('inf'):
+def compute_split_proportions_labels(path, num_cus=float('inf')):
     """!
     @brief Compute the proportion of each split in the dataset. This version receives a path with labels already processed
 
@@ -2603,7 +2572,6 @@ def balance_dataset(dir_path, stg, n_classes=6):
         idx_classes = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0}
 
 
-#@jit(nopython=True)
 def balance_dataset_JF(dir_path, n_classes=6):
     """!
     @brief Balance dataset so that the number of the classes are the same. Uses upsampling. Follows same strategy as
@@ -2654,12 +2622,12 @@ def balance_dataset_JF(dir_path, n_classes=6):
         os.chdir(path)  # Change to the folder to save the data
         lst2file(new_labels, f[:-4] + folder_name)
         os.chdir(dir_path)  # Change back to the previous dir
-        # Reset variable
+
+        # Reset variables
         new_labels = []
         lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
 
 
-#@jit(nopython=True)
 def balance_dataset_down(dir_path, n_classes=6):
     """!
     @brief Balance dataset so that the number of the classes are the same. Uses downsampling. Different strategy that
@@ -2731,7 +2699,6 @@ def balance_dataset_down(dir_path, n_classes=6):
         lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
 
 
-#@jit(nopython=True)
 def balance_dataset_down_v2(dir_path):
     """!
     @brief Balance dataset so that the number of the classes are the same. Uses downsampling. Different strategy that
@@ -2861,6 +2828,7 @@ def balance_dataset_down_v3(dir_path):
         new_labels = []
         lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
 
+
 def balance_dataset_down_v4(dir_path):
     """!
     @brief Balance dataset so that the number of the classes are the same. Uses downsampling. Different strategy that
@@ -2892,29 +2860,23 @@ def balance_dataset_down_v4(dir_path):
     for f in files:
         # Obtain the labels
         labels = file2lst(f[:-4]) # List of dictionaries
-
         # Loop labels
         for k in range(len(labels)):
-
             lst_classes[labels[k][-3]].append(labels[k]) # Add class
 
         # Remove empty lists
         rm_lst = []
         for key in lst_classes.keys():
-
             if len(lst_classes[key]) == 0:
-
                 rm_lst.append(key)
 
         for key in rm_lst:
-            
             del lst_classes[key] # Remove
 
         # Get the size of the smallest list"
         min_size = min(list(map(lambda x: len(x), lst_classes.values())))     
 
         for key in lst_classes.keys():
-
             new_labels.extend(lst_classes[key][:min_size])
 
         # Save label
@@ -2926,7 +2888,6 @@ def balance_dataset_down_v4(dir_path):
         lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
 
 
-#@jit(nopython=True)
 def balance_dataset_up(dir_path, n_classes=6):
     """!
     @brief Balance dataset so that the number of the classes are the same. Uses upsampling. Different strategy that
@@ -2972,15 +2933,11 @@ def balance_dataset_up(dir_path, n_classes=6):
         # Remove empty lists
         rm_lst = []
         for key in lst_classes.keys():
-
             if len(lst_classes[key]) == 0:
-
                 rm_lst.append(key)
 
         for key in rm_lst:
-            
             del lst_classes[key] # Remove
-
 
         # Get the size of the smallest list"
         max_size = max(list(map(lambda x: len(x), lst_classes.values())))     
@@ -3011,7 +2968,6 @@ def balance_dataset_up(dir_path, n_classes=6):
         lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
 
 
-#@jit(nopython=True)
 def balance_dataset_up_v2(dir_path):
     """!
     @brief Balance dataset so that the number of the classes are the same. Uses upsampling. Different strategy that
@@ -3215,9 +3171,8 @@ def gen_dataset_types(d_path, valid_percent):
 
 
 def change_struct_64x64_eval(path_dir_l):
-
-    """
-        This version is meant to be used in to process the stage 1 and 2 data
+    """!
+    This version is meant to be used in to process the stage 1 and 2 data
     """
     print("Active function: change_struct_64x64_eval")
     # Create new dir to save data
@@ -3329,8 +3284,7 @@ def change_struct_64x64_eval(path_dir_l):
 
 
 def change_struct_32x32_eval(path_dir_l):
-
-    """
+    """!
         This version is meant to be used in to process the stage 3 data
     """
     print("Active function: change_struct_32x32_eval")
@@ -3453,9 +3407,8 @@ def change_struct_32x32_eval(path_dir_l):
         lst2file(mod_list, new_path)
 
 def change_struct_64x64(path_dir_l):
-
-    """
-        This version is meant to be used in to process the stage 1 and 2 data
+    """!
+    This version is meant to be used in to process the stage 1 and 2 data
     """
     print("Active function: change_struct_64x64")
 
@@ -3532,7 +3485,7 @@ def change_struct_64x64(path_dir_l):
 
 def change_struct_64x64_no_dupl_v3(path_dir_l):
     """!
-        This version is like the change_struct_64x64_no_dupl_v2, with threads
+    This version is like the change_struct_64x64_no_dupl_v2, with threads
     """
     print("Active function: change_struct_64x64_no_dupl_v3")
 
@@ -3547,13 +3500,11 @@ def change_struct_64x64_no_dupl_v3(path_dir_l):
         shutil.rmtree(new_dir)
         # Recreate it
         os.mkdir(new_dir)
-    #    pass
 
     # List with columns
     columns = ["POC", "pic_name", "cu_pos_x", "cu_pos_y", "cu_size_w", "cu_size_h", "split"]
 
     def right_rows(row):
-        
         if type(row["stg_2"]) != list:
             return True
         else:
@@ -3576,7 +3527,6 @@ def change_struct_64x64_no_dupl_v3(path_dir_l):
 
 
 def mod_64x64_threads(f, path_dir_l, right_rows, columns, new_dir):
-    
     # Make labels path
     lbls_path = os.path.join(path_dir_l, f)
 
@@ -3586,12 +3536,9 @@ def mod_64x64_threads(f, path_dir_l, right_rows, columns, new_dir):
     # Read file
     orig_list = file2lst(lbls_path[:-4])
     data_size = len(orig_list)
-    #orig_frame = pd.DataFrame(orig_list)
     bool_list = list(map(right_rows, orig_list))
     idx_list = list(np.where(bool_list)[0])
     orig_list = list(map(orig_list.__getitem__, idx_list))
-
-    #(type(orig_frame["stg_3"]) != list) & (type(orig_frame["stg_4"]) == list)
 
     # Dataframe initialization
     pd_full = pd.DataFrame(columns=columns)
@@ -3676,7 +3623,6 @@ def change_struct_64x64_no_dupl_v2(path_dir_l):
         shutil.rmtree(new_dir)
         # Recreate it
         os.mkdir(new_dir)
-    #    pass
 
     # List with columns
     columns = ["POC", "pic_name", "cu_pos_x", "cu_pos_y", "cu_size_w", "cu_size_h", "split"]
@@ -3701,12 +3647,9 @@ def change_struct_64x64_no_dupl_v2(path_dir_l):
         # Read file
         orig_list = file2lst(lbls_path[:-4])
         data_size = len(orig_list)
-        #orig_frame = pd.DataFrame(orig_list)
         bool_list = list(map(right_rows, orig_list))
         idx_list = list(np.where(bool_list)[0])
         orig_list = list(map(orig_list.__getitem__, idx_list))
-
-        #(type(orig_frame["stg_3"]) != list) & (type(orig_frame["stg_4"]) == list)
 
         # Dataframe initialization
         pd_full = pd.DataFrame(columns=columns)
@@ -3778,7 +3721,7 @@ def change_struct_64x64_no_dupl_v2(path_dir_l):
 
 def change_struct_32x32(path_dir_l):
     """!
-        This version is meant to be used in to process the stage 3 data
+    This version is meant to be used in to process the stage 3 data
     """
     print("Active function: change_struct_32x32")
 
@@ -3870,7 +3813,7 @@ def change_struct_32x32(path_dir_l):
 
 def change_struct_32x32_no_dupl(path_dir_l):
     """!
-        This version is like the change_struct_32x32, but it removes possible duplicated rows.
+    This version is like the change_struct_32x32, but it removes possible duplicated rows.
     """
     print("Active function: change_struct_32x32_no_dupl")
 
@@ -3883,7 +3826,6 @@ def change_struct_32x32_no_dupl(path_dir_l):
         shutil.rmtree(new_dir)
         # Recreate it
         os.mkdir(new_dir)
-    #    pass
 
     # List with columns
     columns = ["POC", "pic_name", "cu_pos_x", "cu_pos_y", "cu_size_w", "cu_size_h", "split"]
@@ -3984,7 +3926,7 @@ def change_struct_32x32_no_dupl(path_dir_l):
 
 def change_struct_32x32_no_dupl_v2(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is smarter.
+    This version is like the change_struct_32x32_no_dupl_v2, but it is smarter.
     """
     print("Active function: change_struct_32x32_no_dupl_v2")
 
@@ -3997,7 +3939,6 @@ def change_struct_32x32_no_dupl_v2(path_dir_l):
         shutil.rmtree(new_dir)
         # Recreate it
         os.mkdir(new_dir)
-    #    pass
 
     # List with columns
     columns = ["POC", "pic_name", "cu_pos_x", "cu_pos_y", "cu_size_w", "cu_size_h", "split"]
@@ -4022,12 +3963,9 @@ def change_struct_32x32_no_dupl_v2(path_dir_l):
         # Read file
         orig_list = file2lst(lbls_path[:-4])
         data_size = len(orig_list)
-        #orig_frame = pd.DataFrame(orig_list)
         bool_list = list(map(right_rows, orig_list))
         idx_list = list(np.where(bool_list)[0])
         orig_list = list(map(orig_list.__getitem__, idx_list))
-
-        #(type(orig_frame["stg_3"]) != list) & (type(orig_frame["stg_4"]) == list)
 
         # Dataframe initialization
         pd_full = pd.DataFrame(columns=columns)
@@ -4107,7 +4045,7 @@ def change_struct_32x32_no_dupl_v2(path_dir_l):
 
 def change_struct_32x32_no_dupl_v3(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but uses threads.
+    This version is like the change_struct_32x32_no_dupl_v2, but uses threads.
     """
     # Initial steps
     print("Active function: change_struct_32x32_no_dupl_v3")
@@ -4150,102 +4088,101 @@ def change_struct_32x32_no_dupl_v3(path_dir_l):
 
 
 def mod_32x32_threads(f, path_dir_l, right_rows, columns, new_dir):
-    
-        # Make labels path
-        lbls_path = os.path.join(path_dir_l, f)
+    # Make labels path
+    lbls_path = os.path.join(path_dir_l, f)
 
-        # List to save entries
-        mod_list = []
+    # List to save entries
+    mod_list = []
 
-        # Read file
-        orig_list = file2lst(lbls_path[:-4])
-        data_size = len(orig_list)
-        #orig_frame = pd.DataFrame(orig_list)
-        bool_list = list(map(right_rows, orig_list))
-        idx_list = list(np.where(bool_list)[0])
-        orig_list = list(map(orig_list.__getitem__, idx_list))
+    # Read file
+    orig_list = file2lst(lbls_path[:-4])
+    data_size = len(orig_list)
+    #orig_frame = pd.DataFrame(orig_list)
+    bool_list = list(map(right_rows, orig_list))
+    idx_list = list(np.where(bool_list)[0])
+    orig_list = list(map(orig_list.__getitem__, idx_list))
 
-        #(type(orig_frame["stg_3"]) != list) & (type(orig_frame["stg_4"]) == list)
+    #(type(orig_frame["stg_3"]) != list) & (type(orig_frame["stg_4"]) == list)
 
-        # Dataframe initialization
-        pd_full = pd.DataFrame(columns=columns)
+    # Dataframe initialization
+    pd_full = pd.DataFrame(columns=columns)
 
-        # Verbose
-        print("Processing:", lbls_path)
+    # Verbose
+    print("Processing:", lbls_path)
 
-        # Loop entries
-        for k in range(len(orig_list)):
-            
-            # New entries
-            CTU = orig_list[k]["stg_1"]
-            CU_stg2 = orig_list[k]["stg_2"]
-            CU_stg3 = orig_list[k]["stg_3"]
-            
-            # Verify size of the CU and if the variable structure is of what type
-            if type(CU_stg3) == list or CU_stg3["cu_size"]["width"] != 32 or CU_stg3["cu_size"]["height"] != 32:
-                continue
+    # Loop entries
+    for k in range(len(orig_list)):
+        
+        # New entries
+        CTU = orig_list[k]["stg_1"]
+        CU_stg2 = orig_list[k]["stg_2"]
+        CU_stg3 = orig_list[k]["stg_3"]
+        
+        # Verify size of the CU and if the variable structure is of what type
+        if type(CU_stg3) == list or CU_stg3["cu_size"]["width"] != 32 or CU_stg3["cu_size"]["height"] != 32:
+            continue
 
-            # Verify if cu wasn't added already
-            if  len(pd_full[(pd_full["POC"] ==  CU_stg3["POC"]) & (pd_full["pic_name"] == CU_stg3["pic_name"]) & \
-                (pd_full["cu_size_w"] == CU_stg3["cu_size"]["width"]) & \
-                (pd_full["cu_size_h"] == CU_stg3["cu_size"]["height"]) & \
-                (pd_full["cu_pos_y"] == CU_stg3["cu_pos"]["CU_loc_top"]) &\
-                (pd_full["cu_pos_x"] == CU_stg3["cu_pos"]["CU_loc_left"])]) == 0 : 
-                    
-                cu_pos_stg2 = torch.reshape(torch.tensor([CU_stg2["cu_pos"]["CU_loc_top"] - CTU["cu_pos"]["CU_loc_top"],
-                                    CU_stg2["cu_pos"]["CU_loc_left"] - CTU["cu_pos"]["CU_loc_left"]]), (1,-1))
-                cu_pos_stg3 = torch.reshape(torch.tensor([CU_stg3["cu_pos"]["CU_loc_top"] - CU_stg2["cu_pos"]["CU_loc_top"],
-                                    CU_stg3["cu_pos"]["CU_loc_left"] - CU_stg2["cu_pos"]["CU_loc_left"]]), (1,-1))
-                cu_size_stg2 = torch.reshape(torch.tensor([CU_stg2["cu_size"]["height"], CU_stg2["cu_size"]["width"]]), (1,-1))
-                cu_size_stg3 = torch.reshape(torch.tensor([CU_stg3["cu_size"]["height"],CU_stg3["cu_size"]["width"]]), (1,-1))
-                RD0 = CU_stg3['RD0']
-                RD1 = CU_stg3['RD1']
-                RD2 = CU_stg3['RD2']
-                RD3 = CU_stg3['RD3']
-                RD4 = CU_stg3['RD4']
-                RD5 = CU_stg3['RD5']
-                RD_tens = torch.reshape(torch.tensor([[RD0, RD1, RD2, RD3, RD4, RD5]]), (1, -1))
-                split_stg2 = CU_stg2["split"]
-                split_stg3 = CU_stg3["split"]
-                real_CTU = CTU["real_CTU"]
+        # Verify if cu wasn't added already
+        if  len(pd_full[(pd_full["POC"] ==  CU_stg3["POC"]) & (pd_full["pic_name"] == CU_stg3["pic_name"]) & \
+            (pd_full["cu_size_w"] == CU_stg3["cu_size"]["width"]) & \
+            (pd_full["cu_size_h"] == CU_stg3["cu_size"]["height"]) & \
+            (pd_full["cu_pos_y"] == CU_stg3["cu_pos"]["CU_loc_top"]) &\
+            (pd_full["cu_pos_x"] == CU_stg3["cu_pos"]["CU_loc_left"])]) == 0 : 
+                
+            cu_pos_stg2 = torch.reshape(torch.tensor([CU_stg2["cu_pos"]["CU_loc_top"] - CTU["cu_pos"]["CU_loc_top"],
+                                CU_stg2["cu_pos"]["CU_loc_left"] - CTU["cu_pos"]["CU_loc_left"]]), (1,-1))
+            cu_pos_stg3 = torch.reshape(torch.tensor([CU_stg3["cu_pos"]["CU_loc_top"] - CU_stg2["cu_pos"]["CU_loc_top"],
+                                CU_stg3["cu_pos"]["CU_loc_left"] - CU_stg2["cu_pos"]["CU_loc_left"]]), (1,-1))
+            cu_size_stg2 = torch.reshape(torch.tensor([CU_stg2["cu_size"]["height"], CU_stg2["cu_size"]["width"]]), (1,-1))
+            cu_size_stg3 = torch.reshape(torch.tensor([CU_stg3["cu_size"]["height"],CU_stg3["cu_size"]["width"]]), (1,-1))
+            RD0 = CU_stg3['RD0']
+            RD1 = CU_stg3['RD1']
+            RD2 = CU_stg3['RD2']
+            RD3 = CU_stg3['RD3']
+            RD4 = CU_stg3['RD4']
+            RD5 = CU_stg3['RD5']
+            RD_tens = torch.reshape(torch.tensor([[RD0, RD1, RD2, RD3, RD4, RD5]]), (1, -1))
+            split_stg2 = CU_stg2["split"]
+            split_stg3 = CU_stg3["split"]
+            real_CTU = CTU["real_CTU"]
 
-                # Add new entries
-                orig_list[k]["RD"] = RD_tens
-                orig_list[k]["cu_pos_stg2"] = cu_pos_stg2
-                orig_list[k]["cu_pos_stg3"] = cu_pos_stg3
-                orig_list[k]["cu_size_stg2"] = cu_size_stg2
-                orig_list[k]["cu_size_stg3"] = cu_size_stg3
-                orig_list[k]["split_stg2"] = split_stg2
-                orig_list[k]["split"] = split_stg3
-                orig_list[k]["real_CTU"] = real_CTU
-                orig_list[k]["CTU"] = CTU
+            # Add new entries
+            orig_list[k]["RD"] = RD_tens
+            orig_list[k]["cu_pos_stg2"] = cu_pos_stg2
+            orig_list[k]["cu_pos_stg3"] = cu_pos_stg3
+            orig_list[k]["cu_size_stg2"] = cu_size_stg2
+            orig_list[k]["cu_size_stg3"] = cu_size_stg3
+            orig_list[k]["split_stg2"] = split_stg2
+            orig_list[k]["split"] = split_stg3
+            orig_list[k]["real_CTU"] = real_CTU
+            orig_list[k]["CTU"] = CTU
 
-                # Update dataframe
-                pd_row = pd.DataFrame({"POC": [CU_stg3["POC"]], "pic_name": CU_stg3["pic_name"], "cu_pos_x": CU_stg3["cu_pos"]["CU_loc_left"],\
-                         "cu_pos_y": CU_stg3["cu_pos"]["CU_loc_top"], "cu_size_h": CU_stg3["cu_size"]["height"],\
-                         "cu_size_w": CU_stg3["cu_size"]["width"], "split": CU_stg3["split"]})
-                pd_full = pd.concat([pd_full, pd_row], ignore_index=True, axis=0)
+            # Update dataframe
+            pd_row = pd.DataFrame({"POC": [CU_stg3["POC"]], "pic_name": CU_stg3["pic_name"], "cu_pos_x": CU_stg3["cu_pos"]["CU_loc_left"],\
+                        "cu_pos_y": CU_stg3["cu_pos"]["CU_loc_top"], "cu_size_h": CU_stg3["cu_size"]["height"],\
+                        "cu_size_w": CU_stg3["cu_size"]["width"], "split": CU_stg3["split"]})
+            pd_full = pd.concat([pd_full, pd_row], ignore_index=True, axis=0)
 
-                # Delete unnecessary entries
-                for k2 in range(6):
-                    del orig_list[k]["stg_"+str(k2+1)]
+            # Delete unnecessary entries
+            for k2 in range(6):
+                del orig_list[k]["stg_"+str(k2+1)]
 
-                del orig_list[k]["POC"]
-                del orig_list[k]["pic_name"]
+            del orig_list[k]["POC"]
+            del orig_list[k]["pic_name"]
 
-                # Save entry in final list
-                mod_list.append(orig_list[k])
+            # Save entry in final list
+            mod_list.append(orig_list[k])
 
-                utils.echo("Complete: {per:.0%}".format(per=k/data_size))
+            utils.echo("Complete: {per:.0%}".format(per=k/data_size))
 
-        # Save list to file with the same name
-        new_path = os.path.join(new_dir, f[:-4]+"mod_with_struct")
-        lst2file(mod_list, new_path)
+    # Save list to file with the same name
+    new_path = os.path.join(new_dir, f[:-4]+"mod_with_struct")
+    lst2file(mod_list, new_path)
 
 
 def change_struct_32x32_no_dupl_v2_test(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but is for verifying if everything is right
+    This version is like the change_struct_32x32_no_dupl_v2, but is for verifying if everything is right
     """
     print("Active function: change_struct_32x32_no_dupl_v2_test")
 
@@ -4258,7 +4195,6 @@ def change_struct_32x32_no_dupl_v2_test(path_dir_l):
         shutil.rmtree(new_dir)
         # Recreate it
         os.mkdir(new_dir)
-    #    pass
 
     # List with columns
     columns = ["POC", "pic_name", "cu_pos_x", "cu_pos_y", "cu_size_w", "cu_size_h", "split"]
@@ -4350,7 +4286,7 @@ def change_struct_32x32_no_dupl_v2_test(path_dir_l):
 
 def change_struct_16x16_no_dupl_v2(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 16x16 CUs.
+    This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 16x16 CUs.
     """
     # Initial steps
     print("Active function: change_struct_16x16_no_dupl_v2")
@@ -4479,10 +4415,17 @@ def change_struct_16x16_no_dupl_v2(path_dir_l):
 
     print("Time Elapsed:", time.time() - t0)
 
+def list2tuple(l):
+    return tuple(list2tuple(x) for x in l) if type(l) is list else l
+
+
+def tuple2list(l):
+    return list(tuple2list(x) for x in l) if type(l) is tuple else l
+
 
 def change_struct_8x8_no_dupl_v2(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 16x16 CUs.
+    This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 16x16 CUs.
     """
     # Initial steps
     print("Active function: change_struct_8x8_no_dupl_v2")
@@ -4534,7 +4477,6 @@ def change_struct_8x8_no_dupl_v2(path_dir_l):
 
         # Loop entries
         for k in range(len(orig_list)):
-            
             # New entries
             CTU = orig_list[k]["stg_1"]
             CU_stg2 = orig_list[k]["stg_2"]
@@ -4622,17 +4564,11 @@ def change_struct_8x8_no_dupl_v2(path_dir_l):
 
 def change_struct_no_dupl_stg6_v4(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 6
+    This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 6
     """
     # Initial steps
     print("Active function: change_struct_no_dupl_stg6_v4")
     t0 = time.time()
-
-    def list2tuple(l):
-        return tuple(list2tuple(x) for x in l) if type(l) is list else l
-
-    def tuple2list(l):
-        return list(tuple2list(x) for x in l) if type(l) is tuple else l
 
     # Create new dir to save data
     new_dir = path_dir_l + "/mod_with_struct_change_no_dupl_stg6_v4/"
@@ -4687,19 +4623,14 @@ def change_struct_no_dupl_stg6_v4(path_dir_l):
 
     print("Time Elapsed:", time.time() - t0)
 
+
 def change_struct_no_dupl_stg5_v4(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 5
+    This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 5
     """
     # Initial steps
     print("Active function: change_struct_no_dupl_stg5_v4")
     t0 = time.time()
-
-    def list2tuple(l):
-        return tuple(list2tuple(x) for x in l) if type(l) is list else l
-
-    def tuple2list(l):
-        return list(tuple2list(x) for x in l) if type(l) is tuple else l
 
     # Create new dir to save data
     new_dir = path_dir_l + "/mod_with_struct_change_no_dupl_stg5_v4/"
@@ -4751,19 +4682,14 @@ def change_struct_no_dupl_stg5_v4(path_dir_l):
 
     print("Time Elapsed:", time.time() - t0)
 
+
 def change_struct_no_dupl_stg2_v4(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 2
+    This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 2
     """
     # Initial steps
     print("Active function: change_struct_no_dupl_stg2_v4")
     t0 = time.time()
-
-    def list2tuple(l):
-        return tuple(list2tuple(x) for x in l) if type(l) is list else l
-
-    def tuple2list(l):
-        return list(tuple2list(x) for x in l) if type(l) is tuple else l
 
     # Create new dir to save data
     new_dir = path_dir_l + "/mod_with_struct_change_no_dupl_stg2_v4/"
@@ -4809,17 +4735,11 @@ def change_struct_no_dupl_stg2_v4(path_dir_l):
 
 def change_struct_no_dupl_stg4_v4(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 4
+    This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 4
     """
     # Initial steps
     print("Active function: change_struct_no_dupl_stg4_v4")
     t0 = time.time()
-
-    def list2tuple(l):
-        return tuple(list2tuple(x) for x in l) if type(l) is list else l
-
-    def tuple2list(l):
-        return list(tuple2list(x) for x in l) if type(l) is tuple else l
 
     # Create new dir to save data
     new_dir = path_dir_l + "/mod_with_struct_change_no_dupl_stg4_v4/"
@@ -4871,17 +4791,11 @@ def change_struct_no_dupl_stg4_v4(path_dir_l):
 
 def change_struct_no_dupl_stg3_v4(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 3
+    This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 3
     """
     # Initial steps
     print("Active function: change_struct_no_dupl_stg3_v4")
     t0 = time.time()
-
-    def list2tuple(l):
-        return tuple(list2tuple(x) for x in l) if type(l) is list else l
-
-    def tuple2list(l):
-        return list(tuple2list(x) for x in l) if type(l) is tuple else l
 
     # Create new dir to save data
     new_dir = path_dir_l + "/mod_with_struct_change_no_dupl_stg3_v4/"
@@ -4930,7 +4844,7 @@ def change_struct_no_dupl_stg3_v4(path_dir_l):
 
 def change_struct_32x16_no_dupl_v2(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 32x16 CUs.
+    This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 32x16 CUs.
     """
     # Initial steps
     print("Active function: change_struct_32x16_no_dupl_v2")
@@ -5067,7 +4981,7 @@ def change_struct_32x16_no_dupl_v2(path_dir_l):
 
 def change_struct_32x8_no_dupl_v2(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 32x8 CUs.
+    This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 32x8 CUs.
     """
     # Initial steps
     print("Active function: change_struct_32x8_no_dupl_v2")
@@ -5113,7 +5027,6 @@ def change_struct_32x8_no_dupl_v2(path_dir_l):
         # Read file
         orig_list = file2lst(lbls_path[:-4])
         data_size = len(orig_list)
-        #orig_frame = pd.DataFrame(orig_list)
         bool_list = list(map(right_rows, orig_list))
         idx_list = list(np.where(bool_list)[0])
         orig_list = list(map(orig_list.__getitem__, idx_list))
@@ -5211,7 +5124,7 @@ def change_struct_32x8_no_dupl_v2(path_dir_l):
 
 def change_struct_16x8_no_dupl_v2(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 16x8 CUs.
+    This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 16x8 CUs.
     """
     # Initial steps
     print("Active function: change_struct_16x8_no_dupl_v2")
@@ -5257,7 +5170,6 @@ def change_struct_16x8_no_dupl_v2(path_dir_l):
         # Read file
         orig_list = file2lst(lbls_path[:-4])
         data_size = len(orig_list)
-        #orig_frame = pd.DataFrame(orig_list)
         bool_list = list(map(right_rows, orig_list))
         idx_list = list(np.where(bool_list)[0])
         orig_list = list(map(orig_list.__getitem__, idx_list))
@@ -5356,7 +5268,7 @@ def change_struct_16x8_no_dupl_v2(path_dir_l):
 
 def change_struct_8x4_no_dupl_v2(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 8x4 CUs.
+    This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 8x4 CUs.
     """
     # Initial steps
     print("Active function: change_struct_8x4_no_dupl_v2")
@@ -5402,7 +5314,6 @@ def change_struct_8x4_no_dupl_v2(path_dir_l):
         # Read file
         orig_list = file2lst(lbls_path[:-4])
         data_size = len(orig_list)
-        #orig_frame = pd.DataFrame(orig_list)
         bool_list = list(map(right_rows, orig_list))
         idx_list = list(np.where(bool_list)[0])
         orig_list = list(map(orig_list.__getitem__, idx_list))
@@ -5509,7 +5420,7 @@ def change_struct_8x4_no_dupl_v2(path_dir_l):
 
 def change_struct_32x4_no_dupl_v2(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 32x4 CUs.
+    This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 32x4 CUs.
     """
     # Initial steps
     print("Active function: change_struct_32x4_no_dupl_v2")
@@ -5555,7 +5466,6 @@ def change_struct_32x4_no_dupl_v2(path_dir_l):
         # Read file
         orig_list = file2lst(lbls_path[:-4])
         data_size = len(orig_list)
-        #orig_frame = pd.DataFrame(orig_list)
         bool_list = list(map(right_rows, orig_list))
         idx_list = list(np.where(bool_list)[0])
         orig_list = list(map(orig_list.__getitem__, idx_list))
@@ -5659,9 +5569,10 @@ def change_struct_32x4_no_dupl_v2(path_dir_l):
 
     print("Time Elapsed:", time.time() - t0)
 
+
 def change_struct_16x4_no_dupl_v2(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 8x4 CUs.
+    This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 8x4 CUs.
     """
     # Initial steps
     print("Active function: change_struct_16x4_no_dupl_v2")
@@ -5707,7 +5618,6 @@ def change_struct_16x4_no_dupl_v2(path_dir_l):
         # Read file
         orig_list = file2lst(lbls_path[:-4])
         data_size = len(orig_list)
-        #orig_frame = pd.DataFrame(orig_list)
         bool_list = list(map(right_rows, orig_list))
         idx_list = list(np.where(bool_list)[0])
         orig_list = list(map(orig_list.__getitem__, idx_list))
@@ -5812,10 +5722,9 @@ def change_struct_16x4_no_dupl_v2(path_dir_l):
     print("Time Elapsed:", time.time() - t0)
 
 
-
 def change_struct_16x16_no_dupl_v3(path_dir_l):
     """!
-        This version is like the change_struct_16x16_no_dupl_v2, but uses threads.
+    This version is like the change_struct_16x16_no_dupl_v2, but uses threads.
     """
     # Initial Steps
     print("Active function: change_struct_16x16_no_dupl_v3")
@@ -5830,7 +5739,6 @@ def change_struct_16x16_no_dupl_v3(path_dir_l):
         shutil.rmtree(new_dir)
         # Recreate it
         os.mkdir(new_dir)
-    #    pass
 
     # List with columns
     columns = ["POC", "pic_name", "cu_pos_x", "cu_pos_y", "cu_size_w", "cu_size_h", "split"]
@@ -5857,6 +5765,7 @@ def change_struct_16x16_no_dupl_v3(path_dir_l):
 
     print("Time Elapsed: ", time.time()-t0)
 
+
 def mod_16x16_threads(f, path_dir_l, right_rows, columns, new_dir):
 
     # Make labels path
@@ -5868,7 +5777,6 @@ def mod_16x16_threads(f, path_dir_l, right_rows, columns, new_dir):
     # Read file
     orig_list = file2lst(lbls_path[:-4])
     data_size = len(orig_list)
-    #orig_frame = pd.DataFrame(orig_list)
     bool_list = list(map(right_rows, orig_list))
     idx_list = list(np.where(bool_list)[0])
     orig_list = list(map(orig_list.__getitem__, idx_list))
@@ -5956,9 +5864,10 @@ def mod_16x16_threads(f, path_dir_l, right_rows, columns, new_dir):
     new_path = os.path.join(new_dir, f[:-4]+"mod_with_struct")
     lst2file(mod_list, new_path)
 
+
 def change_struct_16x16(path_dir_l):
     """!
-        This version is meant to be used in to process the stage 4 data
+    This version is meant to be used in to process the stage 4 data
     """
     print("Active function: change_struct_16x16")
 
@@ -6057,9 +5966,10 @@ def change_struct_16x16(path_dir_l):
         new_path = os.path.join(new_dir, f[:-4])
         lst2file(mod_list, new_path)
 
+
 def change_struct_no_dupl_stg_4_complexity_v4(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stages 4. Here it is going to be obtained data to be used for the complexity assesment
+    This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stages 4. Here it is going to be obtained data to be used for the complexity assesment
     """
     # Initial steps
     print("Active function: change_struct_no_dupl_stg_4_complexity_v4")
@@ -6242,6 +6152,7 @@ def change_struct_no_dupl_stg_2_complexity_v4(path_dir_l):
 
     print("Time Elapsed:", time.time() - t0)
 
+
 def change_struct_no_dupl_stg_6_complexity_v4(path_dir_l):
     """!
         This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stages 6. Here it is going to be obtained data to be used for the complexity assesment
@@ -6312,7 +6223,7 @@ def change_struct_no_dupl_stg_6_complexity_v4(path_dir_l):
 
 def change_struct_no_dupl_stg_5_complexity_v4(path_dir_l):
     """!
-        This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stages 5. Here it is going to be obtained data to be used for the complexity assesment
+    This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stages 5. Here it is going to be obtained data to be used for the complexity assesment
     """
     # Initial steps
     print("Active function: change_struct_no_dupl_stg_5_complexity_v4")
