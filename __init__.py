@@ -1,23 +1,20 @@
 """@package docstring 
 
-@file create_labels.py 
+@file __init__.py 
 
-@brief Create data structures from raw data for luma channel. 
- 
-@section libraries_create_labels Libraries 
-- dataset_utils
-- sys
-- Exception("Module
+@brief __Summary__ 
 
-@section classes_create_labels Classes 
+@section libraries___init__ Libraries 
 - None 
-@section functions_create_labels Functions 
-- main()
- 
-@section global_vars_create_labels Global Variables 
+@section classes___init__ Classes 
 - None 
 
-@section todo_create_labels TODO 
+@section functions___init__ Functions 
+- None
+@section global_vars___init__ Global Variables 
+- None 
+
+@section todo___init__ TODO 
 - None 
 
 @section license License 
@@ -39,26 +36,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-@section author_create_labels Author(s)
+@section author___init__ Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2023-01-29 22:23:10.672038
+- Last time modified is 2023-01-29 22:22:04.161947
 """
 
-import sys
-# Insert the path of modules folder 
-sys.path.insert(0, "../")
-try:
-    import dataset_utils
-except:
-    raise Exception("Module not found! Please verify that the main modules (CustomDataset, dataset_utils, MSECNN, train_model_utils and utils) can be found in the directory above the current one. Or just find a way of importing them.")
 
-
-def main():
-
-    # Directory containing the .dat files with CUs informations
-    d_path = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/data_for_now/valid/"
-
-    dataset_utils.unite_labels_v6_mod(dir_path_l=d_path, n_output_file="processed_labels")  # The result is saved in the same folder
-
-if __name__ == "__main__":
-    main()

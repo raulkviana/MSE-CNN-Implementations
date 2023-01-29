@@ -5,12 +5,13 @@
 @brief Obtains a specific CU and its specific components 
  
 @section libraries_get_cu_components Libraries 
-- CustomDataset
 - dataset_utils
+- sys
+- Exception("Module
+- CustomDataset
 
 @section classes_get_cu_components Classes 
 - None 
-
 @section functions_get_cu_components Functions 
 - main()
  
@@ -41,7 +42,7 @@ SOFTWARE.
 
 @section author_get_cu_components Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2022-12-02 18:21:21.183212
+- Last time modified is 2023-01-29 22:23:10.684038
 """
 
 import sys

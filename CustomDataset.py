@@ -5,30 +5,29 @@
 @brief This library contains usefull functions to visualise data and also Classes to store and organise data structures. 
  
 @section libraries_CustomDataset Libraries 
-- os
 - torch
 - numpy
 - dataset_utils
 - cv2
-- random
 - __future__
 - torch.utils.data
+- random
 - re
 
 @section classes_CustomDataset Classes 
 - CUDatasetBase
-- CUDatasetStg4 
-- CUDatasetStg5 
+- CUDatasetStg4
 - CUDatasetStg6
-- CUDatasetStg2Compl 
-- CUDatasetStg6Compl 
-- CUDatasetStg3Compl 
-- CUDatasetStg4Compl
+- CUDatasetStg5
 - CUDatasetStg5Compl
-- SamplerStg4 
-- SamplerStg5 
-- SamplerStg6 
-
+- CUDatasetStg2Compl
+- CUDatasetStg6Compl
+- CUDatasetStg4Compl
+- CUDatasetStg3Compl
+- SamplerStg6
+- SamplerStg5
+- SamplerStg4
+ 
 @section functions_CustomDataset Functions 
 - yuv2bgr(matrix)
 - bgr2yuv(matrix)
@@ -37,7 +36,38 @@
 - resize(img, scale_percent)
 - show_CU(image, cu_size, cu_pos)
 - show_all_CUs(CUDataset, file_name, POC, cu_size)
-
+-    def __init__(self, files_path, channel=0)
+-    def __len__(self)
+-    def get_sample(self, entry)
+-    def obtain_files_sizes(self, files)
+-    def select_entry(self, idx)
+-    def __getitem__(self, idx)
+-    def __init__(self, files_path, channel=0)
+-    def get_sample(self, entry)
+-    def __init__(self, files_path, channel=0)
+-    def get_sample(self, entry)
+-    def __init__(self, files_path, channel=0)
+-    def get_sample(self, entry)
+-    def __init__(self, files_path, channel=0)
+-    def get_sample(self, entry)
+-    def __init__(self, files_path, channel=0)
+-    def get_sample(self, entry)
+-    def __init__(self, files_path, channel=0)
+-    def get_sample(self, entry)
+-    def __init__(self, files_path, channel=0)
+-    def get_sample(self, entry)
+-    def __init__(self, files_path, channel=0)
+-    def get_sample(self, entry)
+-    def __init__(self, data_source, batch_size)
+-    def __iter__(self)
+-    def __len__(self)
+-    def __init__(self, data_source, batch_size)
+-    def __iter__(self)
+-    def __len__(self)
+-    def __init__(self, data_source, batch_size)
+-    def __iter__(self)
+-    def __len__(self)
+ 
 @section global_vars_CustomDataset Global Variables 
 - None 
 
@@ -65,7 +95,7 @@ SOFTWARE.
 
 @section author_CustomDataset Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2022-12-02 18:21:21.122664
+- Last time modified is 2023-01-29 22:22:04.113134
 """
 
 # ==============================================================
@@ -277,7 +307,6 @@ def show_CU(image, cu_size, cu_pos):
     # Destroy all windows
     cv2.destroyAllWindows()
 
-
 def show_all_CUs(CUDataset, file_name, POC, cu_size):
     """!
     Shows all CUs in a image with a specific size, TO BE USED WITH THE CU ORIENTE LABELS
@@ -413,7 +442,7 @@ class CUDatasetBase(Dataset):
     def obtain_files_sizes(self, files):
         """!
         Args:
-            @param files (lst): List containing the names of files with CUs info
+            @param files (list): List containing the names of files with CUs info
         """
 
         # Initialize variable

@@ -6,10 +6,11 @@
  
 @section libraries_create_labels_with_channels Libraries 
 - dataset_utils
+- sys
+- Exception("Module
 
 @section classes_create_labels_with_channels Classes 
 - None 
-
 @section functions_create_labels_with_channels Functions 
 - main()
  
@@ -40,7 +41,7 @@ SOFTWARE.
 
 @section author_create_labels_with_channels Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2022-12-02 18:21:21.119719
+- Last time modified is 2023-01-29 22:23:10.674046
 """
 
 import sys

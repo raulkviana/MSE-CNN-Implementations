@@ -1,37 +1,36 @@
 """@package docstring 
 
-@file train_stg6_cus_multi_batch_v3.py 
+@file train_stg6.py 
 
 @brief Training script for the sixth stage of the MSE-CNN, for the luma channel.  
  
-@section libraries_train_stg6_cus_multi_batch_v3 Libraries 
-- torch
-- train_model_utils
-- constants
-- torch.utils.tensorboard
-- numpy
-- matplotlib.pyplot
-- MSECNN
+@section libraries_train_stg6 Libraries 
 - sklearn.metrics
-- utils
-- torchvision
-- datetime
-- __future__
-- time
-- CustomDataset
-- argparse
+- MSECNN
 - torch.utils.data
+- torch
+- argparse
+- torch.utils.tensorboard
+- datetime
+- train_model_utils
+- utils
+- numpy
+- constants
+- CustomDataset
+- Exception("Module
+- sys
+- time
+- matplotlib.pyplot
 
-@section classes_train_stg6_cus_multi_batch_v3 Classes 
+@section classes_train_stg6 Classes 
 - None 
-
-@section functions_train_stg6_cus_multi_batch_v3 Functions 
+@section functions_train_stg6 Functions 
 - train(dataloader, model, loss_fn, optimizer, device)
 - test(dataloader, model, loss_fn, device, loss_name)
 - train_test(train_dataloader, test_dataloader, model, loss_fn, optimizer, device, epochs, lr_sch)
 - main()
  
-@section global_vars_train_stg6_cus_multi_batch_v3 Global Variables 
+@section global_vars_train_stg6 Global Variables 
 - learning_rate
 - parser 
 - args 
@@ -53,7 +52,7 @@
 - cnt_test_train
 - cnt_test_test
 
-@section todo_train_stg6_cus_multi_batch_v3 TODO 
+@section todo_train_stg6 TODO 
 - None 
 
 @section license License 
@@ -75,9 +74,9 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-@section author_train_stg6_cus_multi_batch_v3 Author(s)
+@section author_train_stg6 Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2022-12-02 18:21:21.220860
+- Last time modified is 2023-01-29 22:23:10.689038
 """
 
 
@@ -361,7 +360,6 @@ def test(dataloader, model, loss_fn, device, loss_name):
     return predictions, ground_truths, pred_vector, ground_truths_vector
 
 def train_test(train_dataloader, test_dataloader, model, loss_fn, optimizer, device, epochs, lr_sch):
-    
     # Print current time
     train_model_utils.print_current_time()
     
@@ -492,11 +490,11 @@ def train_test(train_dataloader, test_dataloader, model, loss_fn, optimizer, dev
 def main():
 
     # Initialize Model
-    stg1_2 = MSECNN.MseCnnStg_1_v2(device=device, QP=32).to(device)
-    stg3 = MSECNN.MseCnnStg_x_v2(device=device, QP=32).to(device)
-    stg4 = MSECNN.MseCnnStg_x_v2(device=device, QP=32).to(device)
-    stg5 = MSECNN.MseCnnStg_x_v2(device=device, QP=32).to(device)
-    stg6 = MSECNN.MseCnnStg_x_v2(device=device, QP=32).to(device)
+    stg1_2 = MSECNN.MseCnnStg1(device=device, QP=32).to(device)
+    stg3 = MSECNN.MseCnnStgX(device=device, QP=32).to(device)
+    stg4 = MSECNN.MseCnnStgX(device=device, QP=32).to(device)
+    stg5 = MSECNN.MseCnnStgX(device=device, QP=32).to(device)
+    stg6 = MSECNN.MseCnnStgX(device=device, QP=32).to(device)
 
     model = (stg1_2, stg3, stg4, stg5, stg6)
 
@@ -519,10 +517,10 @@ def main():
             model = train_model_utils.load_model_stg_5_stg_6(model, path, device)
 
     # Prepare training and testing data, Dataset and Dataloader
-    train_data = CustomDataset.CUDatasetStg6V5(files_path=l_path_train) 
+    train_data = CustomDataset.CUDatasetStg6(files_path=l_path_train) 
     batch_sampler_train = CustomDataset.SamplerStg6(train_data, batch_size)  # Batch Sampler
     dataloader_train = DataLoader(train_data, num_workers=num_workers, batch_sampler=batch_sampler_train)
-    test_data = CustomDataset.CUDatasetStg6V5(files_path=l_path_test)
+    test_data = CustomDataset.CUDatasetStg6(files_path=l_path_test)
     batch_sampler_test = CustomDataset.SamplerStg6(test_data, batch_size)  # Batch Sampler
     dataloader_test = DataLoader(test_data, num_workers=num_workers, batch_sampler=batch_sampler_test)
     

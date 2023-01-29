@@ -5,25 +5,24 @@
 @brief Evaluates stage 6 
  
 @section libraries_eval_model_stg6_metrics Libraries 
-- torch
-- train_model_utils
-- constants
-- torch.utils.tensorboard
-- matplotlib.pyplot
-- MSECNN
 - sklearn.metrics
-- utils
-- torchvision
-- datetime
-- __future__
-- time
-- CustomDataset
-- argparse
+- MSECNN
 - torch.utils.data
+- torch
+- argparse
+- torch.utils.tensorboard
+- datetime
+- train_model_utils
+- utils
+- constants
+- Exception("Module
+- CustomDataset
+- sys
+- time
+- matplotlib.pyplot
 
 @section classes_eval_model_stg6_metrics Classes 
 - None 
-
 @section functions_eval_model_stg6_metrics Functions 
 - test(dataloader, model, device, loss_name)
 - val_setup(dataloader_val, model, device)
@@ -67,7 +66,7 @@ SOFTWARE.
 
 @section author_eval_model_stg6_metrics Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2022-12-02 18:21:21.179310
+- Last time modified is 2023-01-29 22:23:10.679038
 """
 
 
@@ -76,7 +75,6 @@ SOFTWARE.
 """
 
 # Imports
-from __future__ import print_function, division
 import torch
 from torch.utils.data import DataLoader
 from sklearn.metrics import classification_report
@@ -291,7 +289,6 @@ def main():
     # Train
     print("Starting training...")
     val_setup(dataloader_val, model, device)
-
 
 if __name__ == "__main__":
     main()

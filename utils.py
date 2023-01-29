@@ -2,29 +2,31 @@
 
 @file utils.py 
 
-@brief __Summary__ 
+@brief Usefull functions that are used to not directly for training the model or anything related to this work actual implementation.
  
 @section libraries_utils Libraries 
 - os
-- def
+- torch
+- Detect
 - =
-- "import"
+- Obtain
+- i
 - datetime
-- __future__
-- re
 - get_import_names(path):
+- Search
+- "import"
+- re
 
 @section classes_utils Classes 
--                if "Class" in l and ":" in l:
+-    def get_classes_names
+-        @return classes_names: Names of all classes in specific format
 
+-                if "class" in l and ":" in l:
+
+-            if len
+-            if len
  
 @section functions_utils Functions 
--    def update_or_create(path)
--    def get_file_name(path)
--    def get_doc_string_data(path)
--    def get_function_names(path)
--                if "def" in l
--    def get_import_names(path)
 - echo(string, padding=80)
 - update_docstring(path)
 -    def update_or_create(path)
@@ -34,9 +36,15 @@
 -                if "def" in l
 -    def get_import_names(path)
 -    def get_classes_names(path)
+- functions_used_from_each_module(str_file)
+- multi_thresholding(rs, preds)
  
 @section global_vars_utils Global Variables 
-- None 
+- STRING_PATH_1
+- STRING_PATH_1_2
+- STRING_PATH_2"
+- NONE_STRING
+- AUTHOR 
 
 @section todo_utils TODO 
 - None 
@@ -62,18 +70,17 @@ SOFTWARE.
 
 @section author_utils Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2022-12-02 18:21:21.224776
+- Last time modified is 2023-01-29 22:22:04.157947
 """
-
 
 # =================================================================================================
 # IMPORTS
 # =================================================================================================
 
 import os
-from datetime import datetime 
+from datetime import datetime
 import re
-
+import torch
 
 # =================================================================================================
 # CONSTANTS
@@ -167,10 +174,10 @@ def echo(string, padding=80):
 
     @param [in] string: String that will be printed
     @param [in] padding: Padding to avoid concatenations
-
     """
     padding = " " * (padding - len(string)) if padding else ""
-    print(string + padding, end='\r')
+    print(string + padding + "\r")
+
 
 def update_docstring(path):
     """!
@@ -423,3 +430,59 @@ def update_docstring(path):
                     if "- Last time" in line:
                         temp_flag = True
                         
+
+def functions_used_from_each_module(str_file):
+    """!
+    @brief Detect the functions associated with each import
+
+    @param [in] str_file: String representation of the file contents
+    @return dict: Dictionary with the following structure - {"'IMPORT #1'": ["'FUNCTION 1#'", "'FUNCTION 2#'", "'FUNCTION 3#'"],
+                                                             "'IMPORT #2'": ["'FUNCTION 1#'", "'FUNCTION 2#'"], ...}
+    """
+    output_dict = {}
+
+    # Obtain import names
+    imports_names = re.findall("import [a-zA-Z0-9\_]+", str_file)
+    imports_names = {i.split()[-1] for i in imports_names}
+
+    # Search in the file the existing functions associated with each import
+    for i in imports_names:
+        functions_names = re.findall(i + "\.[a-zA-Z0-9\_]+", str_file)
+        functions_names = {i.split(".")[-1] for i in functions_names}
+
+        # Build dictionary
+        output_dict[i] = functions_names
+
+    return output_dict
+
+
+def multi_thresholding(rs, preds):
+    """
+    Accordingly, the multi-threshold values can be chosen in the
+    following strategies, ensuring the overall prediction accuracy
+    of MSE-CNN.
+    • Case 1 (more time saving): if the average threshold
+    (1/5) * sum(rs) >= 0.4, then τ2 ≥ τ6 ≥ τ3 ≈ τ4 ≈ τ5.
+    • Case 2 (better RD performance): if the average threshold
+    (1/5) * sum(rs) < 0.4, then τ2 ≥ τ4 ≈ τ3 ≈ τ5 ≥ τ6.
+    @brief Implementation of the multi-threshold for MSE-CNN
+    @param [in] rs: Constant to control the minimum amount of thr probabilities
+    @param [in] preds: Predictions made by the MSE-CNN
+    @param [out] search_RD: Vector with the information of which modes to compute the RD cost and make a decision regarding in which split to make
+    """
+
+    # rs has to be between 0 and 1
+    assert 0 < rs < 1
+
+    # Obtain maximum value for each prediction
+    y_max = torch.reshape( torch.max(preds, dim=1)[0], shape=(-1, 1))
+    # Obtain lowest possible value for each prediction
+    y_max_rs = y_max * rs
+
+    # Obtain logic truth where preds>=y_max_rs
+    search_RD_logic = preds >= y_max_rs
+
+    # Obtain the indexs that are true
+    search_RD = [[idx for idx, l2 in enumerate(l) if l2] for l in search_RD_logic.tolist()]
+
+    return search_RD

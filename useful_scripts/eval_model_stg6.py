@@ -5,23 +5,22 @@
 @brief Evaluates stage 6, outputs predictions and corresponding ground-truth in a .csv file 
  
 @section libraries_eval_model_stg6 Libraries 
-- torch
+- MSECNN
+- torch.utils.data
+- argparse
+- datetime
 - train_model_utils
+- Importsimport
+- utils
 - dataset_utils
 - constants
-- MSECNN
-- utils
-- torchvision
-- datetime
-- __future__
-- time
+- Exception("Module
 - CustomDataset
-- argparse
-- torch.utils.data
+- sys
+- time
 
 @section classes_eval_model_stg6 Classes 
 - None 
-
 @section functions_eval_model_stg6 Functions 
 - test(dataloader, model, device, loss_name)
 - val_setup(dataloader_val, model, device)
@@ -63,7 +62,7 @@ SOFTWARE.
 
 @section author_eval_model_stg6 Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2022-12-02 18:21:21.177352
+- Last time modified is 2023-01-29 22:23:10.677042
 """
 
 # Importsimport torch

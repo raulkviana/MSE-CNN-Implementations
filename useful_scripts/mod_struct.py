@@ -6,10 +6,11 @@
  
 @section libraries_mod_struct Libraries 
 - dataset_utils
+- sys
+- Exception("Module
 
 @section classes_mod_struct Classes 
 - None 
-
 @section functions_mod_struct Functions 
 - main()
  
@@ -40,7 +41,7 @@ SOFTWARE.
 
 @section author_mod_struct Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2022-12-02 18:21:21.185165
+- Last time modified is 2023-01-29 22:23:10.686048
 """
 
 

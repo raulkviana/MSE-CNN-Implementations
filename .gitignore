@@ -1,0 +1,5 @@
+
+useful_scripts/get_functions_used_in_each_script.py
+*.pyc
+get_functions_used_in_each_script.py
+useful_scripts/add_docs_to_files.py

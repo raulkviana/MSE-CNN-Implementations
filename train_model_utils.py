@@ -8,24 +8,29 @@
 - os
 - torch
 - numpy
-- dataset_utils
 - matplotlib.pyplot
-- MSECNN
-- itertools
-- sklearn.metrics
+- dataset_utils
 - seaborn
+- itertools
 - datetime
-- math
+- sklearn.metrics
 
 @section classes_train_model_utils Classes 
-- None 
+-    for i in range
+-    for i in range
+-    for i, color in zip
+-            label="ROC curve of class {0} 
+-    for i in range
+-    for i in range
+-    for i, color in zip
+-            label="ROC curve of class {0} 
+- one_hot_enc
+-    @param [in] num_classes: Number classes in the tensor
 
+ 
 @section functions_train_model_utils Functions 
-- def split(in_CU, split_mode)
-- model_statistics(J_history, predicted, ground_truth, pred_vector, gt_vector, train_or_val="train")
-- model_statistics_v2(J_history, predicted, ground_truth, pred_vector, gt_vector,
+- model_statistics(J_history, predicted, ground_truth, pred_vector, gt_vector,
 - compute_conf_matrix(predicted, ground_truth)
-- right_size(CUs)
 - compute_top_k_accuracy(pred_vector, gt_vector, topk)
 - compute_num_splits_sent(pred_lst)
 - compute_multi_thres_performance(pred_lst, gt_lst)
@@ -34,21 +39,11 @@
 - obtain_best_modes(rs, pred)
 - obtain_mode(pred)
 - one_hot_enc(tensor, num_classes=6)
-- split_class(in_CU, split_mode)
-- split_class_multi_batch(in_CU, split_mode)
-- split_class_multi_batch_v2_for_testing(in_CU, split_mode, pos)
-- split_class_multi_batch_v2(in_CU, split_mode)
-- nr_calc(ac, ap)
-- find_right_cu_class(fm, cu_pos)
-- find_right_cu_class_multi_batch(CUs, cus_pos)
-- def split(in_CU, split_mode)
 - print_parameters(model, optimizer)
 - save_model_parameters(dir_name, f_name, model)
 - save_model(dir_name, f_name, model, optimizer, loss, acc)
 - load_model_parameters_stg(model, path, stg, dev)
 - load_model_parameters_eval(model, path, dev)
-- load_model_parameters(model, path, dev)
-- load_model(model, optimizer, path, dev)
 - load_model_stg_12_stg_3(model, path, dev)
 - load_model_stg_3_stg_4(model, path, dev)
 - load_model_stg_4_stg_5(model, path, dev)
@@ -82,7 +77,7 @@ SOFTWARE.
 
 @section author_train_model_utils Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2022-12-02 18:21:21.208167
+- Last time modified is 2023-01-29 22:22:04.154941
 """
 
 # ==============================================================
@@ -104,135 +99,7 @@ from itertools import cycle
 # Functions
 # ==============================================================
 
-def model_statistics(J_history, predicted, ground_truth, pred_vector, gt_vector, train_or_val="train"):
-    """!
-    @brief Evaluates model with metrics, such as accuracy and f1_score
-
-    @param [in] J_history: Loss function values over iterations
-    @param [in] predicted: List of predictions made by the model with single value
-    @param [in] ground_truth: List of the ground-truths with single value
-    @param [in] pred_vector: List of predictions made by the model with vectors values
-    @param [in] gt_vector: List of the ground-truths with vectors values
-    @param [in] train_or_val: String that is used to write on the image files names
-    @param [out] f1: F1 score
-    @param [out] recall: Recall score
-    @param [out] precision: Precision score
-    @param [out] accuracy: Accuracy score
-
-    Note: Deprecated
-    """
-
-    # Compute metrics
-    accuracy = accuracy_score(ground_truth, predicted)
-    f1 = f1_score(ground_truth, predicted, average='micro')
-    recall = recall_score(ground_truth, predicted, average='micro')
-    precision = precision_score(ground_truth, predicted, average='micro')
-    #print("precision", precision, "f1", f1, "accuracy", accuracy, "recall", recall)
-
-    # Report
-    report = classification_report(ground_truth, predicted)
-    try:
-        f = open("classification_report_" + train_or_val + ".txt", "x")
-    except:
-        os.remove("classification_report_" + train_or_val + ".txt")
-        f = open("classification_report_" + train_or_val + ".txt", "x")
-
-    f.write(report)
-    f.close()
-
-    # Total amount of data
-    total_data = len(ground_truth)
-
-    # Plot Loss function throughout iterations
-    plt.figure()
-    plt.plot(J_history, label='loss')
-    plt.xlabel("Batch number")
-    plt.title("Loss: " + train_or_val)
-    plt.legend()
-    plt.grid()
-    name = "Loss_" + train_or_val + ".png"
-    plt.savefig(name)
-    #plt.show()
-    plt.clf()
-
-    # Plot confusion matrix
-    labels = ["Non-Split", "QT", "HBT", "VBT", "HTT", "VTT"]
-
-    # Draw confusion matrix
-    sns.heatmap(confusion_matrix(ground_truth/total_data, predicted/total_data), annot=True, fmt='d', cmap='Blues', yticklabels=labels,
-                xticklabels=labels)
-
-    name = "confusion_matrix_" + train_or_val + ".png"
-    plt.title("Confusion Matrix: " + train_or_val)
-    plt.savefig(name)
-    plt.clf()
-
-    # ROC Curves
-    # Compute ROC curve and ROC area for each class
-    fpr = dict()
-    tpr = dict()
-    roc_auc = dict()
-
-    # Convert to numpy
-    y, y_score = np.array(gt_vector), np.array(pred_vector)
-
-    # Number of classes
-    n_classes = np.array(predicted).max() + 1
-
-    # Obtain ROC curve values and area
-    for i in range(n_classes):
-        fpr[i], tpr[i], _ = roc_curve(y[:, i], y_score[:, i])
-        roc_auc[i] = auc(fpr[i], tpr[i])
-
-    # Compute micro-average ROC curve and ROC area
-    fpr["micro"], tpr["micro"], _ = roc_curve(y.ravel(), y_score.ravel())
-    roc_auc["micro"] = auc(fpr["micro"], tpr["micro"])
-
-    # Plot ROC curves
-    # First aggregate all false positive rates
-    all_fpr = np.unique(np.concatenate([fpr[i] for i in range(n_classes)]))
-
-    # Then interpolate all ROC curves at this points
-    mean_tpr = np.zeros_like(all_fpr)
-    for i in range(n_classes):
-        mean_tpr += np.interp(all_fpr, fpr[i], tpr[i])
-
-    # Finally average it and compute AUC
-    mean_tpr /= n_classes
-
-    fpr["macro"] = all_fpr
-    tpr["macro"] = mean_tpr
-    roc_auc["macro"] = auc(fpr["macro"], tpr["macro"])
-
-    # # Plot all ROC curves
-    plt.figure()
-
-    lw = 2
-    colors = cycle(["aqua", "darkorange", "cornflowerblue"])
-    for i, color in zip(range(n_classes), colors):
-        plt.plot(
-            fpr[i],
-            tpr[i],
-            color=color,
-            lw=lw,
-            label="ROC curve of class {0} (area = {1:0.2f})".format(i, roc_auc[i]),
-        )
-
-    plt.plot([0, 1], [0, 1], "k--", lw=lw)
-    plt.xlim([0.0, 1.0])
-    plt.ylim([0.0, 1.05])
-    plt.xlabel("False Positive Rate")
-    plt.ylabel("True Positive Rate")
-    plt.title("Some extension of Receiver operating characteristic to multiclass")
-    plt.legend(loc="lower right")
-    plt.grid()
-    name = "ROC_curve" + train_or_val + ".png"
-    plt.savefig(name)
-    plt.clf()
-
-    return f1, recall, precision, accuracy
-
-def model_statistics_v2(J_history, predicted, ground_truth, pred_vector, gt_vector,
+def model_statistics(J_history, predicted, ground_truth, pred_vector, gt_vector,
                         f1_list, recall_list, precision_list,
                         accuracy_list, train_or_val="train"):
     """!
@@ -387,16 +254,6 @@ def compute_conf_matrix(predicted, ground_truth):
 
     return map.get_figure()
 
-def right_size(CUs):
-    """!
-    @brief Verify if the CU as the right size: height as to be lower than width
-
-    @param [in] CUs: Feature maps
-    @param [out] Boolean value indicating the right size
-    """
-    
-    return False if CUs.shape[-2] > CUs.shape[-1] else True
-
 def compute_top_k_accuracy(pred_vector, gt_vector, topk):
     """!
     @brief Computes the top k accuracy score
@@ -426,7 +283,7 @@ def compute_top_k_accuracy(pred_vector, gt_vector, topk):
 
 def compute_num_splits_sent(pred_lst):
     """!
-    @brief Computes the num of splits that would be sent to the encoder
+    @brief Computes the num of splits that would be analyzed by the encoder
 
     @param [in] predicted: List of predictions made by the model with probabilities values
     @param [out] res: Mean of number of splits sent
@@ -759,97 +616,6 @@ def load_model_parameters_eval(model, path, dev):
         model[i].eval()
 
     return model
-
-def load_model_parameters(model, path, dev):
-    """!
-    @brief Loads only the model parameters from a specified files, but it considers that if the model has more stages
-           than files with the parameters, the difference of the amount is 1, this means that it's expected that the
-           last stage in the model variable will have the same parameters has the penultimate.
-
-    @param [in] model: Model which the parameters will be loaded
-    @param [in] path: Path/Folder containing the files that are supposed to be loaded
-    @param [in] dev: Device do load the model to
-    @param [out] model: Model loaded tuple
-    """
-
-    # Get files names
-    files = dataset_utils.get_files_from_folder(path, endswith=".pth")
-    files.sort()
-
-    # Guarante that the number of files is just one number below the number of models
-    assert len(model) - len(files) == 1
-
-    # Load state dict to each model
-    for i in range(len(files)):
-        # Load
-        file_path = path + '/' + files[i]
-
-        if type(dev) is int:
-            m = torch.load(file_path, map_location="cuda:"+str(dev))
-            print("Loading model to GPU number", dev)
-
-        else:
-            m = torch.load(file_path, map_location="cpu")
-            print("Loading model to CPU")
-
-        model[i].load_state_dict(m)
-
-        # To avoid inconsistent inference results
-        model[i].eval()
-
-    # Last new stage needs to have the same params as the stage before it
-    if len(model) > len(files):
-        file_path = path + '/' + files[-1]
-
-        if type(dev) is int:
-            m = torch.load(file_path, map_location="cuda:"+str(dev))
-            print("Loading model to GPU number", dev)
-
-        else:
-            m = torch.load(file_path, map_location="cpu")
-            print("Loading model to CPU")
-
-        model[-1].load_state_dict(m)
-        # To avoid inconsistent inference results
-        model[-1].eval()
-
-    return model
-
-def load_model(model, optimizer, path, dev):
-    """!
-    @brief Loads the parameters of the model and of the optimizer. These are loaded from the folder specified by the
-           user.
-
-    @param [in] model: Model which the parameters will be loaded
-    @param [in] optimizer: Optimizer which the parameters will be loaded
-    @param [in] path: Path/Folder containing the files that are supposed to be loaded
-    @param [in] dev: Device do load the model to
-    """
-
-    # Get files names
-    files = dataset_utils.get_files_from_folder(path, endswith=".tar")
-    files.sort()
-
-    # Load state dict to each model
-    for i in range(len(model)):
-        # Load
-        file_path = path + files[i]
-
-        if type(dev) is int:
-            checkpoint = torch.load(file_path, map_location="cuda:"+str(dev))
-            print("Loading model to GPU number", dev)
-
-        else:
-            checkpoint = torch.load(file_path, map_location="cpu")
-            print("Loading model to CPU")
-         
-        model[i].load_state_dict(checkpoint["model_state_dict"])
-        optimizer[i].load_state_dict(checkpoint["optimizer_state_dict"])
-
-        # To avoid inconsistent inference results
-        model[i].eval()
-
-    return model, optimizer
 
 def load_model_stg_12_stg_3(model, path, dev):
     """!

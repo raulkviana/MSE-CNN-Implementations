@@ -5,28 +5,132 @@
 @brief Usefull functions to manipulate data, change and create structures 
  
 @section libraries_dataset_utils Libraries 
-- numba
 - os
-- shutil
-- threading
-- numpy
-- torch
-- sys
-- csv
-- pandas
 - utils
+- pandas
+- torch
+- csv
+- struct
+- numpy
+- sklearn.model_selection
+- cv2
+- threading
+- pickle
+- shutil
+- sys
 - time
 - math
-- struct
-- pickle
-- cv2
 - re
-- sklearn.model_selection
 
 @section classes_dataset_utils Classes 
-- VideoCaptureYUV 
+- VideoCaptureYUV:
 
+- get_some_data_equaly
+-        for c in range
+- balance_dataset
+-    @param [in] n_classes: Number of classes to try to balance
+
+-    idx_classes = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0}
+
+-                if labels[idx]["stg_"+str
+-        idx_classes = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0}
+
+- balance_dataset_JF
+-    @param [in] n_classes: Number of classes to try to balance
+
+-    idx_classes = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0}
+
+-                if labels[idx]["split"] == class_to_add:
+
+-        lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+
+- balance_dataset_down
+-    @param [in] n_classes: Number of classes to try to balance
+
+-    lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+
+-        for n in range
+-                if labels[k]["split"] == class_to_add: # Find right class
+
+-        for key in lst_classes.keys
+-            if len
+-        min_size = min
+-        for key in lst_classes.keys
+-            new_labels.extend
+-        lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+
+-    @param [in] n_classes: Number of classes to try to balance
+
+-    lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+
+-    for key in lst_classes.keys
+-        if len
+-    min_size = min
+-    for key in lst_classes.keys
+-        new_labels.extend
+-    lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+
+-    @param [in] n_classes: Number of classes to try to balance
+
+-    lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+
+-        for key in lst_classes.keys
+-            if len
+-        min_size = min
+-        for key in lst_classes.keys
+-            new_labels.extend
+-        lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+
+-    @param [in] n_classes: Number of classes to try to balance
+
+-    lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+
+-        for key in lst_classes.keys
+-            if len
+-        min_size = min
+-        for key in lst_classes.keys
+-            new_labels.extend
+-        lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+
+- balance_dataset_up
+-    @param [in] n_classes: Number of classes to try to balance
+
+-    lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+
+-        for n in range
+-                if labels[k]["split"] == class_to_add: # Find right class
+
+-        for key in lst_classes.keys
+-            if len
+-        max_size = max
+-        for key in lst_classes.keys
+-        lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+
+-    @param [in] n_classes: Number of classes to try to balance
+
+-    lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+
+-    for key in lst_classes.keys
+-        if len
+-    max_size = max
+-    for key in lst_classes.keys
+-    lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+
+-    @param [in] n_classes: Number of classes to try to balance
+
+-    lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+
+-        for key in lst_classes.keys
+-            if len
+-        max_size = max
+-        for key in lst_classes.keys
+-        lst_classes = {0:[], 1:[], 2:[], 3:[], 4:[], 5:[]}
+
+ 
 @section functions_dataset_utils Functions 
+-    def __init__(self, filename, size)
+-    def read_raw(self, frame_num=None)
+-    def read(self)
 - bgr2yuv(matrix)
 - extract_content(f)
 - file_stats(path)
@@ -37,16 +141,10 @@
 - match_cu(CU, CTU, position, size)
 - find_cu(df_cu, CTU, position, size)
 - build_entry(stg1=[], stg2=[], stg3=[], stg4=[], stg5=[], stg6=[])
-- build_entry_multi_stg_x_new(CTU, CU)
-- build_entry_multi_stg_2(CTU, CUs)
 - add_cu_to_dict(cu_dict, cu)
 - transform_create_struct_faster_v2_mod_divs(f, f_name, num_records, output_dir, n_output_file, color_ch=0)
 - transform_create_struct_faster_v3(f, f_name, num_records, output_dir, n_output_file, color_ch=0)
 - process_ctus_cus(df_ctus, df_cus)
-- process_ctus_cus_multi_stg_2(df_ctus, df_cus)
-- process_ctus_cus_multi_stg_2_new(df_ctus, df_cus)
-- process_ctus_cus_multi_stg_3_new(df_ctus, df_cus)
-- transform_create_struct_faster_while(f, f_name, num_records)
 - split(size, pos, split_mode)
 - transform_raw_dataset(dic)
 - get_files_from_folder(path, endswith=".yuv")
@@ -86,38 +184,74 @@
 - balance_dataset_up_v3(dir_path)
 - gen_dataset_types(d_path, valid_percent)
 - change_struct_64x64_eval(path_dir_l)
+-    def right_rows(row)
+-    def right_size(row) # Look for CUs with specific size
 - change_struct_32x32_eval(path_dir_l)
+-    def right_rows(row)
+-    def right_size(row) # Look for CUs with specific size
 - change_struct_64x64(path_dir_l)
 - change_struct_64x64_no_dupl_v3(path_dir_l)
+-    def right_rows(row)
 - mod_64x64_threads(f, path_dir_l, right_rows, columns, new_dir)
 - change_struct_64x64_no_dupl_v2(path_dir_l)
+-    def right_rows(row)
 - change_struct_32x32(path_dir_l)
 - change_struct_32x32_no_dupl(path_dir_l)
 - change_struct_32x32_no_dupl_v2(path_dir_l)
+-    def right_rows(row)
 - change_struct_32x32_no_dupl_v3(path_dir_l)
+-    def right_rows(row)
 - mod_32x32_threads(f, path_dir_l, right_rows, columns, new_dir)
 - change_struct_32x32_no_dupl_v2_test(path_dir_l)
+-    def right_rows(row)
 - change_struct_16x16_no_dupl_v2(path_dir_l)
+-    def right_rows(row)
+- list2tuple(l)
+- tuple2list(l)
 - change_struct_8x8_no_dupl_v2(path_dir_l)
+-    def right_rows(row)
 - change_struct_no_dupl_stg6_v4(path_dir_l)
 - change_struct_no_dupl_stg5_v4(path_dir_l)
 - change_struct_no_dupl_stg2_v4(path_dir_l)
 - change_struct_no_dupl_stg4_v4(path_dir_l)
 - change_struct_no_dupl_stg3_v4(path_dir_l)
 - change_struct_32x16_no_dupl_v2(path_dir_l)
+-    def right_rows(row)
+-    def right_size(row) # Look for CUs with specific size
 - change_struct_32x8_no_dupl_v2(path_dir_l)
+-    def right_rows(row)
+-    def right_size(row) # Look for CUs with specific size
 - change_struct_16x8_no_dupl_v2(path_dir_l)
+-    def right_rows(row)
+-    def right_size(row) # Look for CUs with specific size
 - change_struct_8x4_no_dupl_v2(path_dir_l)
+-    def right_rows(row)
+-    def right_size(row) # Look for CUs with specific size
 - change_struct_32x4_no_dupl_v2(path_dir_l)
+-    def right_rows(row)
+-    def right_size(row) # Look for CUs with specific size
 - change_struct_16x4_no_dupl_v2(path_dir_l)
+-    def right_rows(row)
+-    def right_size(row) # Look for CUs with specific size
 - change_struct_16x16_no_dupl_v3(path_dir_l)
+-    def right_rows(row)
 - mod_16x16_threads(f, path_dir_l, right_rows, columns, new_dir)
 - change_struct_16x16(path_dir_l)
 - change_struct_no_dupl_stg_4_complexity_v4(path_dir_l)
+-    def list2tuple(l)
+-    def tuple2list(l)
 - change_struct_no_dupl_stg_3_complexity_v4(path_dir_l)
+-    def list2tuple(l)
+-    def tuple2list(l)
 - change_struct_no_dupl_stg_2_complexity_v4(path_dir_l)
+-    def list2tuple(l)
+-    def tuple2list(l)
 - change_struct_no_dupl_stg_6_complexity_v4(path_dir_l)
+-    def list2tuple(l)
+-    def tuple2list(l)
 - change_struct_no_dupl_stg_5_complexity_v4(path_dir_l)
+-    def list2tuple(l)
+-    def tuple2list(l)
  
 @section global_vars_dataset_utils Global Variables 
 - None 
@@ -146,7 +280,7 @@ SOFTWARE.
 
 @section author_dataset_utils Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2022-12-02 18:21:21.133389
+- Last time modified is 2023-01-29 22:22:04.120175
 """
 
 # ==============================================================

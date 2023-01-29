@@ -5,16 +5,17 @@
 @brief Adds actual CTUs to the data structure. This version is meant to be used with stage oriented data structure, but is similar to the previous version.
  
 @section libraries_add_CTU_v3 Libraries 
-- torch
-- os
 - shutil
-- dataset_utils
+- torch
 - utils
+- dataset_utils
+- Exception("Module
 - CustomDataset
+- sys
+- os
 
 @section classes_add_CTU_v3 Classes 
 - None 
-
 @section functions_add_CTU_v3 Functions 
 - main()
  
@@ -45,7 +46,7 @@ SOFTWARE.
 
 @section author_add_CTU_v3 Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2022-12-02 18:21:21.099308
+- Last time modified is 2023-01-29 22:23:10.666053
 """
 
 # ==============================================================

@@ -6,10 +6,11 @@
  
 @section libraries_encode_dataset Libraries 
 - dataset_utils
+- sys
+- Exception("Module
 
 @section classes_encode_dataset Classes 
 - None 
-
 @section functions_encode_dataset Functions 
 - main()
  
@@ -40,7 +41,7 @@ SOFTWARE.
 
 @section author_encode_dataset Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2022-12-02 18:21:21.155854
+- Last time modified is 2023-01-29 22:23:10.675039
 """
 
 import sys
