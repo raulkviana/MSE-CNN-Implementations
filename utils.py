@@ -7,35 +7,15 @@
 @section libraries_utils Libraries 
 - os
 - torch
-- Detect
-- =
-- Obtain
-- i
 - datetime
-- get_import_names(path):
-- Search
-- "import"
 - re
 
 @section classes_utils Classes 
--    def get_classes_names
--        @return classes_names: Names of all classes in specific format
-
--                if "class" in l and ":" in l:
-
--            if len
--            if len
+- None
  
 @section functions_utils Functions 
 - echo(string, padding=80)
 - update_docstring(path)
--    def update_or_create(path)
--    def get_file_name(path)
--    def get_doc_string_data(path)
--    def get_function_names(path)
--                if "def" in l
--    def get_import_names(path)
--    def get_classes_names(path)
 - functions_used_from_each_module(str_file)
 - multi_thresholding(rs, preds)
  

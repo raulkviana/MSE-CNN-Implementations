@@ -7,10 +7,10 @@
 @section libraries_generate_dataset_types Libraries 
 - dataset_utils
 - sys
-- Exception("Module
 
 @section classes_generate_dataset_types Classes 
 - None 
+
 @section functions_generate_dataset_types Functions 
 - main()
  

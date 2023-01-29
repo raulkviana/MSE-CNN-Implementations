@@ -17,13 +17,13 @@
 - numpy
 - constants
 - CustomDataset
-- Exception("Module
 - sys
 - time
 - matplotlib.pyplot
 
 @section classes_train_stg6 Classes 
-- None 
+- None
+
 @section functions_train_stg6 Functions 
 - train(dataloader, model, loss_fn, optimizer, device)
 - test(dataloader, model, loss_fn, device, loss_name)

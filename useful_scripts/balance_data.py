@@ -8,7 +8,6 @@
 - dataset_utils
 - sys
 - time
-- Exception("Module
 
 @section classes_balance_data Classes 
 - None 

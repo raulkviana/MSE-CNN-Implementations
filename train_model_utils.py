@@ -16,17 +16,7 @@
 - sklearn.metrics
 
 @section classes_train_model_utils Classes 
--    for i in range
--    for i in range
--    for i, color in zip
--            label="ROC curve of class {0} 
--    for i in range
--    for i in range
--    for i, color in zip
--            label="ROC curve of class {0} 
-- one_hot_enc
--    @param [in] num_classes: Number classes in the tensor
-
+- None
  
 @section functions_train_model_utils Functions 
 - model_statistics(J_history, predicted, ground_truth, pred_vector, gt_vector,

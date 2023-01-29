@@ -7,10 +7,10 @@
 @section libraries_mod_struct Libraries 
 - dataset_utils
 - sys
-- Exception("Module
 
 @section classes_mod_struct Classes 
-- None 
+- None
+
 @section functions_mod_struct Functions 
 - main()
  

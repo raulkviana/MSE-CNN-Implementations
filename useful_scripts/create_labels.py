@@ -7,7 +7,6 @@
 @section libraries_create_labels Libraries 
 - dataset_utils
 - sys
-- Exception("Module
 
 @section classes_create_labels Classes 
 - None 

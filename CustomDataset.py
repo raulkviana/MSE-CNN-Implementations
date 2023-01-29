@@ -9,7 +9,6 @@
 - numpy
 - dataset_utils
 - cv2
-- __future__
 - torch.utils.data
 - random
 - re
@@ -36,37 +35,6 @@
 - resize(img, scale_percent)
 - show_CU(image, cu_size, cu_pos)
 - show_all_CUs(CUDataset, file_name, POC, cu_size)
--    def __init__(self, files_path, channel=0)
--    def __len__(self)
--    def get_sample(self, entry)
--    def obtain_files_sizes(self, files)
--    def select_entry(self, idx)
--    def __getitem__(self, idx)
--    def __init__(self, files_path, channel=0)
--    def get_sample(self, entry)
--    def __init__(self, files_path, channel=0)
--    def get_sample(self, entry)
--    def __init__(self, files_path, channel=0)
--    def get_sample(self, entry)
--    def __init__(self, files_path, channel=0)
--    def get_sample(self, entry)
--    def __init__(self, files_path, channel=0)
--    def get_sample(self, entry)
--    def __init__(self, files_path, channel=0)
--    def get_sample(self, entry)
--    def __init__(self, files_path, channel=0)
--    def get_sample(self, entry)
--    def __init__(self, files_path, channel=0)
--    def get_sample(self, entry)
--    def __init__(self, data_source, batch_size)
--    def __iter__(self)
--    def __len__(self)
--    def __init__(self, data_source, batch_size)
--    def __iter__(self)
--    def __len__(self)
--    def __init__(self, data_source, batch_size)
--    def __iter__(self)
--    def __len__(self)
  
 @section global_vars_CustomDataset Global Variables 
 - None 
@@ -102,7 +70,6 @@ SOFTWARE.
 # Imports
 # ==============================================================
 
-from __future__ import print_function, division
 import torch
 import numpy as np
 from torch.utils.data import Dataset

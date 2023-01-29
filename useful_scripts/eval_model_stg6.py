@@ -10,17 +10,16 @@
 - argparse
 - datetime
 - train_model_utils
-- Importsimport
 - utils
 - dataset_utils
 - constants
-- Exception("Module
 - CustomDataset
 - sys
 - time
 
 @section classes_eval_model_stg6 Classes 
 - None 
+
 @section functions_eval_model_stg6 Functions 
 - test(dataloader, model, device, loss_name)
 - val_setup(dataloader_val, model, device)

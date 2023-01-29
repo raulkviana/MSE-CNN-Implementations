@@ -13,54 +13,13 @@
 @section classes_MSECNN Classes 
 - QP_half_mask
 - MseCnnStg1
--        @param [out] logits: Vector of raw predictions that a classification model generates
-
 - MseCnnStgX
--        @param [out] logits: Vector of raw predictions that a classification model generates
-
--        @param [out] logits: Vector of raw predictions that a classification model generates
-
 - LossFunctionMSE
--        @param [out] loss: Vector of raw predictions that a classification model generates
-
 - LossFunctionMSE_Ratios
--        @param [out] loss: Vector of raw predictions that a classification model generates
 
- 
 @section functions_MSECNN Functions 
 - init_weights_seq(m)
 - init_weights_single(m)
--    def __init__(self, QP=32)
--    def normalize_QP(self, QP)
--    def forward(self, feature_maps)
--    def __init__(self, device="cpu", QP=32)
--    def residual_unit_stg1(self, x, nr)
--    def residual_unit_stg2(self, x, nr)
--    def nr_calc(self, ac, ap)
--    def split(self, cu, coords, sizes, split)
--    def forward(self, cu, sizes=None, coords=None)
--    def __init__(self, device="cpu", QP=32)
--    def residual_unit_stg1(self, x, nr)
--    def residual_unit_stg2(self, x, nr)
--    def residual_unit(self, x, nr)
--    def pass_through_subnet(self, x)
--    def forward(self, cu, ap, splits, sizes=None, coords=None)
--    def __init__(self, use_mod_cross_entropy=True, beta=1)
--    def get_proportion_CUs(self, labels)
--    def get_min_RDs(self, RDs)
--    def remove_values_lower(self, tensor, max_val, subst_val)
--    def remove_inf_values(self, tensor)
--    def remove_zero(self, RDs)
--    def remove_values_above(self, RDs, max_val)
--    def forward(self, pred, labels, RD)
--    def __init__(self, pm, use_mod_cross_entropy=True, beta=1, alpha=0.5)
--    def get_proportion_CUs(self, labels)
--    def get_min_RDs(self, RDs)
--    def remove_values_lower(self, tensor, max_val, subst_val)
--    def remove_inf_values(self, tensor)
--    def remove_zero(self, RDs)
--    def remove_values_above(self, RDs, max_val)
--    def forward(self, pred, labels, RD)
  
 @section global_vars_MSECNN Global Variables 
 - None 

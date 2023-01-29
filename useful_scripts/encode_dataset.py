@@ -7,7 +7,6 @@
 @section libraries_encode_dataset Libraries 
 - dataset_utils
 - sys
-- Exception("Module
 
 @section classes_encode_dataset Classes 
 - None 

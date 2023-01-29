@@ -15,14 +15,14 @@
 - train_model_utils
 - utils
 - constants
-- Exception("Module
 - CustomDataset
 - sys
 - time
 - matplotlib.pyplot
 
 @section classes_eval_model_stg6_metrics Classes 
-- None 
+- None
+
 @section functions_eval_model_stg6_metrics Functions 
 - test(dataloader, model, device, loss_name)
 - val_setup(dataloader_val, model, device)

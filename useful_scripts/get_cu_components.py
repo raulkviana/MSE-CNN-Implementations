@@ -7,11 +7,11 @@
 @section libraries_get_cu_components Libraries 
 - dataset_utils
 - sys
-- Exception("Module
 - CustomDataset
 
 @section classes_get_cu_components Classes 
-- None 
+- None
+
 @section functions_get_cu_components Functions 
 - main()
  

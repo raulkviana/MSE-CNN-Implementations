@@ -7,7 +7,6 @@
 @section libraries_create_labels_with_channels Libraries 
 - dataset_utils
 - sys
-- Exception("Module
 
 @section classes_create_labels_with_channels Classes 
 - None 
