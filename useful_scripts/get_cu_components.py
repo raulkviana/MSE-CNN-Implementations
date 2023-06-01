@@ -50,7 +50,7 @@ import sys
 sys.path.insert(0, "../")
 try:
     import dataset_utils
-    import CustomDataset
+    import custom_dataset
 except:
     raise Exception("Module not found! Please verify that the main modules (CustomDataset, dataset_utils, MSECNN, train_model_utils and utils) can be found in the directory above the current one. Or just find a way of importing them.")
 
@@ -58,14 +58,14 @@ except:
 def main():
 
     # Directory containing the .txt files with CUs informations
-    f_path = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/data/RAISE_Test_768x512.yuv"
-    file_info = dataset_utils.get_file_metadata_info("/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/data/", "RAISE_Test_768x512.yuv")
+    f_path = ""
+    file_info = dataset_utils.get_file_metadata_info("", "")
     f_size = (file_info["height"], file_info["width"])
     cu_pos = (0, 0)
     cu_size = (128, 128)
     frame_number = 0
     print("Path:", f_path)
-    yuv_frame, CU_Y, CU_U, CU_V = CustomDataset.get_cu(f_path, f_size, cu_pos, cu_size, frame_number)
+    yuv_frame, CU_Y, CU_U, CU_V = custom_dataset.get_cu(f_path, f_size, cu_pos, cu_size, frame_number)
 
 if __name__ == "__main__":
     main()

@@ -55,7 +55,7 @@ except:
 def main():
 
     # Directory containing the .txt files with CUs informations
-    d_path = r"C:\Users\Raul\Dropbox\Dataset\Img\Test_place\labels_pickle"
+    d_path = r""
 
     dataset_utils.labels_with_specific_cch(dir_path=d_path, cch=0)
     dataset_utils.labels_with_specific_cch(dir_path=d_path, cch=1)

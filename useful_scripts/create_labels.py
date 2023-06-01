@@ -55,7 +55,7 @@ except:
 def main():
 
     # Directory containing the .dat files with CUs informations
-    d_path = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/data_for_now/valid/"
+    d_path = r""
 
     dataset_utils.unite_labels_v6_mod(dir_path_l=d_path, n_output_file="processed_labels")  # The result is saved in the same folder
 
