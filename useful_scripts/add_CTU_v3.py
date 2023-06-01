@@ -61,7 +61,7 @@ import sys
 sys.path.insert(0, "../")
 try:
     import dataset_utils
-    import CustomDataset
+    import custom_dataset
     import utils
 except:
     raise Exception("Module not found! Please verify that the main modules (CustomDataset, dataset_utils, MSECNN, train_model_utils and utils) can be found in the directory above the current one. Or just find a way of importing them.")
@@ -72,10 +72,10 @@ except:
 
 def main():
     # Path with the labels processed
-    path_dir_l = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/labels/valid/processed_labels"  
+    path_dir_l = r""  
  
     # Path with the pictures
-    path_dir_p = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/data"  
+    path_dir_p = r""
 
     # Create new dir to save data
     name_mod = "mod_with_real_CTU"
@@ -104,7 +104,7 @@ def main():
         # Read file
         orig_list = dataset_utils.file2lst(lbls_path[:-4])
         data_size = len(orig_list)
-        accum = data_size 
+        accum = data_size
 
         # Verbose
         print("Processing:", lbls_path)
@@ -116,7 +116,7 @@ def main():
             file_name = orig_list[k]['pic_name']
             img_path = os.path.join(path_dir_p, file_name + '.yuv')
             POC = orig_list[k]['POC']
-            f_size = CustomDataset.get_file_size(file_name)  # Dict with the size of the image
+            f_size = custom_dataset.get_file_size(file_name)  # Dict with the size of the image
             f_size = (f_size['height'], f_size['width'])
             cu_pos = (orig_list[k]["stg_1"]["cu_pos"]["CU_loc_top"], orig_list[k]["stg_1"]["cu_pos"]["CU_loc_left"])
             cu_size = (orig_list[k]["stg_1"]["cu_size"]["height"], orig_list[k]["stg_1"]["cu_size"]["width"])
@@ -126,7 +126,7 @@ def main():
                 continue
 
             # Get CU
-            frame_CU, CU_Y, CU_U, CU_V = CustomDataset.get_cu(img_path, f_size, cu_pos, cu_size, POC)
+            frame_CU, CU_Y, CU_U, CU_V = custom_dataset.get_cu(img_path, f_size, cu_pos, cu_size, POC)
 
             # Convert to Pytorch Tensor
             CU_Y = torch.tensor(CU_Y.tolist())

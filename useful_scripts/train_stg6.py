@@ -96,7 +96,7 @@ sys.path.insert(0, "../")
 try:
     import custom_dataset
     import train_model_utils
-    import MSECNN
+    import msecnn
     import constants
     import utils
 except:
@@ -488,11 +488,11 @@ def train_test(train_dataloader, test_dataloader, model, loss_fn, optimizer, dev
 def main():
 
     # Initialize Model
-    stg1_2 = MSECNN.MseCnnStg1(device=device, QP=QP).to(device)
-    stg3 = MSECNN.MseCnnStgX(device=device, QP=QP).to(device)
-    stg4 = MSECNN.MseCnnStgX(device=device, QP=QP).to(device)
-    stg5 = MSECNN.MseCnnStgX(device=device, QP=QP).to(device)
-    stg6 = MSECNN.MseCnnStgX(device=device, QP=QP).to(device)
+    stg1_2 = msecnn.MseCnnStg1(device=device, QP=QP).to(device)
+    stg3 = msecnn.MseCnnStgX(device=device, QP=QP).to(device)
+    stg4 = msecnn.MseCnnStgX(device=device, QP=QP).to(device)
+    stg5 = msecnn.MseCnnStgX(device=device, QP=QP).to(device)
+    stg6 = msecnn.MseCnnStgX(device=device, QP=QP).to(device)
 
     model = (stg1_2, stg3, stg4, stg5, stg6)
 
@@ -523,7 +523,7 @@ def main():
     dataloader_test = DataLoader(test_data, num_workers=num_workers, batch_sampler=batch_sampler_test)
     
     # Load Loss function
-    loss_fn = MSECNN.LossFunctionMSE(beta=beta)
+    loss_fn = msecnn.LossFunctionMSE(beta=beta)
 
     # Train
     print("Starting training...")

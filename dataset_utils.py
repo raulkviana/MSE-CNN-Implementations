@@ -164,6 +164,7 @@ import torch
 from sklearn.model_selection import train_test_split
 import threading
 
+
 # ==============================================================
 # Classes
 # ==============================================================
@@ -738,6 +739,8 @@ def transform_create_struct_faster_v3(f, f_name, num_records, output_dir, n_outp
 def process_ctus_cus(df_ctus, df_cus):
     """!
     @brief Function to create data structures to organize the CTUs and CUs
+
+    TODO: Try to implement this with recursion
 
     @param [in] df_ctus: Dataframe with CTUs
     @param [in] df_cus: Dataframe with CUs

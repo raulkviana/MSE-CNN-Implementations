@@ -374,7 +374,7 @@ class MseCnnStg1(nn.Module):
         # Split CU and get specific
         if coords != None:
             cu = self.split(cu, coords, sizes, np.ones(coords.shape[0]))  # Split in Quad tree
-
+        
         ##Conditional Convolution stg 2
         # Number of residual units
         ac = min(cu.shape[-1], cu.shape[-2])  # Getting current minimum axis value

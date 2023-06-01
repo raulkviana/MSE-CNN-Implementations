@@ -56,6 +56,7 @@ try:
     import dataset_utils
 except:
     raise Exception("Module not found! Please verify that the main modules (CustomDataset, dataset_utils, MSECNN, train_model_utils and utils) can be found in the directory above the current one. Or just find a way of importing them.")
+
 # ==============================================================
 # Main
 # ==============================================================
@@ -63,7 +64,7 @@ except:
 def main():
 
     # Directory containing the .txt files with CUs informations
-    path_dir_l = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/labels/test/processed_labels/mod_with_real_CTU/mod_with_struct_change_no_dupl_32x32_v2/train_valid_test"  # Path with the labels processed
+    path_dir_l = r""  # Path with the labels processed
 
     print("Balance data in:", path_dir_l)
 
@@ -87,15 +88,15 @@ def main():
     # end = time.time()
     # print("Elapsed time for balance_dataset_down_v2:", end-start)
 
-    # start = time.time()
-    # dataset_utils.balance_dataset_down_v4(path_dir_l)  # Downsampling
-    # end = time.time()
-    # print("Elapsed time for balance_dataset_down_v4:", end-start)
-
     start = time.time()
-    dataset_utils.balance_dataset_down_v3(path_dir_l)  # Downsampling
+    dataset_utils.balance_dataset_down_v4(path_dir_l)  # Downsampling
     end = time.time()
-    print("Elapsed time for balance_dataset_down_v3:", end-start)
+    print("Elapsed time for balance_dataset_down_v4:", end-start)
+
+    # start = time.time()
+    # dataset_utils.balance_dataset_down_v3(path_dir_l)  # Downsampling
+    # end = time.time()
+    # print("Elapsed time for balance_dataset_down_v3:", end-start)
 
 if __name__ == "__main__":
     main()
