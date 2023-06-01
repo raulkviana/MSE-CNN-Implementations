@@ -102,6 +102,7 @@ parser.add_argument("--batch", type=int)
 parser.add_argument("--dev", type=int)
 parser.add_argument("--workers", type=int)
 parser.add_argument("--nmod", type=str)
+parser.add_argument("--labels", type=float)
 
 # Get arguments
 args = parser.parse_args()
@@ -113,6 +114,7 @@ batch_size = args.batch  # No paper 32
 device = args.dev
 num_workers = args.workers
 n_mod = args.nmod
+l_path_val = args.labels
 
 # Multi-thresholding coefficients for medium mode
 rs = [0.3, 0.5]
@@ -120,9 +122,6 @@ rs = [0.3, 0.5]
 print("Using {} device".format(device))
 # Tensorboard variable
 writer = SummaryWriter("runs/MSECNN_Eval_"+n_mod)
-
-# Paths
-l_path_val = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/labels/test/processed_labels/mod_with_real_CTU/mod_with_struct_change_no_dupl_stg6_v4/train_valid_test/balanced_labels_downsamp/test"#/balanced_labels_downsamp"  # For evaluation 
 
 # Build name modifier
 files_mod_name_stats = "_multi_batch_val_batch_{batch}_QP_{QP}_{nmod}".format(batch=batch_size, QP=qp, nmod=n_mod)
