@@ -18,8 +18,68 @@
 <br>
 
 Code database with an implementation of MSE-CNN [1]. Besides the code, the dataset and coefficients obtained after training are provided.
-<br>
-<br>
+
+
+``` python
+>>> import torch
+>>> import MSECNN
+>>> import train_model_utils
+>>>
+>>> # Initialize parameters
+>>> path_to_folder_with_model_params = "model_coefficients/best_coefficients"
+>>> device = "cuda:0"
+>>> qp = 32  # Quantisation Parameter
+>>> 
+>>> # Initialize Model
+>>> stg1_2 = msecnn.MseCnnStg1(device=device, QP=qp).to(device)
+>>> stg3 = msecnn.MseCnnStgX(device=device, QP=qp).to(device)
+>>> stg4 = msecnn.MseCnnStgX(device=device, QP=qp).to(device)
+>>> stg5 = msecnn.MseCnnStgX(device=device, QP=qp).to(device)
+>>> stg6 = msecnn.MseCnnStgX(device=device, QP=qp).to(device)
+>>> model = (stg1_2, stg3, stg4, stg5, stg6)
+>>>
+>>> model = train_model_utils.load_model_parameters_eval(model, path_to_folder_with_model_params, device)
+>>>
+>>> # Loss function
+>>> loss_fn = msecnn.LossFunctionMSE()
+>>> 
+>>> # Path to labels
+>>> l_path_val = "example_data/stg2"
+>>>
+>>> # Random CTU and labels
+>>> CTU = torch.rand(1, 1, 128, 128).to(device)
+>>> CTU
+tensor([[[[0.9320, 0.6777, 0.4490,  ..., 0.0413, 0.6278, 0.5375],
+          [0.3544, 0.5620, 0.8339,  ..., 0.6420, 0.2527, 0.3104],
+          [0.0555, 0.4991, 0.9972,  ..., 0.3898, 0.1169, 0.1661],
+          ...,
+          [0.9452, 0.3566, 0.9825,  ..., 0.3941, 0.7534, 0.8656],
+          [0.3839, 0.8459, 0.4369,  ..., 0.9569, 0.2609, 0.6421],
+          [0.1734, 0.7182, 0.8074,  ..., 0.2122, 0.7573, 0.2492]]]])
+>>> cu_pos = torch.tensor([[0, 0]]).to(device)
+>>> cu_size = torch.tensor([[64, 64]]).to(device)  # Size of the CU of the second stage
+>>> split_label = torch.tensor([[1]]).to(device)
+>>> RDs = torch.rand(1, 6).to(device) * 10_000
+>>> RDs
+tensor([[1975.6646, 2206.7600, 1570.3577, 3570.9478, 6728.2612,  527.9994]])
+>>> # Compute prediction for stages 1 and 2
+>>> # Stage 1 and 2
+>>> pred1_2, CUs, ap = model[0](CTU, cu_size, cu_pos)  # Pass CU through network
+>>> pred1_2
+tensor([[9.9982e-01, 1.8124e-04, 9.9010e-21, 5.9963e-29, 1.9118e-24, 1.0236e-25]],
+       grad_fn=<SoftmaxBackward0>)
+>>> CUs.shape
+torch.Size([1, 16, 64, 64])
+>>> 
+>>> # Compute the loss
+>>> loss, loss_CE, loss_RD = loss_fn(pred1_2, split_label, RDs)
+>> loss
+tensor(177.1340, grad_fn=<AddBackward0>)
+>> loss_CE
+tensor(174.3921, grad_fn=<NegBackward0>)
+>> loss_RD
+tensor(2.7419, grad_fn=<MeanBackward1>)
+```
 
 - [MSE-CNN Implementation](#mse-cnn-implementation)
   - [1. Introduction](#1-introduction)
@@ -32,12 +92,12 @@ Code database with an implementation of MSE-CNN [1]. Besides the code, the datas
       - [2.2.4 Implementation remarks](#224-implementation-remarks)
   - [3. Dataset](#3-dataset)
   - [4. Results](#4-results)
-    - [4.1 F1-score, Recall and Precision](#41-f1-score-recall-and-precision)
+    - [4.1 F1-score, Recall and Precision with test data](#41-f1-score-recall-and-precision-with-test-data)
     - [4.2 Confusion matrices](#42-confusion-matrices)
       - [4.2.1 Stages 2 and 3](#421-stages-2-and-3)
       - [4.2.2 Stages 4 and 5](#422-stages-4-and-5)
       - [4.2.3 Stage 6](#423-stage-6)
-    - [4.3 Y-PSNR, Complexity Reduction and Bitrate](#43-y-psnr-complexity-reduction-and-bitrate)
+    - [4.3 Y-PSNR, Complexity Reduction and Bitrate with test data](#43-y-psnr-complexity-reduction-and-bitrate-with-test-data)
   - [5. Relevant Folders and files](#5-relevant-folders-and-files)
     - [5.1 Folders](#51-folders)
     - [5.2 Files](#52-files)
@@ -47,7 +107,6 @@ Code database with an implementation of MSE-CNN [1]. Besides the code, the datas
   - [9. TODO](#9-todo)
   - [10. References](#10-references)
 
-<!--------- Put demo here ----------->
 
 ## 1. Introduction
 
@@ -159,7 +218,9 @@ In the above equation, the RD costs $r_{n, m}$ uses the same notation for "n" an
 $$\frac{r_{n, m}}{r_{n, min}} - 1$$
 is a normalised RD cost. As a relevant note, $r_{n, min}$ is equal to the RD cost of the best partition mode. Consequently, the result of
 
-$$\hat{y}_{n, m}\frac{r_{n, m}}{r_{n, min}}-1$$ 
+<div align="center">
+  <img src="imgs/formula.png" />
+</div>
 
 ensures that CU's partitions with greater erroneously predicted probability values or greater RD cost values $r_{n, m}$ are more penalised. In $\frac{r_{n, m}}{r_{n, min}} - 1$, the ideal partition has a normalised RD cost of zero, but the other partitions do not. Therefore, the only way for the loss to equal zero is if the probability for all other modes also equals zero. Consequently, the learning algorithm must assign a greater probability to the optimal split mode while reducing the probabilities for the rest. **Experimentally it was verified that this function wasn't able to contribute to the training of the MSE-CNN, this contradicted the remarks made in [1]**.
 
@@ -190,7 +251,7 @@ When the network was being trained, some of the RD costs from the input data had
 
 ## 3. Dataset
 
-Please see this [page](dataset_RAISE_TEST/README.md) to understand better the dataset and also access it.
+Please see this [page](dataset/README.md) to understand better the dataset and also access it.
 
 ## 4. Results
 
