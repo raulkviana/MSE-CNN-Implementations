@@ -70,6 +70,7 @@ import argparse
 import datetime
 import time
 import sys
+import torch
 # Insert the path of modules folder 
 sys.path.insert(0, "../")
 try:
@@ -89,6 +90,7 @@ parser.add_argument("--dev", type=int)
 parser.add_argument("--workers", type=int)
 parser.add_argument("--nmod", type=str)
 parser.add_argument("--thres", type=float)
+parser.add_argument("--labels", type=float)
 
 # Get arguments
 args = parser.parse_args()
@@ -101,14 +103,12 @@ device = args.dev
 num_workers = args.workers
 rs = args.thres
 n_mod = args.nmod
+l_path_val = args.labels
 
 # Get arguments
 args = parser.parse_args()
 
 print("Using {} device".format(device))
-
-# Paths
-l_path_val = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/labels/valid/processed_labels/mod_with_real_CTU/complexity/test/mod_with_struct_change_no_dupl_stg_6_compl_v4"#/balanced_labels_downsamp"  # For evaluation 
 
 # Build name modifier
 files_mod_name_stats = "_multi_batch_val_batch_{batch}_QP_{QP}".format(batch=batch_size, QP=qp)
@@ -198,7 +198,6 @@ def test(dataloader, model, device, loss_name):
             pred_num = train_model_utils.obtain_mode(pred)
             Y_num = train_model_utils.obtain_mode(Y)
 
-
             if len(pred_num) != 1:
                 pred_num = pred_num.reshape(1, -1)
 
@@ -216,11 +215,7 @@ def test(dataloader, model, device, loss_name):
 
             # Print information about training
             if (i_batch+1) % 10 == 0:
-                utils.echo("Complete:{percentage:.0%}".format(percentage=i_batch / size))
-
-            # Delete later condition
-            # if i_batch == 10:
-            #    break
+                utils.echo("Complete: {percentage:.0%}".format(percentage=i_batch / size))
         
         print("Average time to process each CTU batch: ", total_time/(i_batch+1))
         print("Total time to process all CTUs: ", total_time)
