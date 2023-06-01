@@ -1,6 +1,6 @@
 
 # Code to process the images/videos into labels
-All of the code bellow can be found in this [folder](../useful_scripts/).
+All of the code bellow can be found in this [folder](../src/useful_scripts/).
 
 ### Encoding
 ``` python
