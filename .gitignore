@@ -1,4 +1,4 @@
-
+env/
 useful_scripts/get_functions_used_in_each_script.py
 *.pyc
 get_functions_used_in_each_script.py
