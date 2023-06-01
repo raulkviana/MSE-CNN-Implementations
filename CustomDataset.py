@@ -15,14 +15,11 @@
 
 @section classes_CustomDataset Classes 
 - CUDatasetBase
-- CUDatasetStg4
-- CUDatasetStg6
-- CUDatasetStg5
-- CUDatasetStg5Compl
 - CUDatasetStg2Compl
-- CUDatasetStg6Compl
-- CUDatasetStg4Compl
 - CUDatasetStg3Compl
+- CUDatasetStg4Compl
+- CUDatasetStg5Compl
+- CUDatasetStg6Compl
 - SamplerStg6
 - SamplerStg5
 - SamplerStg4
@@ -323,7 +320,6 @@ class CUDatasetBase(Dataset):
     """!
     Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again. Works for stage 2 and 3
     """
-
     def __init__(self, files_path, channel=0):
         """!
         Args:
@@ -469,240 +465,12 @@ class CUDatasetBase(Dataset):
 
         return sample
 
-class CUDatasetStg4(CUDatasetBase):
-    """!
-    Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again. For stage 4
-    """
-
-    def __init__(self, files_path, channel=0):
-        """!
-        Args:
-            @param files_path (string): Path to the files with annotations.
-            @param channel: Channel to get for the dataset (0:Luma, 1:Chroma)
-        """
-        super(CUDatasetStg4, self).__init__(files_path, channel)
-
-    def get_sample(self, entry):
-        """!
-        Args:
-            @param entry (int): An instance from the labels.
-
-            @return out: lst -  CTU | RD_for_specific_stage | cu_left_of_stg_1 | cu_top_of_stg_1 | cu_left_for_specific_stage | cu_top_for_specific_stage |  split_for_specific_stage
-        """
-
-        # Initialize variable
-        info_lst = []
-        color_ch = entry[-1]
-
-        if color_ch == self.channel:
-            # Add Real CU
-            CU_Y = entry[-2]
-
-            # Add dimension
-            CU_Y = torch.unsqueeze(CU_Y, 0)
-
-            # Convert to float
-            CU_Y = CU_Y.to(dtype=torch.float32)
-
-            # CU positions within frame
-            cu_pos = torch.reshape(torch.tensor(entry[3]), (-1, 2))
-            cu_pos_stg3 = torch.reshape(torch.tensor(entry[2]), (-1, 2))
-            cu_pos_stg2 = torch.reshape(torch.tensor(entry[1]), (-1, 2))
-
-            # CU sizes within frame
-            cu_size = torch.reshape(torch.tensor(entry[6]), (-1, 2))
-            cu_size_stg3 = torch.reshape(torch.tensor(entry[5]), (-1, 2))
-            cu_size_stg2 = torch.reshape(torch.tensor(entry[4]), (-1, 2))
-
-            # Best split for CU
-            split = entry[9]
-            split_stg3 = entry[8]
-            split_stg2 = entry[7]
-
-            # Rate distortion costs
-            RDs = torch.reshape(torch.tensor(entry[0]), (-1, 6))
-
-            # Save values
-            info_lst.append(CU_Y)
-            info_lst.append(cu_pos_stg2)
-            info_lst.append(cu_pos_stg3)
-            info_lst.append(cu_pos)
-            info_lst.append(cu_size_stg2)
-            info_lst.append(cu_size_stg3)
-            info_lst.append(cu_size)
-            info_lst.append(split_stg2)
-            info_lst.append(split_stg3)
-            info_lst.append(split)
-            info_lst.append(RDs)
-
-        else:
-            raise Exception("This can not happen! This CU color channel should be " + str(self.channel) + "Try generating the labels and obtain just a specific color channel (see dataset_utils)!")
-
-        return info_lst
-
-class CUDatasetStg6(CUDatasetBase):
-    """!
-    Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again. For stage 6
-    """
-
-    def __init__(self, files_path, channel=0):
-        """!
-        Args:
-            @param files_path (string): Path to the files with annotations.
-            @param channel: Channel to get for the dataset (0:Luma, 1:Chroma)
-        """
-        super(CUDatasetStg6, self).__init__(files_path, channel)
-
-    def get_sample(self, entry):
-        """!
-        Args:
-            @param entry (int): An instance from the labels.
-        """
-
-        # Initialize variable
-        info_lst = []
-        color_ch = entry[-1]
-
-        if color_ch == self.channel:
-            # Add Real CU
-            CU_Y = entry[-2]
-
-            # Add dimension
-            CU_Y = torch.unsqueeze(CU_Y, 0)
-
-            # Convert to float
-            CU_Y = CU_Y.to(dtype=torch.float32)
-
-            # CU positions within frame
-            cu_pos = torch.reshape(torch.tensor(entry[5]), (-1, 2))
-            cu_pos_stg5 = torch.reshape(torch.tensor(entry[4]), (-1, 2))
-            cu_pos_stg4 = torch.reshape(torch.tensor(entry[3]), (-1, 2))
-            cu_pos_stg3 = torch.reshape(torch.tensor(entry[2]), (-1, 2))
-            cu_pos_stg2 = torch.reshape(torch.tensor(entry[1]), (-1, 2))
-
-            # CU sizes within frame
-            cu_size = torch.reshape(torch.tensor(entry[10]), (-1, 2))
-            cu_size_stg5 = torch.reshape(torch.tensor(entry[9]), (-1, 2))
-            cu_size_stg4 = torch.reshape(torch.tensor(entry[8]), (-1, 2))
-            cu_size_stg3 = torch.reshape(torch.tensor(entry[7]), (-1, 2))
-            cu_size_stg2 = torch.reshape(torch.tensor(entry[6]), (-1, 2))
-
-            # Best split for CU
-            split = entry[15]
-            split_stg5 = entry[14]
-            split_stg4 = entry[13]
-            split_stg3 = entry[12]
-            split_stg2 = entry[11]
-
-            # Rate distortion costs
-            RDs = torch.reshape(torch.tensor(entry[0]), (-1, 6))
-
-            # Save values
-            info_lst.append(CU_Y)
-            info_lst.append(cu_pos_stg2)
-            info_lst.append(cu_pos_stg3)
-            info_lst.append(cu_pos_stg4)
-            info_lst.append(cu_pos_stg5)
-            info_lst.append(cu_pos)
-            info_lst.append(cu_size_stg2)
-            info_lst.append(cu_size_stg3)
-            info_lst.append(cu_size_stg4)
-            info_lst.append(cu_size_stg5)
-            info_lst.append(cu_size)
-            info_lst.append(split_stg2)
-            info_lst.append(split_stg3)
-            info_lst.append(split_stg4)
-            info_lst.append(split_stg5)
-            info_lst.append(split)
-            info_lst.append(RDs)
-
-        else:
-            raise Exception("This can not happen! This CU color channel should be " + str(self.channel) + "Try generating the labels and obtain just a specific color channel (see dataset_utils)!")
-
-        return info_lst
-
-class CUDatasetStg5(CUDatasetBase):
-    """!
-    Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again. For stage 5
-    """
-
-    def __init__(self, files_path, channel=0):
-        """!
-        Args:
-            @param files_path (string): Path to the files with annotations.
-            @param channel: Channel to get for the dataset (0:Luma, 1:Chroma)
-        """
-        super(CUDatasetStg5, self).__init__(files_path, channel)
-
-    def get_sample(self, entry):
-        """!
-        Args:
-            @param entry (int): An instance from the labels.
-
-            @return out: lst -  CTU | RD_for_specific_stage | cu_left_of_stg_1 | cu_top_of_stg_1 | cu_left_for_specific_stage | cu_top_for_specific_stage |  split_for_specific_stage
-        """
-
-        # Initialize variable
-        info_lst = []
-        color_ch = entry[-1]
-
-        if color_ch == self.channel:
-            # Add Real CU
-            CU_Y = entry[-2]
-
-            # Add dimension
-            CU_Y = torch.unsqueeze(CU_Y, 0)
-
-            # Convert to float
-            CU_Y = CU_Y.to(dtype=torch.float32)
-
-            # CU positions within frame
-            cu_pos = torch.reshape(torch.tensor(entry[4]), (-1, 2))
-            cu_pos_stg4 = torch.reshape(torch.tensor(entry[3]), (-1, 2))
-            cu_pos_stg3 = torch.reshape(torch.tensor(entry[2]), (-1, 2))
-            cu_pos_stg2 = torch.reshape(torch.tensor(entry[1]), (-1, 2))
-
-            # CU sizes within frame
-            cu_size = torch.reshape(torch.tensor(entry[8]), (-1, 2))
-            cu_size_stg4 = torch.reshape(torch.tensor(entry[7]), (-1, 2))
-            cu_size_stg3 = torch.reshape(torch.tensor(entry[6]), (-1, 2))
-            cu_size_stg2 = torch.reshape(torch.tensor(entry[5]), (-1, 2))
-
-            # Best split for CU
-            split = entry[12]
-            split_stg4 = entry[11]
-            split_stg3 = entry[10]
-            split_stg2 = entry[9]
-
-            # Rate distortion costs
-            RDs = torch.reshape(torch.tensor(entry[0]), (-1, 6))
-
-            # Save values
-            info_lst.append(CU_Y)
-            info_lst.append(cu_pos_stg2)
-            info_lst.append(cu_pos_stg3)
-            info_lst.append(cu_pos_stg4)
-            info_lst.append(cu_pos)
-            info_lst.append(cu_size_stg2)
-            info_lst.append(cu_size_stg3)
-            info_lst.append(cu_size_stg4)
-            info_lst.append(cu_size)
-            info_lst.append(split_stg2)
-            info_lst.append(split_stg3)
-            info_lst.append(split_stg4)
-            info_lst.append(split)
-            info_lst.append(RDs)
-
-        else:
-            raise Exception("This can not happen! This CU color channel should be " + str(self.channel) + "Try generating the labels and obtain just a specific color channel (see dataset_utils)!")
-
-        return info_lst
-
 class CUDatasetStg5Compl(CUDatasetBase):
     """!
     Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again. For stage 5
+    
+    This version contains all of the information available from the CU data
     """
-
     def __init__(self, files_path, channel=0):
         """!
         Args:
@@ -793,8 +561,9 @@ class CUDatasetStg5Compl(CUDatasetBase):
 class CUDatasetStg2Compl(CUDatasetBase):
     """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again. For stage 2
+    
+    This version contains all of the information available from the CU data
     """
-
     def __init__(self, files_path, channel=0):
         """!
         Args:
@@ -828,10 +597,8 @@ class CUDatasetStg2Compl(CUDatasetBase):
             # CU positions within frame
             cu_pos = torch.reshape(torch.tensor(entry[1]), (-1, 2))
 
-
             # CU sizes within frame
             cu_size = torch.reshape(torch.tensor(entry[2]), (-1, 2))
-
 
             # Best split for CU
             split = entry[3]
@@ -869,6 +636,8 @@ class CUDatasetStg2Compl(CUDatasetBase):
 class CUDatasetStg6Compl(CUDatasetBase):
     """!
     Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again. For stage 6
+    
+    This version contains all of the information available from the CU data
     """
 
     def __init__(self, files_path, channel=0):
@@ -966,8 +735,9 @@ class CUDatasetStg6Compl(CUDatasetBase):
 class CUDatasetStg4Compl(CUDatasetBase):
     """!
     Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again. For stage 4
+    
+    This version contains all of the information available from the CU data
     """
-
     def __init__(self, files_path, channel=0):
         """!
         Args:
@@ -1052,8 +822,9 @@ class CUDatasetStg4Compl(CUDatasetBase):
 class CUDatasetStg3Compl(CUDatasetBase):
     """!
     - Dataset stage oriented with capability of loading different files and it's supposed to be used with the function dataset_utils.change_labels_function_again. For stage 3
+    
+    This version contains all of the information available from the CU data
     """
-
     def __init__(self, files_path, channel=0):
         """!
         Args:
