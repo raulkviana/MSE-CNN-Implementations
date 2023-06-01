@@ -311,11 +311,10 @@ Results with weighted average for F1-score, recall and precision.
 
 | Folder | Description |
 |--------|-------------|
-| [dataset](dataset_RAISE_TEST) | This folder contains all of the dataset and all of the data that was processed in order to obtain it |
-| [example_data](example_data) | Here you can find some example data that it is used for the scripts in usefull_scripts folder|
-| [model_coefficients](model_coefficients) | The last coefficient obtained during training, as well as the best one in terms of the best F1-score obtained in testing data |
-| [usefull_scripts](usefull_scripts) | Some example scripts demonstrating how to use some of the functions created can be found here |
-| [src](src) | Source code with the implementation of the MSE-CNN and also useful code and examples |
+| [dataset](/dataset) | This folder contains all of the dataset and all of the data that was processed in order to obtain it |
+| [example_data](/example_data) | Here you can find some example data that it is used for the scripts in usefull_scripts folder|
+| [model_coefficients](/model_coefficients) | The last coefficient obtained during training, as well as the best one in terms of the best F1-score obtained in testing data |
+| [src](/src) | Source code with the implementation of the MSE-CNN and also useful code and examples |
 
 
 
@@ -324,9 +323,9 @@ Results with weighted average for F1-score, recall and precision.
 | Files | Description |
 |--------|-------------|
 | constants.py | Constant values used in other python files |
-| CustomDataset.py | Dataset class to handle the files with the ground-thruth information, as well as other usefull classes to work together with the aforementioned class |
+| custom_dataset.py | Dataset class to handle the files with the ground-thruth information, as well as other usefull classes to work together with the aforementioned class |
 | dataset_utils.py | Functions to manipulate and process the data, also contains functions to interact with YUV files |
-| MSECNN.py | MSE-CNN and Loss Function classes implementation |
+| msecnn.py | MSE-CNN and Loss Function classes implementation |
 | train_model_utils.py | Usefull functions to be used during training or evaluation of the artificial neural network |
 | utils.py | Other functions that are usefull not directly to the model but for the code implementation itself |
 
@@ -351,24 +350,24 @@ This command exits the virtual environment and returns you to your normal comman
 2. Install the package using one of the following methods:
 
    - Install the source distribution:
-     ```shell
-     $ pip install dist/.tar.gz
-     ```
+```shell
+pip install dist/.tar.gz
+```
 
    - Install the wheel distribution:
-     ```shell
-     $ pip install dist/.whl
-     ```
+```shell
+pip install dist/.whl
+```
 
 3. Once the package is installed, you can import and use its functionalities in your Python code.
 
 ## 7. Contributions
 
-Feel free to contact me through this [email](raudao@hotmail.com) or create either a issue or pull request to contribute to this project ^^.
+Feel free to contact me through this [email](raulviana@ua.pt) or create either a issue or pull request to contribute to this project ^^.
 
 ## 8. License
 
-This project license is under the [**MIT License**](LICENSE).
+This project license is under the [MIT License](LICENSE).
 
 ## 9. TODO
 
@@ -377,12 +376,8 @@ This project license is under the [**MIT License**](LICENSE).
 | Implement code to test functions| Use a library, such as Pytest, to test some functions from the many modules developed | w |
 
 ## 10. References
-[1] T. Li, M. Xu, R. Tang, Y. Chen, and Q. Xing, [“DeepQTMT: A Deep Learning Approach for
-Fast QTMT-Based CU Partition of Intra-Mode VVC,”](https://arxiv.org/abs/2006.13125) IEEE Transactions on Image Processing,
-vol. 30, pp. 5377–5390, 2021, doi: 10.1109/tip.2021.3083447.
-<br>
+[1] T. Li, M. Xu, R. Tang, Y. Chen, and Q. Xing, [“DeepQTMT: A Deep Learning Approach for Fast QTMT-Based CU Partition of Intra-Mode VVC,”](https://arxiv.org/abs/2006.13125) IEEE Transactions on Image Processing, vol. 30, pp. 5377–5390, 2021, doi: 10.1109/tip.2021.3083447.
 [2] R. K. Viana, “Deep learning architecture for fast intra-mode CUs partitioning in VVC,” Universidade de Aveiro, Nov. 2022.
-
 <div align="center">
   <img src="imgs\funny_memes_about_this_work\72rukf.gif" width=450 />
   <p>:)</p>
