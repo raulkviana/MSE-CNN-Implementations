@@ -5,3 +5,5 @@ seaborn==0.11.0
 sklearn==0.0
 matplotlib==3.3.1
 opencv-python==4.6.0.66
+torchvision==0.11.3
+torchaudio==0.10.2
