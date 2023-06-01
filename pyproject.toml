@@ -32,8 +32,8 @@ dependencies = [
 ]
 
 [project.urls]
-repository = "https://github.com/raulkviana/MSE-CNN-Implementations"
-# include the docs after
+Repository = "https://github.com/raulkviana/MSE-CNN-Implementations"
+Documentation = "https://github.com/raulkviana/MSE-CNN-Implementations/doc"
 
 [tool.setuptools.metadata]
 exclude = [
