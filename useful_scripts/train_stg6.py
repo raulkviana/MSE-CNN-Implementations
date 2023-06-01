@@ -91,7 +91,7 @@ import datetime
 import numpy as np
 import matplotlib.pyplot as plt
 import sys
-# Insert the path of modules folder 
+# Insert the path of modules folder
 sys.path.insert(0, "../")
 try:
     import CustomDataset
@@ -113,6 +113,8 @@ parser.add_argument("--lr", type=float)
 parser.add_argument("--workers", type=int)
 parser.add_argument("--nmod", type=str)
 parser.add_argument("--dcontr", type=int)
+parser.add_argument("--labelsTrain", type=str)
+parser.add_argument("--labelsTest", type=str)
 
 # Get arguments
 args = parser.parse_args()
@@ -122,24 +124,20 @@ beta = args.b
 learning_rate = args.lr
 loss_threshold = float("-inf")
 QP = 32
-batch_size = args.batch  # No paper 32
-iterations = args.i  # No paper 500_000
+batch_size = args.batch
+iterations = args.i
 decay = 0.01
 decay_controler = args.dcontr
 device = args.dev #"cuda" if torch.cuda.is_available() else "cpu"
 num_workers = args.workers
 n_mod = args.nmod
+l_path_train = args.labelsTrain
+l_path_test = args.labelsTest
 
 print("Using {} device".format(device))
 
 # Tensorboard variable
 writer = SummaryWriter("runs/MSECNN_"+n_mod)
-
-# Paths
-# Data
-l_path_train = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/labels/test/processed_labels/mod_with_real_CTU/mod_with_struct_change_no_dupl_stg6_v4/train_valid_test/balanced_labels_downsamp/train_val"  # For training Labels path
-l_path_test = "/nfs/home/rviana.it/MSE_CNN/Dataset_Labels/all_data/labels/test/processed_labels/mod_with_real_CTU/mod_with_struct_change_no_dupl_stg6_v4/train_valid_test/balanced_labels_downsamp/test"  # For testing Labels path
-
 
 # Build name modifier
 files_mod_name_stats = "_multi_batch_iter_{ite}_batch_{batch}_QP_{QP}_beta_{be}_lr_{lr}_{n_mod}".format(ite=iterations, batch=batch_size, QP=QP, be=beta, lr=learning_rate, n_mod=n_mod)
@@ -490,11 +488,11 @@ def train_test(train_dataloader, test_dataloader, model, loss_fn, optimizer, dev
 def main():
 
     # Initialize Model
-    stg1_2 = MSECNN.MseCnnStg1(device=device, QP=32).to(device)
-    stg3 = MSECNN.MseCnnStgX(device=device, QP=32).to(device)
-    stg4 = MSECNN.MseCnnStgX(device=device, QP=32).to(device)
-    stg5 = MSECNN.MseCnnStgX(device=device, QP=32).to(device)
-    stg6 = MSECNN.MseCnnStgX(device=device, QP=32).to(device)
+    stg1_2 = MSECNN.MseCnnStg1(device=device, QP=QP).to(device)
+    stg3 = MSECNN.MseCnnStgX(device=device, QP=QP).to(device)
+    stg4 = MSECNN.MseCnnStgX(device=device, QP=QP).to(device)
+    stg5 = MSECNN.MseCnnStgX(device=device, QP=QP).to(device)
+    stg6 = MSECNN.MseCnnStgX(device=device, QP=QP).to(device)
 
     model = (stg1_2, stg3, stg4, stg5, stg6)
 
@@ -507,7 +505,7 @@ def main():
     ans = str(input('Do you want to load any existing model? Y/N \n'))
     if ans == 'Y' or ans == 'y':
 
-        ans = str(input('Do you want a full model (all stages in the folder)? Y/N \n'))
+        ans = str(input('Do you want to load the full model (all stages in the folder) or just the last stage? Press A for all stages or L for the last stage. (Press enter afterwards) \n'))
         path = input('What\'s the path of the files you want to load the model to?')
 
         if ans == 'Y' or ans == 'y':
