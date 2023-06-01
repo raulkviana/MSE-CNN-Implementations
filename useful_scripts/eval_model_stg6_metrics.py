@@ -89,7 +89,7 @@ sys.path.insert(0, "../")
 try:
     import utils
     import MSECNN
-    import CustomDataset
+    import custom_dataset
     import train_model_utils
     import constants
 except:
@@ -281,8 +281,8 @@ def main():
        model = train_model_utils.load_model_parameters_eval(model, path, device)
 
     # Prepare testing data, Dataset and Dataloader
-    val_data = CustomDataset.CUDatasetStg6Compl(files_path=l_path_val)
-    batch_sampler_val = CustomDataset.SamplerStg6(val_data, batch_size)  # Batch Sampler
+    val_data = custom_dataset.CUDatasetStg6Compl(files_path=l_path_val)
+    batch_sampler_val = custom_dataset.SamplerStg6(val_data, batch_size)  # Batch Sampler
     dataloader_val = DataLoader(val_data, num_workers=num_workers, batch_sampler=batch_sampler_val)
     
     # Train

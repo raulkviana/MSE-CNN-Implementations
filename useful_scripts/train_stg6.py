@@ -94,7 +94,7 @@ import sys
 # Insert the path of modules folder
 sys.path.insert(0, "../")
 try:
-    import CustomDataset
+    import custom_dataset
     import train_model_utils
     import MSECNN
     import constants
@@ -515,11 +515,11 @@ def main():
             model = train_model_utils.load_model_stg_5_stg_6(model, path, device)
 
     # Prepare training and testing data, Dataset and Dataloader
-    train_data = CustomDataset.CUDatasetStg6(files_path=l_path_train) 
-    batch_sampler_train = CustomDataset.SamplerStg6(train_data, batch_size)  # Batch Sampler
+    train_data = custom_dataset.CUDatasetStg6(files_path=l_path_train) 
+    batch_sampler_train = custom_dataset.SamplerStg6(train_data, batch_size)  # Batch Sampler
     dataloader_train = DataLoader(train_data, num_workers=num_workers, batch_sampler=batch_sampler_train)
-    test_data = CustomDataset.CUDatasetStg6(files_path=l_path_test)
-    batch_sampler_test = CustomDataset.SamplerStg6(test_data, batch_size)  # Batch Sampler
+    test_data = custom_dataset.CUDatasetStg6(files_path=l_path_test)
+    batch_sampler_test = custom_dataset.SamplerStg6(test_data, batch_size)  # Batch Sampler
     dataloader_test = DataLoader(test_data, num_workers=num_workers, batch_sampler=batch_sampler_test)
     
     # Load Loss function
