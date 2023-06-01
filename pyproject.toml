@@ -34,8 +34,3 @@ dependencies = [
 [project.urls]
 Repository = "https://github.com/raulkviana/MSE-CNN-Implementations"
 Documentation = "https://github.com/raulkviana/MSE-CNN-Implementations/doc"
-
-[tool.setuptools.metadata]
-exclude = [
-  "src/msecnn_raulkviana/useful_scripts"
-]
