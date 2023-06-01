@@ -100,8 +100,10 @@ tensor(2.7419, grad_fn=<MeanBackward1>)
     - [4.3 Y-PSNR, Complexity Reduction and Bitrate with test data](#43-y-psnr-complexity-reduction-and-bitrate-with-test-data)
   - [5. Relevant Folders and files](#5-relevant-folders-and-files)
     - [5.1 Folders](#51-folders)
-    - [5.2 Files](#52-files)
+    - [5.2 Files in src folder](#52-files-in-src-folder)
   - [6. Installation of dependencies](#6-installation-of-dependencies)
+    - [Requirements](#requirements)
+    - [Package Distributions](#package-distributions)
   - [7. Contributions](#7-contributions)
   - [8. License](#8-license)
   - [9. TODO](#9-todo)
@@ -309,13 +311,15 @@ Results with weighted average for F1-score, recall and precision.
 
 | Folder | Description |
 |--------|-------------|
-| [dataset_RAISE_TEST](dataset_RAISE_TEST) | This folder contains all of the dataset and all of the data that was processed in order to obtain it |
+| [dataset](dataset_RAISE_TEST) | This folder contains all of the dataset and all of the data that was processed in order to obtain it |
 | [example_data](example_data) | Here you can find some example data that it is used for the scripts in usefull_scripts folder|
 | [model_coefficients](model_coefficients) | The last coefficient obtained during training, as well as the best one in terms of the best F1-score obtained in testing data |
 | [usefull_scripts](usefull_scripts) | Some example scripts demonstrating how to use some of the functions created can be found here |
+| [src](src) | Source code with the implementation of the MSE-CNN and also useful code and examples |
 
 
-### 5.2 Files
+
+### 5.2 Files in src folder
 
 | Files | Description |
 |--------|-------------|
@@ -327,12 +331,36 @@ Results with weighted average for F1-score, recall and precision.
 | utils.py | Other functions that are usefull not directly to the model but for the code implementation itself |
 
 ## 6. Installation of dependencies
+In order to explore this project, it is needed to first install of the libraries used in it.
 
-In order to run this project, it is needed to first install of the libraries used in it. For this please follow the below steps:
+### Requirements
+For this please follow the below steps:
 1. Create a virtual environment to do install the libraries; follow this [link](https://www.geeksforgeeks.org/creating-python-virtual-environment-windows-linux/) in case you don't know how to do it; you possibly need to install [pip](https://www.makeuseof.com/tag/install-pip-for-python/), if you don't have it installed
 2. Run the following command: <br> <code>pip install -r requirements.txt</code> <br>
 This will install all of the libraries references in the requirements.txt file.
+4. When you have finished using the package or working on your project, you can deactivate the virtual environment:
+```shell
+$ deactivate
+```
+This command exits the virtual environment and returns you to your normal command prompt.
 3. Enjoy! :)
+
+### Package Distributions
+1. Locate the `dist` folder in your project's root directory. This folder contains the package distributions, including the source distribution (`*.tar.gz` file) and the wheel distribution (`*.whl` file).
+
+2. Install the package using one of the following methods:
+
+   - Install the source distribution:
+     ```shell
+     $ pip install dist/.tar.gz
+     ```
+
+   - Install the wheel distribution:
+     ```shell
+     $ pip install dist/.whl
+     ```
+
+3. Once the package is installed, you can import and use its functionalities in your Python code.
 
 ## 7. Contributions
 
