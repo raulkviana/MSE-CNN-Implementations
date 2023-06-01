@@ -1,5 +1,4 @@
-# MSE-CNN-Implementations
-Code database with the implementation of MSE-CNN. 
+# Usefull code
+Exemplifications in how to process the data and how to train and evaluate the model.
 
 
-![alt text](msecnn_model.png "MSE-CNN")
