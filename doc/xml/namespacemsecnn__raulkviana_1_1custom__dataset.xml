@@ -1,0 +1,395 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="namespacemsecnn__raulkviana_1_1custom__dataset" kind="namespace" language="Python">
+    <compoundname>msecnn_raulkviana::custom_dataset</compoundname>
+    <innerclass refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_base" prot="public">msecnn_raulkviana::custom_dataset::CUDatasetBase</innerclass>
+    <innerclass refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg2_compl" prot="public">msecnn_raulkviana::custom_dataset::CUDatasetStg2Compl</innerclass>
+    <innerclass refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg3_compl" prot="public">msecnn_raulkviana::custom_dataset::CUDatasetStg3Compl</innerclass>
+    <innerclass refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg4_compl" prot="public">msecnn_raulkviana::custom_dataset::CUDatasetStg4Compl</innerclass>
+    <innerclass refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg5_compl" prot="public">msecnn_raulkviana::custom_dataset::CUDatasetStg5Compl</innerclass>
+    <innerclass refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg6_compl" prot="public">msecnn_raulkviana::custom_dataset::CUDatasetStg6Compl</innerclass>
+    <innerclass refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_sampler_stg4" prot="public">msecnn_raulkviana::custom_dataset::SamplerStg4</innerclass>
+    <innerclass refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_sampler_stg5" prot="public">msecnn_raulkviana::custom_dataset::SamplerStg5</innerclass>
+    <innerclass refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_sampler_stg6" prot="public">msecnn_raulkviana::custom_dataset::SamplerStg6</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1custom__dataset_1a59377f998d1ca74684b3fbf38b625d0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.custom_dataset.yuv2bgr</definition>
+        <argsstring>(matrix)</argsstring>
+        <name>yuv2bgr</name>
+        <qualifiedname>msecnn_raulkviana.custom_dataset.yuv2bgr</qualifiedname>
+        <param>
+          <type>matrix</type>
+          <defname>matrix</defname>
+        </param>
+        <briefdescription>
+<para>Converts yuv matrix to bgr matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">matrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Yuv matrix </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">bgr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bgr conversion </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/custom_dataset.py" line="83" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="83" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1custom__dataset_1a3abd31f0bedab3b24fde027be6cc23a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.custom_dataset.bgr2yuv</definition>
+        <argsstring>(matrix)</argsstring>
+        <name>bgr2yuv</name>
+        <qualifiedname>msecnn_raulkviana.custom_dataset.bgr2yuv</qualifiedname>
+        <param>
+          <type>matrix</type>
+          <defname>matrix</defname>
+        </param>
+        <briefdescription>
+<para>Converts BGR matrix to YUV matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">matrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BGR matrix </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">YUV</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>YUV conversion </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/custom_dataset.py" line="96" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="96" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1custom__dataset_1aa5aba8e9511dd561b4a9c78ba1a973fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.custom_dataset.get_cu</definition>
+        <argsstring>(f_path, f_size, cu_pos, cu_size, frame_number)</argsstring>
+        <name>get_cu</name>
+        <qualifiedname>msecnn_raulkviana.custom_dataset.get_cu</qualifiedname>
+        <param>
+          <type>f_path</type>
+          <defname>f_path</defname>
+        </param>
+        <param>
+          <type>f_size</type>
+          <defname>f_size</defname>
+        </param>
+        <param>
+          <type>cu_pos</type>
+          <defname>cu_pos</defname>
+        </param>
+        <param>
+          <type>cu_size</type>
+          <defname>cu_size</defname>
+        </param>
+        <param>
+          <type>frame_number</type>
+          <defname>frame_number</defname>
+        </param>
+        <briefdescription>
+<para>Get CU from image. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">f_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path of file to get the CU from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">f_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>YUV file dimensions (height, width) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cu_pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tuple with the position of the CU (y position (height), x position (width)) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cu_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tuple with the size of the CU (y position (height), x position (width)) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">frame_number</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of the frame containing the CU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">CU</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CU with all the information from all the components(Luminance and Chroma) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">CU_Y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CU with the Luminance component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">CU_U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CU with the Chroma (Blue) component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">CU_V</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CU with the Chroma (Red) component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">frame_CU</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>specified frame that contains the CU </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/custom_dataset.py" line="109" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="109" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1custom__dataset_1a6dd132332ce4a3bc700a89d4a18f6723" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.custom_dataset.get_file_size</definition>
+        <argsstring>(name)</argsstring>
+        <name>get_file_size</name>
+        <qualifiedname>msecnn_raulkviana.custom_dataset.get_file_size</qualifiedname>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+<para>Retrieves information about the YUV file info (width and height) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the file where the file is located </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">file_info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with information about the yuv file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/custom_dataset.py" line="144" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="144" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1custom__dataset_1a1143ed2a2717e8eb9ecfdc7b06ba6b5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.custom_dataset.resize</definition>
+        <argsstring>(img, scale_percent)</argsstring>
+        <name>resize</name>
+        <qualifiedname>msecnn_raulkviana.custom_dataset.resize</qualifiedname>
+        <param>
+          <type>img</type>
+          <defname>img</defname>
+        </param>
+        <param>
+          <type>scale_percent</type>
+          <defname>scale_percent</defname>
+        </param>
+        <briefdescription>
+<para>Resizes a BGR image. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/custom_dataset.py" line="233" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="233" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1custom__dataset_1ae0eac8f315472938410c9498dc507807" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.custom_dataset.show_CU</definition>
+        <argsstring>(image, cu_size, cu_pos)</argsstring>
+        <name>show_CU</name>
+        <qualifiedname>msecnn_raulkviana.custom_dataset.show_CU</qualifiedname>
+        <param>
+          <type>image</type>
+          <defname>image</defname>
+        </param>
+        <param>
+          <type>cu_size</type>
+          <defname>cu_size</defname>
+        </param>
+        <param>
+          <type>cu_pos</type>
+          <defname>cu_pos</defname>
+        </param>
+        <briefdescription>
+<para>Shows CU in a image. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/custom_dataset.py" line="243" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="243" bodyend="273"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1custom__dataset_1ada43d6f9f3fe6cdc9822a80428213a07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.custom_dataset.show_all_CUs</definition>
+        <argsstring>(CUDataset, file_name, POC, cu_size)</argsstring>
+        <name>show_all_CUs</name>
+        <qualifiedname>msecnn_raulkviana.custom_dataset.show_all_CUs</qualifiedname>
+        <param>
+          <type>CUDataset</type>
+          <defname>CUDataset</defname>
+        </param>
+        <param>
+          <type>file_name</type>
+          <defname>file_name</defname>
+        </param>
+        <param>
+          <type>POC</type>
+          <defname>POC</defname>
+        </param>
+        <param>
+          <type>cu_size</type>
+          <defname>cu_size</defname>
+        </param>
+        <briefdescription>
+<para>Shows all CUs in a image with a specific size, TO BE USED WITH THE CU ORIENTE LABELS. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/custom_dataset.py" line="274" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="274" bodyend="318"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>@package docstring 
+
+@file CustomDataset.py 
+
+@brief This library contains usefull functions to visualise data and also Classes to store and organise data structures. 
+ 
+@section libraries_CustomDataset Libraries 
+- torch
+- numpy
+- dataset_utils
+- cv2
+- torch.utils.data
+- random
+- re
+
+@section classes_CustomDataset Classes 
+- CUDatasetBase
+- CUDatasetStg2Compl
+- CUDatasetStg3Compl
+- CUDatasetStg4Compl
+- CUDatasetStg5Compl
+- CUDatasetStg6Compl
+- SamplerStg6
+- SamplerStg5
+- SamplerStg4
+ 
+@section functions_CustomDataset Functions 
+- yuv2bgr(matrix)
+- bgr2yuv(matrix)
+- get_cu(f_path, f_size, cu_pos, cu_size, frame_number)
+- get_file_size(name)
+- resize(img, scale_percent)
+- show_CU(image, cu_size, cu_pos)
+- show_all_CUs(CUDataset, file_name, POC, cu_size)
+ 
+@section global_vars_CustomDataset Global Variables 
+- None 
+
+@section todo_CustomDataset TODO 
+- None 
+
+@section license License 
+MIT License 
+Copyright (c) 2022 Raul Kevin do Espirito Santo Viana
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+@section author_CustomDataset Author(s)
+- Created by Raul Kevin Viana
+- Last time modified is 2023-01-29 22:22:04.113134
+</verbatim> </para>
+    </detaileddescription>
+    <location file="src/msecnn_raulkviana/custom_dataset.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

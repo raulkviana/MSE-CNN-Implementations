@@ -1,0 +1,235 @@
+\doxysection{msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE Class Reference}
+\hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e}{}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e}\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+Inheritance diagram for msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a67cf22a5add89e21d44855630bb2ec82}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, \mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_ab7faa8cd35ee711e5e75fb3da1b2bb30}{use\+\_\+mod\+\_\+cross\+\_\+entropy}}=True, \mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_af4019632733df09c3399310018af4f2d}{beta}}=1)
+\item 
+\mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a738ea33d96bd93868e7200f721c4b2c4}{get\+\_\+proportion\+\_\+\+CUs}} (self, labels)
+\begin{DoxyCompactList}\small\item\em This function returns the proportion of CU\textquotesingle{}s for all the types of split mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_acccac9d6a2a740c6ef2e5b89a9e71954}{get\+\_\+min\+\_\+\+RDs}} (self, RDs)
+\begin{DoxyCompactList}\small\item\em Obtain the lowest value that isnt zero from RDs tensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_ab82baebe428014adabd6b6b44f46515a}{remove\+\_\+values\+\_\+lower}} (self, tensor, max\+\_\+val, subst\+\_\+val)
+\begin{DoxyCompactList}\small\item\em Remove values from tensor that are lower than a given value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a02f6f7e431eebad6b0c7fb20fae90aa7}{remove\+\_\+inf\+\_\+values}} (self, tensor)
+\begin{DoxyCompactList}\small\item\em Remove values from tensor that are inf and make them zeros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_ab327c3b3f51bd109b0319329703adb9f}{remove\+\_\+zero}} (self, RDs)
+\begin{DoxyCompactList}\small\item\em Substitutes the zeros values for big RD values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a3838054429e45773d57460f4ffe528f5}{remove\+\_\+values\+\_\+above}} (self, RDs, max\+\_\+val)
+\begin{DoxyCompactList}\small\item\em Substitutes values above MAX\+\_\+\+RD for the MAX\+\_\+\+RD. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_aab9602de6ada43d3d7c74f54f9a02ea3}{forward}} (self, pred, labels, RD)
+\begin{DoxyCompactList}\small\item\em This function implements the loss function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_af4019632733df09c3399310018af4f2d}{beta}}
+\item 
+\mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_ab7faa8cd35ee711e5e75fb3da1b2bb30}{use\+\_\+mod\+\_\+cross\+\_\+entropy}}
+\item 
+\mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_aa01b44a53e8b450a63f486f3ca5fe800}{MAX\+\_\+\+RD}}
+\item 
+\mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_ab1b89301074c9fbde31891815cd37ff9}{MAX\+\_\+\+LOSS}}
+\item 
+\mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a729049449786c1646bcb21e092beca1e}{last\+\_\+loss}}
+\item 
+\mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a7e57981ba18cd103eb9a828ecd6bc85e}{last\+\_\+pred}}
+\item 
+\mbox{\hyperlink{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a9372a22c19c9ba252a4c3b80690aa41c}{last\+\_\+\+RD}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a67cf22a5add89e21d44855630bb2ec82}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a67cf22a5add89e21d44855630bb2ec82} 
+\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{use\+\_\+mod\+\_\+cross\+\_\+entropy = {\ttfamily True},  }\item[{}]{beta = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_aab9602de6ada43d3d7c74f54f9a02ea3}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_aab9602de6ada43d3d7c74f54f9a02ea3} 
+\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}!forward@{forward}}
+\index{forward@{forward}!msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE.\+forward (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{pred,  }\item[{}]{labels,  }\item[{}]{RD }\end{DoxyParamCaption})}
+
+
+
+This function implements the loss function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pred} & Predictions made by the model \\
+\hline
+\mbox{\texttt{ in}}  & {\em labels} & Ground-\/truth tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em RD} & Rate distortion tensor \\
+\hline
+\mbox{\texttt{ out}}  & {\em loss} & Vector of raw predictions that a classification model generates \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_acccac9d6a2a740c6ef2e5b89a9e71954}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_acccac9d6a2a740c6ef2e5b89a9e71954} 
+\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}!get\_min\_RDs@{get\_min\_RDs}}
+\index{get\_min\_RDs@{get\_min\_RDs}!msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+\doxysubsubsection{\texorpdfstring{get\_min\_RDs()}{get\_min\_RDs()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE.\+get\+\_\+min\+\_\+\+RDs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{RDs }\end{DoxyParamCaption})}
+
+
+
+Obtain the lowest value that isnt zero from RDs tensor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em RDs} & Tensor with RDs \\
+\hline
+\mbox{\texttt{ out}}  & {\em min\+\_\+\+RD} & Lowest value of RDs that isnt zero \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a738ea33d96bd93868e7200f721c4b2c4}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a738ea33d96bd93868e7200f721c4b2c4} 
+\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}!get\_proportion\_CUs@{get\_proportion\_CUs}}
+\index{get\_proportion\_CUs@{get\_proportion\_CUs}!msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+\doxysubsubsection{\texorpdfstring{get\_proportion\_CUs()}{get\_proportion\_CUs()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE.\+get\+\_\+proportion\+\_\+\+CUs (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{labels }\end{DoxyParamCaption})}
+
+
+
+This function returns the proportion of CU\textquotesingle{}s for all the types of split mode. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em labels} & Ground truth tensor \\
+\hline
+\mbox{\texttt{ out}}  & {\em p\+\_\+m} & Tensor with the proportions \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a02f6f7e431eebad6b0c7fb20fae90aa7}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a02f6f7e431eebad6b0c7fb20fae90aa7} 
+\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}!remove\_inf\_values@{remove\_inf\_values}}
+\index{remove\_inf\_values@{remove\_inf\_values}!msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+\doxysubsubsection{\texorpdfstring{remove\_inf\_values()}{remove\_inf\_values()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE.\+remove\+\_\+inf\+\_\+values (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tensor }\end{DoxyParamCaption})}
+
+
+
+Remove values from tensor that are inf and make them zeros. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tensor} & Tensor with values \\
+\hline
+\mbox{\texttt{ out}}  & {\em tensor} & New tensor \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a3838054429e45773d57460f4ffe528f5}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a3838054429e45773d57460f4ffe528f5} 
+\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}!remove\_values\_above@{remove\_values\_above}}
+\index{remove\_values\_above@{remove\_values\_above}!msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+\doxysubsubsection{\texorpdfstring{remove\_values\_above()}{remove\_values\_above()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE.\+remove\+\_\+values\+\_\+above (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{RDs,  }\item[{}]{max\+\_\+val }\end{DoxyParamCaption})}
+
+
+
+Substitutes values above MAX\+\_\+\+RD for the MAX\+\_\+\+RD. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em RDs} & Tensor with RDs \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+val} & Max value to add \\
+\hline
+\mbox{\texttt{ out}}  & {\em clone\+\_\+\+RDs} & Tensor With Max values added \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_ab82baebe428014adabd6b6b44f46515a}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_ab82baebe428014adabd6b6b44f46515a} 
+\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}!remove\_values\_lower@{remove\_values\_lower}}
+\index{remove\_values\_lower@{remove\_values\_lower}!msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+\doxysubsubsection{\texorpdfstring{remove\_values\_lower()}{remove\_values\_lower()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE.\+remove\+\_\+values\+\_\+lower (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{tensor,  }\item[{}]{max\+\_\+val,  }\item[{}]{subst\+\_\+val }\end{DoxyParamCaption})}
+
+
+
+Remove values from tensor that are lower than a given value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em tensor} & Tensor with values \\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+\_\+val} & Threshold val \\
+\hline
+\mbox{\texttt{ in}}  & {\em subst\+\_\+val} & Max value to replace the others \\
+\hline
+\mbox{\texttt{ out}}  & {\em tensor} & New tensor \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_ab327c3b3f51bd109b0319329703adb9f}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_ab327c3b3f51bd109b0319329703adb9f} 
+\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}!remove\_zero@{remove\_zero}}
+\index{remove\_zero@{remove\_zero}!msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+\doxysubsubsection{\texorpdfstring{remove\_zero()}{remove\_zero()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE.\+remove\+\_\+zero (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{RDs }\end{DoxyParamCaption})}
+
+
+
+Substitutes the zeros values for big RD values. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em RDs} & Tensor with RDs \\
+\hline
+\mbox{\texttt{ out}}  & {\em RDs} & Tensor With Max values added \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_af4019632733df09c3399310018af4f2d}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_af4019632733df09c3399310018af4f2d} 
+\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}!beta@{beta}}
+\index{beta@{beta}!msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+\doxysubsubsection{\texorpdfstring{beta}{beta}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE.\+beta}
+
+\Hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a729049449786c1646bcb21e092beca1e}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a729049449786c1646bcb21e092beca1e} 
+\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}!last\_loss@{last\_loss}}
+\index{last\_loss@{last\_loss}!msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+\doxysubsubsection{\texorpdfstring{last\_loss}{last\_loss}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE.\+last\+\_\+loss}
+
+\Hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a7e57981ba18cd103eb9a828ecd6bc85e}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a7e57981ba18cd103eb9a828ecd6bc85e} 
+\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}!last\_pred@{last\_pred}}
+\index{last\_pred@{last\_pred}!msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+\doxysubsubsection{\texorpdfstring{last\_pred}{last\_pred}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE.\+last\+\_\+pred}
+
+\Hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a9372a22c19c9ba252a4c3b80690aa41c}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_a9372a22c19c9ba252a4c3b80690aa41c} 
+\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}!last\_RD@{last\_RD}}
+\index{last\_RD@{last\_RD}!msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+\doxysubsubsection{\texorpdfstring{last\_RD}{last\_RD}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE.\+last\+\_\+\+RD}
+
+\Hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_ab1b89301074c9fbde31891815cd37ff9}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_ab1b89301074c9fbde31891815cd37ff9} 
+\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}!MAX\_LOSS@{MAX\_LOSS}}
+\index{MAX\_LOSS@{MAX\_LOSS}!msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+\doxysubsubsection{\texorpdfstring{MAX\_LOSS}{MAX\_LOSS}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE.\+MAX\+\_\+\+LOSS}
+
+\Hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_aa01b44a53e8b450a63f486f3ca5fe800}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_aa01b44a53e8b450a63f486f3ca5fe800} 
+\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}!MAX\_RD@{MAX\_RD}}
+\index{MAX\_RD@{MAX\_RD}!msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+\doxysubsubsection{\texorpdfstring{MAX\_RD}{MAX\_RD}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE.\+MAX\+\_\+\+RD}
+
+\Hypertarget{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_ab7faa8cd35ee711e5e75fb3da1b2bb30}\label{classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_ab7faa8cd35ee711e5e75fb3da1b2bb30} 
+\index{msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}!use\_mod\_cross\_entropy@{use\_mod\_cross\_entropy}}
+\index{use\_mod\_cross\_entropy@{use\_mod\_cross\_entropy}!msecnn\_raulkviana.msecnn.LossFunctionMSE@{msecnn\_raulkviana.msecnn.LossFunctionMSE}}
+\doxysubsubsection{\texorpdfstring{use\_mod\_cross\_entropy}{use\_mod\_cross\_entropy}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+msecnn.\+Loss\+Function\+MSE.\+use\+\_\+mod\+\_\+cross\+\_\+entropy}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/msecnn\+\_\+raulkviana/\mbox{\hyperlink{msecnn_8py}{msecnn.\+py}}\end{DoxyCompactItemize}

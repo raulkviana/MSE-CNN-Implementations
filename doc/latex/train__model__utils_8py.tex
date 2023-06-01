@@ -1,0 +1,52 @@
+\doxysection{src/msecnn\+\_\+raulkviana/train\+\_\+model\+\_\+utils.py File Reference}
+\hypertarget{train__model__utils_8py}{}\label{train__model__utils_8py}\index{src/msecnn\_raulkviana/train\_model\_utils.py@{src/msecnn\_raulkviana/train\_model\_utils.py}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacemsecnn__raulkviana}{msecnn\+\_\+raulkviana}}
+\item 
+namespace \mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_afeee7ef82714dbc67d42e0c748e99114}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+model\+\_\+statistics}} (J\+\_\+history, predicted, ground\+\_\+truth, pred\+\_\+vector, gt\+\_\+vector, f1\+\_\+list, recall\+\_\+list, precision\+\_\+list, accuracy\+\_\+list, train\+\_\+or\+\_\+val=\"{}train\"{})
+\begin{DoxyCompactList}\small\item\em Evaluates model with metrics, such as accuracy and f1\+\_\+score. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a22037a90eee86799850c3a765e4da26f}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+compute\+\_\+conf\+\_\+matrix}} (predicted, ground\+\_\+truth)
+\begin{DoxyCompactList}\small\item\em Computes the confusion matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a9208690996ff3dc9692f9e77f6e176a0}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+compute\+\_\+top\+\_\+k\+\_\+accuracy}} (pred\+\_\+vector, gt\+\_\+vector, topk)
+\begin{DoxyCompactList}\small\item\em Computes the top k accuracy score. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_ad9aeb6ce29f45cc766ba7320d34670c1}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+compute\+\_\+num\+\_\+splits\+\_\+sent}} (pred\+\_\+lst)
+\begin{DoxyCompactList}\small\item\em Computes the num of splits that would be analyzed by the encoder. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_aa3cb64ee0fbaa82878681fac367eadf7}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+compute\+\_\+multi\+\_\+thres\+\_\+performance}} (pred\+\_\+lst, gt\+\_\+lst)
+\begin{DoxyCompactList}\small\item\em Computes multi-\/threshold performance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a2538c5927aded1286f7e8220ff22e9cb}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+compute\+\_\+\+ROC\+\_\+curve}} (pred\+\_\+vector, gt\+\_\+vector, pred\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Computes ROC curve. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a964adadaca962cbcbc5078977779311b}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+model\+\_\+simple\+\_\+metrics}} (predicted, ground\+\_\+truth)
+\begin{DoxyCompactList}\small\item\em Evaluates model with metrics 4 metrics, such as accuracy, f1\+\_\+score, recall and precision. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a993070f8c8fdf03d09c5cc98c0ee31d7}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+obtain\+\_\+best\+\_\+modes}} (rs, pred)
+\begin{DoxyCompactList}\small\item\em Converts a prediction into a specific number that corresponds to the best way to split (non-\/split, quad tree, binary vert tree...) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a9a466ae6eaee510daf4fdc575bf380cd}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+obtain\+\_\+mode}} (pred)
+\begin{DoxyCompactList}\small\item\em Converts a prediction into a specific number that corresponds to the best way to split (non-\/split, quad tree, binary vert tree...) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a79494642e232d1c076a7b5fa7466b31e}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+one\+\_\+hot\+\_\+enc}} (tensor, num\+\_\+classes=6)
+\begin{DoxyCompactList}\small\item\em Implements one-\/hot encoding to a specific tensor with the set of split modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a3e657e72d3f33b63fbd784f87e3eb8e9}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+print\+\_\+parameters}} (model, optimizer)
+\begin{DoxyCompactList}\small\item\em Prints the parameters from the state dictionaries of the model and optimizer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_adb76e5e1e7fb9398be537a21810f4fcf}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+save\+\_\+model\+\_\+parameters}} (dir\+\_\+name, f\+\_\+name, model)
+\begin{DoxyCompactList}\small\item\em Saves only the model parameters to a specific folder. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_af861829fd2bb377d08cf101471987aa5}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+save\+\_\+model}} (dir\+\_\+name, f\+\_\+name, model, optimizer, loss, acc)
+\begin{DoxyCompactList}\small\item\em Saves the parameters of the model and of the optimizer, and also the loss and the accuracy. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a6d4bba83279a0482b9d5c1b0d006b18e}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+load\+\_\+model\+\_\+parameters\+\_\+stg}} (model, path, stg, dev)
+\begin{DoxyCompactList}\small\item\em Loads all stages but make sure that the stage number \textquotesingle{}stg\textquotesingle{} has the same parameters has the previous. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a335386ac8c610e1db1871d3700b6ad98}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+load\+\_\+model\+\_\+parameters\+\_\+eval}} (model, path, dev)
+\begin{DoxyCompactList}\small\item\em Loads all stages, meant to be used with the eval\+\_\+model script. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a1a11d507d70a0c1706812d23ba767eac}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+load\+\_\+model\+\_\+stg\+\_\+12\+\_\+stg\+\_\+3}} (model, path, dev)
+\begin{DoxyCompactList}\small\item\em THis function makes it possible to load parameters from the first and second stage to the third. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a7fc7ec27e310efc1d10ea490dd27cddf}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+load\+\_\+model\+\_\+stg\+\_\+3\+\_\+stg\+\_\+4}} (model, path, dev)
+\begin{DoxyCompactList}\small\item\em This function makes it possible to load parameters from the third stage to the fourth. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a02cbf7d191b5968da6f4731d8ae10e6f}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+load\+\_\+model\+\_\+stg\+\_\+4\+\_\+stg\+\_\+5}} (model, path, dev)
+\begin{DoxyCompactList}\small\item\em This function makes it possible to load parameters from the fourth stage to the fith. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a58a16083e57ad4844a6ae858342363d7}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+load\+\_\+model\+\_\+stg\+\_\+5\+\_\+stg\+\_\+6}} (model, path, dev)
+\begin{DoxyCompactList}\small\item\em This function makes it possible to load parameters from the fourth stage to the fith. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a9f287edd155c2f5ca644e55b1e12f738}{msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+print\+\_\+current\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Prints current time. \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,554 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="train__stg6_8py" kind="file" language="Python">
+    <compoundname>train_stg6.py</compoundname>
+    <innernamespace refid="namespacetrain__stg6">train_stg6</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespacetrain__stg6" refkind="compound"><highlight class="stringliteral">&quot;&quot;&quot;@package<sp/>docstring<sp/></highlight></codeline>
+<codeline lineno="2"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="3"><highlight class="stringliteral">@file<sp/>train_stg6.py<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">@brief<sp/>Training<sp/>script<sp/>for<sp/>the<sp/>sixth<sp/>stage<sp/>of<sp/>the<sp/>MSE-CNN,<sp/>for<sp/>the<sp/>luma<sp/>channel.<sp/><sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral"><sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral"></highlight><highlight class="preprocessor">@section</highlight><highlight class="normal"><sp/>libraries_train_stg6<sp/>Libraries<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">-<sp/>sklearn.metrics</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">-<sp/>MSECNN</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">-<sp/><ref refid="namespacetorch_1_1utils_1_1data" kindref="compound">torch.utils.data</ref></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">-<sp/>torch</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">-<sp/>argparse</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">-<sp/>torch.utils.tensorboard</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">-<sp/>datetime</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">-<sp/>train_model_utils</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">-<sp/>utils</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">-<sp/>numpy</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">-<sp/>constants</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">-<sp/>CustomDataset</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">-<sp/>sys</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">-<sp/>time</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">-<sp/>matplotlib.pyplot</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">@section</highlight><highlight class="normal"><sp/>classes_train_stg6<sp/>Classes<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">-<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">@section</highlight><highlight class="normal"><sp/>functions_train_stg6<sp/>Functions<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">-<sp/><ref refid="namespacetrain__stg6_1acdea602488f368d2634836e2d4140f92" kindref="member">train</ref>(dataloader,<sp/>model,<sp/>loss_fn,<sp/>optimizer,<sp/>device)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">-<sp/><ref refid="namespacetrain__stg6_1af5a4441c56dc8502731a1c3c0d99316a" kindref="member">test</ref>(dataloader,<sp/>model,<sp/>loss_fn,<sp/>device,<sp/>loss_name)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">-<sp/><ref refid="namespacetrain__stg6_1a5fa206f76e13ffd9683dd8aa096079f7" kindref="member">train_test</ref>(train_dataloader,<sp/>test_dataloader,<sp/>model,<sp/>loss_fn,<sp/>optimizer,<sp/>device,<sp/>epochs,<sp/>lr_sch)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">-<sp/><ref refid="namespacetrain__stg6_1a566754db3d002de3c456576aa51619fc" kindref="member">main</ref>()</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">@section</highlight><highlight class="normal"><sp/>global_vars_train_stg6<sp/>Global<sp/>Variables<sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">-<sp/>learning_rate</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">-<sp/>parser<sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">-<sp/>args<sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">-<sp/>loss_threshold<sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">-<sp/>batch_size<sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">-<sp/>qp<sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">-<sp/>device<sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">-<sp/>n_mod<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">-<sp/>num_workers<sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">-<sp/>writer<sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">-<sp/>l_path_val<sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">-<sp/>decay</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">-<sp/>decay_controler</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">-<sp/>iterations</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">-<sp/>files_mod_name_stats<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">-<sp/>l_path_train</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">-<sp/>l_path_test</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">-<sp/>cnt_train</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">-<sp/>cnt_test_train</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">-<sp/>cnt_test_test</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">@section</highlight><highlight class="normal"><sp/>todo_train_stg6<sp/>TODO<sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">-<sp/></highlight><highlight class="keywordtype">None</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">@section</highlight><highlight class="normal"><sp/>license<sp/>License<sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">MIT<sp/>License<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">Copyright<sp/>(c)<sp/>2022<sp/>Raul<sp/>Kevin<sp/>do<sp/>Espirito<sp/>Santo<sp/>Viana</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">Permission<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"><sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">of<sp/>this<sp/>software<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/></highlight><highlight class="stringliteral">&quot;Software&quot;</highlight><highlight class="normal">),<sp/>to<sp/>deal</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the<sp/>rights</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal">/</highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>sell</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">copies<sp/>of<sp/>the<sp/>Software,<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal">furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">The<sp/>above<sp/>copyright<sp/>notice<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>all</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">copies<sp/></highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/></highlight><highlight class="stringliteral">&quot;AS<sp/>IS&quot;</highlight><highlight class="normal">,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING<sp/>FROM,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS<sp/>IN<sp/>THE</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">SOFTWARE.</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">@section</highlight><highlight class="normal"><sp/>author_train_stg6<sp/>Author(s)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">-<sp/>Created<sp/>by<sp/>Raul<sp/>Kevin<sp/>Viana</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">-<sp/>Last<sp/>time<sp/>modified<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"><sp/>2023-01-29<sp/>22:23:10.689038</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="81"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="82"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="83"><highlight class="stringliteral">#<sp/>Imports</highlight></codeline>
+<codeline lineno="84"><highlight class="stringliteral">import<sp/>torch</highlight></codeline>
+<codeline lineno="85"><highlight class="stringliteral">from<sp/>torch.utils.data<sp/>import<sp/>DataLoader</highlight></codeline>
+<codeline lineno="86"><highlight class="stringliteral">from<sp/>sklearn.metrics<sp/>import<sp/>classification_report</highlight></codeline>
+<codeline lineno="87"><highlight class="stringliteral">import<sp/>time</highlight></codeline>
+<codeline lineno="88"><highlight class="stringliteral">import<sp/>argparse</highlight></codeline>
+<codeline lineno="89"><highlight class="stringliteral">from<sp/>torch.utils.tensorboard<sp/>import<sp/>SummaryWriter<sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="stringliteral">import<sp/>datetime</highlight></codeline>
+<codeline lineno="91"><highlight class="stringliteral">import<sp/>numpy<sp/>as<sp/>np</highlight></codeline>
+<codeline lineno="92"><highlight class="stringliteral">import<sp/>matplotlib.pyplot<sp/>as<sp/>plt</highlight></codeline>
+<codeline lineno="93"><highlight class="stringliteral">import<sp/>sys</highlight></codeline>
+<codeline lineno="94"><highlight class="stringliteral">#<sp/>Insert<sp/>the<sp/>path<sp/>of<sp/>modules<sp/>folder</highlight></codeline>
+<codeline lineno="95"><highlight class="stringliteral">sys.path.insert(0,<sp/>&quot;../&quot;)</highlight></codeline>
+<codeline lineno="96"><highlight class="stringliteral">try:</highlight></codeline>
+<codeline lineno="97"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>custom_dataset</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>train_model_utils</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>msecnn</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>constants</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>utils</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keywordflow">except</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>Exception(</highlight><highlight class="stringliteral">&quot;Module<sp/>not<sp/>found!<sp/>Please<sp/>verify<sp/>that<sp/>the<sp/>main<sp/>modules<sp/>(CustomDataset,<sp/>dataset_utils,<sp/>MSECNN,<sp/>train_model_utils<sp/>and<sp/>utils)<sp/>can<sp/>be<sp/>found<sp/>in<sp/>the<sp/>directory<sp/>above<sp/>the<sp/>current<sp/>one.<sp/>Or<sp/>just<sp/>find<sp/>a<sp/>way<sp/>of<sp/>importing<sp/>them.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Parse<sp/>arguments</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">parser<sp/>=<sp/>argparse.ArgumentParser(description=constants.script_description)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">parser.add_argument(</highlight><highlight class="stringliteral">&quot;-i&quot;</highlight><highlight class="normal">,<sp/>type=int)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">parser.add_argument(</highlight><highlight class="stringliteral">&quot;--batch&quot;</highlight><highlight class="normal">,<sp/>type=int)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">parser.add_argument(</highlight><highlight class="stringliteral">&quot;--dev&quot;</highlight><highlight class="normal">,<sp/>type=int)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">parser.add_argument(</highlight><highlight class="stringliteral">&quot;-b&quot;</highlight><highlight class="normal">,<sp/>type=float)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">parser.add_argument(</highlight><highlight class="stringliteral">&quot;--lr&quot;</highlight><highlight class="normal">,<sp/>type=float)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">parser.add_argument(</highlight><highlight class="stringliteral">&quot;--workers&quot;</highlight><highlight class="normal">,<sp/>type=int)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">parser.add_argument(</highlight><highlight class="stringliteral">&quot;--nmod&quot;</highlight><highlight class="normal">,<sp/>type=str)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">parser.add_argument(</highlight><highlight class="stringliteral">&quot;--dcontr&quot;</highlight><highlight class="normal">,<sp/>type=int)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">parser.add_argument(</highlight><highlight class="stringliteral">&quot;--labelsTrain&quot;</highlight><highlight class="normal">,<sp/>type=str)</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">parser.add_argument(</highlight><highlight class="stringliteral">&quot;--labelsTest&quot;</highlight><highlight class="normal">,<sp/>type=str)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Get<sp/>arguments</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">args<sp/>=<sp/>parser.parse_args()</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Parameters</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal">beta<sp/>=<sp/>args.b</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">learning_rate<sp/>=<sp/>args.lr</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">loss_threshold<sp/>=<sp/>float(</highlight><highlight class="stringliteral">&quot;-inf&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">QP<sp/>=<sp/>32</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">batch_size<sp/>=<sp/>args.batch</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">iterations<sp/>=<sp/>args.i</highlight></codeline>
+<codeline lineno="129"><highlight class="normal">decay<sp/>=<sp/>0.01</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">decay_controler<sp/>=<sp/>args.dcontr</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">device<sp/>=<sp/>args.dev<sp/></highlight><highlight class="comment">#&quot;cuda&quot;<sp/>if<sp/>torch.cuda.is_available()<sp/>else<sp/>&quot;cpu&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">num_workers<sp/>=<sp/>args.workers</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">n_mod<sp/>=<sp/>args.nmod</highlight></codeline>
+<codeline lineno="134"><highlight class="normal">l_path_train<sp/>=<sp/>args.labelsTrain</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">l_path_test<sp/>=<sp/>args.labelsTest</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal">print(</highlight><highlight class="stringliteral">&quot;Using<sp/>{}<sp/>device&quot;</highlight><highlight class="normal">.format(device))</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Tensorboard<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal">writer<sp/>=<sp/>SummaryWriter(</highlight><highlight class="stringliteral">&quot;runs/MSECNN_&quot;</highlight><highlight class="normal">+n_mod)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Build<sp/>name<sp/>modifier</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal">files_mod_name_stats<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;_multi_batch_iter_{ite}_batch_{batch}_QP_{QP}_beta_{be}_lr_{lr}_{n_mod}&quot;</highlight><highlight class="normal">.format(ite=iterations,<sp/>batch=batch_size,<sp/>QP=QP,<sp/>be=beta,<sp/>lr=learning_rate,<sp/>n_mod=n_mod)</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Register<sp/>for<sp/>loss<sp/>counter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal">cnt_train<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">cnt_test_train<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">cnt_test_test<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetrain__stg6_1acdea602488f368d2634836e2d4140f92" kindref="member">train</ref>(dataloader,<sp/>model,<sp/>loss_fn,<sp/>optimizer,<sp/>device):</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;!</highlight></codeline>
+<codeline lineno="152"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>If<sp/>batch<sp/>size<sp/>equal<sp/>to<sp/>1<sp/>it&apos;s<sp/>a<sp/>Stochastic<sp/>Gradiente<sp/>Descent<sp/>(SGD),<sp/>otherwise<sp/>it&apos;</highlight><highlight class="normal">s<sp/>a<sp/>mini-batch<sp/>gradient<sp/>descent.<sp/></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>If<sp/>the<sp/>batch<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"><sp/>the<sp/>same<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>the<sp/>number<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>the<sp/>size<sp/>of<sp/>the<sp/>dataset,<sp/>it<sp/>will<sp/>be<sp/>a<sp/>Batch<sp/>gradient<sp/>Descent</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="155"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="156"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Initialize<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>size<sp/>=<sp/>len(dataloader.dataset)</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>size<sp/>=<sp/>int(size/batch_size)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>cnt_train</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>History<sp/>variables<sp/>for<sp/>loss</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>loss_RD_lst<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>loss_CE_lst<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>loss_lst<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>model[0].eval()</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>model[1].eval()</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>model[2].eval()</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>model[3].eval()</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>model[4].<ref refid="namespacetrain__stg6_1acdea602488f368d2634836e2d4140f92" kindref="member">train</ref>()</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Loop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>batch_num,<sp/>sample_batch<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>enumerate(dataloader):</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Obtain<sp/>data<sp/>for<sp/>training</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CTU<sp/>=<sp/>torch.reshape(sample_batch[0],<sp/>shape=(-1,<sp/>1,<sp/>128,<sp/>128))</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_pos_stg2<sp/>=<sp/>torch.reshape(sample_batch[1],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_pos_stg3<sp/>=<sp/>torch.reshape(sample_batch[2],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_pos_stg4<sp/>=<sp/>torch.reshape(sample_batch[3],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_pos_stg5<sp/>=<sp/>torch.reshape(sample_batch[4],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_pos<sp/>=<sp/>torch.reshape(sample_batch[5],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_size_stg2<sp/>=<sp/>torch.reshape(sample_batch[6],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_size_stg3<sp/>=<sp/>torch.reshape(sample_batch[7],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_size_stg4<sp/>=<sp/>torch.reshape(sample_batch[8],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_size_stg5<sp/>=<sp/>torch.reshape(sample_batch[9],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_size<sp/>=<sp/>torch.reshape(sample_batch[10],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split_stg2<sp/>=<sp/>torch.reshape(sample_batch[11],<sp/>(-1,<sp/>1))</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split_stg3<sp/>=<sp/>torch.reshape(sample_batch[12],<sp/>(-1,<sp/>1))</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split_stg4<sp/>=<sp/>torch.reshape(sample_batch[13],<sp/>(-1,<sp/>1))</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split_stg5<sp/>=<sp/>torch.reshape(sample_batch[14],<sp/>(-1,<sp/>1))</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split<sp/>=<sp/>torch.reshape(sample_batch[15],<sp/>(-1,<sp/>1))</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RDs<sp/>=<sp/>torch.reshape(sample_batch[16],<sp/>shape=(-1,<sp/>6))<sp/></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Zero<sp/>your<sp/>gradients<sp/>for<sp/>every<sp/>batch!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>optimizer.zero_grad()</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Convert<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CUs<sp/>=<sp/>CTU.to(device)</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Y<sp/>=<sp/>split.to(device)</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RDs<sp/>=<sp/>RDs.to(dtype=torch.float64).to(device)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Y<sp/>=<sp/>train_model_utils.one_hot_enc(torch.tensor(Y.tolist())).to(device)</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>prediction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Stage<sp/>1<sp/>and<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred_stg2,<sp/>CUs,<sp/>ap<sp/>=<sp/>model[0](CUs,<sp/>cu_size_stg2,<sp/>cu_pos_stg2)<sp/><sp/></highlight><highlight class="comment">#<sp/>Pass<sp/>CU<sp/>through<sp/>network</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Stage<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred_stg3,<sp/>CUs,<sp/>ap<sp/>=<sp/>model[1](CUs,<sp/>ap,<sp/>split_stg2,<sp/>cu_size_stg3,<sp/>cu_pos_stg3)<sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Pass<sp/>CU<sp/>through<sp/>network<sp/>---<sp/>You<sp/>can<sp/>also<sp/>use<sp/>the<sp/>predicitons<sp/>of<sp/>the<sp/>previous<sp/>stage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Stage<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred_stg4,<sp/>CUs,<sp/>ap<sp/>=<sp/>model[2](CUs,<sp/>ap,<sp/>split_stg3,<sp/>cu_size_stg4,<sp/>cu_pos_stg4)<sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Pass<sp/>CU<sp/>through<sp/>network<sp/>---<sp/>You<sp/>can<sp/>also<sp/>use<sp/>the<sp/>predicitons<sp/>of<sp/>the<sp/>previous<sp/>stage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Stage<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred_stg5,<sp/>CUs,<sp/>ap<sp/>=<sp/>model[3](CUs,<sp/>ap,<sp/>split_stg4,<sp/>cu_size_stg5,<sp/>cu_pos_stg5)<sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Pass<sp/>CU<sp/>through<sp/>network<sp/>---<sp/>You<sp/>can<sp/>also<sp/>use<sp/>the<sp/>predicitons<sp/>of<sp/>the<sp/>previous<sp/>stage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Stage<sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred,<sp/>CUs,<sp/>ap<sp/>=<sp/>model[4](CUs,<sp/>ap,<sp/>split_stg5,<sp/>cu_size,<sp/>cu_pos)<sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Pass<sp/>CU<sp/>through<sp/>network<sp/>---<sp/>You<sp/>can<sp/>also<sp/>use<sp/>the<sp/>predicitons<sp/>of<sp/>the<sp/>previous<sp/>stage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>the<sp/>loss<sp/>and<sp/>its<sp/>gradients</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loss,<sp/>loss_CE,<sp/>loss_RD<sp/>=<sp/>loss_fn(pred,<sp/>Y,<sp/>RDs)</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loss.backward()</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Register<sp/>the<sp/>losses</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loss_lst.append(loss.item())</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loss_CE_lst.append(loss_CE.item())</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loss_RD_lst.append(loss_RD.item())</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cnt_train<sp/>+=<sp/>1</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Adjust<sp/>learning<sp/>weights</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>optimizer.step()</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Print<sp/>information<sp/>about<sp/>training</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(batch_num+1)<sp/>%<sp/>1<sp/>==<sp/>0:</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#Acc_history.append(acc)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>utils.echo(</highlight><highlight class="stringliteral">&quot;Complete:<sp/>{percentage:.0%}&quot;</highlight><highlight class="normal">.format(percentage=batch_num/size))</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Save<sp/>model</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(batch_num+1)<sp/>%<sp/>5<sp/>==<sp/>0:</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f_name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;last_stg_&quot;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">#<sp/>File<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>k<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(len(model)):</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>train_model_utils.save_model_parameters(</highlight><highlight class="stringliteral">&quot;stg6_best_&quot;</highlight><highlight class="normal">+files_mod_name_stats,<sp/>f_name<sp/>+<sp/>str(k),<sp/>model[k])</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Get<sp/>mean<sp/>of<sp/>losses</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>mean_L_RD<sp/>=<sp/>np.array(loss_RD_lst).mean()</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/>mean_L_CE<sp/>=<sp/>np.array(loss_CE_lst).mean()</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>mean_L<sp/>=<sp/>np.array(loss_lst).mean()</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Register<sp/>losses<sp/>per<sp/>epoch</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>writer.add_scalars(</highlight><highlight class="stringliteral">&quot;Losses/trainPerEpoch&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;Loss&quot;</highlight><highlight class="normal">:<sp/>mean_L,<sp/></highlight><highlight class="stringliteral">&quot;Loss_CE&quot;</highlight><highlight class="normal">:<sp/>mean_L_CE,<sp/></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Loss_RD&quot;</highlight><highlight class="normal">:<sp/>mean_L_RD},<sp/>t)</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetrain__stg6_1af5a4441c56dc8502731a1c3c0d99316a" kindref="member">test</ref>(dataloader,<sp/>model,<sp/>loss_fn,<sp/>device,<sp/>loss_name):</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Initialize<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>size<sp/>=<sp/>len(dataloader.dataset)</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>size<sp/>=<sp/>int(size/batch_size)</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>History<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>predictions<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>ground_truths<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/>pred_vector<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/><sp/><sp/>ground_truths_vector<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><sp/><sp/>loss_RD_lst<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/>loss_CE_lst<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>loss_lst<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>cnt_test_test</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>cnt_test_train</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Select<sp/>model<sp/>mode</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>m<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>model:</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m.eval()</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>With<sp/>no<sp/>gradient<sp/>descent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">with</highlight><highlight class="normal"><sp/>torch.no_grad():</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i_batch,<sp/>sample_batch<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>enumerate(dataloader):</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Obtain<sp/>data<sp/>for<sp/>training</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CTU<sp/>=<sp/>torch.reshape(sample_batch[0],<sp/>shape=(-1,<sp/>1,<sp/>128,<sp/>128))</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_pos_stg2<sp/>=<sp/>torch.reshape(sample_batch[1],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_pos_stg3<sp/>=<sp/>torch.reshape(sample_batch[2],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_pos_stg4<sp/>=<sp/>torch.reshape(sample_batch[3],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_pos_stg5<sp/>=<sp/>torch.reshape(sample_batch[4],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_pos<sp/>=<sp/>torch.reshape(sample_batch[5],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_size_stg2<sp/>=<sp/>torch.reshape(sample_batch[6],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_size_stg3<sp/>=<sp/>torch.reshape(sample_batch[7],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_size_stg4<sp/>=<sp/>torch.reshape(sample_batch[8],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_size_stg5<sp/>=<sp/>torch.reshape(sample_batch[9],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_size<sp/>=<sp/>torch.reshape(sample_batch[10],<sp/>shape=(-1,<sp/>2))</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split_stg2<sp/>=<sp/>torch.reshape(sample_batch[11],<sp/>(-1,<sp/>1))</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split_stg3<sp/>=<sp/>torch.reshape(sample_batch[12],<sp/>(-1,<sp/>1))</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split_stg4<sp/>=<sp/>torch.reshape(sample_batch[13],<sp/>(-1,<sp/>1))</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split_stg5<sp/>=<sp/>torch.reshape(sample_batch[14],<sp/>(-1,<sp/>1))</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>split<sp/>=<sp/>torch.reshape(sample_batch[15],<sp/>(-1,<sp/>1))</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RDs<sp/>=<sp/>torch.reshape(sample_batch[16],<sp/>shape=(-1,<sp/>6))<sp/></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Convert<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CUs<sp/>=<sp/>CTU.to(device)</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Y<sp/>=<sp/>split.to(device)</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>RDs<sp/>=<sp/>RDs.to(dtype=torch.float64).to(device)</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Y<sp/>=<sp/>train_model_utils.one_hot_enc(torch.tensor(Y.tolist())).to(device)</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>prediction</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Stage<sp/>1<sp/>and<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred_stg2,<sp/>CUs,<sp/>ap<sp/>=<sp/>model[0](CUs,<sp/>cu_size_stg2,<sp/>cu_pos_stg2)<sp/><sp/></highlight><highlight class="comment">#<sp/>Pass<sp/>CU<sp/>through<sp/>network</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Stage<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred_stg3,<sp/>CUs,<sp/>ap<sp/>=<sp/>model[1](CUs,<sp/>ap,<sp/>split_stg2,<sp/>cu_size_stg3,<sp/>cu_pos_stg3)<sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Pass<sp/>CU<sp/>through<sp/>network<sp/>---<sp/>You<sp/>can<sp/>also<sp/>use<sp/>the<sp/>predicitons<sp/>of<sp/>the<sp/>previous<sp/>stage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Stage<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred_stg4,<sp/>CUs,<sp/>ap<sp/>=<sp/>model[2](CUs,<sp/>ap,<sp/>split_stg3,<sp/>cu_size_stg4,<sp/>cu_pos_stg4)<sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Pass<sp/>CU<sp/>through<sp/>network<sp/>---<sp/>You<sp/>can<sp/>also<sp/>use<sp/>the<sp/>predicitons<sp/>of<sp/>the<sp/>previous<sp/>stage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Stage<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred_stg5,<sp/>CUs,<sp/>ap<sp/>=<sp/>model[3](CUs,<sp/>ap,<sp/>split_stg4,<sp/>cu_size_stg5,<sp/>cu_pos_stg5)<sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Pass<sp/>CU<sp/>through<sp/>network<sp/>---<sp/>You<sp/>can<sp/>also<sp/>use<sp/>the<sp/>predicitons<sp/>of<sp/>the<sp/>previous<sp/>stage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Stage<sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred,<sp/>CUs,<sp/>ap<sp/>=<sp/>model[4](CUs,<sp/>ap,<sp/>split_stg5,<sp/>cu_size,<sp/>cu_pos)<sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Pass<sp/>CU<sp/>through<sp/>network<sp/>---<sp/>You<sp/>can<sp/>also<sp/>use<sp/>the<sp/>predicitons<sp/>of<sp/>the<sp/>previous<sp/>stage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>loss</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loss,<sp/>loss_CE,<sp/>loss_RD<sp/>=<sp/>loss_fn(pred,<sp/>Y,<sp/>RDs)</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>loss_name<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;train&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loss_lst.append(loss.item())</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loss_CE_lst.append(loss_CE.item())</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loss_RD_lst.append(loss_RD.item())</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cnt_test_train<sp/>+=<sp/>1</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Register<sp/>losses</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loss_lst.append(loss.item())</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loss_CE_lst.append(loss_CE.item())</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>loss_RD_lst.append(loss_RD.item())</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cnt_test_test<sp/>+=<sp/>1</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Obtain<sp/>results<sp/>in<sp/>different<sp/>format</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred_num<sp/>=<sp/>train_model_utils.obtain_mode(pred)</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Y_num<sp/>=<sp/>train_model_utils.obtain_mode(Y)</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Update<sp/>lists</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>predictions.extend(pred_num.tolist())</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ground_truths.extend(Y_num.tolist())</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ground_truths_vector.extend(Y.tolist())</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred_vector.extend(pred.tolist())</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Print<sp/>information<sp/>about<sp/>training</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i_batch+1)<sp/>%<sp/>10<sp/>==<sp/>0:</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>utils.echo(</highlight><highlight class="stringliteral">&quot;Complete:{percentage:.0%}&quot;</highlight><highlight class="normal">.format(percentage=i_batch<sp/>/<sp/>size))</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Get<sp/>mean<sp/>of<sp/>losses</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/>mean_L_RD<sp/>=<sp/>np.array(loss_RD_lst).mean()</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/>mean_L_CE<sp/>=<sp/>np.array(loss_CE_lst).mean()</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/>mean_L<sp/>=<sp/>np.array(loss_lst).mean()</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Register<sp/>losses<sp/>per<sp/>epoch</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/>writer.add_scalars(</highlight><highlight class="stringliteral">&quot;Losses/val&quot;</highlight><highlight class="normal">+loss_name+</highlight><highlight class="stringliteral">&quot;PerEpoch&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;Loss&quot;</highlight><highlight class="normal">:<sp/>mean_L,<sp/></highlight><highlight class="stringliteral">&quot;Loss_CE&quot;</highlight><highlight class="normal">:<sp/>mean_L_CE,<sp/></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Loss_RD&quot;</highlight><highlight class="normal">:<sp/>mean_L_RD},<sp/>t)</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>predictions,<sp/>ground_truths,<sp/>pred_vector,<sp/>ground_truths_vector</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetrain__stg6_1a5fa206f76e13ffd9683dd8aa096079f7" kindref="member">train_test</ref>(train_dataloader,<sp/>test_dataloader,<sp/>model,<sp/>loss_fn,<sp/>optimizer,<sp/>device,<sp/>epochs,<sp/>lr_sch):</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Print<sp/>current<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/>train_model_utils.print_current_time()</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>History<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Train</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/>predictions_train<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"><sp/><sp/><sp/><sp/>ground_truths_train<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Test</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/>predictions_test<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/>ground_truths_test<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Initialize<sp/>best<sp/>f1-score<sp/>register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/>best_f1<sp/>=<sp/>-1</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Start<sp/>training</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">global</highlight><highlight class="normal"><sp/>t</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>t<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(epochs):</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Cycle<sp/>start<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>start<sp/>=<sp/>time.time()</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Print<sp/>current<sp/>epoch</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(f</highlight><highlight class="stringliteral">&quot;Epoch<sp/>{t<sp/>+<sp/>1}\n-------------------------------&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Train</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;TRAINING&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacetrain__stg6_1acdea602488f368d2634836e2d4140f92" kindref="member">train</ref>(train_dataloader,<sp/>model,<sp/>loss_fn,<sp/>optimizer,<sp/>device)</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print()</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Validation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;VALIDATING&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Validate<sp/>on<sp/>training<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>predictions_train,<sp/>ground_truths_train,<sp/>pred_vector_train,<sp/>gt_vector_train\</highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespacetrain__stg6_1af5a4441c56dc8502731a1c3c0d99316a" kindref="member">test</ref>(train_dataloader,<sp/>model,<sp/>loss_fn,<sp/>device,<sp/></highlight><highlight class="stringliteral">&quot;train&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Validate<sp/>on<sp/>validation<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>predictions_test,<sp/>ground_truths_test,<sp/>pred_vector_test,<sp/>gt_vector_test\</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/><ref refid="namespacetrain__stg6_1af5a4441c56dc8502731a1c3c0d99316a" kindref="member">test</ref>(test_dataloader,<sp/>model,<sp/>loss_fn,<sp/>device,<sp/></highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Print<sp/>information<sp/>about<sp/>training</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print()</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Validation<sp/>in<sp/>training<sp/>data:&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(classification_report(ground_truths_train,<sp/>predictions_train))</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print()</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Validation<sp/>in<sp/>validation<sp/>data:&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(classification_report(ground_truths_test,<sp/>predictions_test))</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print()</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"></highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>metrics<sp/>from<sp/>training</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f1_train,<sp/>recall_train,<sp/>precision_train,<sp/>accuracy_train<sp/>=<sp/>\</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>train_model_utils.model_simple_metrics(predictions_train,<sp/>ground_truths_train)</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>top<sp/>k<sp/>accuracy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>top_2_accuracy_train<sp/>=<sp/>train_model_utils.compute_top_k_accuracy(torch.tensor(pred_vector_train),<sp/>torch.tensor(ground_truths_train),<sp/>2)</highlight></codeline>
+<codeline lineno="415"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>top_3_accuracy_train<sp/>=<sp/>train_model_utils.compute_top_k_accuracy(torch.tensor(pred_vector_train),<sp/>torch.tensor(ground_truths_train),<sp/>3)</highlight></codeline>
+<codeline lineno="416"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>top_4_accuracy_train<sp/>=<sp/>train_model_utils.compute_top_k_accuracy(torch.tensor(pred_vector_train),<sp/>torch.tensor(ground_truths_train),<sp/>4)</highlight></codeline>
+<codeline lineno="417"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>multi-thresholdin<sp/>performance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="418"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred_mult_thres_0_3_train<sp/>=<sp/>utils.multi_thresholding(0.3,<sp/>torch.tensor(pred_vector_train))</highlight></codeline>
+<codeline lineno="419"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mul_thre_perfo_0_3_train<sp/>=<sp/>train_model_utils.compute_multi_thres_performance(pred_mult_thres_0_3_train,<sp/>ground_truths_train)</highlight></codeline>
+<codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred_mult_thres_0_5_train<sp/>=<sp/>utils.multi_thresholding(0.5,<sp/>torch.tensor(pred_vector_train))</highlight></codeline>
+<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mul_thre_perfo_0_5_train<sp/>=<sp/>train_model_utils.compute_multi_thres_performance(pred_mult_thres_0_5_train,<sp/>ground_truths_train)</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>writer.add_scalars(</highlight><highlight class="stringliteral">&quot;metrics/train&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;f1-score&quot;</highlight><highlight class="normal">:<sp/>f1_train,<sp/></highlight><highlight class="stringliteral">&quot;recall&quot;</highlight><highlight class="normal">:<sp/>recall_train,<sp/></highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;precision&quot;</highlight><highlight class="normal">:<sp/>precision_train,<sp/></highlight><highlight class="stringliteral">&quot;accuracy&quot;</highlight><highlight class="normal">:<sp/>accuracy_train,<sp/></highlight><highlight class="stringliteral">&quot;top<sp/>2<sp/>accuracy&quot;</highlight><highlight class="normal">:<sp/>top_2_accuracy_train,</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;top<sp/>3<sp/>accuracy&quot;</highlight><highlight class="normal">:<sp/>top_3_accuracy_train,<sp/></highlight><highlight class="stringliteral">&quot;top<sp/>4<sp/>accuracy&quot;</highlight><highlight class="normal">:<sp/>top_4_accuracy_train,<sp/></highlight><highlight class="stringliteral">&quot;multi-thres<sp/>0.3&quot;</highlight><highlight class="normal">:<sp/>mul_thre_perfo_0_3_train,<sp/></highlight><highlight class="stringliteral">&quot;multi-thres<sp/>0.5&quot;</highlight><highlight class="normal">:<sp/>mul_thre_perfo_0_5_train,<sp/>},<sp/>t)</highlight></codeline>
+<codeline lineno="425"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="426"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>ROC<sp/>curve</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="427"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROC_train<sp/>=<sp/>train_model_utils.compute_ROC_curve(pred_vector_train,<sp/>gt_vector_train,<sp/>predictions_train)</highlight></codeline>
+<codeline lineno="428"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>ROC<sp/>curve:<sp/>Training<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="429"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>writer.add_figure(</highlight><highlight class="stringliteral">&quot;rocCurve/train&quot;</highlight><highlight class="normal">,<sp/>ROC_train,<sp/>t)</highlight></codeline>
+<codeline lineno="430"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plt.clf()</highlight></codeline>
+<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>confusion<sp/>matrix</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conf_mat_train<sp/>=<sp/>train_model_utils.compute_conf_matrix(predictions_train,<sp/>ground_truths_train)</highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Confusion<sp/>matrix:<sp/>Training<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>writer.add_figure(</highlight><highlight class="stringliteral">&quot;confMatrix/train&quot;</highlight><highlight class="normal">,<sp/>conf_mat_train,<sp/>t)</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"></highlight></codeline>
+<codeline lineno="436"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>metrics<sp/>from<sp/>validation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="437"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f1_test,<sp/>recall_test,<sp/>precision_test,<sp/>accuracy_test<sp/>=\</highlight></codeline>
+<codeline lineno="438"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>train_model_utils.model_simple_metrics(predictions_test,<sp/>ground_truths_test)</highlight></codeline>
+<codeline lineno="439"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>top<sp/>k<sp/>accuracy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>top_2_accuracy_test<sp/>=<sp/>train_model_utils.compute_top_k_accuracy(torch.tensor(pred_vector_test),<sp/>torch.tensor(ground_truths_test),<sp/>2)</highlight></codeline>
+<codeline lineno="441"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>top_3_accuracy_test<sp/>=<sp/>train_model_utils.compute_top_k_accuracy(torch.tensor(pred_vector_test),<sp/>torch.tensor(ground_truths_test),<sp/>3)</highlight></codeline>
+<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>top_4_accuracy_test<sp/>=<sp/>train_model_utils.compute_top_k_accuracy(torch.tensor(pred_vector_test),<sp/>torch.tensor(ground_truths_test),<sp/>4)</highlight></codeline>
+<codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>multi-thresholdin<sp/>performance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred_mult_thres_0_3_test<sp/>=<sp/>utils.multi_thresholding(0.3,<sp/>torch.tensor(pred_vector_test))</highlight></codeline>
+<codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mul_thre_perfo_0_3_test<sp/>=<sp/>train_model_utils.compute_multi_thres_performance(pred_mult_thres_0_3_test,<sp/>ground_truths_test)</highlight></codeline>
+<codeline lineno="446"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pred_mult_thres_0_5_test<sp/>=<sp/>utils.multi_thresholding(0.5,<sp/>torch.tensor(pred_vector_test))</highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mul_thre_perfo_0_5_test<sp/>=<sp/>train_model_utils.compute_multi_thres_performance(pred_mult_thres_0_5_test,<sp/>ground_truths_test)</highlight></codeline>
+<codeline lineno="448"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Save<sp/>metric<sp/>from<sp/>training</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="449"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>writer.add_scalars(</highlight><highlight class="stringliteral">&quot;metrics/val&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;f1-score&quot;</highlight><highlight class="normal">:<sp/>f1_test,<sp/></highlight><highlight class="stringliteral">&quot;recall&quot;</highlight><highlight class="normal">:<sp/>recall_test,<sp/></highlight></codeline>
+<codeline lineno="450"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;precision&quot;</highlight><highlight class="normal">:<sp/>precision_test,<sp/></highlight><highlight class="stringliteral">&quot;accuracy&quot;</highlight><highlight class="normal">:<sp/>accuracy_test,<sp/></highlight><highlight class="stringliteral">&quot;top<sp/>2<sp/>accuracy&quot;</highlight><highlight class="normal">:<sp/>top_2_accuracy_test,</highlight></codeline>
+<codeline lineno="451"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;top<sp/>3<sp/>accuracy&quot;</highlight><highlight class="normal">:<sp/>top_3_accuracy_test,<sp/></highlight><highlight class="stringliteral">&quot;top<sp/>4<sp/>accuracy&quot;</highlight><highlight class="normal">:<sp/>top_4_accuracy_test,<sp/></highlight><highlight class="stringliteral">&quot;multi-thres<sp/>0.3&quot;</highlight><highlight class="normal">:<sp/>mul_thre_perfo_0_3_test,<sp/></highlight><highlight class="stringliteral">&quot;multi-thres<sp/>0.5&quot;</highlight><highlight class="normal">:<sp/>mul_thre_perfo_0_5_test},<sp/>t)</highlight></codeline>
+<codeline lineno="452"><highlight class="normal"></highlight></codeline>
+<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>ROC<sp/>curve</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ROC_test<sp/>=<sp/>train_model_utils.compute_ROC_curve(pred_vector_test,<sp/>gt_vector_test,<sp/>predictions_test)</highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>ROC<sp/>curve:<sp/>Validation<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="456"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>writer.add_figure(</highlight><highlight class="stringliteral">&quot;rocCurve/test&quot;</highlight><highlight class="normal">,<sp/>ROC_test,<sp/>t)</highlight></codeline>
+<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>plt.clf()</highlight></codeline>
+<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>confusion<sp/>matrix</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="459"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>conf_mat_test<sp/>=<sp/>train_model_utils.compute_conf_matrix(predictions_test,<sp/>ground_truths_test)</highlight></codeline>
+<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Confusion<sp/>matrix:<sp/>Validation<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>writer.add_figure(</highlight><highlight class="stringliteral">&quot;confMatrix/val&quot;</highlight><highlight class="normal">,<sp/>conf_mat_test,<sp/>t)</highlight></codeline>
+<codeline lineno="462"><highlight class="normal"></highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Save<sp/>best<sp/>loss<sp/>and<sp/>best<sp/>params</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="464"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>best_f1<sp/>&lt;<sp/>f1_test:</highlight></codeline>
+<codeline lineno="465"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>best_f1<sp/>=<sp/>f1_test<sp/><sp/></highlight><highlight class="comment">#<sp/>Update<sp/>best<sp/>f1-score</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="466"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f_name<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;best_stg_&quot;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">#<sp/>Choose<sp/>file<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="467"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>k<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(len(model)):</highlight></codeline>
+<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>train_model_utils.save_model_parameters(</highlight><highlight class="stringliteral">&quot;stg6_last_&quot;</highlight><highlight class="normal">+files_mod_name_stats,<sp/>f_name<sp/>+<sp/>str(k),<sp/>model[k])</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"></highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Learning<sp/>rate<sp/>Decay</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(t+1)<sp/>%<sp/>decay_controler<sp/>==<sp/>0:</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;lr:&quot;</highlight><highlight class="normal">,<sp/>lr_sch.get_lr())</highlight></codeline>
+<codeline lineno="473"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lr_sch.step()</highlight></codeline>
+<codeline lineno="474"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="475"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>end<sp/>=<sp/>time.time()</highlight></codeline>
+<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Time:&quot;</highlight><highlight class="normal">,<sp/>str(datetime.timedelta(seconds=end-start)))</highlight></codeline>
+<codeline lineno="477"><highlight class="normal"></highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Print<sp/>current<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/>train_model_utils.print_current_time()</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Done!&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="481"><highlight class="normal"></highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Make<sp/>sure<sp/>all<sp/>events<sp/>have<sp/>been<sp/>written<sp/>to<sp/>the<sp/>disk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/>writer.flush()</highlight></codeline>
+<codeline lineno="484"><highlight class="normal"><sp/><sp/><sp/><sp/>writer.close()<sp/></highlight><highlight class="comment">#<sp/>Close<sp/>session</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="485"><highlight class="normal"></highlight></codeline>
+<codeline lineno="486"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>model,<sp/>optimizer</highlight></codeline>
+<codeline lineno="487"><highlight class="normal"></highlight></codeline>
+<codeline lineno="488"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespacetrain__stg6_1a566754db3d002de3c456576aa51619fc" kindref="member">main</ref>():</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"></highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Initialize<sp/>Model</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/><sp/><sp/>stg1_2<sp/>=<sp/>msecnn.MseCnnStg1(device=device,<sp/>QP=QP).to(device)</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"><sp/><sp/><sp/><sp/>stg3<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=QP).to(device)</highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/><sp/><sp/>stg4<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=QP).to(device)</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/>stg5<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=QP).to(device)</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/>stg6<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=QP).to(device)</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"></highlight></codeline>
+<codeline lineno="497"><highlight class="normal"><sp/><sp/><sp/><sp/>model<sp/>=<sp/>(stg1_2,<sp/>stg3,<sp/>stg4,<sp/>stg5,<sp/>stg6)</highlight></codeline>
+<codeline lineno="498"><highlight class="normal"></highlight></codeline>
+<codeline lineno="499"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Load<sp/>Optimizer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="500"><highlight class="normal"><sp/><sp/><sp/><sp/>optimizer<sp/>=<sp/>torch.optim.Adam(model[-1].parameters(),<sp/>lr=learning_rate)<sp/><sp/></highlight><highlight class="comment">#<sp/>Tal<sp/>como<sp/>no<sp/>paper</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="501"><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Load<sp/>scheduler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="503"><highlight class="normal"><sp/><sp/><sp/><sp/>lr_sch<sp/>=<sp/>torch.optim.lr_scheduler.ExponentialLR(optimizer,<sp/>decay,<sp/>last_epoch=-1)</highlight></codeline>
+<codeline lineno="504"><highlight class="normal"></highlight></codeline>
+<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/>ans<sp/>=<sp/>str(input(</highlight><highlight class="stringliteral">&apos;Do<sp/>you<sp/>want<sp/>to<sp/>load<sp/>any<sp/>existing<sp/>model?<sp/>Y/N<sp/>\n&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="506"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>ans<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;Y&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>ans<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;y&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="507"><highlight class="normal"></highlight></codeline>
+<codeline lineno="508"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ans<sp/>=<sp/>str(input(</highlight><highlight class="stringliteral">&apos;Do<sp/>you<sp/>want<sp/>to<sp/>load<sp/>the<sp/>full<sp/>model<sp/>(all<sp/>stages<sp/>in<sp/>the<sp/>folder)<sp/>or<sp/>just<sp/>the<sp/>last<sp/>stage?<sp/>Press<sp/>A<sp/>for<sp/>all<sp/>stages<sp/>or<sp/>L<sp/>for<sp/>the<sp/>last<sp/>stage.<sp/>(Press<sp/>enter<sp/>afterwards)<sp/>\n&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="509"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>path<sp/>=<sp/>input(</highlight><highlight class="stringliteral">&apos;What\&apos;s<sp/>the<sp/>path<sp/>of<sp/>the<sp/>files<sp/>you<sp/>want<sp/>to<sp/>load<sp/>the<sp/>model<sp/>to?&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="510"><highlight class="normal"></highlight></codeline>
+<codeline lineno="511"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>ans<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;Y&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>ans<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;y&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="512"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>model<sp/>=<sp/>train_model_utils.load_model_parameters_eval(model,<sp/>path,<sp/>device)</highlight></codeline>
+<codeline lineno="513"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="515"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>model<sp/>=<sp/>train_model_utils.load_model_stg_5_stg_6(model,<sp/>path,<sp/>device)</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"></highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Prepare<sp/>training<sp/>and<sp/>testing<sp/>data,<sp/>Dataset<sp/>and<sp/>Dataloader</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="518"><highlight class="normal"><sp/><sp/><sp/><sp/>train_data<sp/>=<sp/>custom_dataset.CUDatasetStg6(files_path=l_path_train)<sp/></highlight></codeline>
+<codeline lineno="519"><highlight class="normal"><sp/><sp/><sp/><sp/>batch_sampler_train<sp/>=<sp/>custom_dataset.SamplerStg6(train_data,<sp/>batch_size)<sp/><sp/></highlight><highlight class="comment">#<sp/>Batch<sp/>Sampler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="520"><highlight class="normal"><sp/><sp/><sp/><sp/>dataloader_train<sp/>=<sp/>DataLoader(train_data,<sp/>num_workers=num_workers,<sp/>batch_sampler=batch_sampler_train)</highlight></codeline>
+<codeline lineno="521"><highlight class="normal"><sp/><sp/><sp/><sp/>test_data<sp/>=<sp/>custom_dataset.CUDatasetStg6(files_path=l_path_test)</highlight></codeline>
+<codeline lineno="522"><highlight class="normal"><sp/><sp/><sp/><sp/>batch_sampler_test<sp/>=<sp/>custom_dataset.SamplerStg6(test_data,<sp/>batch_size)<sp/><sp/></highlight><highlight class="comment">#<sp/>Batch<sp/>Sampler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="523"><highlight class="normal"><sp/><sp/><sp/><sp/>dataloader_test<sp/>=<sp/>DataLoader(test_data,<sp/>num_workers=num_workers,<sp/>batch_sampler=batch_sampler_test)</highlight></codeline>
+<codeline lineno="524"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="525"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Load<sp/>Loss<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="526"><highlight class="normal"><sp/><sp/><sp/><sp/>loss_fn<sp/>=<sp/>msecnn.LossFunctionMSE(beta=beta)</highlight></codeline>
+<codeline lineno="527"><highlight class="normal"></highlight></codeline>
+<codeline lineno="528"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Train</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="529"><highlight class="normal"><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Starting<sp/>training...&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="530"><highlight class="normal"><sp/><sp/><sp/><sp/>my_final_model,<sp/>my_final_optimizer<sp/>=<sp/><ref refid="namespacetrain__stg6_1a5fa206f76e13ffd9683dd8aa096079f7" kindref="member">train_test</ref>(dataloader_train,<sp/>dataloader_test,<sp/>model,<sp/>loss_fn,</highlight></codeline>
+<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>optimizer,<sp/>device,<sp/>iterations,</highlight></codeline>
+<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lr_sch)</highlight></codeline>
+<codeline lineno="533"><highlight class="normal"></highlight></codeline>
+<codeline lineno="534"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Print<sp/>optimizer&apos;s<sp/>state_dict</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="535"><highlight class="normal"><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Optimizer&apos;s<sp/>lr:&quot;</highlight><highlight class="normal">,<sp/>lr_sch.get_lr())</highlight></codeline>
+<codeline lineno="536"><highlight class="normal"><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Optimizer&apos;s<sp/>lr:&quot;</highlight><highlight class="normal">,<sp/>lr_sch.get_last_lr())</highlight></codeline>
+<codeline lineno="537"><highlight class="normal"><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Optimizer&apos;s<sp/>lr:&quot;</highlight><highlight class="normal">,<sp/>my_final_optimizer.param_groups[0][</highlight><highlight class="stringliteral">&quot;lr&quot;</highlight><highlight class="normal">])</highlight></codeline>
+<codeline lineno="538"><highlight class="normal"></highlight></codeline>
+<codeline lineno="539"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacetrain__stg6_1a566754db3d002de3c456576aa51619fc" kindref="member">main</ref>()</highlight></codeline>
+    </programlisting>
+    <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py"/>
+  </compounddef>
+</doxygen>

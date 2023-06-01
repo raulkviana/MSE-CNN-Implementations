@@ -1,0 +1,224 @@
+\doxysection{msecnn\+\_\+raulkviana.\+custom\+\_\+dataset Namespace Reference}
+\hypertarget{namespacemsecnn__raulkviana_1_1custom__dataset}{}\label{namespacemsecnn__raulkviana_1_1custom__dataset}\index{msecnn\_raulkviana.custom\_dataset@{msecnn\_raulkviana.custom\_dataset}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_base}{CUDataset\+Base}}
+\begin{DoxyCompactList}\small\item\em Dataset stage oriented with capability of loading different files and it\textquotesingle{}s supposed to be used with the function dataset\+\_\+utils.\+change\+\_\+labels\+\_\+function\+\_\+again. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg2_compl}{CUDataset\+Stg2\+Compl}}
+\item 
+class \mbox{\hyperlink{classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg3_compl}{CUDataset\+Stg3\+Compl}}
+\item 
+class \mbox{\hyperlink{classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg4_compl}{CUDataset\+Stg4\+Compl}}
+\begin{DoxyCompactList}\small\item\em Dataset stage oriented with capability of loading different files and it\textquotesingle{}s supposed to be used with the function dataset\+\_\+utils.\+change\+\_\+labels\+\_\+function\+\_\+again. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg5_compl}{CUDataset\+Stg5\+Compl}}
+\begin{DoxyCompactList}\small\item\em Dataset stage oriented with capability of loading different files and it\textquotesingle{}s supposed to be used with the function dataset\+\_\+utils.\+change\+\_\+labels\+\_\+function\+\_\+again. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg6_compl}{CUDataset\+Stg6\+Compl}}
+\begin{DoxyCompactList}\small\item\em Dataset stage oriented with capability of loading different files and it\textquotesingle{}s supposed to be used with the function dataset\+\_\+utils.\+change\+\_\+labels\+\_\+function\+\_\+again. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classmsecnn__raulkviana_1_1custom__dataset_1_1_sampler_stg4}{Sampler\+Stg4}}
+\item 
+class \mbox{\hyperlink{classmsecnn__raulkviana_1_1custom__dataset_1_1_sampler_stg5}{Sampler\+Stg5}}
+\item 
+class \mbox{\hyperlink{classmsecnn__raulkviana_1_1custom__dataset_1_1_sampler_stg6}{Sampler\+Stg6}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1custom__dataset_a59377f998d1ca74684b3fbf38b625d0d}{yuv2bgr}} (matrix)
+\begin{DoxyCompactList}\small\item\em Converts yuv matrix to bgr matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1custom__dataset_a3abd31f0bedab3b24fde027be6cc23a6}{bgr2yuv}} (matrix)
+\begin{DoxyCompactList}\small\item\em Converts BGR matrix to YUV matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1custom__dataset_aa5aba8e9511dd561b4a9c78ba1a973fb}{get\+\_\+cu}} (f\+\_\+path, f\+\_\+size, cu\+\_\+pos, cu\+\_\+size, frame\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Get CU from image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1custom__dataset_a6dd132332ce4a3bc700a89d4a18f6723}{get\+\_\+file\+\_\+size}} (name)
+\begin{DoxyCompactList}\small\item\em Retrieves information about the YUV file info (width and height) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1custom__dataset_a1143ed2a2717e8eb9ecfdc7b06ba6b5c}{resize}} (img, scale\+\_\+percent)
+\begin{DoxyCompactList}\small\item\em Resizes a BGR image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1custom__dataset_ae0eac8f315472938410c9498dc507807}{show\+\_\+\+CU}} (image, cu\+\_\+size, cu\+\_\+pos)
+\begin{DoxyCompactList}\small\item\em Shows CU in a image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1custom__dataset_ada43d6f9f3fe6cdc9822a80428213a07}{show\+\_\+all\+\_\+\+CUs}} (CUDataset, file\+\_\+name, POC, cu\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Shows all CUs in a image with a specific size, TO BE USED WITH THE CU ORIENTE LABELS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}@package docstring 
+
+@file CustomDataset.py 
+
+@brief This library contains usefull functions to visualise data and also Classes to store and organise data structures. 
+ 
+@section libraries_CustomDataset Libraries 
+- torch
+- numpy
+- dataset_utils
+- cv2
+- torch.utils.data
+- random
+- re
+
+@section classes_CustomDataset Classes 
+- CUDatasetBase
+- CUDatasetStg2Compl
+- CUDatasetStg3Compl
+- CUDatasetStg4Compl
+- CUDatasetStg5Compl
+- CUDatasetStg6Compl
+- SamplerStg6
+- SamplerStg5
+- SamplerStg4
+ 
+@section functions_CustomDataset Functions 
+- yuv2bgr(matrix)
+- bgr2yuv(matrix)
+- get_cu(f_path, f_size, cu_pos, cu_size, frame_number)
+- get_file_size(name)
+- resize(img, scale_percent)
+- show_CU(image, cu_size, cu_pos)
+- show_all_CUs(CUDataset, file_name, POC, cu_size)
+ 
+@section global_vars_CustomDataset Global Variables 
+- None 
+
+@section todo_CustomDataset TODO 
+- None 
+
+@section license License 
+MIT License 
+Copyright (c) 2022 Raul Kevin do Espirito Santo Viana
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+@section author_CustomDataset Author(s)
+- Created by Raul Kevin Viana
+- Last time modified is 2023-01-29 22:22:04.113134
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacemsecnn__raulkviana_1_1custom__dataset_a3abd31f0bedab3b24fde027be6cc23a6}\label{namespacemsecnn__raulkviana_1_1custom__dataset_a3abd31f0bedab3b24fde027be6cc23a6} 
+\index{msecnn\_raulkviana.custom\_dataset@{msecnn\_raulkviana.custom\_dataset}!bgr2yuv@{bgr2yuv}}
+\index{bgr2yuv@{bgr2yuv}!msecnn\_raulkviana.custom\_dataset@{msecnn\_raulkviana.custom\_dataset}}
+\doxysubsubsection{\texorpdfstring{bgr2yuv()}{bgr2yuv()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+custom\+\_\+dataset.\+bgr2yuv (\begin{DoxyParamCaption}\item[{}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Converts BGR matrix to YUV matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em matrix} & BGR matrix \\
+\hline
+\mbox{\texttt{ out}}  & {\em YUV} & YUV conversion \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacemsecnn__raulkviana_1_1custom__dataset_aa5aba8e9511dd561b4a9c78ba1a973fb}\label{namespacemsecnn__raulkviana_1_1custom__dataset_aa5aba8e9511dd561b4a9c78ba1a973fb} 
+\index{msecnn\_raulkviana.custom\_dataset@{msecnn\_raulkviana.custom\_dataset}!get\_cu@{get\_cu}}
+\index{get\_cu@{get\_cu}!msecnn\_raulkviana.custom\_dataset@{msecnn\_raulkviana.custom\_dataset}}
+\doxysubsubsection{\texorpdfstring{get\_cu()}{get\_cu()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+custom\+\_\+dataset.\+get\+\_\+cu (\begin{DoxyParamCaption}\item[{}]{f\+\_\+path,  }\item[{}]{f\+\_\+size,  }\item[{}]{cu\+\_\+pos,  }\item[{}]{cu\+\_\+size,  }\item[{}]{frame\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+Get CU from image. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em f\+\_\+path} & Path of file to get the CU from \\
+\hline
+\mbox{\texttt{ in}}  & {\em f\+\_\+size} & YUV file dimensions (height, width) \\
+\hline
+\mbox{\texttt{ in}}  & {\em cu\+\_\+pos} & Tuple with the position of the CU (y position (height), x position (width)) \\
+\hline
+\mbox{\texttt{ in}}  & {\em cu\+\_\+size} & Tuple with the size of the CU (y position (height), x position (width)) \\
+\hline
+\mbox{\texttt{ in}}  & {\em frame\+\_\+number} & Number of the frame containing the CU \\
+\hline
+\mbox{\texttt{ out}}  & {\em CU} & CU with all the information from all the components(\+Luminance and Chroma) \\
+\hline
+\mbox{\texttt{ out}}  & {\em CU\+\_\+Y} & CU with the Luminance component \\
+\hline
+\mbox{\texttt{ out}}  & {\em CU\+\_\+U} & CU with the Chroma (Blue) component \\
+\hline
+\mbox{\texttt{ out}}  & {\em CU\+\_\+V} & CU with the Chroma (Red) component \\
+\hline
+\mbox{\texttt{ out}}  & {\em frame\+\_\+\+CU} & specified frame that contains the CU \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacemsecnn__raulkviana_1_1custom__dataset_a6dd132332ce4a3bc700a89d4a18f6723}\label{namespacemsecnn__raulkviana_1_1custom__dataset_a6dd132332ce4a3bc700a89d4a18f6723} 
+\index{msecnn\_raulkviana.custom\_dataset@{msecnn\_raulkviana.custom\_dataset}!get\_file\_size@{get\_file\_size}}
+\index{get\_file\_size@{get\_file\_size}!msecnn\_raulkviana.custom\_dataset@{msecnn\_raulkviana.custom\_dataset}}
+\doxysubsubsection{\texorpdfstring{get\_file\_size()}{get\_file\_size()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+custom\+\_\+dataset.\+get\+\_\+file\+\_\+size (\begin{DoxyParamCaption}\item[{}]{name }\end{DoxyParamCaption})}
+
+
+
+Retrieves information about the YUV file info (width and height) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em name} & Name of the file where the file is located \\
+\hline
+\mbox{\texttt{ out}}  & {\em file\+\_\+info} & Dictionary with information about the yuv file \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacemsecnn__raulkviana_1_1custom__dataset_a1143ed2a2717e8eb9ecfdc7b06ba6b5c}\label{namespacemsecnn__raulkviana_1_1custom__dataset_a1143ed2a2717e8eb9ecfdc7b06ba6b5c} 
+\index{msecnn\_raulkviana.custom\_dataset@{msecnn\_raulkviana.custom\_dataset}!resize@{resize}}
+\index{resize@{resize}!msecnn\_raulkviana.custom\_dataset@{msecnn\_raulkviana.custom\_dataset}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+custom\+\_\+dataset.\+resize (\begin{DoxyParamCaption}\item[{}]{img,  }\item[{}]{scale\+\_\+percent }\end{DoxyParamCaption})}
+
+
+
+Resizes a BGR image. 
+
+\Hypertarget{namespacemsecnn__raulkviana_1_1custom__dataset_ada43d6f9f3fe6cdc9822a80428213a07}\label{namespacemsecnn__raulkviana_1_1custom__dataset_ada43d6f9f3fe6cdc9822a80428213a07} 
+\index{msecnn\_raulkviana.custom\_dataset@{msecnn\_raulkviana.custom\_dataset}!show\_all\_CUs@{show\_all\_CUs}}
+\index{show\_all\_CUs@{show\_all\_CUs}!msecnn\_raulkviana.custom\_dataset@{msecnn\_raulkviana.custom\_dataset}}
+\doxysubsubsection{\texorpdfstring{show\_all\_CUs()}{show\_all\_CUs()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+custom\+\_\+dataset.\+show\+\_\+all\+\_\+\+CUs (\begin{DoxyParamCaption}\item[{}]{CUDataset,  }\item[{}]{file\+\_\+name,  }\item[{}]{POC,  }\item[{}]{cu\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Shows all CUs in a image with a specific size, TO BE USED WITH THE CU ORIENTE LABELS. 
+
+\Hypertarget{namespacemsecnn__raulkviana_1_1custom__dataset_ae0eac8f315472938410c9498dc507807}\label{namespacemsecnn__raulkviana_1_1custom__dataset_ae0eac8f315472938410c9498dc507807} 
+\index{msecnn\_raulkviana.custom\_dataset@{msecnn\_raulkviana.custom\_dataset}!show\_CU@{show\_CU}}
+\index{show\_CU@{show\_CU}!msecnn\_raulkviana.custom\_dataset@{msecnn\_raulkviana.custom\_dataset}}
+\doxysubsubsection{\texorpdfstring{show\_CU()}{show\_CU()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+custom\+\_\+dataset.\+show\+\_\+\+CU (\begin{DoxyParamCaption}\item[{}]{image,  }\item[{}]{cu\+\_\+size,  }\item[{}]{cu\+\_\+pos }\end{DoxyParamCaption})}
+
+
+
+Shows CU in a image. 
+
+\Hypertarget{namespacemsecnn__raulkviana_1_1custom__dataset_a59377f998d1ca74684b3fbf38b625d0d}\label{namespacemsecnn__raulkviana_1_1custom__dataset_a59377f998d1ca74684b3fbf38b625d0d} 
+\index{msecnn\_raulkviana.custom\_dataset@{msecnn\_raulkviana.custom\_dataset}!yuv2bgr@{yuv2bgr}}
+\index{yuv2bgr@{yuv2bgr}!msecnn\_raulkviana.custom\_dataset@{msecnn\_raulkviana.custom\_dataset}}
+\doxysubsubsection{\texorpdfstring{yuv2bgr()}{yuv2bgr()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+custom\+\_\+dataset.\+yuv2bgr (\begin{DoxyParamCaption}\item[{}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Converts yuv matrix to bgr matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em matrix} & Yuv matrix \\
+\hline
+\mbox{\texttt{ out}}  & {\em bgr} & Bgr conversion \\
+\hline
+\end{DoxyParams}

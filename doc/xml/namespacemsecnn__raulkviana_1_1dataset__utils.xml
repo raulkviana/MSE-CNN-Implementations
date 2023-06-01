@@ -1,0 +1,3526 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="namespacemsecnn__raulkviana_1_1dataset__utils" kind="namespace" language="Python">
+    <compoundname>msecnn_raulkviana::dataset_utils</compoundname>
+    <innerclass refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v" prot="public">msecnn_raulkviana::dataset_utils::VideoCaptureYUV</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ad77955814433f58f58b0513a6127a239" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.bgr2yuv</definition>
+        <argsstring>(matrix)</argsstring>
+        <name>bgr2yuv</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.bgr2yuv</qualifiedname>
+        <param>
+          <type>matrix</type>
+          <defname>matrix</defname>
+        </param>
+        <briefdescription>
+<para>Converts BGR matrix to YUV matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">matrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>BGR matrix </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">YUV</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>YUV conversion </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="210" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="210" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a593e830c4a93c93728539b1a59e52ff9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.extract_content</definition>
+        <argsstring>(f)</argsstring>
+        <name>extract_content</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.extract_content</qualifiedname>
+        <param>
+          <type>f</type>
+          <defname>f</defname>
+        </param>
+        <briefdescription>
+<para>Extract a single record from binary file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary containing the information of a single record </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="223" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="223" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ac6ae8db4b242935eeec705bec8633e54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.file_stats</definition>
+        <argsstring>(path)</argsstring>
+        <name>file_stats</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.file_stats</qualifiedname>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+<para>Finds out the size of the binary file and computes the number of records. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path where the binary file is located </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">num_records</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of records that the binary file contains </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">file_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the binary file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="276" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="276" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ac7246ea082350e97d972e7e3f22a41f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.show_bin_content</definition>
+        <argsstring>(path, num_records=100)</argsstring>
+        <name>show_bin_content</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.show_bin_content</qualifiedname>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>num_records</type>
+          <defname>num_records</defname>
+          <defval>100</defval>
+        </param>
+        <briefdescription>
+<para>Show contents of a binary file containing encoding information. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path where the binary file is located </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_records</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of records to show </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="296" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="296" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a02facd8d529a019450fc03b0da33f2b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.add_best_split</definition>
+        <argsstring>(labels)</argsstring>
+        <name>add_best_split</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.add_best_split</qualifiedname>
+        <param>
+          <type>labels</type>
+          <defname>labels</defname>
+        </param>
+        <briefdescription>
+<para>Modifies labels by adding an extra parameter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Dictionary containing all the info about the file: It&apos;s a dictionary of picture numbers, which then leads to a dictionary of the info. For example: records = {&quot;Pic_0&quot; :{&quot;CU_0&quot;: {&quot;colorChannel&quot;: 1, &quot;CULoc_left&quot;: 2, ... &quot;split&quot;: 5 } ... ... } }</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">labels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the labels of the dataset </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">new_labels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New dictionary with the lables of the dataset </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="330" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="330" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a4a18ca23c78ddb1622d447c01490e85c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.read_from_records</definition>
+        <argsstring>(path, num_records)</argsstring>
+        <name>read_from_records</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.read_from_records</qualifiedname>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>num_records</type>
+          <defname>num_records</defname>
+        </param>
+        <briefdescription>
+<para>Read the information/file generated by the encoder Dictionary containing all the info about the file: It&apos;s a dictionary of picture numbers, which then leads to a dictionary of the info. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For example: records = {&quot;Pic_0&quot; :{&quot;CU_0&quot;: {&quot;colorChannel&quot;: 1, &quot;CULoc_left&quot;: 2, ... } ... ... } }</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path where the file is located </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_records</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of records to show </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">records</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary containing the information of all records </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="367" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="367" bodyend="429"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1aedaaa1246176bfe71ae5b345ced93c63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.process_info</definition>
+        <argsstring>(content)</argsstring>
+        <name>process_info</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.process_info</qualifiedname>
+        <param>
+          <type>content</type>
+          <defname>content</defname>
+        </param>
+        <briefdescription>
+<para>Process the raw data from the labels given by the encoder. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dict with the information about </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Processed dict </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="430" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="430" bodyend="463"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1af14d03c407df3fecbb5fac86f78c851c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.match_cu</definition>
+        <argsstring>(CU, CTU, position, size)</argsstring>
+        <name>match_cu</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.match_cu</qualifiedname>
+        <param>
+          <type>CU</type>
+          <defname>CU</defname>
+        </param>
+        <param>
+          <type>CTU</type>
+          <defname>CTU</defname>
+        </param>
+        <param>
+          <type>position</type>
+          <defname>position</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+<para>Verifies if the CUs are the same based in their position, size and other information. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">CU</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CU (dict with information about the CU) that will be inspected </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">CTU</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Original CTU (dict with information about the CTU) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Position of the CU that it is being searched </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Position of the CU that it is being searched </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">match_or_not</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bool value with the decision about the matching </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="464" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="464" bodyend="490"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a6b5b16fb3f723663c0e5108be65ea80d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.find_cu</definition>
+        <argsstring>(df_cu, CTU, position, size)</argsstring>
+        <name>find_cu</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.find_cu</qualifiedname>
+        <param>
+          <type>df_cu</type>
+          <defname>df_cu</defname>
+        </param>
+        <param>
+          <type>CTU</type>
+          <defname>CTU</defname>
+        </param>
+        <param>
+          <type>position</type>
+          <defname>position</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+<para>Verifies if the CU is in the dataframe, using the size and other information. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses pandas&apos; dataframe</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">df_cu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dataframe with all the CUs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">CTU</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Original CTU (dict with information about the CTU) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Position of the CU that it is being searched [left, top] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Position of the CU that it is being searched [left, top] </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">cu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Either a CU pandas&apos; series object or a false boolean value that indicates that the CU wasn&apos;t found </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="491" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="491" bodyend="511"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a7a6a91a978fd27cc1af3b7c0b2772441" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.build_entry</definition>
+        <argsstring>(stg1=[], stg2=[], stg3=[], stg4=[], stg5=[], stg6=[])</argsstring>
+        <name>build_entry</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.build_entry</qualifiedname>
+        <param>
+          <type>stg1</type>
+          <defname>stg1</defname>
+          <defval>[]</defval>
+        </param>
+        <param>
+          <type>stg2</type>
+          <defname>stg2</defname>
+          <defval>[]</defval>
+        </param>
+        <param>
+          <type>stg3</type>
+          <defname>stg3</defname>
+          <defval>[]</defval>
+        </param>
+        <param>
+          <type>stg4</type>
+          <defname>stg4</defname>
+          <defval>[]</defval>
+        </param>
+        <param>
+          <type>stg5</type>
+          <defname>stg5</defname>
+          <defval>[]</defval>
+        </param>
+        <param>
+          <type>stg6</type>
+          <defname>stg6</defname>
+          <defval>[]</defval>
+        </param>
+        <briefdescription>
+<para>Builds a entry with all information needed for each stage, and also removes unnecessary info. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">stg1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CU (dict with information about the CU) for stage 1 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stg2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CU (dict with information about the CU) for stage 2 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stg3</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CU (dict with information about the CU) for stage 3 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stg4</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CU (dict with information about the CU) for stage 4 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stg5</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CU (dict with information about the CU) for stage 5 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stg6</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CU (dict with information about the CU) for stage 6 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">entry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with information about the all stages inputs </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="512" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="512" bodyend="533"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1af788e0ed3d1a77a7000da4ff32df3837" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.add_cu_to_dict</definition>
+        <argsstring>(cu_dict, cu)</argsstring>
+        <name>add_cu_to_dict</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.add_cu_to_dict</qualifiedname>
+        <param>
+          <type>cu_dict</type>
+          <defname>cu_dict</defname>
+        </param>
+        <param>
+          <type>cu</type>
+          <defname>cu</defname>
+        </param>
+        <briefdescription>
+<para>Adds information of a specific CU to the dictionary. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cu_dict</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with information about all CUs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>CU information to add to the dictionary </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">cu_dict</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with information about all CUs, with a new cu added </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="534" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="534" bodyend="557"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1af51f5b85407e8b3f81adbca64b1d72e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.transform_create_struct_faster_v2_mod_divs</definition>
+        <argsstring>(f, f_name, num_records, output_dir, n_output_file, color_ch=0)</argsstring>
+        <name>transform_create_struct_faster_v2_mod_divs</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.transform_create_struct_faster_v2_mod_divs</qualifiedname>
+        <param>
+          <type>f</type>
+          <defname>f</defname>
+        </param>
+        <param>
+          <type>f_name</type>
+          <defname>f_name</defname>
+        </param>
+        <param>
+          <type>num_records</type>
+          <defname>num_records</defname>
+        </param>
+        <param>
+          <type>output_dir</type>
+          <defname>output_dir</defname>
+        </param>
+        <param>
+          <type>n_output_file</type>
+          <defname>n_output_file</defname>
+        </param>
+        <param>
+          <type>color_ch</type>
+          <defname>color_ch</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>First obtains all CTUs and CUs in the file using a dictionary/dataframe, afterward organizes them in a stage oriented way. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes elements from the cu list to speed up the process. Uses only specified color channel. This versions divides info into multiple files</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">f_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_records</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of records </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">color_ch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Color channel </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">structed_cus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary containing the all CUs organized in a stage oriented way. Each entry looks like: [f_name_labels, pic_name, RD0, RD1, RD2, RD3, RD4, RD5, pos, size] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="558" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="558" bodyend="651"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ab5e4697acb7b7684aa9290f0910032bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.transform_create_struct_faster_v3</definition>
+        <argsstring>(f, f_name, num_records, output_dir, n_output_file, color_ch=0)</argsstring>
+        <name>transform_create_struct_faster_v3</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.transform_create_struct_faster_v3</qualifiedname>
+        <param>
+          <type>f</type>
+          <defname>f</defname>
+        </param>
+        <param>
+          <type>f_name</type>
+          <defname>f_name</defname>
+        </param>
+        <param>
+          <type>num_records</type>
+          <defname>num_records</defname>
+        </param>
+        <param>
+          <type>output_dir</type>
+          <defname>output_dir</defname>
+        </param>
+        <param>
+          <type>n_output_file</type>
+          <defname>n_output_file</defname>
+        </param>
+        <param>
+          <type>color_ch</type>
+          <defname>color_ch</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>First obtains all CTUs and CUs in the file using a dictionary/dataframe, afterward organizes them in a stage oriented way. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes elements from the cu list to speed up the process. Uses only specified color channel. This version its similar to the div version, but outputs only a file</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">f_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File name </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_records</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of records </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">color_ch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Color channel </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">structed_cus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary containing the all CUs organized in a stage oriented way. Each entry looks like: [f_name_labels, pic_name, RD0, RD1, RD2, RD3, RD4, RD5, pos, size] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="652" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="652" bodyend="738"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1aabb53fba42ba17f3996158456140fdae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.process_ctus_cus</definition>
+        <argsstring>(df_ctus, df_cus)</argsstring>
+        <name>process_ctus_cus</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.process_ctus_cus</qualifiedname>
+        <param>
+          <type>df_ctus</type>
+          <defname>df_ctus</defname>
+        </param>
+        <param>
+          <type>df_cus</type>
+          <defname>df_cus</defname>
+        </param>
+        <briefdescription>
+<para>Function to create data structures to organize the CTUs and CUs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>TODO: Try to implement this with recursion</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">df_ctus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dataframe with CTUs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">df_cus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dataframe with CUs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">structed_cus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary containing the all CUs organized in a stage oriented way. Each entry looks like: [f_name_labels, pic_name, RD0, RD1, RD2, RD3, RD4, RD5, pos, size] </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="739" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="739" bodyend="878"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a81a7fcccb9018a9220c6065966c8847c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.split</definition>
+        <argsstring>(size, pos, split_mode)</argsstring>
+        <name>split</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.split</qualifiedname>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <param>
+          <type>pos</type>
+          <defname>pos</defname>
+        </param>
+        <param>
+          <type>split_mode</type>
+          <defname>split_mode</defname>
+        </param>
+        <briefdescription>
+<para>Split a CU in one of the specific modes (quad tree, binary vert tree, binary horz tree, threenary vert tree, etc) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the CU (width, height) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Position of the CU (width, height) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">new_positions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output of tuple with the positions of the CUs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">new_sizes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output of tuple with the sizes of the CUs </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="879" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="879" bodyend="975"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a5015f5adc38f4b380784eea7f4e73dfa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.transform_raw_dataset</definition>
+        <argsstring>(dic)</argsstring>
+        <name>transform_raw_dataset</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.transform_raw_dataset</qualifiedname>
+        <param>
+          <type>dic</type>
+          <defname>dic</defname>
+        </param>
+        <briefdescription>
+<para>Transform raw dataset (dictionary with information of all datasets) and convert it to a list of dictionaries. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>List entry: pic_name | color_ch | POC | CU_loc_left | ... | split CU oriented style</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary containing all the raw data </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">lst_dicts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of dictionaries (entries of the information of each CU) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="976" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="976" bodyend="1009"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a07801749cf9063929eb56dff6b05ddb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.get_files_from_folder</definition>
+        <argsstring>(path, endswith=&quot;.yuv&quot;)</argsstring>
+        <name>get_files_from_folder</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.get_files_from_folder</qualifiedname>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>endswith</type>
+          <defname>endswith</defname>
+          <defval>&quot;.yuv&quot;</defval>
+        </param>
+        <briefdescription>
+<para>This function obtains the name of all .yuv files in a given path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path containing the files </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">files_list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List containing all the names of the .yuv and .hif files </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1010" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1010" bodyend="1029"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1acde58cf0f3e5d3a35cf347918b209b83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.get_num_frames</definition>
+        <argsstring>(path, name, width, height)</argsstring>
+        <name>get_num_frames</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.get_num_frames</qualifiedname>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>width</type>
+          <defname>width</defname>
+        </param>
+        <param>
+          <type>height</type>
+          <defname>height</defname>
+        </param>
+        <briefdescription>
+<para>Get number of frames in yuv file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path containing dataset </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the file where the file is located </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Width of the picture </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Height of the picture </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">num_frames</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of frames that the file contain </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1030" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1030" bodyend="1061"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a0ef96dcc102e4eecb2db8571fb96e251" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.get_file_metadata_info</definition>
+        <argsstring>(path, name)</argsstring>
+        <name>get_file_metadata_info</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.get_file_metadata_info</qualifiedname>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+<para>Retrieves information about the YUV file info (framerate, width and height and number of frames) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path containing dataset </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the file where the file is located </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">file_info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with information about the yuv file (dimensions, frame rate and number of frames) or a boolean value indicating that there is no informations </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1062" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1062" bodyend="1154"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a96be65647c78f6944439aecda78ed4bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.get_file_metadata_info_mod</definition>
+        <argsstring>(name)</argsstring>
+        <name>get_file_metadata_info_mod</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.get_file_metadata_info_mod</qualifiedname>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+<para>Retrieves information about the YUV file info (framerate, width and height ). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This version doesn&apos;t compute the number of frames.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the file where the file is located </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">file_info</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with information about the yuv file (dimensions and frame rate) or a boolean value indicating that there is no informations </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1155" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1155" bodyend="1243"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a8fe90e2af7cd823e648de4cb74b8e082" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.encode_dataset</definition>
+        <argsstring>(d_path=&quot;C:\\Users\\Raul\\Dropbox\\Dataset&quot;, e_path=&quot;C:\\Users\\Raul\\Documents\\GitHub\\CPIV\\VTM-7.0_Data\\bin\\vs16\\msvc-19.24\\x86_64\\release&quot;, ts=1, QP=32)</argsstring>
+        <name>encode_dataset</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.encode_dataset</qualifiedname>
+        <param>
+          <type>d_path</type>
+          <defname>d_path</defname>
+          <defval>&quot;C:\\Users\\Raul\\Dropbox\\Dataset&quot;</defval>
+        </param>
+        <param>
+          <type>e_path</type>
+          <defname>e_path</defname>
+          <defval>&quot;C:\\Users\\Raul\\Documents\\GitHub\\CPIV\\VTM-7.0_Data\\bin\\vs16\\msvc-19.24\\x86_64\\release&quot;</defval>
+        </param>
+        <param>
+          <type>ts</type>
+          <defname>ts</defname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>QP</type>
+          <defname>QP</defname>
+          <defval>32</defval>
+        </param>
+        <briefdescription>
+<para>This function encodes the entire dataset with in a given path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path containing the dataset with the files to encode (this path can not contain spaces) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">e_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path containing the encoder and configurations for it </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Temporal Subsample Ratio (ts é o parametro que controla a quantidade de frames) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">QP</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Quantization parameter </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1244" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1246" bodyend="1305"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a8c465a25fdf96c18ca039e3cb4e93935" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.compute_split_per_depth</definition>
+        <argsstring>(d_path)</argsstring>
+        <name>compute_split_per_depth</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.compute_split_per_depth</qualifiedname>
+        <param>
+          <type>d_path</type>
+          <defname>d_path</defname>
+        </param>
+        <briefdescription>
+<para>Compute the percentage and number of splits per depth of the partitiooning scheme. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with the files containing with the cus sequences </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the proportion of each split. {0: 0.1, 1:0.01, ... , 5:0.3} </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">am</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the amount of each split. {0: 10, 1:1, ... , 5:30} </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1306" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1306" bodyend="1445"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1aedae18aaf320c6582b4e81241ce69a68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.compute_split_per_depth_v2</definition>
+        <argsstring>(d_path)</argsstring>
+        <name>compute_split_per_depth_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.compute_split_per_depth_v2</qualifiedname>
+        <param>
+          <type>d_path</type>
+          <defname>d_path</defname>
+        </param>
+        <briefdescription>
+<para>Compute the percentage and number of splits per depth of the partitiooning scheme. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This version uses just dataframe</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with the files containing with the cus sequences </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the proportion of each split. {0: 0.1, 1:0.01, ... , 5:0.3} </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">am</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the amount of each split. {0: 10, 1:1, ... , 5:30} </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1446" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1446" bodyend="1647"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1af3548baf7d7c0ba53b55881003f1b594" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.compute_split_per_depth_v3</definition>
+        <argsstring>(d_path)</argsstring>
+        <name>compute_split_per_depth_v3</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.compute_split_per_depth_v3</qualifiedname>
+        <param>
+          <type>d_path</type>
+          <defname>d_path</defname>
+        </param>
+        <briefdescription>
+<para>Compute the percentage and number of splits per depth of the partitiooning scheme. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This version uses just list comprehension</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with the files containing with the cus sequences </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the proportion of each split. {0: 0.1, 1:0.01, ... , 5:0.3} </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">am</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the amount of each split. {0: 10, 1:1, ... , 5:30} </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1648" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1648" bodyend="1813"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ab6741179bb0c4633d61034952970e6dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.lst2csv</definition>
+        <argsstring>(lst, name_of_file)</argsstring>
+        <name>lst2csv</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.lst2csv</qualifiedname>
+        <param>
+          <type>lst</type>
+          <defname>lst</defname>
+        </param>
+        <param>
+          <type>name_of_file</type>
+          <defname>name_of_file</defname>
+        </param>
+        <briefdescription>
+<para>Converts list of dictionaries to csv file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of dictionaries </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name_of_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name to be given to the csv file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1814" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1814" bodyend="1832"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a8293d48b757c5a679a9d521473ecf2b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.get_some_data_equaly</definition>
+        <argsstring>(X, path_dir_l, classes, split_pos)</argsstring>
+        <name>get_some_data_equaly</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.get_some_data_equaly</qualifiedname>
+        <param>
+          <type>X</type>
+          <defname>X</defname>
+        </param>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <param>
+          <type>classes</type>
+          <defname>classes</defname>
+        </param>
+        <param>
+          <type>split_pos</type>
+          <defname>split_pos</defname>
+        </param>
+        <briefdescription>
+<para>Gets X amount of data from files. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1833" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1833" bodyend="1883"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a447df2e1c370cbaa5e50857cab8e0608" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.lst2csv_v2</definition>
+        <argsstring>(lst_lst, n_file, n_fields)</argsstring>
+        <name>lst2csv_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.lst2csv_v2</qualifiedname>
+        <param>
+          <type>lst_lst</type>
+          <defname>lst_lst</defname>
+        </param>
+        <param>
+          <type>n_file</type>
+          <defname>n_file</defname>
+        </param>
+        <param>
+          <type>n_fields</type>
+          <defname>n_fields</defname>
+        </param>
+        <briefdescription>
+<para>Converts list to csv file using panda dataframe. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of lists </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name to be given to the csv file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n_fields</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of names given to each field </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1884" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1884" bodyend="1896"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ab43062b1fb7e8efcac49376580cb3277" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.csv2lst</definition>
+        <argsstring>(csv_file)</argsstring>
+        <name>csv2lst</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.csv2lst</qualifiedname>
+        <param>
+          <type>csv_file</type>
+          <defname>csv_file</defname>
+        </param>
+        <briefdescription>
+<para>Reads csv file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">csv_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with the csv file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">lst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of dictionaries with the labels from the csv file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1897" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1897" bodyend="1908"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a55c2b61ac5557d35d02965a8d5c46604" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.file2lst</definition>
+        <argsstring>(file)</argsstring>
+        <name>file2lst</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.file2lst</qualifiedname>
+        <param>
+          <type>file</type>
+          <defname>file</defname>
+        </param>
+        <briefdescription>
+<para>Reads file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with the txt file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">lst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of dictionaries with the labels from a pickle file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1909" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1909" bodyend="1921"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1aee60daeafb2f441daaa70e30d6dac0a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.lst2file</definition>
+        <argsstring>(lst, name_of_file)</argsstring>
+        <name>lst2file</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.lst2file</qualifiedname>
+        <param>
+          <type>lst</type>
+          <defname>lst</defname>
+        </param>
+        <param>
+          <type>name_of_file</type>
+          <defname>name_of_file</defname>
+        </param>
+        <briefdescription>
+<para>Converts list of dictionaries to file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of dictionaries </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">name_of_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name to be given to the file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1922" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1922" bodyend="1933"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ad858b9f822fab0433388f45f5d2d0cf1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.unite_labels_v6</definition>
+        <argsstring>(dir_path_l, n_output_file=&quot;labels_pickle&quot;, color_ch=0)</argsstring>
+        <name>unite_labels_v6</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.unite_labels_v6</qualifiedname>
+        <param>
+          <type>dir_path_l</type>
+          <defname>dir_path_l</defname>
+        </param>
+        <param>
+          <type>n_output_file</type>
+          <defname>n_output_file</defname>
+          <defval>&quot;labels_pickle&quot;</defval>
+        </param>
+        <param>
+          <type>color_ch</type>
+          <defname>color_ch</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Unites all the labels into a giant list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This version, follows a stage oriented approach. Uses just the specified color channel</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dir_path_l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with all the labels (.dat files) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n_output_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name for the output file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">color_ch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Color channel </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1934" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1934" bodyend="1981"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1aebf9406f3e2f9a07698d17be47dad90d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.unite_labels_v6_mod</definition>
+        <argsstring>(dir_path_l, n_output_file=&quot;labels_pickle&quot;, color_ch=0)</argsstring>
+        <name>unite_labels_v6_mod</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.unite_labels_v6_mod</qualifiedname>
+        <param>
+          <type>dir_path_l</type>
+          <defname>dir_path_l</defname>
+        </param>
+        <param>
+          <type>n_output_file</type>
+          <defname>n_output_file</defname>
+          <defval>&quot;labels_pickle&quot;</defval>
+        </param>
+        <param>
+          <type>color_ch</type>
+          <defname>color_ch</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Unites all the labels into a giant list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This version, follows a stage oriented approach. Uses just the specified color channel</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dir_path_l</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with all the labels (.dat files) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n_output_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name for the output file </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">color_ch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Color channel </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="1982" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="1982" bodyend="2029"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a6a8ca247a635e81a24585583ca87c84a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.create_dir</definition>
+        <argsstring>(output_dir)</argsstring>
+        <name>create_dir</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.create_dir</qualifiedname>
+        <param>
+          <type>output_dir</type>
+          <defname>output_dir</defname>
+        </param>
+        <briefdescription>
+<para>Creates a directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the directory already exists, it will be deleted</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">output_dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the directory </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2030" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2030" bodyend="2045"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a3f6ccfcb2b02dd67139db1409e333d60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.labels_with_specific_cch</definition>
+        <argsstring>(dir_path, cch=0)</argsstring>
+        <name>labels_with_specific_cch</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.labels_with_specific_cch</qualifiedname>
+        <param>
+          <type>dir_path</type>
+          <defname>dir_path</defname>
+        </param>
+        <param>
+          <type>cch</type>
+          <defname>cch</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Obtain from a group of labels in a pickle file the CUs which the color channel is &apos;cch&apos;. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dir_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with all the labels (.txt files) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">cch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Color Channel </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2046" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2046" bodyend="2082"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ac10dad80d8fb1af26a74e1aedefbd6eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.read_from_records_v2</definition>
+        <argsstring>(f, f_name, num_records)</argsstring>
+        <name>read_from_records_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.read_from_records_v2</qualifiedname>
+        <param>
+          <type>f</type>
+          <defname>f</defname>
+        </param>
+        <param>
+          <type>f_name</type>
+          <defname>f_name</defname>
+        </param>
+        <param>
+          <type>num_records</type>
+          <defname>num_records</defname>
+        </param>
+        <briefdescription>
+<para>Read the information/file generated by the encoder. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This version contains the file object. Adapted for the unite_labels_v3 function Dictionary containing all the info about the file: It&apos;s a dictionary of picture numbers, which then leads to a dictionary of the info. For example: records = {&quot;Pic_0&quot; :{&quot;CU_0&quot;: {&quot;colorChannel&quot;: 1, &quot;CULoc_left&quot;: 2, ... } ... ... } }</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">f</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File object </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">f_name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path where the file is located </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">num_records</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary containing the information of all records </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2083" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2083" bodyend="2140"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a026a2cef6c01267baceca918bb8cdb10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.file_stats_v2</definition>
+        <argsstring>(path)</argsstring>
+        <name>file_stats_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.file_stats_v2</qualifiedname>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+<para>Finds out the size of all binary files, computes the total amount of records, computes the amount of each CU. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path where the binary files are located </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">num_records</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of records that all binary files contains </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">amount_dic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the amount of each CU amount_dic = {&quot;file_name&quot;: {&quot;128x128L&quot;:100, &quot;128x128C&quot;:100, ... , &quot;4x4C&quot;, &quot;4x4L&quot;}, ..., &quot;file_name2&quot;:{...}}, in which C stands for chroma and L for Luma </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">summary_dic</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the sum of each CU type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2141" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2141" bodyend="2227"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1afcebf369a7f5c84c9ed9801ce184dcb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.compute_split_proportions</definition>
+        <argsstring>(path, num_cus=float(&apos;inf&apos;))</argsstring>
+        <name>compute_split_proportions</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.compute_split_proportions</qualifiedname>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>num_cus</type>
+          <defname>num_cus</defname>
+          <defval>float(&apos;inf&apos;)</defval>
+        </param>
+        <briefdescription>
+<para>Compute the proportion of each split in the dataset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path where the encoded data is located </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_cus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number CUs to count for each file to calculate the proportions </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the proportion of each split. {0: 0.1, 1:0.01, ... , 5:0.3} </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">am</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the amount of each split. {0: 10, 1:1, ... , 5:30} </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2228" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2228" bodyend="2280"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a0480482ff3737b46fadb5ac4e80dba0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.compute_split_proportions_with_custom_data</definition>
+        <argsstring>(custom_dataset, stage, num_cus=float(&apos;inf&apos;))</argsstring>
+        <name>compute_split_proportions_with_custom_data</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.compute_split_proportions_with_custom_data</qualifiedname>
+        <param>
+          <type>custom_dataset</type>
+          <defname>custom_dataset</defname>
+        </param>
+        <param>
+          <type>stage</type>
+          <defname>stage</defname>
+        </param>
+        <param>
+          <type>num_cus</type>
+          <defname>num_cus</defname>
+          <defval>float(&apos;inf&apos;)</defval>
+        </param>
+        <briefdescription>
+<para>Compute the proportion of each split in the dataset (Custom dataset classs) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">custom_dataset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Object with custom dataset </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stage number that the proportions will be computed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_cus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number CUs to count to calculate the proportions </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the proportion of each split. {0: 0.1, 1:0.01, ... , 5:0.3} </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">am</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the amount of each split. {0: 10, 1:1, ... , 5:30} </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2281" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2281" bodyend="2326"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ab36bebb745db46574ae2e123db251cb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.compute_split_proportions_with_custom_data_multi</definition>
+        <argsstring>(custom_dataset, split_pos_in_struct, num_cus=float(&apos;inf&apos;))</argsstring>
+        <name>compute_split_proportions_with_custom_data_multi</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.compute_split_proportions_with_custom_data_multi</qualifiedname>
+        <param>
+          <type>custom_dataset</type>
+          <defname>custom_dataset</defname>
+        </param>
+        <param>
+          <type>split_pos_in_struct</type>
+          <defname>split_pos_in_struct</defname>
+        </param>
+        <param>
+          <type>num_cus</type>
+          <defname>num_cus</defname>
+          <defval>float(&apos;inf&apos;)</defval>
+        </param>
+        <briefdescription>
+<para>Compute the proportion of each split in the dataset (Custom dataset classs) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">custom_dataset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Object with custom dataset </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stage number that the proportions will be computed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">split_pos_in_struct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Position in dataset with the split information </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the proportion of each split. {0: 0.1, 1:0.01, ... , 5:0.3} </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">am</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the amount of each split. {0: 10, 1:1, ... , 5:30} </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2327" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2327" bodyend="2375"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a608f1e46057ba89e3f2bb74f2683dc96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.compute_split_proportions_with_path_multi_new</definition>
+        <argsstring>(path, split_pos_in_struct, num_cus=float(&apos;inf&apos;))</argsstring>
+        <name>compute_split_proportions_with_path_multi_new</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.compute_split_proportions_with_path_multi_new</qualifiedname>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>split_pos_in_struct</type>
+          <defname>split_pos_in_struct</defname>
+        </param>
+        <param>
+          <type>num_cus</type>
+          <defname>num_cus</defname>
+          <defval>float(&apos;inf&apos;)</defval>
+        </param>
+        <briefdescription>
+<para>Compute the proportion of each split in the dataset (Custom dataset classs) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stage number that the proportions will be computed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">split_pos_in_struct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Position in dataset with the split information </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the proportion of each split. {0: 0.1, 1:0.01, ... , 5:0.3} </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">am</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the amount of each split. {0: 10, 1:1, ... , 5:30} </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2376" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2376" bodyend="2428"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a89f5e8917f7204992a9eb0b7f748fa72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.compute_split_proportions_with_custom_data_multi_new</definition>
+        <argsstring>(custom_dataset, split_pos_in_struct, num_cus=float(&apos;inf&apos;))</argsstring>
+        <name>compute_split_proportions_with_custom_data_multi_new</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.compute_split_proportions_with_custom_data_multi_new</qualifiedname>
+        <param>
+          <type>custom_dataset</type>
+          <defname>custom_dataset</defname>
+        </param>
+        <param>
+          <type>split_pos_in_struct</type>
+          <defname>split_pos_in_struct</defname>
+        </param>
+        <param>
+          <type>num_cus</type>
+          <defname>num_cus</defname>
+          <defval>float(&apos;inf&apos;)</defval>
+        </param>
+        <briefdescription>
+<para>Compute the proportion of each split in the dataset (Custom dataset classs) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">custom_dataset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Object with custom dataset </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stage</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stage number that the proportions will be computed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">split_pos_in_struct</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Position in dataset with the split information </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the proportion of each split. {0: 0.1, 1:0.01, ... , 5:0.3} </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">am</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the amount of each split. {0: 10, 1:1, ... , 5:30} </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2429" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2429" bodyend="2471"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1af7605dd6cd96b7d1a46b5c53979504ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.compute_split_proportions_labels</definition>
+        <argsstring>(path, num_cus=float(&apos;inf&apos;))</argsstring>
+        <name>compute_split_proportions_labels</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.compute_split_proportions_labels</qualifiedname>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <param>
+          <type>num_cus</type>
+          <defname>num_cus</defname>
+          <defval>float(&apos;inf&apos;)</defval>
+        </param>
+        <briefdescription>
+<para>Compute the proportion of each split in the dataset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This version receives a path with labels already processed</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path where the encoded data is located </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">num_cus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number CUs to count for each file to calculate the proportions </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">pm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the proportion of each split. {0: 0.1, 1:0.01, ... , 5:0.3} </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">am</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dictionary with the amount of each split. {0: 10, 1:1, ... , 5:30} </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2472" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2472" bodyend="2522"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1aed5c912f445075ef64162a07add833d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.balance_dataset</definition>
+        <argsstring>(dir_path, stg, n_classes=6)</argsstring>
+        <name>balance_dataset</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.balance_dataset</qualifiedname>
+        <param>
+          <type>dir_path</type>
+          <defname>dir_path</defname>
+        </param>
+        <param>
+          <type>stg</type>
+          <defname>stg</defname>
+        </param>
+        <param>
+          <type>n_classes</type>
+          <defname>n_classes</defname>
+          <defval>6</defval>
+        </param>
+        <briefdescription>
+<para>Balance dataset so that the number of the classes are the same. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dir_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with all the labels (.txt files) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">stg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Stage number </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n_classes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of classes to try to balance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2523" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2523" bodyend="2572"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a8c56ef285bc6aca40bc171547a67c237" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.balance_dataset_JF</definition>
+        <argsstring>(dir_path, n_classes=6)</argsstring>
+        <name>balance_dataset_JF</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.balance_dataset_JF</qualifiedname>
+        <param>
+          <type>dir_path</type>
+          <defname>dir_path</defname>
+        </param>
+        <param>
+          <type>n_classes</type>
+          <defname>n_classes</defname>
+          <defval>6</defval>
+        </param>
+        <briefdescription>
+<para>Balance dataset so that the number of the classes are the same. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses upsampling. Follows same strategy as the balance dataset function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dir_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with all the labels (.txt files) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n_classes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of classes to try to balance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2573" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2573" bodyend="2628"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a1fde3eef81115d9a0b83c88cd65491e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.balance_dataset_down</definition>
+        <argsstring>(dir_path, n_classes=6)</argsstring>
+        <name>balance_dataset_down</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.balance_dataset_down</qualifiedname>
+        <param>
+          <type>dir_path</type>
+          <defname>dir_path</defname>
+        </param>
+        <param>
+          <type>n_classes</type>
+          <defname>n_classes</defname>
+          <defval>6</defval>
+        </param>
+        <briefdescription>
+<para>Balance dataset so that the number of the classes are the same. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses downsampling. Different strategy that of the balance_dataset function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dir_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with all the labels (.txt files) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n_classes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of classes to try to balance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2629" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2629" bodyend="2699"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1aac302e26c75c4fbce705242e9428d9df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.balance_dataset_down_v2</definition>
+        <argsstring>(dir_path)</argsstring>
+        <name>balance_dataset_down_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.balance_dataset_down_v2</qualifiedname>
+        <param>
+          <type>dir_path</type>
+          <defname>dir_path</defname>
+        </param>
+        <briefdescription>
+<para>Balance dataset so that the number of the classes are the same. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses downsampling. Different strategy that of the balance_dataset function. Faster version</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dir_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with all the labels (.txt files) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n_classes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of classes to try to balance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2700" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2700" bodyend="2764"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a0d16434db1590ad4a356fc36db6e3be9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.balance_dataset_down_v3</definition>
+        <argsstring>(dir_path)</argsstring>
+        <name>balance_dataset_down_v3</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.balance_dataset_down_v3</qualifiedname>
+        <param>
+          <type>dir_path</type>
+          <defname>dir_path</defname>
+        </param>
+        <briefdescription>
+<para>Balance dataset so that the number of the classes are the same. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses downsampling. Different strategy that of the balance_dataset function. Faster version</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dir_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with all the labels (.txt files) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n_classes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of classes to try to balance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2765" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2765" bodyend="2829"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ac88d436c49e6e9cfa2b450c0869c9c7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.balance_dataset_down_v4</definition>
+        <argsstring>(dir_path)</argsstring>
+        <name>balance_dataset_down_v4</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.balance_dataset_down_v4</qualifiedname>
+        <param>
+          <type>dir_path</type>
+          <defname>dir_path</defname>
+        </param>
+        <briefdescription>
+<para>Balance dataset so that the number of the classes are the same. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses downsampling. Different strategy that of the balance_dataset function. Faster version. No dicts version</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dir_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with all the labels (.txt files) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n_classes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of classes to try to balance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2830" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2830" bodyend="2888"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ae6215abffdea1eacf8d6fc8095b3e8ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.balance_dataset_up</definition>
+        <argsstring>(dir_path, n_classes=6)</argsstring>
+        <name>balance_dataset_up</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.balance_dataset_up</qualifiedname>
+        <param>
+          <type>dir_path</type>
+          <defname>dir_path</defname>
+        </param>
+        <param>
+          <type>n_classes</type>
+          <defname>n_classes</defname>
+          <defval>6</defval>
+        </param>
+        <briefdescription>
+<para>Balance dataset so that the number of the classes are the same. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses upsampling. Different strategy that of the balance_dataset function.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dir_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with all the labels (.txt files) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n_classes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of classes to try to balance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2889" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2889" bodyend="2968"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a1a33d137a177bbf48ddb3611034c3691" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.balance_dataset_up_v2</definition>
+        <argsstring>(dir_path)</argsstring>
+        <name>balance_dataset_up_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.balance_dataset_up_v2</qualifiedname>
+        <param>
+          <type>dir_path</type>
+          <defname>dir_path</defname>
+        </param>
+        <briefdescription>
+<para>Balance dataset so that the number of the classes are the same. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses upsampling. Different strategy that of the balance_dataset function. Faster version</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dir_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with all the labels (.txt files) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n_classes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of classes to try to balance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="2969" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="2969" bodyend="3046"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a3a15341460808285ca2ecffef6a771f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.balance_dataset_up_v3</definition>
+        <argsstring>(dir_path)</argsstring>
+        <name>balance_dataset_up_v3</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.balance_dataset_up_v3</qualifiedname>
+        <param>
+          <type>dir_path</type>
+          <defname>dir_path</defname>
+        </param>
+        <briefdescription>
+<para>Balance dataset so that the number of the classes are the same. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Uses upsampling. Different strategy that of the balance_dataset function. Faster version</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">dir_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with all the labels (.txt files) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">n_classes</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of classes to try to balance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="3047" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="3047" bodyend="3124"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ae958859e487b293beec19274679321de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.gen_dataset_types</definition>
+        <argsstring>(d_path, valid_percent)</argsstring>
+        <name>gen_dataset_types</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.gen_dataset_types</qualifiedname>
+        <param>
+          <type>d_path</type>
+          <defname>d_path</defname>
+        </param>
+        <param>
+          <type>valid_percent</type>
+          <defname>valid_percent</defname>
+        </param>
+        <briefdescription>
+<para>Generate a dataset for trainign, validating and testing. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is done by concatenating all of the data from a folder and then dividing it in 3 parts</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">d_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path with all the labels (.txt files) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">valid_percent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Percentage of data allocated to test and validation data </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="3125" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="3125" bodyend="3170"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a742419bf0536739e9c78eddcf1c89ddc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_64x64_eval</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_64x64_eval</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_64x64_eval</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is meant to be used in to process the stage 1 and 2 data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="3171" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="3171" bodyend="3283"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a005a80afec1c211e7eef33f56e91ae69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_32x32_eval</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_32x32_eval</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_32x32_eval</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is meant to be used in to process the stage 3 data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="3284" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="3284" bodyend="3406"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1aa85fda50ea1f02fdffff377ff440ccd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_64x64</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_64x64</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_64x64</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is meant to be used in to process the stage 1 and 2 data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="3407" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="3407" bodyend="3483"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ab4405c526eee3d651f4eb2de209ac8db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_64x64_no_dupl_v3</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_64x64_no_dupl_v3</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_64x64_no_dupl_v3</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_64x64_no_dupl_v2, with threads. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="3484" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="3484" bodyend="3526"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ae6ec79b6a87162101310a31ad51445a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.mod_64x64_threads</definition>
+        <argsstring>(f, path_dir_l, right_rows, columns, new_dir)</argsstring>
+        <name>mod_64x64_threads</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.mod_64x64_threads</qualifiedname>
+        <param>
+          <type>f</type>
+          <defname>f</defname>
+        </param>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <param>
+          <type>right_rows</type>
+          <defname>right_rows</defname>
+        </param>
+        <param>
+          <type>columns</type>
+          <defname>columns</defname>
+        </param>
+        <param>
+          <type>new_dir</type>
+          <defname>new_dir</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="3527" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="3527" bodyend="3608"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1abc80d71b418bccc79bbbfe5dec38e6ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_64x64_no_dupl_v2</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_64x64_no_dupl_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_64x64_no_dupl_v2</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="3609" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="3609" bodyend="3719"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1aa881c8df48fcdab71ea352475aad8d64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_32x32</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_32x32</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_32x32</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is meant to be used in to process the stage 3 data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="3720" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="3720" bodyend="3811"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ab52768ecdd19aba8c7c40513192fc7fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_32x32_no_dupl</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_32x32_no_dupl</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_32x32_no_dupl</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32, but it removes possible duplicated rows. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="3812" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="3812" bodyend="3924"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a28a0b66784721cab1ac3112f12e64f1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_32x32_no_dupl_v2</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_32x32_no_dupl_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_32x32_no_dupl_v2</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is smarter. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="3925" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="3925" bodyend="4043"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1aaad74fa78bcfe9b23669279114fa5a0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_32x32_no_dupl_v3</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_32x32_no_dupl_v3</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_32x32_no_dupl_v3</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but uses threads. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="4044" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="4044" bodyend="4087"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1acae2fdd6f50d08fd44d142fae6695cd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.mod_32x32_threads</definition>
+        <argsstring>(f, path_dir_l, right_rows, columns, new_dir)</argsstring>
+        <name>mod_32x32_threads</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.mod_32x32_threads</qualifiedname>
+        <param>
+          <type>f</type>
+          <defname>f</defname>
+        </param>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <param>
+          <type>right_rows</type>
+          <defname>right_rows</defname>
+        </param>
+        <param>
+          <type>columns</type>
+          <defname>columns</defname>
+        </param>
+        <param>
+          <type>new_dir</type>
+          <defname>new_dir</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="4088" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="4088" bodyend="4180"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a60561be3047a711dc4e3b22295a7a45f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_32x32_no_dupl_v2_test</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_32x32_no_dupl_v2_test</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_32x32_no_dupl_v2_test</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but is for verifying if everything is right. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="4181" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="4181" bodyend="4284"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ae5683347b534939683915b735046bc6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_16x16_no_dupl_v2</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_16x16_no_dupl_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_16x16_no_dupl_v2</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 16x16 CUs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="4285" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="4285" bodyend="4415"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a3b8b0b54210b3d7d842d8e2996e1e6de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.list2tuple</definition>
+        <argsstring>(l)</argsstring>
+        <name>list2tuple</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.list2tuple</qualifiedname>
+        <param>
+          <type>l</type>
+          <defname>l</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="4416" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="4416" bodyend="4419"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a18efe69dd25da8e59ae2b0f13ce06781" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.tuple2list</definition>
+        <argsstring>(l)</argsstring>
+        <name>tuple2list</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.tuple2list</qualifiedname>
+        <param>
+          <type>l</type>
+          <defname>l</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="4420" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="4420" bodyend="4423"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a9feec21773273624d6d4abed06a30fae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_8x8_no_dupl_v2</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_8x8_no_dupl_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_8x8_no_dupl_v2</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 16x16 CUs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="4424" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="4424" bodyend="4562"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a4ef2d5a1450e30a0373938172c5b3402" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg6_v4</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_no_dupl_stg6_v4</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg6_v4</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 6. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="4563" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="4563" bodyend="4624"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a0e48ee9af7c1deede0c84a512c576ebd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg5_v4</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_no_dupl_stg5_v4</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg5_v4</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 5. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="4625" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="4625" bodyend="4683"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a1871062ddcb44416caa9a1b1bd76adeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg2_v4</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_no_dupl_stg2_v4</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg2_v4</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 2. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="4684" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="4684" bodyend="4733"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a559672492e70710efd6640be02a90724" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg4_v4</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_no_dupl_stg4_v4</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg4_v4</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 4. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="4734" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="4734" bodyend="4789"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a4314669485e326f12c17c033b2a23a45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg3_v4</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_no_dupl_stg3_v4</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg3_v4</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stage 3. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="4790" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="4790" bodyend="4842"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a3fc5676a1218c3a05ce38fbfeef892e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_32x16_no_dupl_v2</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_32x16_no_dupl_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_32x16_no_dupl_v2</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 32x16 CUs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="4843" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="4843" bodyend="4979"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a195e5f1f28e455b84e927a7ca4878ec8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_32x8_no_dupl_v2</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_32x8_no_dupl_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_32x8_no_dupl_v2</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 32x8 CUs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="4980" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="4980" bodyend="5122"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1abdb139db704c8deab6fce39d46a4875a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_16x8_no_dupl_v2</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_16x8_no_dupl_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_16x8_no_dupl_v2</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 16x8 CUs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="5123" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="5123" bodyend="5266"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a0a80c1a32f956aaed5281f3d67474118" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_8x4_no_dupl_v2</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_8x4_no_dupl_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_8x4_no_dupl_v2</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 8x4 CUs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="5267" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="5267" bodyend="5418"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ad3638f01bb38652cbb64be853e80b706" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_32x4_no_dupl_v2</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_32x4_no_dupl_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_32x4_no_dupl_v2</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 32x4 CUs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="5419" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="5419" bodyend="5570"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ad620d8b9902c781e4c1289b50025cc59" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_16x4_no_dupl_v2</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_16x4_no_dupl_v2</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_16x4_no_dupl_v2</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to 8x4 CUs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="5571" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="5571" bodyend="5722"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a0a54e72a403428db6967346dbb177989" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_16x16_no_dupl_v3</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_16x16_no_dupl_v3</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_16x16_no_dupl_v3</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_16x16_no_dupl_v2, but uses threads. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="5723" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="5723" bodyend="5766"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ac6ee7df73292fb85041cab00c945b50a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.mod_16x16_threads</definition>
+        <argsstring>(f, path_dir_l, right_rows, columns, new_dir)</argsstring>
+        <name>mod_16x16_threads</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.mod_16x16_threads</qualifiedname>
+        <param>
+          <type>f</type>
+          <defname>f</defname>
+        </param>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <param>
+          <type>right_rows</type>
+          <defname>right_rows</defname>
+        </param>
+        <param>
+          <type>columns</type>
+          <defname>columns</defname>
+        </param>
+        <param>
+          <type>new_dir</type>
+          <defname>new_dir</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="5767" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="5767" bodyend="5865"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a40553feda20cb196d7497a649ca5c1c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_16x16</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_16x16</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_16x16</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is meant to be used in to process the stage 4 data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="5866" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="5866" bodyend="5967"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ae25b0becd5cbfc0164503be50a0d168f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg_4_complexity_v4</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_no_dupl_stg_4_complexity_v4</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg_4_complexity_v4</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stages 4. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Here it is going to be obtained data to be used for the complexity assesment </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="5968" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="5968" bodyend="6031"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a4dcf9b58a291c23975c46262d9683273" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg_3_complexity_v4</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_no_dupl_stg_3_complexity_v4</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg_3_complexity_v4</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stages 3. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Here it is going to be obtained data to be used for the complexity assesment </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="6032" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="6032" bodyend="6093"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1a87e77ca59615f5f77e9720dbb972c0ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg_2_complexity_v4</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_no_dupl_stg_2_complexity_v4</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg_2_complexity_v4</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stages 2. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Here it is going to be obtained data to be used for the complexity assesment </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="6094" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="6094" bodyend="6153"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ac5d848b7e65430a833802955e5edb5bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg_6_complexity_v4</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_no_dupl_stg_6_complexity_v4</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg_6_complexity_v4</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stages 6. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Here it is going to be obtained data to be used for the complexity assesment </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="6154" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="6154" bodyend="6221"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1dataset__utils_1ad753218462a6e9a8a410f7df67251bed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg_5_complexity_v4</definition>
+        <argsstring>(path_dir_l)</argsstring>
+        <name>change_struct_no_dupl_stg_5_complexity_v4</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.change_struct_no_dupl_stg_5_complexity_v4</qualifiedname>
+        <param>
+          <type>path_dir_l</type>
+          <defname>path_dir_l</defname>
+        </param>
+        <briefdescription>
+<para>This version is like the change_struct_32x32_no_dupl_v2, but it is applied to stages 5. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Here it is going to be obtained data to be used for the complexity assesment </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="6222" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="6222" bodyend="6286"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>@package docstring 
+
+@file dataset_utils.py 
+
+@brief Usefull functions to manipulate data, change and create structures 
+ 
+@section libraries_dataset_utils Libraries 
+- os
+- utils
+- pandas
+- torch
+- csv
+- struct
+- numpy
+- sklearn.model_selection
+- cv2
+- threading
+- pickle
+- shutil
+- sys
+- time
+- math
+- re
+
+@section classes_dataset_utils Classes 
+- VideoCaptureYUV
+ 
+@section functions_dataset_utils Functions
+- bgr2yuv(matrix)
+- extract_content(f)
+- file_stats(path)
+- show_bin_content(path, num_records=100)
+- add_best_split(labels)
+- read_from_records(path, num_records)
+- process_info(content)
+- match_cu(CU, CTU, position, size)
+- find_cu(df_cu, CTU, position, size)
+- build_entry(stg1=[], stg2=[], stg3=[], stg4=[], stg5=[], stg6=[])
+- add_cu_to_dict(cu_dict, cu)
+- transform_create_struct_faster_v2_mod_divs(f, f_name, num_records, output_dir, n_output_file, color_ch=0)
+- transform_create_struct_faster_v3(f, f_name, num_records, output_dir, n_output_file, color_ch=0)
+- process_ctus_cus(df_ctus, df_cus)
+- split(size, pos, split_mode)
+- transform_raw_dataset(dic)
+- get_files_from_folder(path, endswith=&quot;.yuv&quot;)
+- get_num_frames(path, name, width, height)
+- get_file_metadata_info(path, name)
+- get_file_metadata_info_mod(name)
+- encode_dataset
+- compute_split_per_depth(d_path)
+- compute_split_per_depth_v2(d_path)
+- compute_split_per_depth_v3(d_path)
+- lst2csv(lst, name_of_file)
+- get_some_data_equaly(X, path_dir_l, classes, split_pos)
+- lst2csv_v2(lst_lst, n_file, n_fields)
+- csv2lst(csv_file)
+- file2lst(file)
+- lst2file(lst, name_of_file)
+- unite_labels_v6(dir_path_l, n_output_file=&quot;labels_pickle&quot;, color_ch=0)
+- unite_labels_v6_mod(dir_path_l, n_output_file=&quot;labels_pickle&quot;, color_ch=0)
+- create_dir(output_dir)
+- labels_with_specific_cch(dir_path, cch=0)
+- read_from_records_v2(f, f_name, num_records)
+- file_stats_v2(path)
+- compute_split_proportions(path, num_cus=float(&apos;inf&apos;))
+- compute_split_proportions_with_custom_data(custom_dataset, stage, num_cus=float(&apos;inf&apos;))
+- compute_split_proportions_with_custom_data_multi(custom_dataset, split_pos_in_struct, num_cus=float(&apos;inf&apos;))
+- compute_split_proportions_with_path_multi_new(path, split_pos_in_struct, num_cus=float(&apos;inf&apos;))
+- compute_split_proportions_with_custom_data_multi_new(custom_dataset, split_pos_in_struct, num_cus=float(&apos;inf&apos;))
+- compute_split_proportions_labels(path, num_cus=float(&apos;inf&apos;))
+- balance_dataset(dir_path, stg, n_classes=6)
+- balance_dataset_JF(dir_path, n_classes=6)
+- balance_dataset_down(dir_path, n_classes=6)
+- balance_dataset_down_v2(dir_path)
+- balance_dataset_down_v3(dir_path)
+- balance_dataset_down_v4(dir_path)
+- balance_dataset_up(dir_path, n_classes=6)
+- balance_dataset_up_v2(dir_path)
+- balance_dataset_up_v3(dir_path)
+- gen_dataset_types(d_path, valid_percent)
+- change_struct_64x64_eval(path_dir_l)
+- change_struct_32x32_eval(path_dir_l)
+- change_struct_64x64(path_dir_l)
+- change_struct_64x64_no_dupl_v3(path_dir_l)
+- mod_64x64_threads(f, path_dir_l, right_rows, columns, new_dir)
+- change_struct_64x64_no_dupl_v2(path_dir_l)
+- change_struct_32x32(path_dir_l)
+- change_struct_32x32_no_dupl(path_dir_l)
+- change_struct_32x32_no_dupl_v2(path_dir_l)
+- change_struct_32x32_no_dupl_v3(path_dir_l)
+- mod_32x32_threads(f, path_dir_l, right_rows, columns, new_dir)
+- change_struct_32x32_no_dupl_v2_test(path_dir_l)
+- change_struct_16x16_no_dupl_v2(path_dir_l)
+- list2tuple(l)
+- tuple2list(l)
+- change_struct_8x8_no_dupl_v2(path_dir_l)
+- change_struct_no_dupl_stg6_v4(path_dir_l)
+- change_struct_no_dupl_stg5_v4(path_dir_l)
+- change_struct_no_dupl_stg2_v4(path_dir_l)
+- change_struct_no_dupl_stg4_v4(path_dir_l)
+- change_struct_no_dupl_stg3_v4(path_dir_l)
+- change_struct_32x16_no_dupl_v2(path_dir_l)
+- change_struct_32x8_no_dupl_v2(path_dir_l)
+- change_struct_16x8_no_dupl_v2(path_dir_l)
+- change_struct_8x4_no_dupl_v2(path_dir_l)
+- change_struct_32x4_no_dupl_v2(path_dir_l)
+- change_struct_16x4_no_dupl_v2(path_dir_l)
+- change_struct_16x16_no_dupl_v3(path_dir_l)
+- mod_16x16_threads(f, path_dir_l, right_rows, columns, new_dir)
+- change_struct_16x16(path_dir_l)
+- change_struct_no_dupl_stg_4_complexity_v4(path_dir_l)
+- change_struct_no_dupl_stg_3_complexity_v4(path_dir_l)
+- change_struct_no_dupl_stg_2_complexity_v4(path_dir_l)
+- change_struct_no_dupl_stg_6_complexity_v4(path_dir_l)
+- change_struct_no_dupl_stg_5_complexity_v4(path_dir_l)
+ 
+@section global_vars_dataset_utils Global Variables 
+- None 
+
+@section todo_dataset_utils TODO 
+- None 
+
+@section license License 
+MIT License 
+Copyright (c) 2022 Raul Kevin do Espirito Santo Viana
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+@section author_dataset_utils Author(s)
+- Created by Raul Kevin Viana
+- Last time modified is 2023-01-29 22:22:04.120175
+</verbatim> </para>
+    </detaileddescription>
+    <location file="src/msecnn_raulkviana/dataset_utils.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,215 @@
+\doxysection{eval\+\_\+model\+\_\+stg6\+\_\+metrics Namespace Reference}
+\hypertarget{namespaceeval__model__stg6__metrics}{}\label{namespaceeval__model__stg6__metrics}\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_ae27be79f8771354863a7e29e82b955c0}{test}} (dataloader, model, \mbox{\hyperlink{namespaceeval__model__stg6__metrics_a9ae3489b3d7a394012278bffa5bb1972}{device}}, loss\+\_\+name)
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_aff8b970691d4eaacc75d6cb35ca38f9b}{val\+\_\+setup}} (dataloader\+\_\+val, model, \mbox{\hyperlink{namespaceeval__model__stg6__metrics_a9ae3489b3d7a394012278bffa5bb1972}{device}})
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_ae17ef904e073c0011cb665feee920429}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_ac3ce6332e700a187e5567ccc9df0439e}{parser}} = argparse.\+Argument\+Parser(description=constants.\+script\+\_\+description)
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a74da3a106b60aeeba20e66a20efed3ce}{type}}
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_adf6ebc266e8453e8691663e6e6c7a67c}{args}} = parser.\+parse\+\_\+args()
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_ae269c3d62b8eea1b2f36d09b7585a70a}{loss\+\_\+threshold}} = float(\"{}-\/inf\"{})
+\item 
+int \mbox{\hyperlink{namespaceeval__model__stg6__metrics_a154e483e7f708eec54cb8d96b9104a0d}{qp}} = 32
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a89e52b4de47e93c7f47b94c0f429f606}{batch\+\_\+size}} = args.\+batch
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a9ae3489b3d7a394012278bffa5bb1972}{device}} = args.\+dev
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a79be8651265f22c4df6ee35a42a9bed1}{num\+\_\+workers}} = args.\+workers
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a885015787b9a18566d0957b4e6169229}{n\+\_\+mod}} = args.\+nmod
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a8185f038cf92a2372300accc21674c79}{l\+\_\+path\+\_\+val}} = args.\+labels
+\item 
+list \mbox{\hyperlink{namespaceeval__model__stg6__metrics_ac6f05626d73aa34fd04c44098062c3f5}{rs}} = \mbox{[}0.\+3, 0.\+5\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_abcf721e0397241b8985d4f2967e2d945}{writer}} = Summary\+Writer(\"{}runs/MSECNN\+\_\+\+Eval\+\_\+\"{}+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a885015787b9a18566d0957b4e6169229}{n\+\_\+mod}})
+\item 
+str \mbox{\hyperlink{namespaceeval__model__stg6__metrics_aade837b2ff6300bba7d899440082d5d0}{files\+\_\+mod\+\_\+name\+\_\+stats}} = \"{}\+\_\+multi\+\_\+batch\+\_\+val\+\_\+batch\+\_\+\{batch\}\+\_\+\+QP\+\_\+\{QP\}\+\_\+\{nmod\}\"{}.format(batch=\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a89e52b4de47e93c7f47b94c0f429f606}{batch\+\_\+size}}, QP=\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a154e483e7f708eec54cb8d96b9104a0d}{qp}}, nmod=\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a885015787b9a18566d0957b4e6169229}{n\+\_\+mod}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}@package docstring 
+
+@file eval_model_stg6_metrics.py 
+
+@brief Evaluates stage 6 
+ 
+@section libraries_eval_model_stg6_metrics Libraries 
+- sklearn.metrics
+- MSECNN
+- torch.utils.data
+- torch
+- argparse
+- torch.utils.tensorboard
+- datetime
+- train_model_utils
+- utils
+- constants
+- CustomDataset
+- sys
+- time
+- matplotlib.pyplot
+
+@section classes_eval_model_stg6_metrics Classes 
+- None
+
+@section functions_eval_model_stg6_metrics Functions 
+- test(dataloader, model, device, loss_name)
+- val_setup(dataloader_val, model, device)
+- main()
+ 
+@section global_vars_eval_model_stg6_metrics Global Variables 
+- parser 
+- args 
+- loss_threshold 
+- batch_size 
+- qp 
+- device 
+- n_mod 
+- num_workers 
+- rs 
+- writer 
+- l_path_val 
+- files_mod_name_stats 
+
+@section todo_eval_model_stg6_metrics TODO 
+- None 
+
+@section license License 
+MIT License 
+Copyright (c) 2022 Raul Kevin do Espirito Santo Viana
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+@section author_eval_model_stg6_metrics Author(s)
+- Created by Raul Kevin Viana
+- Last time modified is 2023-01-29 22:23:10.679038
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceeval__model__stg6__metrics_ae17ef904e073c0011cb665feee920429}\label{namespaceeval__model__stg6__metrics_ae17ef904e073c0011cb665feee920429} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!main@{main}}
+\index{main@{main}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceeval__model__stg6__metrics_ae27be79f8771354863a7e29e82b955c0}\label{namespaceeval__model__stg6__metrics_ae27be79f8771354863a7e29e82b955c0} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!test@{test}}
+\index{test@{test}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+test (\begin{DoxyParamCaption}\item[{}]{dataloader,  }\item[{}]{model,  }\item[{}]{device,  }\item[{}]{loss\+\_\+name }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceeval__model__stg6__metrics_aff8b970691d4eaacc75d6cb35ca38f9b}\label{namespaceeval__model__stg6__metrics_aff8b970691d4eaacc75d6cb35ca38f9b} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!val\_setup@{val\_setup}}
+\index{val\_setup@{val\_setup}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{val\_setup()}{val\_setup()}}
+{\footnotesize\ttfamily eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+val\+\_\+setup (\begin{DoxyParamCaption}\item[{}]{dataloader\+\_\+val,  }\item[{}]{model,  }\item[{}]{device }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespaceeval__model__stg6__metrics_adf6ebc266e8453e8691663e6e6c7a67c}\label{namespaceeval__model__stg6__metrics_adf6ebc266e8453e8691663e6e6c7a67c} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!args@{args}}
+\index{args@{args}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{args}{args}}
+{\footnotesize\ttfamily eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+args = parser.\+parse\+\_\+args()}
+
+\Hypertarget{namespaceeval__model__stg6__metrics_a89e52b4de47e93c7f47b94c0f429f606}\label{namespaceeval__model__stg6__metrics_a89e52b4de47e93c7f47b94c0f429f606} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!batch\_size@{batch\_size}}
+\index{batch\_size@{batch\_size}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{batch\_size}{batch\_size}}
+{\footnotesize\ttfamily eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+batch\+\_\+size = args.\+batch}
+
+\Hypertarget{namespaceeval__model__stg6__metrics_a9ae3489b3d7a394012278bffa5bb1972}\label{namespaceeval__model__stg6__metrics_a9ae3489b3d7a394012278bffa5bb1972} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!device@{device}}
+\index{device@{device}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{device}{device}}
+{\footnotesize\ttfamily eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+device = args.\+dev}
+
+\Hypertarget{namespaceeval__model__stg6__metrics_aade837b2ff6300bba7d899440082d5d0}\label{namespaceeval__model__stg6__metrics_aade837b2ff6300bba7d899440082d5d0} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!files\_mod\_name\_stats@{files\_mod\_name\_stats}}
+\index{files\_mod\_name\_stats@{files\_mod\_name\_stats}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{files\_mod\_name\_stats}{files\_mod\_name\_stats}}
+{\footnotesize\ttfamily str eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+files\+\_\+mod\+\_\+name\+\_\+stats = \"{}\+\_\+multi\+\_\+batch\+\_\+val\+\_\+batch\+\_\+\{batch\}\+\_\+\+QP\+\_\+\{QP\}\+\_\+\{nmod\}\"{}.format(batch=\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a89e52b4de47e93c7f47b94c0f429f606}{batch\+\_\+size}}, QP=\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a154e483e7f708eec54cb8d96b9104a0d}{qp}}, nmod=\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a885015787b9a18566d0957b4e6169229}{n\+\_\+mod}})}
+
+\Hypertarget{namespaceeval__model__stg6__metrics_a8185f038cf92a2372300accc21674c79}\label{namespaceeval__model__stg6__metrics_a8185f038cf92a2372300accc21674c79} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!l\_path\_val@{l\_path\_val}}
+\index{l\_path\_val@{l\_path\_val}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{l\_path\_val}{l\_path\_val}}
+{\footnotesize\ttfamily eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+l\+\_\+path\+\_\+val = args.\+labels}
+
+\Hypertarget{namespaceeval__model__stg6__metrics_ae269c3d62b8eea1b2f36d09b7585a70a}\label{namespaceeval__model__stg6__metrics_ae269c3d62b8eea1b2f36d09b7585a70a} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!loss\_threshold@{loss\_threshold}}
+\index{loss\_threshold@{loss\_threshold}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{loss\_threshold}{loss\_threshold}}
+{\footnotesize\ttfamily eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+loss\+\_\+threshold = float(\"{}-\/inf\"{})}
+
+\Hypertarget{namespaceeval__model__stg6__metrics_a885015787b9a18566d0957b4e6169229}\label{namespaceeval__model__stg6__metrics_a885015787b9a18566d0957b4e6169229} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!n\_mod@{n\_mod}}
+\index{n\_mod@{n\_mod}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{n\_mod}{n\_mod}}
+{\footnotesize\ttfamily eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+n\+\_\+mod = args.\+nmod}
+
+\Hypertarget{namespaceeval__model__stg6__metrics_a79be8651265f22c4df6ee35a42a9bed1}\label{namespaceeval__model__stg6__metrics_a79be8651265f22c4df6ee35a42a9bed1} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!num\_workers@{num\_workers}}
+\index{num\_workers@{num\_workers}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{num\_workers}{num\_workers}}
+{\footnotesize\ttfamily eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+num\+\_\+workers = args.\+workers}
+
+\Hypertarget{namespaceeval__model__stg6__metrics_ac3ce6332e700a187e5567ccc9df0439e}\label{namespaceeval__model__stg6__metrics_ac3ce6332e700a187e5567ccc9df0439e} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!parser@{parser}}
+\index{parser@{parser}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{parser}{parser}}
+{\footnotesize\ttfamily eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+parser = argparse.\+Argument\+Parser(description=constants.\+script\+\_\+description)}
+
+\Hypertarget{namespaceeval__model__stg6__metrics_a154e483e7f708eec54cb8d96b9104a0d}\label{namespaceeval__model__stg6__metrics_a154e483e7f708eec54cb8d96b9104a0d} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!qp@{qp}}
+\index{qp@{qp}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{qp}{qp}}
+{\footnotesize\ttfamily int eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+qp = 32}
+
+\Hypertarget{namespaceeval__model__stg6__metrics_ac6f05626d73aa34fd04c44098062c3f5}\label{namespaceeval__model__stg6__metrics_ac6f05626d73aa34fd04c44098062c3f5} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!rs@{rs}}
+\index{rs@{rs}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{rs}{rs}}
+{\footnotesize\ttfamily list eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+rs = \mbox{[}0.\+3, 0.\+5\mbox{]}}
+
+\Hypertarget{namespaceeval__model__stg6__metrics_a74da3a106b60aeeba20e66a20efed3ce}\label{namespaceeval__model__stg6__metrics_a74da3a106b60aeeba20e66a20efed3ce} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!type@{type}}
+\index{type@{type}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+type}
+
+\Hypertarget{namespaceeval__model__stg6__metrics_abcf721e0397241b8985d4f2967e2d945}\label{namespaceeval__model__stg6__metrics_abcf721e0397241b8985d4f2967e2d945} 
+\index{eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}!writer@{writer}}
+\index{writer@{writer}!eval\_model\_stg6\_metrics@{eval\_model\_stg6\_metrics}}
+\doxysubsubsection{\texorpdfstring{writer}{writer}}
+{\footnotesize\ttfamily eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+writer = Summary\+Writer(\"{}runs/MSECNN\+\_\+\+Eval\+\_\+\"{}+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a885015787b9a18566d0957b4e6169229}{n\+\_\+mod}})}
+

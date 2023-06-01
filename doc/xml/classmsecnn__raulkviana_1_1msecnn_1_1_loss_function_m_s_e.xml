@@ -1,0 +1,528 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e" kind="class" language="Python" prot="public">
+    <compoundname>msecnn_raulkviana::msecnn::LossFunctionMSE</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">nn.Module</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1af4019632733df09c3399310018af4f2d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.LossFunctionMSE::beta</definition>
+        <argsstring></argsstring>
+        <name>beta</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.LossFunctionMSE.beta</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="728" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="728" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1ab7faa8cd35ee711e5e75fb3da1b2bb30" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.LossFunctionMSE::use_mod_cross_entropy</definition>
+        <argsstring></argsstring>
+        <name>use_mod_cross_entropy</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.LossFunctionMSE.use_mod_cross_entropy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="729" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="729" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1aa01b44a53e8b450a63f486f3ca5fe800" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.LossFunctionMSE::MAX_RD</definition>
+        <argsstring></argsstring>
+        <name>MAX_RD</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.LossFunctionMSE.MAX_RD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="731" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="731" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1ab1b89301074c9fbde31891815cd37ff9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.LossFunctionMSE::MAX_LOSS</definition>
+        <argsstring></argsstring>
+        <name>MAX_LOSS</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.LossFunctionMSE.MAX_LOSS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="732" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="732" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1a729049449786c1646bcb21e092beca1e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.LossFunctionMSE::last_loss</definition>
+        <argsstring></argsstring>
+        <name>last_loss</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.LossFunctionMSE.last_loss</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="733" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="733" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1a7e57981ba18cd103eb9a828ecd6bc85e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.LossFunctionMSE::last_pred</definition>
+        <argsstring></argsstring>
+        <name>last_pred</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.LossFunctionMSE.last_pred</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="734" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="734" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1a9372a22c19c9ba252a4c3b80690aa41c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.LossFunctionMSE::last_RD</definition>
+        <argsstring></argsstring>
+        <name>last_RD</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.LossFunctionMSE.last_RD</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="735" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="735" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1a67cf22a5add89e21d44855630bb2ec82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.LossFunctionMSE.__init__</definition>
+        <argsstring>(self, use_mod_cross_entropy=True, beta=1)</argsstring>
+        <name>__init__</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.LossFunctionMSE.__init__</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1ab7faa8cd35ee711e5e75fb3da1b2bb30" kindref="member">use_mod_cross_entropy</ref></type>
+          <defname>use_mod_cross_entropy</defname>
+          <defval>True</defval>
+        </param>
+        <param>
+          <type><ref refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1af4019632733df09c3399310018af4f2d" kindref="member">beta</ref></type>
+          <defname>beta</defname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="726" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="726" bodyend="736"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1a738ea33d96bd93868e7200f721c4b2c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.LossFunctionMSE.get_proportion_CUs</definition>
+        <argsstring>(self, labels)</argsstring>
+        <name>get_proportion_CUs</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.LossFunctionMSE.get_proportion_CUs</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>labels</type>
+          <defname>labels</defname>
+        </param>
+        <briefdescription>
+<para>This function returns the proportion of CU&apos;s for all the types of split mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">labels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ground truth tensor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">p_m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tensor with the proportions </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="737" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="737" bodyend="749"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1acccac9d6a2a740c6ef2e5b89a9e71954" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.LossFunctionMSE.get_min_RDs</definition>
+        <argsstring>(self, RDs)</argsstring>
+        <name>get_min_RDs</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.LossFunctionMSE.get_min_RDs</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>RDs</type>
+          <defname>RDs</defname>
+        </param>
+        <briefdescription>
+<para>Obtain the lowest value that isnt zero from RDs tensor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">RDs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tensor with RDs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">min_RD</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lowest value of RDs that isnt zero </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="750" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="750" bodyend="764"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1ab82baebe428014adabd6b6b44f46515a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.LossFunctionMSE.remove_values_lower</definition>
+        <argsstring>(self, tensor, max_val, subst_val)</argsstring>
+        <name>remove_values_lower</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.LossFunctionMSE.remove_values_lower</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>tensor</type>
+          <defname>tensor</defname>
+        </param>
+        <param>
+          <type>max_val</type>
+          <defname>max_val</defname>
+        </param>
+        <param>
+          <type>subst_val</type>
+          <defname>subst_val</defname>
+        </param>
+        <briefdescription>
+<para>Remove values from tensor that are lower than a given value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tensor with values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">max_val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Threshold val </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">subst_val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Max value to replace the others </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">tensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New tensor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="765" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="765" bodyend="779"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1a02f6f7e431eebad6b0c7fb20fae90aa7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.LossFunctionMSE.remove_inf_values</definition>
+        <argsstring>(self, tensor)</argsstring>
+        <name>remove_inf_values</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.LossFunctionMSE.remove_inf_values</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>tensor</type>
+          <defname>tensor</defname>
+        </param>
+        <briefdescription>
+<para>Remove values from tensor that are inf and make them zeros. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">tensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tensor with values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">tensor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New tensor </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="780" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="780" bodyend="793"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1ab327c3b3f51bd109b0319329703adb9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.LossFunctionMSE.remove_zero</definition>
+        <argsstring>(self, RDs)</argsstring>
+        <name>remove_zero</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.LossFunctionMSE.remove_zero</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>RDs</type>
+          <defname>RDs</defname>
+        </param>
+        <briefdescription>
+<para>Substitutes the zeros values for big RD values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">RDs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tensor with RDs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">RDs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tensor With Max values added </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="794" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="794" bodyend="807"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1a3838054429e45773d57460f4ffe528f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.LossFunctionMSE.remove_values_above</definition>
+        <argsstring>(self, RDs, max_val)</argsstring>
+        <name>remove_values_above</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.LossFunctionMSE.remove_values_above</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>RDs</type>
+          <defname>RDs</defname>
+        </param>
+        <param>
+          <type>max_val</type>
+          <defname>max_val</defname>
+        </param>
+        <briefdescription>
+<para>Substitutes values above MAX_RD for the MAX_RD. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">RDs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tensor with RDs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">max_val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Max value to add </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">clone_RDs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Tensor With Max values added </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="808" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="808" bodyend="822"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1aab9602de6ada43d3d7c74f54f9a02ea3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.LossFunctionMSE.forward</definition>
+        <argsstring>(self, pred, labels, RD)</argsstring>
+        <name>forward</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.LossFunctionMSE.forward</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>pred</type>
+          <defname>pred</defname>
+        </param>
+        <param>
+          <type>labels</type>
+          <defname>labels</defname>
+        </param>
+        <param>
+          <type>RD</type>
+          <defname>RD</defname>
+        </param>
+        <briefdescription>
+<para>This function implements the loss function. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">pred</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Predictions made by the model </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">labels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Ground-truth tensor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">RD</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rate distortion tensor </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">loss</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of raw predictions that a classification model generates </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="823" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="823" bodyend="891"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>msecnn_raulkviana.msecnn.LossFunctionMSE</label>
+        <link refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nn::Module</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>msecnn_raulkviana.msecnn.LossFunctionMSE</label>
+        <link refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nn::Module</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/msecnn_raulkviana/msecnn.py" line="725" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="725" bodyend="891"/>
+    <listofallmembers>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1a67cf22a5add89e21d44855630bb2ec82" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::LossFunctionMSE</scope><name>__init__</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1af4019632733df09c3399310018af4f2d" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::LossFunctionMSE</scope><name>beta</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1aab9602de6ada43d3d7c74f54f9a02ea3" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::LossFunctionMSE</scope><name>forward</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1acccac9d6a2a740c6ef2e5b89a9e71954" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::LossFunctionMSE</scope><name>get_min_RDs</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1a738ea33d96bd93868e7200f721c4b2c4" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::LossFunctionMSE</scope><name>get_proportion_CUs</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1a729049449786c1646bcb21e092beca1e" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::LossFunctionMSE</scope><name>last_loss</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1a7e57981ba18cd103eb9a828ecd6bc85e" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::LossFunctionMSE</scope><name>last_pred</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1a9372a22c19c9ba252a4c3b80690aa41c" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::LossFunctionMSE</scope><name>last_RD</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1ab1b89301074c9fbde31891815cd37ff9" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::LossFunctionMSE</scope><name>MAX_LOSS</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1aa01b44a53e8b450a63f486f3ca5fe800" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::LossFunctionMSE</scope><name>MAX_RD</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1a02f6f7e431eebad6b0c7fb20fae90aa7" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::LossFunctionMSE</scope><name>remove_inf_values</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1a3838054429e45773d57460f4ffe528f5" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::LossFunctionMSE</scope><name>remove_values_above</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1ab82baebe428014adabd6b6b44f46515a" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::LossFunctionMSE</scope><name>remove_values_lower</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1ab327c3b3f51bd109b0319329703adb9f" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::LossFunctionMSE</scope><name>remove_zero</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e_1ab7faa8cd35ee711e5e75fb3da1b2bb30" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::LossFunctionMSE</scope><name>use_mod_cross_entropy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

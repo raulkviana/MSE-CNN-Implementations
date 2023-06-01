@@ -1,0 +1,301 @@
+\doxysection{train\+\_\+stg6 Namespace Reference}
+\hypertarget{namespacetrain__stg6}{}\label{namespacetrain__stg6}\index{train\_stg6@{train\_stg6}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_acdea602488f368d2634836e2d4140f92}{train}} (dataloader, model, loss\+\_\+fn, optimizer, \mbox{\hyperlink{namespacetrain__stg6_aa074b45b6a5b2a792e9cf4d32c584f03}{device}})
+\begin{DoxyCompactList}\small\item\em If batch size equal to 1 it\textquotesingle{}s a Stochastic Gradiente Descent (SGD), otherwise it\textquotesingle{}s a mini-\/batch gradient descent. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetrain__stg6_af5a4441c56dc8502731a1c3c0d99316a}{test}} (dataloader, model, loss\+\_\+fn, \mbox{\hyperlink{namespacetrain__stg6_aa074b45b6a5b2a792e9cf4d32c584f03}{device}}, loss\+\_\+name)
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_a5fa206f76e13ffd9683dd8aa096079f7}{train\+\_\+test}} (train\+\_\+dataloader, test\+\_\+dataloader, model, loss\+\_\+fn, optimizer, \mbox{\hyperlink{namespacetrain__stg6_aa074b45b6a5b2a792e9cf4d32c584f03}{device}}, epochs, lr\+\_\+sch)
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_a566754db3d002de3c456576aa51619fc}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_a61b826ea595cc74f81fa538392d1f7d0}{parser}} = argparse.\+Argument\+Parser(description=constants.\+script\+\_\+description)
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_aee09b2b19a5e9459161ba0e5aab9f448}{type}}
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_ad6051bea47954365c5df019db1f467a7}{args}} = parser.\+parse\+\_\+args()
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_aae7d3de08fc2b18c6c20eb072e1f1eef}{beta}} = args.\+b
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_a02d7476d43ccb35ad29a6d510f1dfc0f}{learning\+\_\+rate}} = args.\+lr
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_a022370d28d736cf2cf8a652b4b9ddbaf}{loss\+\_\+threshold}} = float(\"{}-\/inf\"{})
+\item 
+int \mbox{\hyperlink{namespacetrain__stg6_ac8c6bed499d363f0c037f03bd48d42d2}{QP}} = 32
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_ac0b01e55c83c14b34ac05672499fc18b}{batch\+\_\+size}} = args.\+batch
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_a382be9f56bf6a2335226b70dd5d32290}{iterations}} = args.\+i
+\item 
+float \mbox{\hyperlink{namespacetrain__stg6_a40298b18adedb8a9e2adcc7346dab322}{decay}} = 0.\+01
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_af7cb7c0ad6debc62b15f83642144160d}{decay\+\_\+controler}} = args.\+dcontr
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_aa074b45b6a5b2a792e9cf4d32c584f03}{device}} = args.\+dev
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_aec4822b987578d2ae95a71d1ca43f04b}{num\+\_\+workers}} = args.\+workers
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_a0dff77c8ca93ddb2f2726de44e8c45bd}{n\+\_\+mod}} = args.\+nmod
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_a2c5351fbebdd0b2d10ea7dfe2f94f2ff}{l\+\_\+path\+\_\+train}} = args.\+labels\+Train
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_ad2bbe6b373146be8485eff2781f9d647}{l\+\_\+path\+\_\+test}} = args.\+labels\+Test
+\item 
+\mbox{\hyperlink{namespacetrain__stg6_a647a876ab1e371eb01ad57aa73f96733}{writer}} = Summary\+Writer(\"{}runs/MSECNN\+\_\+\"{}+\mbox{\hyperlink{namespacetrain__stg6_a0dff77c8ca93ddb2f2726de44e8c45bd}{n\+\_\+mod}})
+\item 
+str \mbox{\hyperlink{namespacetrain__stg6_a7778cd52531340f1a8ddb8574e96d0f0}{files\+\_\+mod\+\_\+name\+\_\+stats}} = \"{}\+\_\+multi\+\_\+batch\+\_\+iter\+\_\+\{ite\}\+\_\+batch\+\_\+\{batch\}\+\_\+\+QP\+\_\+\{\mbox{\hyperlink{namespacetrain__stg6_ac8c6bed499d363f0c037f03bd48d42d2}{QP}}\}\+\_\+beta\+\_\+\{be\}\+\_\+lr\+\_\+\{lr\}\+\_\+\{\mbox{\hyperlink{namespacetrain__stg6_a0dff77c8ca93ddb2f2726de44e8c45bd}{n\+\_\+mod}}\}\"{}.format(ite=\mbox{\hyperlink{namespacetrain__stg6_a382be9f56bf6a2335226b70dd5d32290}{iterations}}, batch=\mbox{\hyperlink{namespacetrain__stg6_ac0b01e55c83c14b34ac05672499fc18b}{batch\+\_\+size}}, \mbox{\hyperlink{namespacetrain__stg6_ac8c6bed499d363f0c037f03bd48d42d2}{QP}}=\mbox{\hyperlink{namespacetrain__stg6_ac8c6bed499d363f0c037f03bd48d42d2}{QP}}, be=\mbox{\hyperlink{namespacetrain__stg6_aae7d3de08fc2b18c6c20eb072e1f1eef}{beta}}, lr=\mbox{\hyperlink{namespacetrain__stg6_a02d7476d43ccb35ad29a6d510f1dfc0f}{learning\+\_\+rate}}, \mbox{\hyperlink{namespacetrain__stg6_a0dff77c8ca93ddb2f2726de44e8c45bd}{n\+\_\+mod}}=\mbox{\hyperlink{namespacetrain__stg6_a0dff77c8ca93ddb2f2726de44e8c45bd}{n\+\_\+mod}})
+\item 
+int \mbox{\hyperlink{namespacetrain__stg6_afae04f92d4dcebbf51a6a1e3f4f42413}{cnt\+\_\+train}} = 0
+\item 
+int \mbox{\hyperlink{namespacetrain__stg6_a0dbd019c2ed881812b82733aa6040931}{cnt\+\_\+test\+\_\+train}} = 0
+\item 
+int \mbox{\hyperlink{namespacetrain__stg6_a9b0f16715f4b76e7ef8234800f5557fe}{cnt\+\_\+test\+\_\+test}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}@package docstring 
+
+@file train_stg6.py 
+
+@brief Training script for the sixth stage of the MSE-CNN, for the luma channel.  
+ 
+@section libraries_train_stg6 Libraries 
+- sklearn.metrics
+- MSECNN
+- torch.utils.data
+- torch
+- argparse
+- torch.utils.tensorboard
+- datetime
+- train_model_utils
+- utils
+- numpy
+- constants
+- CustomDataset
+- sys
+- time
+- matplotlib.pyplot
+
+@section classes_train_stg6 Classes 
+- None
+
+@section functions_train_stg6 Functions 
+- train(dataloader, model, loss_fn, optimizer, device)
+- test(dataloader, model, loss_fn, device, loss_name)
+- train_test(train_dataloader, test_dataloader, model, loss_fn, optimizer, device, epochs, lr_sch)
+- main()
+ 
+@section global_vars_train_stg6 Global Variables 
+- learning_rate
+- parser 
+- args 
+- loss_threshold 
+- batch_size 
+- qp 
+- device 
+- n_mod 
+- num_workers 
+- writer 
+- l_path_val 
+- decay
+- decay_controler
+- iterations
+- files_mod_name_stats 
+- l_path_train
+- l_path_test
+- cnt_train
+- cnt_test_train
+- cnt_test_test
+
+@section todo_train_stg6 TODO 
+- None 
+
+@section license License 
+MIT License 
+Copyright (c) 2022 Raul Kevin do Espirito Santo Viana
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+@section author_train_stg6 Author(s)
+- Created by Raul Kevin Viana
+- Last time modified is 2023-01-29 22:23:10.689038
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacetrain__stg6_a566754db3d002de3c456576aa51619fc}\label{namespacetrain__stg6_a566754db3d002de3c456576aa51619fc} 
+\index{train\_stg6@{train\_stg6}!main@{main}}
+\index{main@{main}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacetrain__stg6_af5a4441c56dc8502731a1c3c0d99316a}\label{namespacetrain__stg6_af5a4441c56dc8502731a1c3c0d99316a} 
+\index{train\_stg6@{train\_stg6}!test@{test}}
+\index{test@{test}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+test (\begin{DoxyParamCaption}\item[{}]{dataloader,  }\item[{}]{model,  }\item[{}]{loss\+\_\+fn,  }\item[{}]{device,  }\item[{}]{loss\+\_\+name }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacetrain__stg6_acdea602488f368d2634836e2d4140f92}\label{namespacetrain__stg6_acdea602488f368d2634836e2d4140f92} 
+\index{train\_stg6@{train\_stg6}!train@{train}}
+\index{train@{train}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{train()}{train()}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+train (\begin{DoxyParamCaption}\item[{}]{dataloader,  }\item[{}]{model,  }\item[{}]{loss\+\_\+fn,  }\item[{}]{optimizer,  }\item[{}]{device }\end{DoxyParamCaption})}
+
+
+
+If batch size equal to 1 it\textquotesingle{}s a Stochastic Gradiente Descent (SGD), otherwise it\textquotesingle{}s a mini-\/batch gradient descent. 
+
+If the batch is the same as the number as the size of the dataset, it will be a Batch gradient Descent \Hypertarget{namespacetrain__stg6_a5fa206f76e13ffd9683dd8aa096079f7}\label{namespacetrain__stg6_a5fa206f76e13ffd9683dd8aa096079f7} 
+\index{train\_stg6@{train\_stg6}!train\_test@{train\_test}}
+\index{train\_test@{train\_test}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{train\_test()}{train\_test()}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+train\+\_\+test (\begin{DoxyParamCaption}\item[{}]{train\+\_\+dataloader,  }\item[{}]{test\+\_\+dataloader,  }\item[{}]{model,  }\item[{}]{loss\+\_\+fn,  }\item[{}]{optimizer,  }\item[{}]{device,  }\item[{}]{epochs,  }\item[{}]{lr\+\_\+sch }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacetrain__stg6_ad6051bea47954365c5df019db1f467a7}\label{namespacetrain__stg6_ad6051bea47954365c5df019db1f467a7} 
+\index{train\_stg6@{train\_stg6}!args@{args}}
+\index{args@{args}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{args}{args}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+args = parser.\+parse\+\_\+args()}
+
+\Hypertarget{namespacetrain__stg6_ac0b01e55c83c14b34ac05672499fc18b}\label{namespacetrain__stg6_ac0b01e55c83c14b34ac05672499fc18b} 
+\index{train\_stg6@{train\_stg6}!batch\_size@{batch\_size}}
+\index{batch\_size@{batch\_size}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{batch\_size}{batch\_size}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+batch\+\_\+size = args.\+batch}
+
+\Hypertarget{namespacetrain__stg6_aae7d3de08fc2b18c6c20eb072e1f1eef}\label{namespacetrain__stg6_aae7d3de08fc2b18c6c20eb072e1f1eef} 
+\index{train\_stg6@{train\_stg6}!beta@{beta}}
+\index{beta@{beta}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{beta}{beta}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+beta = args.\+b}
+
+\Hypertarget{namespacetrain__stg6_a9b0f16715f4b76e7ef8234800f5557fe}\label{namespacetrain__stg6_a9b0f16715f4b76e7ef8234800f5557fe} 
+\index{train\_stg6@{train\_stg6}!cnt\_test\_test@{cnt\_test\_test}}
+\index{cnt\_test\_test@{cnt\_test\_test}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{cnt\_test\_test}{cnt\_test\_test}}
+{\footnotesize\ttfamily int train\+\_\+stg6.\+cnt\+\_\+test\+\_\+test = 0}
+
+\Hypertarget{namespacetrain__stg6_a0dbd019c2ed881812b82733aa6040931}\label{namespacetrain__stg6_a0dbd019c2ed881812b82733aa6040931} 
+\index{train\_stg6@{train\_stg6}!cnt\_test\_train@{cnt\_test\_train}}
+\index{cnt\_test\_train@{cnt\_test\_train}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{cnt\_test\_train}{cnt\_test\_train}}
+{\footnotesize\ttfamily int train\+\_\+stg6.\+cnt\+\_\+test\+\_\+train = 0}
+
+\Hypertarget{namespacetrain__stg6_afae04f92d4dcebbf51a6a1e3f4f42413}\label{namespacetrain__stg6_afae04f92d4dcebbf51a6a1e3f4f42413} 
+\index{train\_stg6@{train\_stg6}!cnt\_train@{cnt\_train}}
+\index{cnt\_train@{cnt\_train}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{cnt\_train}{cnt\_train}}
+{\footnotesize\ttfamily int train\+\_\+stg6.\+cnt\+\_\+train = 0}
+
+\Hypertarget{namespacetrain__stg6_a40298b18adedb8a9e2adcc7346dab322}\label{namespacetrain__stg6_a40298b18adedb8a9e2adcc7346dab322} 
+\index{train\_stg6@{train\_stg6}!decay@{decay}}
+\index{decay@{decay}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{decay}{decay}}
+{\footnotesize\ttfamily float train\+\_\+stg6.\+decay = 0.\+01}
+
+\Hypertarget{namespacetrain__stg6_af7cb7c0ad6debc62b15f83642144160d}\label{namespacetrain__stg6_af7cb7c0ad6debc62b15f83642144160d} 
+\index{train\_stg6@{train\_stg6}!decay\_controler@{decay\_controler}}
+\index{decay\_controler@{decay\_controler}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{decay\_controler}{decay\_controler}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+decay\+\_\+controler = args.\+dcontr}
+
+\Hypertarget{namespacetrain__stg6_aa074b45b6a5b2a792e9cf4d32c584f03}\label{namespacetrain__stg6_aa074b45b6a5b2a792e9cf4d32c584f03} 
+\index{train\_stg6@{train\_stg6}!device@{device}}
+\index{device@{device}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{device}{device}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+device = args.\+dev}
+
+\Hypertarget{namespacetrain__stg6_a7778cd52531340f1a8ddb8574e96d0f0}\label{namespacetrain__stg6_a7778cd52531340f1a8ddb8574e96d0f0} 
+\index{train\_stg6@{train\_stg6}!files\_mod\_name\_stats@{files\_mod\_name\_stats}}
+\index{files\_mod\_name\_stats@{files\_mod\_name\_stats}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{files\_mod\_name\_stats}{files\_mod\_name\_stats}}
+{\footnotesize\ttfamily str train\+\_\+stg6.\+files\+\_\+mod\+\_\+name\+\_\+stats = \"{}\+\_\+multi\+\_\+batch\+\_\+iter\+\_\+\{ite\}\+\_\+batch\+\_\+\{batch\}\+\_\+\+QP\+\_\+\{\mbox{\hyperlink{namespacetrain__stg6_ac8c6bed499d363f0c037f03bd48d42d2}{QP}}\}\+\_\+beta\+\_\+\{be\}\+\_\+lr\+\_\+\{lr\}\+\_\+\{\mbox{\hyperlink{namespacetrain__stg6_a0dff77c8ca93ddb2f2726de44e8c45bd}{n\+\_\+mod}}\}\"{}.format(ite=\mbox{\hyperlink{namespacetrain__stg6_a382be9f56bf6a2335226b70dd5d32290}{iterations}}, batch=\mbox{\hyperlink{namespacetrain__stg6_ac0b01e55c83c14b34ac05672499fc18b}{batch\+\_\+size}}, \mbox{\hyperlink{namespacetrain__stg6_ac8c6bed499d363f0c037f03bd48d42d2}{QP}}=\mbox{\hyperlink{namespacetrain__stg6_ac8c6bed499d363f0c037f03bd48d42d2}{QP}}, be=\mbox{\hyperlink{namespacetrain__stg6_aae7d3de08fc2b18c6c20eb072e1f1eef}{beta}}, lr=\mbox{\hyperlink{namespacetrain__stg6_a02d7476d43ccb35ad29a6d510f1dfc0f}{learning\+\_\+rate}}, \mbox{\hyperlink{namespacetrain__stg6_a0dff77c8ca93ddb2f2726de44e8c45bd}{n\+\_\+mod}}=\mbox{\hyperlink{namespacetrain__stg6_a0dff77c8ca93ddb2f2726de44e8c45bd}{n\+\_\+mod}})}
+
+\Hypertarget{namespacetrain__stg6_a382be9f56bf6a2335226b70dd5d32290}\label{namespacetrain__stg6_a382be9f56bf6a2335226b70dd5d32290} 
+\index{train\_stg6@{train\_stg6}!iterations@{iterations}}
+\index{iterations@{iterations}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{iterations}{iterations}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+iterations = args.\+i}
+
+\Hypertarget{namespacetrain__stg6_ad2bbe6b373146be8485eff2781f9d647}\label{namespacetrain__stg6_ad2bbe6b373146be8485eff2781f9d647} 
+\index{train\_stg6@{train\_stg6}!l\_path\_test@{l\_path\_test}}
+\index{l\_path\_test@{l\_path\_test}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{l\_path\_test}{l\_path\_test}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+l\+\_\+path\+\_\+test = args.\+labels\+Test}
+
+\Hypertarget{namespacetrain__stg6_a2c5351fbebdd0b2d10ea7dfe2f94f2ff}\label{namespacetrain__stg6_a2c5351fbebdd0b2d10ea7dfe2f94f2ff} 
+\index{train\_stg6@{train\_stg6}!l\_path\_train@{l\_path\_train}}
+\index{l\_path\_train@{l\_path\_train}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{l\_path\_train}{l\_path\_train}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+l\+\_\+path\+\_\+train = args.\+labels\+Train}
+
+\Hypertarget{namespacetrain__stg6_a02d7476d43ccb35ad29a6d510f1dfc0f}\label{namespacetrain__stg6_a02d7476d43ccb35ad29a6d510f1dfc0f} 
+\index{train\_stg6@{train\_stg6}!learning\_rate@{learning\_rate}}
+\index{learning\_rate@{learning\_rate}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{learning\_rate}{learning\_rate}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+learning\+\_\+rate = args.\+lr}
+
+\Hypertarget{namespacetrain__stg6_a022370d28d736cf2cf8a652b4b9ddbaf}\label{namespacetrain__stg6_a022370d28d736cf2cf8a652b4b9ddbaf} 
+\index{train\_stg6@{train\_stg6}!loss\_threshold@{loss\_threshold}}
+\index{loss\_threshold@{loss\_threshold}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{loss\_threshold}{loss\_threshold}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+loss\+\_\+threshold = float(\"{}-\/inf\"{})}
+
+\Hypertarget{namespacetrain__stg6_a0dff77c8ca93ddb2f2726de44e8c45bd}\label{namespacetrain__stg6_a0dff77c8ca93ddb2f2726de44e8c45bd} 
+\index{train\_stg6@{train\_stg6}!n\_mod@{n\_mod}}
+\index{n\_mod@{n\_mod}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{n\_mod}{n\_mod}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+n\+\_\+mod = args.\+nmod}
+
+\Hypertarget{namespacetrain__stg6_aec4822b987578d2ae95a71d1ca43f04b}\label{namespacetrain__stg6_aec4822b987578d2ae95a71d1ca43f04b} 
+\index{train\_stg6@{train\_stg6}!num\_workers@{num\_workers}}
+\index{num\_workers@{num\_workers}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{num\_workers}{num\_workers}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+num\+\_\+workers = args.\+workers}
+
+\Hypertarget{namespacetrain__stg6_a61b826ea595cc74f81fa538392d1f7d0}\label{namespacetrain__stg6_a61b826ea595cc74f81fa538392d1f7d0} 
+\index{train\_stg6@{train\_stg6}!parser@{parser}}
+\index{parser@{parser}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{parser}{parser}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+parser = argparse.\+Argument\+Parser(description=constants.\+script\+\_\+description)}
+
+\Hypertarget{namespacetrain__stg6_ac8c6bed499d363f0c037f03bd48d42d2}\label{namespacetrain__stg6_ac8c6bed499d363f0c037f03bd48d42d2} 
+\index{train\_stg6@{train\_stg6}!QP@{QP}}
+\index{QP@{QP}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{QP}{QP}}
+{\footnotesize\ttfamily int train\+\_\+stg6.\+QP = 32}
+
+\Hypertarget{namespacetrain__stg6_aee09b2b19a5e9459161ba0e5aab9f448}\label{namespacetrain__stg6_aee09b2b19a5e9459161ba0e5aab9f448} 
+\index{train\_stg6@{train\_stg6}!type@{type}}
+\index{type@{type}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+type}
+
+\Hypertarget{namespacetrain__stg6_a647a876ab1e371eb01ad57aa73f96733}\label{namespacetrain__stg6_a647a876ab1e371eb01ad57aa73f96733} 
+\index{train\_stg6@{train\_stg6}!writer@{writer}}
+\index{writer@{writer}!train\_stg6@{train\_stg6}}
+\doxysubsubsection{\texorpdfstring{writer}{writer}}
+{\footnotesize\ttfamily train\+\_\+stg6.\+writer = Summary\+Writer(\"{}runs/MSECNN\+\_\+\"{}+\mbox{\hyperlink{namespacetrain__stg6_a0dff77c8ca93ddb2f2726de44e8c45bd}{n\+\_\+mod}})}
+

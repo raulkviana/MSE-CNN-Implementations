@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="add___c_t_u__v3_8py" kind="file" language="Python">
+    <compoundname>add_CTU_v3.py</compoundname>
+    <innernamespace refid="namespaceadd___c_t_u__v3">add_CTU_v3</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="namespaceadd___c_t_u__v3" refkind="compound"><highlight class="stringliteral">&quot;&quot;&quot;@package<sp/>docstring<sp/></highlight></codeline>
+<codeline lineno="2"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="3"><highlight class="stringliteral">@file<sp/>add_CTU_v3.py<sp/></highlight></codeline>
+<codeline lineno="4"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="5"><highlight class="stringliteral">@brief<sp/>Adds<sp/>actual<sp/>CTUs<sp/>to<sp/>the<sp/>data<sp/>structure.<sp/>This<sp/>version<sp/>is<sp/>meant<sp/>to<sp/>be<sp/>used<sp/>with<sp/>stage<sp/>oriented<sp/>data<sp/>structure,<sp/>but<sp/>is<sp/>similar<sp/>to<sp/>the<sp/>previous<sp/>version.</highlight></codeline>
+<codeline lineno="6"><highlight class="stringliteral"><sp/></highlight></codeline>
+<codeline lineno="7"><highlight class="stringliteral">@section<sp/>libraries_add_CTU_v3<sp/>Libraries<sp/></highlight></codeline>
+<codeline lineno="8"><highlight class="stringliteral">-<sp/>shutil</highlight></codeline>
+<codeline lineno="9"><highlight class="stringliteral">-<sp/>torch</highlight></codeline>
+<codeline lineno="10"><highlight class="stringliteral">-<sp/>utils</highlight></codeline>
+<codeline lineno="11"><highlight class="stringliteral">-<sp/>dataset_utils</highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral">-<sp/>Exception(&quot;Module</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral">-<sp/>CustomDataset</highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral">-<sp/>sys</highlight></codeline>
+<codeline lineno="15"><highlight class="stringliteral">-<sp/>os</highlight></codeline>
+<codeline lineno="16"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="17"><highlight class="stringliteral">@section<sp/>classes_add_CTU_v3<sp/>Classes<sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="stringliteral">-<sp/>None<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="stringliteral">@section<sp/>functions_add_CTU_v3<sp/>Functions<sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="stringliteral">-<sp/>main()</highlight></codeline>
+<codeline lineno="21"><highlight class="stringliteral"><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="stringliteral">@section<sp/>global_vars_add_CTU_v3<sp/>Global<sp/>Variables<sp/></highlight></codeline>
+<codeline lineno="23"><highlight class="stringliteral">-<sp/>None</highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="25"><highlight class="stringliteral">@section<sp/>todo_add_CTU_v3<sp/>TODO<sp/></highlight></codeline>
+<codeline lineno="26"><highlight class="stringliteral">-<sp/>None</highlight></codeline>
+<codeline lineno="27"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="stringliteral"></highlight><highlight class="preprocessor">@section</highlight><highlight class="normal"><sp/>license<sp/>License<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">MIT<sp/>License<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">Copyright<sp/>(c)<sp/>2022<sp/>Raul<sp/>Kevin<sp/>do<sp/>Espirito<sp/>Santo<sp/>Viana</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">Permission<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"><sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">of<sp/>this<sp/>software<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/></highlight><highlight class="stringliteral">&quot;Software&quot;</highlight><highlight class="normal">),<sp/>to<sp/>deal</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the<sp/>rights</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">to<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal">/</highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>sell</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">copies<sp/>of<sp/>the<sp/>Software,<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">furnished<sp/>to<sp/>do<sp/>so,<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">The<sp/>above<sp/>copyright<sp/>notice<sp/></highlight><highlight class="keywordflow">and</highlight><highlight class="normal"><sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>all</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">copies<sp/></highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/></highlight><highlight class="stringliteral">&quot;AS<sp/>IS&quot;</highlight><highlight class="normal">,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">AUTHORS<sp/>OR<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">LIABILITY,<sp/>WHETHER<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING<sp/>FROM,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">OUT<sp/>OF<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS<sp/>IN<sp/>THE</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">SOFTWARE.</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">@section</highlight><highlight class="normal"><sp/>author_add_CTU_v3<sp/>Author(s)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">-<sp/>Created<sp/>by<sp/>Raul<sp/>Kevin<sp/>Viana</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">-<sp/>Last<sp/>time<sp/>modified<sp/></highlight><highlight class="keywordflow">is</highlight><highlight class="normal"><sp/>2023-01-29<sp/>22:23:10.666053</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="51"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="52"><highlight class="stringliteral">#<sp/>==============================================================</highlight></codeline>
+<codeline lineno="53"><highlight class="stringliteral">#<sp/>Imports</highlight></codeline>
+<codeline lineno="54"><highlight class="stringliteral">#<sp/>==============================================================</highlight></codeline>
+<codeline lineno="55"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="56"><highlight class="stringliteral">import<sp/>torch</highlight></codeline>
+<codeline lineno="57"><highlight class="stringliteral">import<sp/>os</highlight></codeline>
+<codeline lineno="58"><highlight class="stringliteral">import<sp/>shutil</highlight></codeline>
+<codeline lineno="59"><highlight class="stringliteral">import<sp/>sys</highlight></codeline>
+<codeline lineno="60"><highlight class="stringliteral">#<sp/>Insert<sp/>the<sp/>path<sp/>of<sp/>modules<sp/>folder<sp/></highlight></codeline>
+<codeline lineno="61"><highlight class="stringliteral">sys.path.insert(0,<sp/>&quot;../&quot;)</highlight></codeline>
+<codeline lineno="62"><highlight class="stringliteral">try:</highlight></codeline>
+<codeline lineno="63"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>dataset_utils</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>custom_dataset</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>utils</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordflow">except</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>Exception(</highlight><highlight class="stringliteral">&quot;Module<sp/>not<sp/>found!<sp/>Please<sp/>verify<sp/>that<sp/>the<sp/>main<sp/>modules<sp/>(CustomDataset,<sp/>dataset_utils,<sp/>MSECNN,<sp/>train_model_utils<sp/>and<sp/>utils)<sp/>can<sp/>be<sp/>found<sp/>in<sp/>the<sp/>directory<sp/>above<sp/>the<sp/>current<sp/>one.<sp/>Or<sp/>just<sp/>find<sp/>a<sp/>way<sp/>of<sp/>importing<sp/>them.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">#<sp/>==============================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Main</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">#<sp/>==============================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespaceadd___c_t_u__v3_1a8cc2c3ffcf9d0ca1ba5041e821e390c4" kindref="member">main</ref>():</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Path<sp/>with<sp/>the<sp/>labels<sp/>processed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>path_dir_l<sp/>=<sp/></highlight><highlight class="stringliteral">r&quot;&quot;</highlight><highlight class="normal"><sp/><sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Path<sp/>with<sp/>the<sp/>pictures</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>path_dir_p<sp/>=<sp/></highlight><highlight class="stringliteral">r&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Create<sp/>new<sp/>dir<sp/>to<sp/>save<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>name_mod<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;mod_with_real_CTU&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>new_dir<sp/>=<sp/>path_dir_l<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal"><sp/>+<sp/>name_mod<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os.mkdir(new_dir)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">except</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Delete<sp/>the<sp/>directory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>shutil.rmtree(new_dir)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Recreate<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>os.mkdir(new_dir)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Get<sp/>files<sp/>names<sp/>from<sp/>folder</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>files_l<sp/>=<sp/>dataset_utils.get_files_from_folder(path_dir_l,<sp/>endswith=</highlight><highlight class="stringliteral">&quot;.txt&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>CTU<sp/>Counter<sp/>and<sp/>number<sp/>of<sp/>entries<sp/>to<sp/>accumulate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>ctu_count<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>f<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>files_l:</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Make<sp/>labels<sp/>path</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lbls_path<sp/>=<sp/>os.path.join(path_dir_l,<sp/>f)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>List<sp/>to<sp/>save<sp/>entries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mod_list<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Read<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orig_list<sp/>=<sp/>dataset_utils.file2lst(lbls_path[:-4])</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data_size<sp/>=<sp/>len(orig_list)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accum<sp/>=<sp/>data_size</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Verbose</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>print(</highlight><highlight class="stringliteral">&quot;Processing:&quot;</highlight><highlight class="normal">,<sp/>lbls_path)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Loop<sp/>entries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>k<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(len(orig_list)):</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Build<sp/>all<sp/>requirements<sp/>to<sp/>get<sp/>the<sp/>CU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>file_name<sp/>=<sp/>orig_list[k][</highlight><highlight class="stringliteral">&apos;pic_name&apos;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>img_path<sp/>=<sp/>os.path.join(path_dir_p,<sp/>file_name<sp/>+<sp/></highlight><highlight class="stringliteral">&apos;.yuv&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>POC<sp/>=<sp/>orig_list[k][</highlight><highlight class="stringliteral">&apos;POC&apos;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f_size<sp/>=<sp/>custom_dataset.get_file_size(file_name)<sp/><sp/></highlight><highlight class="comment">#<sp/>Dict<sp/>with<sp/>the<sp/>size<sp/>of<sp/>the<sp/>image</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>f_size<sp/>=<sp/>(f_size[</highlight><highlight class="stringliteral">&apos;height&apos;</highlight><highlight class="normal">],<sp/>f_size[</highlight><highlight class="stringliteral">&apos;width&apos;</highlight><highlight class="normal">])</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_pos<sp/>=<sp/>(orig_list[k][</highlight><highlight class="stringliteral">&quot;stg_1&quot;</highlight><highlight class="normal">][</highlight><highlight class="stringliteral">&quot;cu_pos&quot;</highlight><highlight class="normal">][</highlight><highlight class="stringliteral">&quot;CU_loc_top&quot;</highlight><highlight class="normal">],<sp/>orig_list[k][</highlight><highlight class="stringliteral">&quot;stg_1&quot;</highlight><highlight class="normal">][</highlight><highlight class="stringliteral">&quot;cu_pos&quot;</highlight><highlight class="normal">][</highlight><highlight class="stringliteral">&quot;CU_loc_left&quot;</highlight><highlight class="normal">])</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cu_size<sp/>=<sp/>(orig_list[k][</highlight><highlight class="stringliteral">&quot;stg_1&quot;</highlight><highlight class="normal">][</highlight><highlight class="stringliteral">&quot;cu_size&quot;</highlight><highlight class="normal">][</highlight><highlight class="stringliteral">&quot;height&quot;</highlight><highlight class="normal">],<sp/>orig_list[k][</highlight><highlight class="stringliteral">&quot;stg_1&quot;</highlight><highlight class="normal">][</highlight><highlight class="stringliteral">&quot;cu_size&quot;</highlight><highlight class="normal">][</highlight><highlight class="stringliteral">&quot;width&quot;</highlight><highlight class="normal">])</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Verify<sp/>size<sp/>of<sp/>the<sp/>CU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>cu_size[0]<sp/>!=<sp/>128<sp/></highlight><highlight class="keywordflow">or</highlight><highlight class="normal"><sp/>cu_size[1]<sp/>!=<sp/>128:</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Get<sp/>CU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>frame_CU,<sp/>CU_Y,<sp/>CU_U,<sp/>CU_V<sp/>=<sp/>custom_dataset.get_cu(img_path,<sp/>f_size,<sp/>cu_pos,<sp/>cu_size,<sp/>POC)</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Convert<sp/>to<sp/>Pytorch<sp/>Tensor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_Y<sp/>=<sp/>torch.tensor(CU_Y.tolist())</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Convert<sp/>to<sp/>type</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_Y<sp/>=<sp/>CU_Y.to(dtype=torch.float32)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Add<sp/>dimension</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CU_Y<sp/>=<sp/>torch.unsqueeze(CU_Y,<sp/>0)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Add<sp/>to<sp/>entry</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>orig_list[k][</highlight><highlight class="stringliteral">&quot;stg_1&quot;</highlight><highlight class="normal">][</highlight><highlight class="stringliteral">&quot;real_CTU&quot;</highlight><highlight class="normal">]<sp/>=<sp/>CU_Y</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Save<sp/>entry<sp/>in<sp/>final<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mod_list.append(orig_list[k])</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>utils.echo(</highlight><highlight class="stringliteral">&quot;Complete:<sp/>{per:.0%}&quot;</highlight><highlight class="normal">.format(per=k/data_size))</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(k+1)<sp/>%<sp/>accum<sp/>==<sp/>0:</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Save<sp/>list<sp/>to<sp/>file<sp/>with<sp/>the<sp/>same<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_path<sp/>=<sp/>os.path.join(new_dir,<sp/>f[:-4]+str(ctu_count)+<sp/></highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal"><sp/>+<sp/>name_mod)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dataset_utils.lst2file(mod_list,<sp/>new_path)</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Reset<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mod_list<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Incremente<sp/>counter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctu_count<sp/>+=<sp/>1</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(k<sp/>-<sp/>(len(orig_list)<sp/>-<sp/>1))<sp/>!=<sp/>0:<sp/><sp/></highlight><highlight class="comment">#<sp/>Verify<sp/>if<sp/>there<sp/>is<sp/>still<sp/>entries</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Save<sp/>list<sp/>to<sp/>file<sp/>with<sp/>the<sp/>same<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>new_path<sp/>=<sp/>os.path.join(new_dir,<sp/>f[:-4]<sp/>+<sp/>str(ctu_count)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;_&quot;</highlight><highlight class="normal"><sp/>+<sp/>name_mod)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dataset_utils.lst2file(mod_list,<sp/>new_path)</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Reset<sp/>counter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ctu_count<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceadd___c_t_u__v3_1a8cc2c3ffcf9d0ca1ba5041e821e390c4" kindref="member">main</ref>()</highlight></codeline>
+    </programlisting>
+    <location file="src/msecnn_raulkviana/useful_scripts/add_CTU_v3.py"/>
+  </compounddef>
+</doxygen>

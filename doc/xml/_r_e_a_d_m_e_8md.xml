@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Usefull<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">Exemplifications<sp/>in<sp/>how<sp/>to<sp/>process<sp/>the<sp/>data<sp/>and<sp/>how<sp/>to<sp/>train<sp/>and<sp/>evaluate<sp/>the<sp/>model.</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="src/msecnn_raulkviana/useful_scripts/README.md"/>
+  </compounddef>
+</doxygen>

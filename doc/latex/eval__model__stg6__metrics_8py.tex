@@ -1,0 +1,45 @@
+\doxysection{src/msecnn\+\_\+raulkviana/useful\+\_\+scripts/eval\+\_\+model\+\_\+stg6\+\_\+metrics.py File Reference}
+\hypertarget{eval__model__stg6__metrics_8py}{}\label{eval__model__stg6__metrics_8py}\index{src/msecnn\_raulkviana/useful\_scripts/eval\_model\_stg6\_metrics.py@{src/msecnn\_raulkviana/useful\_scripts/eval\_model\_stg6\_metrics.py}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceeval__model__stg6__metrics}{eval\+\_\+model\+\_\+stg6\+\_\+metrics}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_ae27be79f8771354863a7e29e82b955c0}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+test}} (dataloader, model, \mbox{\hyperlink{namespaceeval__model__stg6__metrics_a9ae3489b3d7a394012278bffa5bb1972}{device}}, loss\+\_\+name)
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_aff8b970691d4eaacc75d6cb35ca38f9b}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+val\+\_\+setup}} (dataloader\+\_\+val, model, \mbox{\hyperlink{namespaceeval__model__stg6__metrics_a9ae3489b3d7a394012278bffa5bb1972}{device}})
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_ae17ef904e073c0011cb665feee920429}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_ac3ce6332e700a187e5567ccc9df0439e}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+parser}} = argparse.\+Argument\+Parser(description=constants.\+script\+\_\+description)
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a74da3a106b60aeeba20e66a20efed3ce}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+type}}
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_adf6ebc266e8453e8691663e6e6c7a67c}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+args}} = parser.\+parse\+\_\+args()
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_ae269c3d62b8eea1b2f36d09b7585a70a}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+loss\+\_\+threshold}} = float(\"{}-\/inf\"{})
+\item 
+int \mbox{\hyperlink{namespaceeval__model__stg6__metrics_a154e483e7f708eec54cb8d96b9104a0d}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+qp}} = 32
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a89e52b4de47e93c7f47b94c0f429f606}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+batch\+\_\+size}} = args.\+batch
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a9ae3489b3d7a394012278bffa5bb1972}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+device}} = args.\+dev
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a79be8651265f22c4df6ee35a42a9bed1}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+num\+\_\+workers}} = args.\+workers
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a885015787b9a18566d0957b4e6169229}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+n\+\_\+mod}} = args.\+nmod
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a8185f038cf92a2372300accc21674c79}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+l\+\_\+path\+\_\+val}} = args.\+labels
+\item 
+list \mbox{\hyperlink{namespaceeval__model__stg6__metrics_ac6f05626d73aa34fd04c44098062c3f5}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+rs}} = \mbox{[}0.\+3, 0.\+5\mbox{]}
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_abcf721e0397241b8985d4f2967e2d945}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+writer}} = Summary\+Writer(\"{}runs/MSECNN\+\_\+\+Eval\+\_\+\"{}+\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a885015787b9a18566d0957b4e6169229}{n\+\_\+mod}})
+\item 
+str \mbox{\hyperlink{namespaceeval__model__stg6__metrics_aade837b2ff6300bba7d899440082d5d0}{eval\+\_\+model\+\_\+stg6\+\_\+metrics.\+files\+\_\+mod\+\_\+name\+\_\+stats}} = \"{}\+\_\+multi\+\_\+batch\+\_\+val\+\_\+batch\+\_\+\{batch\}\+\_\+\+QP\+\_\+\{QP\}\+\_\+\{nmod\}\"{}.format(batch=\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a89e52b4de47e93c7f47b94c0f429f606}{batch\+\_\+size}}, QP=\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a154e483e7f708eec54cb8d96b9104a0d}{qp}}, nmod=\mbox{\hyperlink{namespaceeval__model__stg6__metrics_a885015787b9a18566d0957b4e6169229}{n\+\_\+mod}})
+\end{DoxyCompactItemize}

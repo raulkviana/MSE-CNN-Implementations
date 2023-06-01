@@ -1,0 +1,43 @@
+\doxysection{src/msecnn\+\_\+raulkviana/useful\+\_\+scripts/eval\+\_\+model\+\_\+stg6.py File Reference}
+\hypertarget{eval__model__stg6_8py}{}\label{eval__model__stg6_8py}\index{src/msecnn\_raulkviana/useful\_scripts/eval\_model\_stg6.py@{src/msecnn\_raulkviana/useful\_scripts/eval\_model\_stg6.py}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceeval__model__stg6}{eval\+\_\+model\+\_\+stg6}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6_a2b677f1eb8ebd600925b54755ceb837b}{eval\+\_\+model\+\_\+stg6.\+test}} (dataloader, model, \mbox{\hyperlink{namespaceeval__model__stg6_ab38362ec446378cd8a021189c74e5bce}{device}}, loss\+\_\+name)
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6_a7cb26dcb64707b3d1393eed704b3c979}{eval\+\_\+model\+\_\+stg6.\+val\+\_\+setup}} (dataloader\+\_\+val, model, \mbox{\hyperlink{namespaceeval__model__stg6_ab38362ec446378cd8a021189c74e5bce}{device}})
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6_a4b5cf7cc650c4757c2a774d7e9117760}{eval\+\_\+model\+\_\+stg6.\+main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6_a7080058b4c891881c4a20159beac7aae}{eval\+\_\+model\+\_\+stg6.\+parser}} = argparse.\+Argument\+Parser(description=constants.\+script\+\_\+description)
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6_af40dafb2cea08a7814db1efcce97994e}{eval\+\_\+model\+\_\+stg6.\+type}}
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6_a69efd20a511f3aabed3d3908247d23e0}{eval\+\_\+model\+\_\+stg6.\+args}} = parser.\+parse\+\_\+args()
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6_a05cc075df863c09d742903b65c63bcda}{eval\+\_\+model\+\_\+stg6.\+loss\+\_\+threshold}} = float(\"{}-\/inf\"{})
+\item 
+int \mbox{\hyperlink{namespaceeval__model__stg6_a93d6c2dd2f9f21a576ab7074e3d5480f}{eval\+\_\+model\+\_\+stg6.\+qp}} = 32
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6_aa454d64e1ee7a27026928b9266671a7b}{eval\+\_\+model\+\_\+stg6.\+batch\+\_\+size}} = args.\+batch
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6_ab38362ec446378cd8a021189c74e5bce}{eval\+\_\+model\+\_\+stg6.\+device}} = args.\+dev
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6_a49f0af65d29ca166fa6cb725c50ef5b5}{eval\+\_\+model\+\_\+stg6.\+num\+\_\+workers}} = args.\+workers
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6_a7578936f269fd0c28946b7fa3e956d92}{eval\+\_\+model\+\_\+stg6.\+rs}} = args.\+thres
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6_a9dd538d776d6fd9e1a28c875568daa64}{eval\+\_\+model\+\_\+stg6.\+n\+\_\+mod}} = args.\+nmod
+\item 
+\mbox{\hyperlink{namespaceeval__model__stg6_a9b4cf08c0d4afc9f048d9138c95cab43}{eval\+\_\+model\+\_\+stg6.\+l\+\_\+path\+\_\+val}} = args.\+labels
+\item 
+str \mbox{\hyperlink{namespaceeval__model__stg6_a5440e0880b08ee77104c9f744e76d08e}{eval\+\_\+model\+\_\+stg6.\+files\+\_\+mod\+\_\+name\+\_\+stats}} = \"{}\+\_\+multi\+\_\+batch\+\_\+val\+\_\+batch\+\_\+\{batch\}\+\_\+\+QP\+\_\+\{QP\}\"{}.format(batch=\mbox{\hyperlink{namespaceeval__model__stg6_aa454d64e1ee7a27026928b9266671a7b}{batch\+\_\+size}}, QP=\mbox{\hyperlink{namespaceeval__model__stg6_a93d6c2dd2f9f21a576ab7074e3d5480f}{qp}})
+\end{DoxyCompactItemize}

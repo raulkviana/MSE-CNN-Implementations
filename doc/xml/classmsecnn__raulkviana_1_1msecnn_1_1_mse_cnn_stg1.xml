@@ -1,0 +1,566 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1" kind="class" language="Python" prot="public">
+    <compoundname>msecnn_raulkviana::msecnn::MseCnnStg1</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">nn.Module</basecompoundref>
+    <derivedcompoundref refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg_x" prot="public" virt="non-virtual">msecnn_raulkviana.msecnn.MseCnnStgX</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a33a53b8f8d138ee745f45a64bf18540a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1::first_simple_conv</definition>
+        <argsstring></argsstring>
+        <name>first_simple_conv</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.first_simple_conv</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="139" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a0b58c286c2e6b4c7e53a39f66e67c132" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1::simple_conv_stg1</definition>
+        <argsstring></argsstring>
+        <name>simple_conv_stg1</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.simple_conv_stg1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="146" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1aa8cffcfb40c8a7c75c7285edeaf23c42" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1::simple_conv_no_activation_stg1</definition>
+        <argsstring></argsstring>
+        <name>simple_conv_no_activation_stg1</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.simple_conv_no_activation_stg1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="150" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1abd4a32ea4a14bf693a80ca6ba8367e4b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1::simple_conv2_stg1</definition>
+        <argsstring></argsstring>
+        <name>simple_conv2_stg1</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.simple_conv2_stg1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="153" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a27a8d38f5319d9821fcbc891704b2ffe" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1::simple_conv_no_activation2_stg1</definition>
+        <argsstring></argsstring>
+        <name>simple_conv_no_activation2_stg1</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.simple_conv_no_activation2_stg1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="157" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a530df3c6a1c8658408a691c89fef9c89" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1::activation_PRelu_stg1</definition>
+        <argsstring></argsstring>
+        <name>activation_PRelu_stg1</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.activation_PRelu_stg1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="160" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1ac3209758abf3bf62cab093a3fb68093a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1::activation_PRelu2_stg1</definition>
+        <argsstring></argsstring>
+        <name>activation_PRelu2_stg1</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.activation_PRelu2_stg1</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="161" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1ac1420d7762560e7f9b0bfdbc4ce110e1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1::simple_conv_stg2</definition>
+        <argsstring></argsstring>
+        <name>simple_conv_stg2</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.simple_conv_stg2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="164" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1aa1a93a0639f072c7764cdcf5ff25c7d9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1::simple_conv_no_activation_stg2</definition>
+        <argsstring></argsstring>
+        <name>simple_conv_no_activation_stg2</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.simple_conv_no_activation_stg2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="168" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="168" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a28fbe568d0e5f06d69cdf9e6be721170" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1::simple_conv2_stg2</definition>
+        <argsstring></argsstring>
+        <name>simple_conv2_stg2</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.simple_conv2_stg2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="171" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a5c7325db013e1b96af57000cfe25d263" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1::simple_conv_no_activation2_stg2</definition>
+        <argsstring></argsstring>
+        <name>simple_conv_no_activation2_stg2</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.simple_conv_no_activation2_stg2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="175" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1aad8a9e5ef09b190f70e96d4f183ffe3a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1::activation_PRelu_stg2</definition>
+        <argsstring></argsstring>
+        <name>activation_PRelu_stg2</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.activation_PRelu_stg2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="178" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a0fe32e9b048a203705a696ebd39b1e5c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1::activation_PRelu2_stg2</definition>
+        <argsstring></argsstring>
+        <name>activation_PRelu2_stg2</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.activation_PRelu2_stg2</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="179" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a937f93475e64997427ff05a558572889" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1::sub_net</definition>
+        <argsstring></argsstring>
+        <name>sub_net</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.sub_net</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="193" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a7e27be6ee1687683cfdf11bfe6799209" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1.__init__</definition>
+        <argsstring>(self, device=&quot;cpu&quot;, QP=32)</argsstring>
+        <name>__init__</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.__init__</qualifiedname>
+        <reimplementedby refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg_x_1a0ef11bb1194bd709addc38ee23a26757">__init__</reimplementedby>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>device</type>
+          <defname>device</defname>
+          <defval>&quot;cpu&quot;</defval>
+        </param>
+        <param>
+          <type>QP</type>
+          <defname>QP</defname>
+          <defval>32</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="135" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="135" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a4d437240e0f83b0da4a693fb51475b29" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1.residual_unit_stg1</definition>
+        <argsstring>(self, x, nr)</argsstring>
+        <name>residual_unit_stg1</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.residual_unit_stg1</qualifiedname>
+        <reimplementedby refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg_x_1a1e88e0e54df09462a50e911e0dc496a5">residual_unit_stg1</reimplementedby>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>nr</type>
+          <defname>nr</defname>
+        </param>
+        <briefdescription>
+<para>Generic residual unit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input of the network </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of residual units </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="210" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="210" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a34b598a34a7f665f7d8210be65f35bae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1.residual_unit_stg2</definition>
+        <argsstring>(self, x, nr)</argsstring>
+        <name>residual_unit_stg2</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.residual_unit_stg2</qualifiedname>
+        <reimplementedby refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg_x_1a075f20c421fd05daa08de644ef66377f">residual_unit_stg2</reimplementedby>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <param>
+          <type>nr</type>
+          <defname>nr</defname>
+        </param>
+        <briefdescription>
+<para>Generic residual unit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input of the network </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of residual units </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="246" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="246" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a7cf725c4469409aef6e7a6e2612ebc9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1.nr_calc</definition>
+        <argsstring>(self, ac, ap)</argsstring>
+        <name>nr_calc</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.nr_calc</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>ac</type>
+          <defname>ac</defname>
+        </param>
+        <param>
+          <type>ap</type>
+          <defname>ap</defname>
+        </param>
+        <briefdescription>
+<para>Calculate the number of residual units. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">ac</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum value of the current input axises </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ap</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Minimum value of the parent input axises </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">nr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of residual units </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="282" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="282" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1ab79608194b3a41cbcd8963f21cf3ca4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1.split</definition>
+        <argsstring>(self, cu, coords, sizes, split)</argsstring>
+        <name>split</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.split</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cu</type>
+          <defname>cu</defname>
+        </param>
+        <param>
+          <type>coords</type>
+          <defname>coords</defname>
+        </param>
+        <param>
+          <type>sizes</type>
+          <defname>sizes</defname>
+        </param>
+        <param>
+          <type>split</type>
+          <defname>split</defname>
+        </param>
+        <briefdescription>
+<para>Splits feature maps in specific way. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input to the model </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">coords</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Coordinates of the new CUs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">coords</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the new CUs </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">split</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Way to split CU </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">cu_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New Feature maps </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="314" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="314" bodyend="357"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1addf32f5ce5db682ba6967fd71f8eabfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.msecnn.MseCnnStg1.forward</definition>
+        <argsstring>(self, cu, sizes=None, coords=None)</argsstring>
+        <name>forward</name>
+        <qualifiedname>msecnn_raulkviana.msecnn.MseCnnStg1.forward</qualifiedname>
+        <reimplementedby refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg_x_1a9351eb93b3a089d36c559da6f013c70e">forward</reimplementedby>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cu</type>
+          <defname>cu</defname>
+        </param>
+        <param>
+          <type>sizes</type>
+          <defname>sizes</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>coords</type>
+          <defname>coords</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+<para>This functions propagates the input to the output. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">cu</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input to the model </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">logits</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Vector of raw predictions that a classification model generates </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/msecnn.py" line="358" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="358" bodyend="389"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>msecnn_raulkviana.msecnn.MseCnnStg1</label>
+        <link refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>msecnn_raulkviana.msecnn.MseCnnStgX</label>
+        <link refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg_x"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nn.Module</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>msecnn_raulkviana.msecnn.MseCnnStg1</label>
+        <link refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>nn.Module</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/msecnn_raulkviana/msecnn.py" line="133" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="133" bodyend="389"/>
+    <listofallmembers>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a7e27be6ee1687683cfdf11bfe6799209" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>__init__</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1ac3209758abf3bf62cab093a3fb68093a" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>activation_PRelu2_stg1</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a0fe32e9b048a203705a696ebd39b1e5c" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>activation_PRelu2_stg2</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a530df3c6a1c8658408a691c89fef9c89" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>activation_PRelu_stg1</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1aad8a9e5ef09b190f70e96d4f183ffe3a" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>activation_PRelu_stg2</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a33a53b8f8d138ee745f45a64bf18540a" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>first_simple_conv</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1addf32f5ce5db682ba6967fd71f8eabfe" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>forward</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a7cf725c4469409aef6e7a6e2612ebc9d" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>nr_calc</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a4d437240e0f83b0da4a693fb51475b29" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>residual_unit_stg1</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a34b598a34a7f665f7d8210be65f35bae" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>residual_unit_stg2</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1abd4a32ea4a14bf693a80ca6ba8367e4b" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>simple_conv2_stg1</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a28fbe568d0e5f06d69cdf9e6be721170" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>simple_conv2_stg2</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a27a8d38f5319d9821fcbc891704b2ffe" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>simple_conv_no_activation2_stg1</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a5c7325db013e1b96af57000cfe25d263" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>simple_conv_no_activation2_stg2</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1aa8cffcfb40c8a7c75c7285edeaf23c42" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>simple_conv_no_activation_stg1</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1aa1a93a0639f072c7764cdcf5ff25c7d9" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>simple_conv_no_activation_stg2</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a0b58c286c2e6b4c7e53a39f66e67c132" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>simple_conv_stg1</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1ac1420d7762560e7f9b0bfdbc4ce110e1" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>simple_conv_stg2</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1ab79608194b3a41cbcd8963f21cf3ca4e" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>split</name></member>
+      <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1_1a937f93475e64997427ff05a558572889" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::MseCnnStg1</scope><name>sub_net</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

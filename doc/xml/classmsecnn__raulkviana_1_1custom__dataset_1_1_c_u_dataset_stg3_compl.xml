@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg3_compl" kind="class" language="Python" prot="public">
+    <compoundname>msecnn_raulkviana::custom_dataset::CUDatasetStg3Compl</compoundname>
+    <basecompoundref refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_base" prot="public" virt="non-virtual">msecnn_raulkviana.custom_dataset.CUDatasetBase</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg3_compl_1a8f3d2893dd870eaed72ffa5a90e68cdc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.custom_dataset.CUDatasetStg3Compl::channel</definition>
+        <argsstring></argsstring>
+        <name>channel</name>
+        <qualifiedname>msecnn_raulkviana.custom_dataset.CUDatasetStg3Compl.channel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/custom_dataset.py" line="899" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="899" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg3_compl_1a276e7662ff73acc3bb0960be5c495e8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.custom_dataset.CUDatasetStg3Compl.__init__</definition>
+        <argsstring>(self, files_path, channel=0)</argsstring>
+        <name>__init__</name>
+        <qualifiedname>msecnn_raulkviana.custom_dataset.CUDatasetStg3Compl.__init__</qualifiedname>
+        <reimplements refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_base_1a47f01ca4fdbdc31fa128cc1df80c1dbd">__init__</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_base_1acde41b7b225e6bcf6538a73f7e8fe709" kindref="member">files_path</ref></type>
+          <defname>files_path</defname>
+        </param>
+        <param>
+          <type><ref refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg3_compl_1a8f3d2893dd870eaed72ffa5a90e68cdc" kindref="member">channel</ref></type>
+          <defname>channel</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Args: </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>files_path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(string): Path to the files with annotations. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Channel to get for the dataset (0:Luma, 1:Chroma) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/custom_dataset.py" line="828" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="828" bodyend="835"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg3_compl_1a8c3c124d57f3948358f57c85dcf9b00f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.custom_dataset.CUDatasetStg3Compl.get_sample</definition>
+        <argsstring>(self, entry)</argsstring>
+        <name>get_sample</name>
+        <qualifiedname>msecnn_raulkviana.custom_dataset.CUDatasetStg3Compl.get_sample</qualifiedname>
+        <reimplements refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_base_1a3c97c7be334e8296248a772fd99a5d46">get_sample</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>entry</type>
+          <defname>entry</defname>
+        </param>
+        <briefdescription>
+<para>Args: </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(int): An instance from the labels.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>out: lst - CTU | RD_for_specific_stage | cu_left_of_stg_1 | cu_top_of_stg_1 | cu_left_for_specific_stage | cu_top_for_specific_stage | split_for_specific_stage </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/custom_dataset.py" line="836" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="836" bodyend="902"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Dataset stage oriented with capability of loading different files and it&apos;s supposed to be used with the function dataset_utils.change_labels_function_again. For stage 3</para>
+</listitem></itemizedlist>
+</para>
+<para>This version contains all of the information available from the CU data </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>msecnn_raulkviana.custom_dataset.CUDatasetStg3Compl</label>
+        <link refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg3_compl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>msecnn_raulkviana.custom_dataset.CUDatasetBase</label>
+        <link refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_base"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Dataset</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>msecnn_raulkviana.custom_dataset.CUDatasetStg3Compl</label>
+        <link refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg3_compl"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>msecnn_raulkviana.custom_dataset.CUDatasetBase</label>
+        <link refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_base"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Dataset</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/msecnn_raulkviana/custom_dataset.py" line="822" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="822" bodyend="902"/>
+    <listofallmembers>
+      <member refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg3_compl_1a276e7662ff73acc3bb0960be5c495e8c" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::custom_dataset::CUDatasetStg3Compl</scope><name>__init__</name></member>
+      <member refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg3_compl_1a8f3d2893dd870eaed72ffa5a90e68cdc" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::custom_dataset::CUDatasetStg3Compl</scope><name>channel</name></member>
+      <member refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg3_compl_1a8c3c124d57f3948358f57c85dcf9b00f" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::custom_dataset::CUDatasetStg3Compl</scope><name>get_sample</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,308 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="namespacemsecnn__raulkviana_1_1utils" kind="namespace" language="Python">
+    <compoundname>msecnn_raulkviana::utils</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacemsecnn__raulkviana_1_1utils_1a0a4104404a48b8bd52b5f9c7822c17d6" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str msecnn_raulkviana::utils.DOCSTRING_BEGINNING_CREATE</definition>
+        <argsstring></argsstring>
+        <name>DOCSTRING_BEGINNING_CREATE</name>
+        <qualifiedname>msecnn_raulkviana.utils.DOCSTRING_BEGINNING_CREATE</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/utils.py" line="69" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemsecnn__raulkviana_1_1utils_1a1c6f2fb8ee5b94fb9ba0eea72c5cad1f" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str msecnn_raulkviana::utils.DOCSTRING_BEGINNING_UPDATE</definition>
+        <argsstring></argsstring>
+        <name>DOCSTRING_BEGINNING_UPDATE</name>
+        <qualifiedname>msecnn_raulkviana.utils.DOCSTRING_BEGINNING_UPDATE</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/utils.py" line="105" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemsecnn__raulkviana_1_1utils_1ab167d6fc73ebbba13a56aeed4f755ef6" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str msecnn_raulkviana::utils.STRING_PATH_1</definition>
+        <argsstring></argsstring>
+        <name>STRING_PATH_1</name>
+        <qualifiedname>msecnn_raulkviana.utils.STRING_PATH_1</qualifiedname>
+        <initializer>=  &quot;updated_docs&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/utils.py" line="141" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemsecnn__raulkviana_1_1utils_1a58d80305bebd1659fdc6a23a37a902e7" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str msecnn_raulkviana::utils.STRING_PATH_1_2</definition>
+        <argsstring></argsstring>
+        <name>STRING_PATH_1_2</name>
+        <qualifiedname>msecnn_raulkviana.utils.STRING_PATH_1_2</qualifiedname>
+        <initializer>=  &quot;created_docs&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/utils.py" line="142" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemsecnn__raulkviana_1_1utils_1a7eec0a89cdc50863882f2c40a8bedb69" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str msecnn_raulkviana::utils.STRING_PATH_2</definition>
+        <argsstring></argsstring>
+        <name>STRING_PATH_2</name>
+        <qualifiedname>msecnn_raulkviana.utils.STRING_PATH_2</qualifiedname>
+        <initializer>=  &quot;.py&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/utils.py" line="143" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemsecnn__raulkviana_1_1utils_1af467d1f6acbc685507ada8101aed8bae" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str msecnn_raulkviana::utils.NONE_STRING</definition>
+        <argsstring></argsstring>
+        <name>NONE_STRING</name>
+        <qualifiedname>msecnn_raulkviana.utils.NONE_STRING</qualifiedname>
+        <initializer>=  &quot;- None&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/utils.py" line="144" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespacemsecnn__raulkviana_1_1utils_1a8e8856db05a65acdbbb786f5bbb853cb" prot="public" static="no" mutable="no">
+        <type>str</type>
+        <definition>str msecnn_raulkviana::utils.AUTHOR</definition>
+        <argsstring></argsstring>
+        <name>AUTHOR</name>
+        <qualifiedname>msecnn_raulkviana.utils.AUTHOR</qualifiedname>
+        <initializer>=  &quot;Raul Kevin Viana&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/utils.py" line="145" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1utils_1a677f5e4855f46e98828bdd29e0a86bc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.utils.echo</definition>
+        <argsstring>(string, padding=80)</argsstring>
+        <name>echo</name>
+        <qualifiedname>msecnn_raulkviana.utils.echo</qualifiedname>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <param>
+          <type>padding</type>
+          <defname>padding</defname>
+          <defval>80</defval>
+        </param>
+        <briefdescription>
+<para>Prints and clears. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String that will be printed </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">padding</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Padding to avoid concatenations </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/utils.py" line="151" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="151" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1utils_1afc3702321da27b677de7346b45b2b3e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.utils.update_docstring</definition>
+        <argsstring>(path)</argsstring>
+        <name>update_docstring</name>
+        <qualifiedname>msecnn_raulkviana.utils.update_docstring</qualifiedname>
+        <param>
+          <type>path</type>
+          <defname>path</defname>
+        </param>
+        <briefdescription>
+<para>Creates and updates the beginning docstring of python file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to a script </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/utils.py" line="162" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="162" bodyend="413"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1utils_1abccc7d3daba4b0e131d2899ccbad8c44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.utils.functions_used_from_each_module</definition>
+        <argsstring>(str_file)</argsstring>
+        <name>functions_used_from_each_module</name>
+        <qualifiedname>msecnn_raulkviana.utils.functions_used_from_each_module</qualifiedname>
+        <param>
+          <type>str_file</type>
+          <defname>str_file</defname>
+        </param>
+        <briefdescription>
+<para>Detect the functions associated with each import. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">str_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String representation of the file contents </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>dict: Dictionary with the following structure - {&quot;&apos;IMPORT #1&apos;&quot;: [&quot;&apos;FUNCTION 1#&apos;&quot;, &quot;&apos;FUNCTION 2#&apos;&quot;, &quot;&apos;FUNCTION 3#&apos;&quot;], &quot;&apos;IMPORT #2&apos;&quot;: [&quot;&apos;FUNCTION 1#&apos;&quot;, &quot;&apos;FUNCTION 2#&apos;&quot;], ...} </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/utils.py" line="414" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="414" bodyend="438"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1utils_1af2d76375a79e7ceed4bc83342fc4aea9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.utils.multi_thresholding</definition>
+        <argsstring>(rs, preds)</argsstring>
+        <name>multi_thresholding</name>
+        <qualifiedname>msecnn_raulkviana.utils.multi_thresholding</qualifiedname>
+        <param>
+          <type>rs</type>
+          <defname>rs</defname>
+        </param>
+        <param>
+          <type>preds</type>
+          <defname>preds</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Accordingly, the multi-threshold values can be chosen in the
+following strategies, ensuring the overall prediction accuracy
+of MSE-CNN.
+• Case 1 (more time saving): if the average threshold
+(1/5) * sum(rs) &gt;= 0.4, then τ2 ≥ τ6 ≥ τ3 ≈ τ4 ≈ τ5.
+• Case 2 (better RD performance): if the average threshold
+(1/5) * sum(rs) &lt; 0.4, then τ2 ≥ τ4 ≈ τ3 ≈ τ5 ≥ τ6.
+@brief Implementation of the multi-threshold for MSE-CNN
+@param [in] rs: Constant to control the minimum amount of thr probabilities
+@param [in] preds: Predictions made by the MSE-CNN
+@param [out] search_RD: Vector with the information of which modes to compute the RD cost and make a decision regarding in which split to make
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/msecnn_raulkviana/utils.py" line="439" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="439" bodyend="469"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>@package docstring 
+
+@file utils.py 
+
+@brief Usefull functions that are used to not directly for training the model or anything related to this work actual implementation.
+ 
+@section libraries_utils Libraries 
+- os
+- torch
+- datetime
+- re
+
+@section classes_utils Classes 
+- None
+ 
+@section functions_utils Functions 
+- echo(string, padding=80)
+- update_docstring(path)
+- functions_used_from_each_module(str_file)
+- multi_thresholding(rs, preds)
+ 
+@section global_vars_utils Global Variables 
+- STRING_PATH_1
+- STRING_PATH_1_2
+- STRING_PATH_2&quot;
+- NONE_STRING
+- AUTHOR 
+
+@section todo_utils TODO 
+- None 
+
+@section license License 
+MIT License 
+Copyright (c) 2022 Raul Kevin do Espirito Santo Viana
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+@section author_utils Author(s)
+- Created by Raul Kevin Viana
+- Last time modified is 2023-01-29 22:22:04.157947
+</verbatim> </para>
+    </detaileddescription>
+    <location file="src/msecnn_raulkviana/utils.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

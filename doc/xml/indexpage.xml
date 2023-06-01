@@ -1,0 +1,458 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>MSE-CNN Implementation</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="index_1md_mainpage"/>  <image type="html" name="../../imgs/msecnn_model.png" inline="yes"></image>
+ </para>
+<para>Code database with an implementation of MSE-CNN [1]. Besides the code, the dataset and coefficients obtained after training are provided.</para>
+<para><programlisting filename=".py"><codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>torch</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>MSECNN</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>train_model_utils</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="comment">#<sp/>Initialize<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>path_to_folder_with_model_params<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;model_coefficients/best_coefficients&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>device<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;cuda:0&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>qp<sp/>=<sp/>32<sp/><sp/></highlight><highlight class="comment">#<sp/>Quantisation<sp/>Parameter</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="comment">#<sp/>Initialize<sp/>Model</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>stg1_2<sp/>=<sp/>msecnn.MseCnnStg1(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>stg3<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>stg4<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>stg5<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>stg6<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>model<sp/>=<sp/>(stg1_2,<sp/>stg3,<sp/>stg4,<sp/>stg5,<sp/>stg6)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>model<sp/>=<sp/>train_model_utils.load_model_parameters_eval(model,<sp/>path_to_folder_with_model_params,<sp/>device)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="comment">#<sp/>Loss<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>loss_fn<sp/>=<sp/>msecnn.LossFunctionMSE()</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="comment">#<sp/>Path<sp/>to<sp/>labels</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>l_path_val<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;example_data/stg2&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="comment">#<sp/>Random<sp/>CTU<sp/>and<sp/>labels</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>CTU<sp/>=<sp/>torch.rand(1,<sp/>1,<sp/>128,<sp/>128).to(device)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>CTU</highlight></codeline>
+<codeline><highlight class="normal">tensor([[[[0.9320,<sp/>0.6777,<sp/>0.4490,<sp/><sp/>...,<sp/>0.0413,<sp/>0.6278,<sp/>0.5375],</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[0.3544,<sp/>0.5620,<sp/>0.8339,<sp/><sp/>...,<sp/>0.6420,<sp/>0.2527,<sp/>0.3104],</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[0.0555,<sp/>0.4991,<sp/>0.9972,<sp/><sp/>...,<sp/>0.3898,<sp/>0.1169,<sp/>0.1661],</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>...,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[0.9452,<sp/>0.3566,<sp/>0.9825,<sp/><sp/>...,<sp/>0.3941,<sp/>0.7534,<sp/>0.8656],</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[0.3839,<sp/>0.8459,<sp/>0.4369,<sp/><sp/>...,<sp/>0.9569,<sp/>0.2609,<sp/>0.6421],</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[0.1734,<sp/>0.7182,<sp/>0.8074,<sp/><sp/>...,<sp/>0.2122,<sp/>0.7573,<sp/>0.2492]]]])</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>cu_pos<sp/>=<sp/>torch.tensor([[0,<sp/>0]]).to(device)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>cu_size<sp/>=<sp/>torch.tensor([[64,<sp/>64]]).to(device)<sp/><sp/></highlight><highlight class="comment">#<sp/>Size<sp/>of<sp/>the<sp/>CU<sp/>of<sp/>the<sp/>second<sp/>stage</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>split_label<sp/>=<sp/>torch.tensor([[1]]).to(device)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>RDs<sp/>=<sp/>torch.rand(1,<sp/>6).to(device)<sp/>*<sp/>10_000</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>RDs</highlight></codeline>
+<codeline><highlight class="normal">tensor([[1975.6646,<sp/>2206.7600,<sp/>1570.3577,<sp/>3570.9478,<sp/>6728.2612,<sp/><sp/>527.9994]])</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>prediction<sp/>for<sp/>stages<sp/>1<sp/>and<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="comment">#<sp/>Stage<sp/>1<sp/>and<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>pred1_2,<sp/>CUs,<sp/>ap<sp/>=<sp/>model[0](CTU,<sp/>cu_size,<sp/>cu_pos)<sp/><sp/></highlight><highlight class="comment">#<sp/>Pass<sp/>CU<sp/>through<sp/>network</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>pred1_2</highlight></codeline>
+<codeline><highlight class="normal">tensor([[9.9982e-01,<sp/>1.8124e-04,<sp/>9.9010e-21,<sp/>5.9963e-29,<sp/>1.9118e-24,<sp/>1.0236e-25]],</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grad_fn=&lt;SoftmaxBackward0&gt;)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>CUs.shape</highlight></codeline>
+<codeline><highlight class="normal">torch.Size([1,<sp/>16,<sp/>64,<sp/>64])</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="comment">#<sp/>Compute<sp/>the<sp/>loss</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>loss,<sp/>loss_CE,<sp/>loss_RD<sp/>=<sp/>loss_fn(pred1_2,<sp/>split_label,<sp/>RDs)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;<sp/>loss</highlight></codeline>
+<codeline><highlight class="normal">tensor(177.1340,<sp/>grad_fn=&lt;AddBackward0&gt;)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;<sp/>loss_CE</highlight></codeline>
+<codeline><highlight class="normal">tensor(174.3921,<sp/>grad_fn=&lt;NegBackward0&gt;)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;<sp/>loss_RD</highlight></codeline>
+<codeline><highlight class="normal">tensor(2.7419,<sp/>grad_fn=&lt;MeanBackward1&gt;)</highlight></codeline>
+</programlisting></para>
+<para><itemizedlist>
+<listitem><para>MSE-CNN Implementation<itemizedlist>
+<listitem><para>1. Introduction</para>
+</listitem><listitem><para>2. Theorectical Background<itemizedlist>
+<listitem><para>2.1 Partitioning in VVC</para>
+</listitem><listitem><para>2.2 MSE-CNN<itemizedlist>
+<listitem><para>2.2.1 Architecture</para>
+</listitem><listitem><para>2.2.2 Loss Function</para>
+</listitem><listitem><para>2.2.3 Training</para>
+</listitem><listitem><para>2.2.4 Implementation remarks</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>3. Dataset</para>
+</listitem><listitem><para>4. Results<itemizedlist>
+<listitem><para>4.1 F1-score, Recall and Precision with test data</para>
+</listitem><listitem><para>4.2 Confusion matrices<itemizedlist>
+<listitem><para>4.2.1 Stages 2 and 3</para>
+</listitem><listitem><para>4.2.2 Stages 4 and 5</para>
+</listitem><listitem><para>4.2.3 Stage 6</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>4.3 Y-PSNR, Complexity Reduction and Bitrate with test data</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>5. Relevant Folders and files<itemizedlist>
+<listitem><para>5.1 Folders</para>
+</listitem><listitem><para>5.2 Files in src folder</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>6. Installation of dependencies<itemizedlist>
+<listitem><para>Requirements</para>
+</listitem><listitem><para>Package Distributions</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>7. Contributions</para>
+</listitem><listitem><para>8. License</para>
+</listitem><listitem><para>9. TODO</para>
+</listitem><listitem><para>10. References</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+<sect1 id="index_1autotoc_md1">
+<title>1. Introduction</title>
+<para>The emergence of new technologies that provide creative audiovisual experiences, such as 360-degree films, virtual reality, augmented reality, 4K, 8K UHD, 16K, and also with the rise of video traffic on the web, shows the current demand for video data in the modern world. Because of this tension, Versatile Video Coding (VVC) was developed due to the the necessity for the introduction of new coding standards. Despite the advancements achieved with the introduction of this standard, its complexity has increased very much. The new partitioning technique is responsible for majority of the increase in encoding time. This extended duration is linked with the optimization of the Rate-Distortion cost (RD cost). Although VVC offers higher compression rates, the complexity of its encoding is high.</para>
+<para> <image type="html" name="../../imgs/funny_memes_about_this_work/72rrr9.jpg" inline="yes"></image>
+ </para>
+<para>Fig. 1: VVC Complexity</para>
+<para> </para>
+<para>In light of this, the Multi-Stage Exit Convolutional Neural Nework (MSE-CNN) was developed. This Deep Learning-based model is organised in a sequential structure with several stages. Each stage, which represents a different partition depth, encompasses a set of layers for extracting features from a Coding Tree Unit (CTU) and deciding how to partition it. Instead of using recursive approaches to determine the optimal way to fragment an image, this model allows VVC to estimate the most appropriate way of doing it. <bold>This work presents a model of the MSE-CNN that employs training procedures distinct from the original implementation of this network, as well as the ground-thruth to train and validate the model and an interpretation of the work done by the MSE-CNN’s original creators</bold>.</para>
+<para> <image type="html" name="../../imgs/funny_memes_about_this_work/72roie.jpg" inline="yes"></image>
+ </para>
+<para>Fig. 2: MSE-CNN benefits</para>
+<para> </para>
+</sect1>
+<sect1 id="index_1autotoc_md2">
+<title>2. Theorectical Background</title>
+<sect2 id="index_1autotoc_md3">
+<title>2.1 Partitioning in VVC</title>
+<para>The key objective of partitioning is to divide frames into pieces in a way that results in a reduction of the RD cost. To achieve a perfect balance of quality and bitrate, numerous image fragments combinations must be tested, which is computationally expensive. Due to the intensive nature of this process, a high compression rate can be attained. Partitioning contributes heavily to both the complexity and compression gains in VVC. H.266 (VVC), organize a video sequence in many frames that are divided into smaller pieces. First, pictures are split into coding tree units (CTUs), and then they are divided into coding units (CUs). For the luma channel, the largest CTU size in VVC is 128x128 and the smallest is 4x4. In VVC, a quad-tree (QT) is initially applied to the CTUs in the first level, and then a quad-tree with nested multi-type tree (QMTT) is applied recursively.</para>
+<para> <image type="html" name="../../imgs/vvc_parti_real.png" inline="yes"></image>
+ </para>
+<para>Fig. 3: Types of partitions in VVC</para>
+<para> </para>
+<para>This innovation makes it possible to split CUs in different rectangle forms. Splitting a CU into:</para>
+<para><itemizedlist>
+<listitem><para>three rectangles with a ratio of 1:2:1 results in a ternary tree (TT), with the center rectangle being half the size of the original CU; when applied horizontally it is called a horizontal ternary tree (HTT), and vertical ternary tree (VTT) when it is done vertically.</para>
+</listitem><listitem><para>two rectangles results in a binary tree (BT)partition, a block with two symmetrical structures; like in the case of the TT, depending on the way the split is done, it can be called either a vertical binary tree (VBT) or a horizontal binary tree (HBT).</para>
+</listitem></itemizedlist>
+</para>
+<para>The association of BT and TT is named a multi-type tree (MTT). The introduction of BT and TT partitions enables the creation of various new types of forms, with heights and widths that can be a combination between 128, 64, 32, 16, 8 and 4. The increased number of possible CUs boosts the ability of the codec to fragment an image more efficiently, allowing better predictions and higher compressing abilities. Although this standard now have these advantages, as a downside it takes longer to encode.</para>
+<para> <image type="html" name="../../imgs/partitioning_image.png" inline="yes"></image>
+ </para>
+<para>Fig. 4: Partitioning in VVC</para>
+<para> </para>
+</sect2>
+<sect2 id="index_1autotoc_md4">
+<title>2.2 MSE-CNN</title>
+<para>Multi-Stage Exit Convolutional Neural Network (MSE-CNN) is a DL model that seeks to forecast CUs in a waterfall architecture (top-down manner), it integrates . This structure takes a CTU as input, extracts features from it, splits the CU into one of at most six possible partitions (Non-split, QT, HBT, VBT, HTT, and VTT), and then sends it to the next stage. This model has CTUs as inputs in the first stage, either in the chroma or luma channel, and feature maps in the subsequent stages. Furthermore, it generates feature maps and a split decision at each level. In the event that one of the models returns the split decision as Non-Split, the partitioning of the CU is ended immediately.</para>
+<sect3 id="index_1autotoc_md5">
+<title>2.2.1 Architecture</title>
+<para>This model is composed by the following blocks:</para>
+<para><itemizedlist>
+<listitem><para>Initially, this model adds more channels to the input of this network to create more features from it; this is accomplished by utilising simple convolutional layers.</para>
+</listitem></itemizedlist>
+</para>
+<para> <image type="html" name="../../imgs/over_con_block.drawio.png" inline="yes"></image>
+ </para>
+<para>Fig. 5: Overlapping convolution layer</para>
+<para> </para>
+<para><itemizedlist>
+<listitem><para>To extract more characteristics from the data, the information is then passed through a series of convolutional layers; these layers were named Conditional Convolution.</para>
+</listitem></itemizedlist>
+</para>
+<para> <image type="html" name="../../imgs/resnet_mse.png" inline="yes"></image>
+ </para>
+<para>Fig. 6: Conditional Convolution</para>
+<para> </para>
+<para><itemizedlist>
+<listitem><para>At the end, a final layer is employed to determine the optimal manner of partitioning the CU. This layer is a blend of fully connected and convolutional layers.</para>
+</listitem></itemizedlist>
+</para>
+<para> <image type="html" name="../../imgs/sub_networks.png" inline="yes"></image>
+ </para>
+<para>Fig. 7: Sub-networks</para>
+<para> </para>
+<para>Note: For more details regarding these layers check [1]</para>
+</sect3>
+<sect3 id="index_1autotoc_md6">
+<title>2.2.2 Loss Function</title>
+<para>The loss developed for the MSE-CNN is the result of two other functions, as defined in the following expression:</para>
+<para>$$ L = L_{CE}+\beta L_{RD}$$</para>
+<para>In the above equation, $\beta$ is a real number to adjust the influence of the $L_{RD}$ loss. The first member of this loss function is a modified Cross-Entrotopy loss, developed to solve imbalanced dataset issues:</para>
+<para>$$L_{CEmod} = -\frac{1}{N}\sum_{n=1}^N \sum_{m\varepsilon Partitions}(\frac{1}{p_m})^\alpha y_{n, m}\log(\hat{y}_{n, m})$$</para>
+<para> <subscript> Eq. 1: In this equation &quot;n&quot; is the batch number, &quot;m&quot; is the corresponding partition (0 (Non-Split), 1 (QT), 2 (HBT), 3 (VBT), 4 (VTT), 5 (HTT)), &quot;N&quot; is the total number of batches and alpha is a parameter to configure the penalties for the less represented classes </subscript> </para>
+<para><linebreak/>
+ <linebreak/>
+</para>
+<para>Concerning the second member of the MSE-CNN loss function, this constituent gives the network the ability to also make predictions based on the RD Cost.</para>
+<para>$$L_{RD} = \frac{1}{N}\sum_{n=1}^N \sum_{m\varepsilon Partitions}\hat{y}_{n, m}\frac{r_{n, m}}{r_{n, min}}-1$$</para>
+<para>In the above equation, the RD costs $r_{n, m}$ uses the same notation for &quot;n&quot; and &quot;m&quot; as the previous equation. Regarding $r_{n ,min}$, it is the minimal RD cost for the nth CU among all split modes and $$\frac{r_{n, m}}{r_{n, min}} - 1$$ is a normalised RD cost. As a relevant note, $r_{n, min}$ is equal to the RD cost of the best partition mode. Consequently, the result of</para>
+<para> <image type="html" name="../../imgs/formula.png" inline="yes"></image>
+ </para>
+<para>ensures that CU&apos;s partitions with greater erroneously predicted probability values or greater RD cost values $r_{n, m}$ are more penalised. In $\frac{r_{n, m}}{r_{n, min}} - 1$, the ideal partition has a normalised RD cost of zero, but the other partitions do not. Therefore, the only way for the loss to equal zero is if the probability for all other modes also equals zero. Consequently, the learning algorithm must assign a greater probability to the optimal split mode while reducing the probabilities for the rest. <bold>Experimentally it was verified that this function wasn&apos;t able to contribute to the training of the MSE-CNN, this contradicted the remarks made in [1]</bold>.</para>
+</sect3>
+<sect3 id="index_1autotoc_md7">
+<title>2.2.3 Training</title>
+<para>The strategy used to train the MSE-CNN was very similar to the one used in [1]. The first parts of the model to be trained were the first and second stages, in which 64x64 CUs were passed through the second depth. Afterwards, transfer learning was used to pass certain coefficients of the second stage to the third. Then, the third stage was trained with 32x32 CUs flowing through it. After this step, a similar process was done to the following stages. It is worth noting that, beginning with stage 4, various CUs forms are at the models&apos; input. This means that these stages were fed different kinds of CUs. <linebreak/>
+</para>
+<para> <image type="html" name="../../imgs/training_steps.png" inline="yes"></image>
+ </para>
+<para>Fig. 8: Training flow used</para>
+<para> </para>
+<para>At the end of training, 6 models were obtained one for each partitioning depth in the luma channel. Although models for the luma and chroma channels could be created for all the shapes of CUs that are possible, rather than just for each depth, only six were trained for the sake of assessing the model behaviour in a simpler and more understandable configuration.</para>
+</sect3>
+<sect3 id="index_1autotoc_md8">
+<title>2.2.4 Implementation remarks</title>
+<para>Due to the deterministic nature of the first stage, where CTUs are always partitioned with a QT, it was implemented together with the second stage. If it was done separately, the training for the first two stages would have to be done at the same time. Consequently, two distinct optimisers would need to be employed, which could result in unpredictable training behaviour. <linebreak/>
+</para>
+<para> <image type="html" name="../../imgs/subnet_min_32_1.drawio.png" inline="yes"></image>
+ <image type="html" name="../../imgs/subnet_min_32_2.drawio.png" inline="yes"></image>
+ </para>
+<para>Fig. 9: 32 minimum axis size sub-networks</para>
+<para> </para>
+<para>When implementing the sub-networks on code, those that were meant to cater for varying CU sizes were further implemented separately. For example, in the case of the sub-network utilised when the minimum width or height is 32, two variants of the first two layers were built. This was done because 64x32 and 32x32 CUs can flow across this block. Because of this, the first two layers were implemented separately from the entire block. Then, they were used in conjunction with the remaining layers based on the dimensions of the input CU. The same procedures were followed for the other types of sub-networks.</para>
+<para>When the network was being trained, some of the RD costs from the input data had very high values. Consequently, the RD loss function value skyrocketed, resulting in extremely huge gradients during training. As a result, the maximum RD cost was hard coded at $10^{10}$. This amount is large enough to be more than the best partition&apos;s RD cost and small enough to address this issue.</para>
+</sect3>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md9">
+<title>3. Dataset</title>
+<para>Please see this page to understand better the dataset and also access it.</para>
+</sect1>
+<sect1 id="index_1autotoc_md10">
+<title>4. Results</title>
+<para>Since it was verified that the Rate-Distortion Loss. $L_{RD}$, could contribute for better results, the metrics presented here were obtained with a model trained only with the modified cross-entropy loss.</para>
+<sect2 id="index_1autotoc_md11">
+<title>4.1 F1-score, Recall and Precision with test data</title>
+<para><table rows="6" cols="4"><row>
+<entry thead="yes"><para>Stage   </para>
+</entry><entry thead="yes"><para>F1-Score   </para>
+</entry><entry thead="yes"><para>Recall   </para>
+</entry><entry thead="yes"><para>Precision    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Stage 2   </para>
+</entry><entry thead="no"><para>0.9111   </para>
+</entry><entry thead="no"><para>0.9111   </para>
+</entry><entry thead="no"><para>0.9112    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Stage 3   </para>
+</entry><entry thead="no"><para>0.5624   </para>
+</entry><entry thead="no"><para>0.5767   </para>
+</entry><entry thead="no"><para>0.5770    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Stage 4   </para>
+</entry><entry thead="no"><para>0.4406   </para>
+</entry><entry thead="no"><para>0.4581   </para>
+</entry><entry thead="no"><para>0.4432    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Stage 5   </para>
+</entry><entry thead="no"><para>0.5143   </para>
+</entry><entry thead="no"><para>0.5231   </para>
+</entry><entry thead="no"><para>0.5184    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Stage 6   </para>
+</entry><entry thead="no"><para>0.7282   </para>
+</entry><entry thead="no"><para>0.7411   </para>
+</entry><entry thead="no"><para>0.7311   </para>
+</entry></row>
+</table>
+</para>
+<para>Results with weighted average for F1-score, recall and precision.</para>
+</sect2>
+<sect2 id="index_1autotoc_md12">
+<title>4.2 Confusion matrices</title>
+<sect3 id="index_1autotoc_md13">
+<title>4.2.1 Stages 2 and 3</title>
+<para> <image type="html" name="../../imgs/conf_mat_val_stg2.png" inline="yes"></image>
+ <image type="html" name="../../imgs/conf_mat_val_v2_stg3.png" inline="yes"></image>
+ </para>
+<para>Fig. 10: Confusion matrix results with the testing data in stages 2 and 3</para>
+<para> </para>
+</sect3>
+<sect3 id="index_1autotoc_md14">
+<title>4.2.2 Stages 4 and 5</title>
+<para> <image type="html" name="../../imgs/conf_mat_val_stg4.png" inline="yes"></image>
+ <image type="html" name="../../imgs/conf_mat_val_stg5.png" inline="yes"></image>
+ </para>
+<para>Fig. 11: Confusion matrix results with the testing data in stages 4 and 5</para>
+<para> </para>
+</sect3>
+<sect3 id="index_1autotoc_md15">
+<title>4.2.3 Stage 6</title>
+<para> <image type="html" name="../../imgs/conf_mat_val_stg6.png" inline="yes"></image>
+ </para>
+<para>Fig. 12: Confusion matrix results with the testing data in stage 6</para>
+<para> </para>
+</sect3>
+</sect2>
+<sect2 id="index_1autotoc_md16">
+<title>4.3 Y-PSNR, Complexity Reduction and Bitrate with test data</title>
+<para><table rows="4" cols="4"><row>
+<entry thead="yes"><para>Metric   </para>
+</entry><entry thead="yes"><para>VTM-7.0   </para>
+</entry><entry thead="yes"><para>VTM-7.0+Model   </para>
+</entry><entry thead="yes"><para>Gain    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Bitrate   </para>
+</entry><entry thead="no"><para>3810.192 kbps   </para>
+</entry><entry thead="no"><para>4069.392 kbps   </para>
+</entry><entry thead="no"><para>6.80%    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Y-PSNR   </para>
+</entry><entry thead="no"><para>35.7927 dB   </para>
+</entry><entry thead="no"><para>35.5591 dB   </para>
+</entry><entry thead="no"><para>-0.65%    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Complexity   </para>
+</entry><entry thead="no"><para>1792.88 s   </para>
+</entry><entry thead="no"><para>1048.95 s   </para>
+</entry><entry thead="no"><para>-41.49%   </para>
+</entry></row>
+</table>
+</para>
+<para><bold>These results were obtained with the &quot;medium&quot; configuration for the multi-thresholding method.</bold></para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md17">
+<title>5. Relevant Folders and files</title>
+<sect2 id="index_1autotoc_md18">
+<title>5.1 Folders</title>
+<para><table rows="5" cols="2"><row>
+<entry thead="yes"><para>Folder   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ulink url="/dataset">dataset</ulink>   </para>
+</entry><entry thead="no"><para>This folder contains all of the dataset and all of the data that was processed in order to obtain it    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ulink url="/example_data">example_data</ulink>   </para>
+</entry><entry thead="no"><para>Here you can find some example data that it is used for the scripts in usefull_scripts folder    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ulink url="/model_coefficients">model_coefficients</ulink>   </para>
+</entry><entry thead="no"><para>The last coefficient obtained during training, as well as the best one in terms of the best F1-score obtained in testing data    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ulink url="/src">src</ulink>   </para>
+</entry><entry thead="no"><para>Source code with the implementation of the MSE-CNN and also useful code and examples   </para>
+</entry></row>
+</table>
+</para>
+</sect2>
+<sect2 id="index_1autotoc_md19">
+<title>5.2 Files in src folder</title>
+<para><table rows="7" cols="2"><row>
+<entry thead="yes"><para>Files   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="constants_8py" kindref="compound">constants.py</ref>   </para>
+</entry><entry thead="no"><para>Constant values used in other python files    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="custom__dataset_8py" kindref="compound">custom_dataset.py</ref>   </para>
+</entry><entry thead="no"><para>Dataset class to handle the files with the ground-thruth information, as well as other usefull classes to work together with the aforementioned class    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="dataset__utils_8py" kindref="compound">dataset_utils.py</ref>   </para>
+</entry><entry thead="no"><para>Functions to manipulate and process the data, also contains functions to interact with YUV files    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="msecnn_8py" kindref="compound">msecnn.py</ref>   </para>
+</entry><entry thead="no"><para>MSE-CNN and Loss Function classes implementation    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="train__model__utils_8py" kindref="compound">train_model_utils.py</ref>   </para>
+</entry><entry thead="no"><para>Usefull functions to be used during training or evaluation of the artificial neural network    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ref refid="utils_8py" kindref="compound">utils.py</ref>   </para>
+</entry><entry thead="no"><para>Other functions that are usefull not directly to the model but for the code implementation itself   </para>
+</entry></row>
+</table>
+</para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md20">
+<title>6. Installation of dependencies</title>
+<para>In order to explore this project, it is needed to first install of the libraries used in it.</para>
+<sect2 id="index_1autotoc_md21">
+<title>Requirements</title>
+<para>For this please follow the below steps:<orderedlist>
+<listitem><para>Create a virtual environment to do install the libraries; follow this <ulink url="https://www.geeksforgeeks.org/creating-python-virtual-environment-windows-linux/">link</ulink> in case you don&apos;t know how to do it; you possibly need to install <ulink url="https://www.makeuseof.com/tag/install-pip-for-python/">pip</ulink>, if you don&apos;t have it installed</para>
+</listitem><listitem><para>Run the following command: <programlisting filename=".shell"><codeline><highlight class="normal">pip<sp/>install<sp/>-r<sp/>requirements.txt</highlight></codeline>
+</programlisting> This will install all of the libraries references in the requirements.txt file.</para>
+</listitem></orderedlist>
+<orderedlist>
+<listitem><para>When you have finished using the package or working on your project, you can deactivate the virtual environment: <programlisting filename=".shell"><codeline><highlight class="normal">deactivate</highlight></codeline>
+</programlisting> This command exits the virtual environment and returns you to your normal command prompt.</para>
+</listitem></orderedlist>
+<orderedlist>
+<listitem><para>Enjoy! :)</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+<sect2 id="index_1autotoc_md22">
+<title>Package Distributions</title>
+<para><orderedlist>
+<listitem><para>Locate the <computeroutput>dist</computeroutput> folder in your project&apos;s root directory. This folder contains the package distributions, including the source distribution (<computeroutput>*.tar.gz</computeroutput> file) and the wheel distribution (<computeroutput>*.whl</computeroutput> file).</para>
+</listitem><listitem><para>Install the package using one of the following methods:<itemizedlist>
+<listitem><para>Install the source distribution: <programlisting filename=".shell"><codeline><highlight class="normal">pip<sp/>install<sp/>dist/.tar.gz</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>Install the wheel distribution: <programlisting filename=".shell"><codeline><highlight class="normal">pip<sp/>install<sp/>dist/.whl</highlight></codeline>
+</programlisting></para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Once the package is installed, you can import and use its functionalities in your Python code.</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md23">
+<title>7. Contributions</title>
+<para>Feel free to contact me through this <ulink url="raulviana@ua.pt">email</ulink> or create either a issue or pull request to contribute to this project ^^.</para>
+</sect1>
+<sect1 id="index_1autotoc_md24">
+<title>8. License</title>
+<para>This project license is under the [MIT License](LICENSE).</para>
+</sect1>
+<sect1 id="index_1autotoc_md25">
+<title>9. TODO</title>
+<para><table rows="2" cols="3"><row>
+<entry thead="yes"><para>Task   </para>
+</entry><entry thead="yes"><para>Description   </para>
+</entry><entry thead="yes"><para>Status (d - doing, w - waiting, f- finished)    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Implement code to test functions   </para>
+</entry><entry thead="no"><para>Use a library, such as Pytest, to test some functions from the many modules developed   </para>
+</entry><entry thead="no"><para>w   </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="index_1autotoc_md26">
+<title>10. References</title>
+<para>[1] T. Li, M. Xu, R. Tang, Y. Chen, and Q. Xing, <ulink url="https://arxiv.org/abs/2006.13125">“DeepQTMT: A Deep Learning Approach for Fast QTMT-Based CU Partition of Intra-Mode VVC,”</ulink> IEEE Transactions on Image Processing, vol. 30, pp. 5377–5390, 2021, doi: 10.1109/tip.2021.3083447. [2] R. K. Viana, “Deep learning architecture for fast intra-mode CUs partitioning in VVC,” Universidade de Aveiro, Nov. 2022.</para>
+<para> <image type="html" name="../../imgs/funny_memes_about_this_work/72rukf.gif" inline="yes"></image>
+ </para>
+<para>:)</para>
+<para>  </para>
+</sect1>
+    </detaileddescription>
+    <location file="mainpage.md"/>
+  </compounddef>
+</doxygen>
