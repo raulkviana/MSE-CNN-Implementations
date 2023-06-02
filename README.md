@@ -22,7 +22,7 @@ Code database with an implementation of MSE-CNN [1]. Besides the code, the datas
 
 ``` python
 >>> import torch
->>> import MSECNN
+>>> import msecnn
 >>> import train_model_utils
 >>>
 >>> # Initialize parameters

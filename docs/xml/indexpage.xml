@@ -10,7 +10,7 @@
  </para>
 <para>Code database with an implementation of MSE-CNN [1]. Besides the code, the dataset and coefficients obtained after training are provided.</para>
 <para><programlisting filename=".py"><codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>torch</highlight></codeline>
-<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>MSECNN</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>msecnn</highlight></codeline>
 <codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>train_model_utils</highlight></codeline>
 <codeline><highlight class="normal">&gt;&gt;&gt;</highlight></codeline>
 <codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="comment">#<sp/>Initialize<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>
