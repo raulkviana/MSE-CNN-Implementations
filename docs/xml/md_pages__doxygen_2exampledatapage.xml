@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="md_pages__doxygen_2exampledatapage" kind="page">
+    <compoundname>md_pages__doxygen_2exampledatapage</compoundname>
+    <title>Example data</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md_pages__doxygen_2exampledatapage_1autotoc_md2"/> The data in this folder is used by the scripts in the <ulink url="../src/msecnn_raulkviana/usefull_scripts/">usefull_scripts</ulink> folder. The data in this folder is unbalanced. To load this data into the custom data class, you can follow this sample of code</para>
+<para><programlisting filename=".py"><codeline><highlight class="keyword">import</highlight><highlight class="normal"><sp/>custom_dataset</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">#<sp/>Path<sp/>to<sp/>already<sp/>processed<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">l_path<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;path_to_label&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">#<sp/>Instatiate<sp/>dataset<sp/>class<sp/>to<sp/>train<sp/>stage<sp/>6<sp/>(there<sp/>is<sp/>also<sp/>classes<sp/>to<sp/>train<sp/>other<sp/>stages)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">dataset<sp/>=<sp/>custom_dataset.CUDatasetStg6(files_path=l_path_train)<sp/><sp/></highlight><highlight class="comment">#<sp/>Dataset<sp/>for<sp/>training<sp/>of<sp/>stage<sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">batch_sampler<sp/>=<sp/>custom_dataset.SamplerStg6(train_data,<sp/>batch_size)<sp/><sp/></highlight><highlight class="comment">#<sp/>Batch<sp/>Sampler<sp/>to<sp/>batch<sp/>cus<sp/>of<sp/>the<sp/>same<sp/>size<sp/>together</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">dataloader_train<sp/>=<sp/>DataLoader(train_data,<sp/>num_workers=num_workers,<sp/>batch_sampler=batch_sampler_train)<sp/><sp/></highlight><highlight class="comment">#<sp/>Data<sp/>Loader<sp/>that<sp/>can<sp/>be<sp/>used<sp/>to<sp/>train<sp/>or<sp/>evaluate<sp/>the<sp/>model<sp/></highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <location file="pages_doxygen/exampledatapage.md"/>
+  </compounddef>
+</doxygen>

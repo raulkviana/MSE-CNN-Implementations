@@ -1,0 +1,20 @@
+\chapter{Example data}
+\hypertarget{md_pages__doxygen_2exampledatapage}{}\label{md_pages__doxygen_2exampledatapage}\index{Example data@{Example data}}
+\label{md_pages__doxygen_2exampledatapage_autotoc_md2}%
+\Hypertarget{md_pages__doxygen_2exampledatapage_autotoc_md2}%
+ The data in this folder is used by the scripts in the \href{../src/msecnn_raulkviana/usefull_scripts/}{\texttt{ usefull\+\_\+scripts}} folder. The data in this folder is unbalanced. To load this data into the custom data class, you can follow this sample of code
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{import}\ custom\_dataset}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{\#\ Path\ to\ already\ processed\ data}}
+\DoxyCodeLine{l\_path\ =\ \textcolor{stringliteral}{"{}path\_to\_label"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{\#\ Instatiate\ dataset\ class\ to\ train\ stage\ 6\ (there\ is\ also\ classes\ to\ train\ other\ stages)}}
+\DoxyCodeLine{dataset\ =\ custom\_dataset.CUDatasetStg6(files\_path=l\_path\_train)\ \ \textcolor{comment}{\#\ Dataset\ for\ training\ of\ stage\ 6}}
+\DoxyCodeLine{batch\_sampler\ =\ custom\_dataset.SamplerStg6(train\_data,\ batch\_size)\ \ \textcolor{comment}{\#\ Batch\ Sampler\ to\ batch\ cus\ of\ the\ same\ size\ together}}
+\DoxyCodeLine{dataloader\_train\ =\ DataLoader(train\_data,\ num\_workers=num\_workers,\ batch\_sampler=batch\_sampler\_train)\ \ \textcolor{comment}{\#\ Data\ Loader\ that\ can\ be\ used\ to\ train\ or\ evaluate\ the\ model\ }}
+
+\end{DoxyCode}
+ 

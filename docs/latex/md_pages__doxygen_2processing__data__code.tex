@@ -1,0 +1,168 @@
+\chapter{Code to process the images/videos into labels}
+\hypertarget{md_pages__doxygen_2processing__data__code}{}\label{md_pages__doxygen_2processing__data__code}\index{Code to process the images/videos into labels@{Code to process the images/videos into labels}}
+\label{md_pages__doxygen_2processing__data__code_autotoc_md31}%
+\Hypertarget{md_pages__doxygen_2processing__data__code_autotoc_md31}%
+All of the code bellow can be found in this \href{../src/msecnn_raulkviana/useful_scripts}{\texttt{ folder}}.\hypertarget{md_pages__doxygen_2processing__data__code_autotoc_md32}{}\doxysubsection{\texorpdfstring{Encoding}{Encoding}}\label{md_pages__doxygen_2processing__data__code_autotoc_md32}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ python}
+\DoxyCodeLine{import\ dataset\_utils}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Quantization\ parameter}
+\DoxyCodeLine{QP\ =\ 27}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Temporal\ Subsample\ Ratio}
+\DoxyCodeLine{ts\ =\ 500}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Directory\ containing\ the\ dataset\ images}
+\DoxyCodeLine{d\_path\ =\ "{}path\_for\_images\_or\_videos"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Directory\ containing\ the\ .exe\ file\ extension\ to\ run\ the\ encoder.}
+\DoxyCodeLine{\#\ It\ ends\ with\ CPIV\(\backslash\)VTM-\/7.0\_Data\(\backslash\)bin\(\backslash\)vs16\(\backslash\)msvc-\/19.24\(\backslash\)x86\_64\(\backslash\)release\ in\ Windows}
+\DoxyCodeLine{e\_path\ =\ "{}path\_to\_encoder"{}\ \#\ Example\ for\ windows}
+\DoxyCodeLine{}
+\DoxyCodeLine{dataset\_utils.encode\_dataset(d\_path=d\_path,\ e\_path=e\_path,\ ts=ts,\ QP=QP)\ \#\ The\ result\ is\ saved\ in\ the\ encoder\ folder}
+
+\end{DoxyCode}
+\hypertarget{md_pages__doxygen_2processing__data__code_autotoc_md33}{}\doxysubsection{\texorpdfstring{Generate data structures}{Generate data structures}}\label{md_pages__doxygen_2processing__data__code_autotoc_md33}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ python}
+\DoxyCodeLine{import\ dataset\_utils}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Directory\ containing\ the\ .dat\ files\ with\ CUs\ informations}
+\DoxyCodeLine{d\_path\ =\ "{}path\_of\_output\_directory\_of\_the\_previous\_step"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{dataset\_utils.unite\_labels\_v6\_mod(dir\_path\_l=d\_path,\ n\_output\_file="{}modifier\_of\_the\_output\_files\_name"{})\ \ \#\ The\ result\ is\ saved\ in\ the\ same\ folder}
+
+\end{DoxyCode}
+\hypertarget{md_pages__doxygen_2processing__data__code_autotoc_md34}{}\doxysubsection{\texorpdfstring{Add real CTUs}{Add real CTUs}}\label{md_pages__doxygen_2processing__data__code_autotoc_md34}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ python}
+\DoxyCodeLine{import\ dataset\_utils}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Path\ with\ the\ labels\ processed}
+\DoxyCodeLine{path\_dir\_l\ =\ r"{}path\_of\_output\_directory\_of\_the\_previous\_step"{}\ \ }
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Path\ with\ the\ pictures}
+\DoxyCodeLine{path\_dir\_p\ =\ r"{}path\_for\_images\_or\_videos"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Create\ new\ dir\ to\ save\ data}
+\DoxyCodeLine{name\_mod\ =\ "{}mod\_with\_real\_CTU"{}}
+\DoxyCodeLine{new\_dir\ =\ path\_dir\_l\ +\ "{}/"{}\ +\ name\_mod\ +\ "{}/"{}}
+\DoxyCodeLine{try:}
+\DoxyCodeLine{\ \ \ \ os.mkdir(new\_dir)}
+\DoxyCodeLine{except:}
+\DoxyCodeLine{\ \ \ \ \#\ Delete\ the\ directory}
+\DoxyCodeLine{\ \ \ \ shutil.rmtree(new\_dir)}
+\DoxyCodeLine{\ \ \ \ \#\ Recreate\ it}
+\DoxyCodeLine{\ \ \ \ os.mkdir(new\_dir)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Get\ files\ names\ from\ folder}
+\DoxyCodeLine{files\_l\ =\ dataset\_utils.get\_files\_from\_folder(path\_dir\_l,\ endswith="{}.txt"{})}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ CTU\ Counter\ and\ number\ of\ entries\ to\ accumulate}
+\DoxyCodeLine{ctu\_count\ =\ 0}
+\DoxyCodeLine{}
+\DoxyCodeLine{for\ f\ in\ files\_l:}
+\DoxyCodeLine{\ \ \ \ \#\ Make\ labels\ path}
+\DoxyCodeLine{\ \ \ \ lbls\_path\ =\ os.path.join(path\_dir\_l,\ f)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \#\ List\ to\ save\ entries}
+\DoxyCodeLine{\ \ \ \ mod\_list\ =\ []}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \#\ Read\ file}
+\DoxyCodeLine{\ \ \ \ orig\_list\ =\ dataset\_utils.file2lst(lbls\_path[:-\/4])}
+\DoxyCodeLine{\ \ \ \ data\_size\ =\ len(orig\_list)}
+\DoxyCodeLine{\ \ \ \ accum\ =\ data\_size}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \#\ Verbose}
+\DoxyCodeLine{\ \ \ \ print("{}Processing:"{},\ lbls\_path)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \#\ Loop\ entries}
+\DoxyCodeLine{\ \ \ \ for\ k\ in\ range(len(orig\_list)):}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \#\ Build\ all\ requirements\ to\ get\ the\ CU}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ file\_name\ =\ orig\_list[k]['pic\_name']}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ img\_path\ =\ os.path.join(path\_dir\_p,\ file\_name\ +\ '.yuv')}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ POC\ =\ orig\_list[k]['POC']}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ f\_size\ =\ CustomDataset.get\_file\_size(file\_name)\ \ \#\ Dict\ with\ the\ size\ of\ the\ image}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ f\_size\ =\ (f\_size['height'],\ f\_size['width'])}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cu\_pos\ =\ (orig\_list[k]["{}stg\_1"{}]["{}cu\_pos"{}]["{}CU\_loc\_top"{}],\ orig\_list[k]["{}stg\_1"{}]["{}cu\_pos"{}]["{}CU\_loc\_left"{}])}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ cu\_size\ =\ (orig\_list[k]["{}stg\_1"{}]["{}cu\_size"{}]["{}height"{}],\ orig\_list[k]["{}stg\_1"{}]["{}cu\_size"{}]["{}width"{}])}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \#\ Verify\ size\ of\ the\ CU}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if\ cu\_size[0]\ !=\ 128\ or\ cu\_size[1]\ !=\ 128:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ continue}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \#\ Get\ CU}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ frame\_CU,\ CU\_Y,\ CU\_U,\ CU\_V\ =\ CustomDataset.get\_cu(img\_path,\ f\_size,\ cu\_pos,\ cu\_size,\ POC)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \#\ Convert\ to\ Pytorch\ Tensor}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ CU\_Y\ =\ torch.tensor(CU\_Y.tolist())}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \#\ Convert\ to\ type}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ CU\_Y\ =\ CU\_Y.to(dtype=torch.float32)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \#\ Add\ dimension}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ CU\_Y\ =\ torch.unsqueeze(CU\_Y,\ 0)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \#\ Add\ to\ entry}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ orig\_list[k]["{}stg\_1"{}]["{}real\_CTU"{}]\ =\ CU\_Y}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \#\ Save\ entry\ in\ final\ list}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ mod\_list.append(orig\_list[k])}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ utils.echo("{}Complete:\ \{per:.0\%\}"{}.format(per=k/data\_size))}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if\ (k+1)\ \%\ accum\ ==\ 0:}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \#\ Save\ list\ to\ file\ with\ the\ same\ name}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ new\_path\ =\ os.path.join(new\_dir,\ f[:-\/4]+str(ctu\_count)+\ "{}\_"{}\ +\ name\_mod)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ dataset\_utils.lst2file(mod\_list,\ new\_path)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \#\ Reset\ list}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ mod\_list\ =\ []}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \#\ Incremente\ counter}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ ctu\_count\ +=\ 1}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ if\ (k\ -\/\ (len(orig\_list)\ -\/\ 1))\ !=\ 0:\ \ \#\ Verify\ if\ there\ is\ still\ entries}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \#\ Save\ list\ to\ file\ with\ the\ same\ name}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ new\_path\ =\ os.path.join(new\_dir,\ f[:-\/4]\ +\ str(ctu\_count)\ +\ "{}\_"{}\ +\ name\_mod)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ dataset\_utils.lst2file(mod\_list,\ new\_path)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \#\ Reset\ counter}
+\DoxyCodeLine{\ \ \ \ ctu\_count\ =\ 0}
+
+\end{DoxyCode}
+\hypertarget{md_pages__doxygen_2processing__data__code_autotoc_md35}{}\doxysubsection{\texorpdfstring{Retrieve essential data}{Retrieve essential data}}\label{md_pages__doxygen_2processing__data__code_autotoc_md35}
+Retrieve essential data for the for stage 6
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ python}
+\DoxyCodeLine{import\ dataset\_utils}
+\DoxyCodeLine{}
+\DoxyCodeLine{path\_dir\_l\ =\ "{}directory\_with\_the\_output\_of\_the\_previous\_step"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{print("{}Modifying\ struct\ from:"{},\ path\_dir\_l)}
+\DoxyCodeLine{}
+\DoxyCodeLine{dataset\_utils.change\_struct\_no\_dupl\_stg\_6\_complexity\_v4(path\_dir\_l)}
+
+\end{DoxyCode}
+\hypertarget{md_pages__doxygen_2processing__data__code_autotoc_md36}{}\doxysubsection{\texorpdfstring{Balacing data}{Balacing data}}\label{md_pages__doxygen_2processing__data__code_autotoc_md36}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ python}
+\DoxyCodeLine{import\ dataset\_utils}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Directory\ containing\ the\ .txt\ files\ with\ CUs\ informations}
+\DoxyCodeLine{path\_dir\_l\ =\ "{}output\_of\_the\_previous\_step"{}\ \ \#\ Path\ with\ the\ labels\ processed}
+\DoxyCodeLine{}
+\DoxyCodeLine{print("{}Balance\ data\ in:"{},\ path\_dir\_l)}
+\DoxyCodeLine{}
+\DoxyCodeLine{dataset\_utils.balance\_dataset\_down\_v3(path\_dir\_l)\ \ \#\ Downsampling}
+
+\end{DoxyCode}
+ 

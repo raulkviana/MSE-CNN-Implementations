@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="dataset_8md" kind="file" language="Markdown">
+    <compoundname>dataset.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Data</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>folder<sp/>contains<sp/>all<sp/>of<sp/>the<sp/>data<sp/>used<sp/>in<sp/>this<sp/>work.<sp/>To<sp/>train<sp/>a<sp/>supervised<sp/>ML<sp/>model,<sp/>annotated<sp/>data<sp/>must<sp/>be<sp/>created.<sp/>Given<sp/>that<sp/>a<sp/>trained<sp/>network<sp/>has<sp/>inputs<sp/>and<sp/>outputs<sp/>with<sp/>specifications,<sp/>the<sp/>data<sp/>supplied<sp/>to<sp/>the<sp/>model<sp/>must<sp/>be<sp/>modified<sp/>to<sp/>meet<sp/>those.<sp/>This<sp/>modification<sp/>entails<sp/>certain<sp/>data<sp/>processing<sp/>steps<sp/>to<sp/>generate<sp/>data<sp/>that<sp/>can<sp/>directly<sp/>aid<sp/>network<sp/>training/evaluation.<sp/>A<sp/>five-step<sp/>method<sp/>was<sp/>designed<sp/>to<sp/>process<sp/>the<sp/>data,<sp/>as<sp/>shown<sp/>in<sp/>the<sp/>diagram<sp/>below.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">![labels_gen](../../imgs/labels_gen_method.png)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>learn<sp/>more<sp/>about<sp/>the<sp/>code<sp/>inside<sp/>each<sp/>step<sp/>from<sp/>the<sp/>above<sp/>image<sp/>in<sp/>[processing_data_code.md](processing_data_code.md)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Available<sp/>data</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Type<sp/>of<sp/>data<sp/>|Description|<sp/></highlight></codeline>
+<codeline><highlight class="normal">|--------------|-----------|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>[Images](https://uapt33090-my.sharepoint.com/:f:/g/personal/raulviana_ua_pt/ErGMPFUtH7BMkdNu3KiTz1sBcqiW78JDAcoymWU5HKgbug?e=fKNfdy)<sp/>|<sp/>Images<sp/>from<sp/>gathered<sp/>by<sp/>Tianyi<sp/>Li<sp/>et<sp/>al<sp/>that<sp/>can<sp/>be<sp/>used<sp/>to<sp/>obtain<sp/>labels.<sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>[Videos](https://uapt33090-my.sharepoint.com/:f:/g/personal/raulviana_ua_pt/EmmY3sQqrcBGuPyIoWncQdkB8DpEqZAqCsO0kIR8_9nuEw?e=vnve6T)<sp/>|<sp/>Videos<sp/>from<sp/>gathered<sp/>by<sp/>Tianyi<sp/>Li<sp/>et<sp/>al<sp/>that<sp/>can<sp/>be<sp/>used<sp/>to<sp/>obtain<sp/>labels.<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>[Entire<sp/>Encoded<sp/>Images<sp/>with<sp/>a<sp/>QP<sp/>of<sp/>32](https://uapt33090-my.sharepoint.com/:f:/g/personal/raulviana_ua_pt/Eo0u_LRfxlNDqdK2Q4rPXfkBI_FQzUMW2DiJpkfpTy9kZQ?e=DYmam3)<sp/>|<sp/>All<sp/>RAISE<sp/>images<sp/>encoded<sp/>using<sp/>the<sp/>encoder [VTM-7.0](https://github.com/tianyili2017/CPIV/blob/master/VTM-7.0_Data.zip).<sp/>This<sp/>tool<sp/>encodes<sp/>the<sp/>database<sp/>and<sp/>determines<sp/>the<sp/>best<sp/>method<sp/>for<sp/>partitioning<sp/>the<sp/>sequences<sp/>contained<sp/>within<sp/>it,<sp/>while<sp/>also<sp/>indicating<sp/>the<sp/>RD<sp/>cost<sp/>for<sp/>each<sp/>of<sp/>these<sp/>partitions.<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>[Structured<sp/>data](https://uapt33090-my.sharepoint.com/:f:/g/personal/raulviana_ua_pt/EpF90NJ8QNdGhpc5rjJfQygBrQ9GD8D77gDAXiib4mDZiw?e=LNXU2L)|<sp/>Because<sp/>the<sp/>encoded<sp/>data<sp/>consists<sp/>of<sp/>a<sp/>large<sp/>number<sp/>of<sp/>files<sp/>containing<sp/>information<sp/>about<sp/>specific<sp/>CUs<sp/>with<sp/>no<sp/>correlation,<sp/>the<sp/>data<sp/>must<sp/>be<sp/>structured.<sp/>This<sp/>structure<sp/>contains<sp/>information<sp/>about<sp/>the<sp/>CU&apos;s<sp/>location,<sp/>size,<sp/>file<sp/>name,<sp/>picture<sp/>order<sp/>count<sp/>(POC),<sp/>and<sp/>optimal<sp/>split<sp/>mode.<sp/>The<sp/>data<sp/>is<sp/>in<sp/>the<sp/>luma<sp/>channel.<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Data<sp/>with<sp/>real<sp/>CTUs<sp/>|<sp/>Because<sp/>the<sp/>MSE-input<sp/>CNN&apos;s<sp/>is<sp/>a<sp/>CTU,<sp/>this<sp/>information<sp/>must<sp/>be<sp/>added<sp/>to<sp/>the<sp/>labels.<sp/>A<sp/>new<sp/>property<sp/>called<sp/>&quot;real<sp/>CTU&quot;<sp/>is<sp/>added<sp/>to<sp/>the<sp/>sequence<sp/>structure,<sp/>which<sp/>includes<sp/>the<sp/>actual<sp/>CTU<sp/>splitting<sp/>structure<sp/>from<sp/>the<sp/>images.<sp/>The<sp/>data<sp/>is<sp/>in<sp/>the<sp/>luma<sp/>channel.<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Filtered<sp/>data<sp/>for<sp/>training<sp/>each<sp/>stage<sp/>|<sp/>It<sp/>is<sp/>proposed<sp/>in<sp/>the<sp/>original<sp/>paper<sp/>that<sp/>this<sp/>network<sp/>be<sp/>trained<sp/>stage<sp/>by<sp/>stage<sp/>and<sp/>with<sp/>specific<sp/>CU<sp/>types.<sp/>This<sp/>means<sp/>that<sp/>not<sp/>all<sp/>CUs<sp/>will<sp/>be<sp/>required<sp/>at<sp/>the<sp/>same<sp/>time<sp/>during<sp/>training.<sp/>To<sp/>organise<sp/>the<sp/>data<sp/>in<sp/>this<sp/>manner,<sp/>a<sp/>search<sp/>of<sp/>the<sp/>previous<sp/>step&apos;s<sp/>data<sp/>is<sp/>performed,<sp/>and<sp/>changes<sp/>are<sp/>made<sp/>to<sp/>the<sp/>data<sp/>structure<sp/>containing<sp/>the<sp/>sequences.<sp/>The<sp/>data<sp/>is<sp/>in<sp/>the<sp/>luma<sp/>channel.|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Balanced<sp/>dataset<sp/>|<sp/>The<sp/>data<sp/>up<sp/>to<sp/>this<sp/>point<sp/>is<sp/>imbalanced<sp/>and<sp/>not<sp/>suitable<sp/>for<sp/>training<sp/>because<sp/>there<sp/>are<sp/>different<sp/>numbers<sp/>of<sp/>split<sp/>modes.<sp/>The<sp/>mode<sp/>may<sp/>not<sp/>be<sp/>able<sp/>to<sp/>learn<sp/>how<sp/>to<sp/>predict<sp/>underrepresented<sp/>partitions<sp/>if<sp/>this<sp/>data<sp/>is<sp/>fed<sp/>to<sp/>it.<sp/>Because<sp/>of<sp/>this,<sp/>the<sp/>network<sp/>assumes<sp/>that<sp/>each<sp/>class<sp/>will<sp/>be<sp/>the<sp/>one<sp/>with<sp/>the<sp/>highest<sp/>representation<sp/>in<sp/>the<sp/>dataset.<sp/>To<sp/>balance<sp/>the<sp/>data,<sp/>the<sp/>sample<sp/>size<sp/>has<sp/>been<sp/>reduced.<sp/>The<sp/>data<sp/>is<sp/>in<sp/>the<sp/>luma<sp/>channel.|</highlight></codeline>
+    </programlisting>
+    <location file="pages_doxygen/dataset.md"/>
+  </compounddef>
+</doxygen>

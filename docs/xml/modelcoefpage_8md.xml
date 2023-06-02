@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="modelcoefpage_8md" kind="file" language="Markdown">
+    <compoundname>modelcoefpage.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Model<sp/>coeficients</highlight></codeline>
+<codeline><highlight class="normal">Here<sp/>in<sp/>this<sp/>folder<sp/>you<sp/>can<sp/>find<sp/>the<sp/>last<sp/>and<sp/>best<sp/>coeficients<sp/>obtained<sp/>during<sp/>training<sp/>for<sp/>each<sp/>stage.<sp/>To<sp/>load<sp/>these<sp/>coeficients<sp/>in<sp/>the<sp/>following<sp/>way</highlight></codeline>
+<codeline><highlight class="normal">```python</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>import<sp/>MSECNN</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>import<sp/>train_model_utils</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>#<sp/>Initialize<sp/>parameters</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>path_to_folder_with_model_params<sp/>=<sp/>&quot;model_coefficients/best_coefficients&quot;</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>device<sp/>=<sp/>&quot;cuda:0&quot;</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>qp<sp/>=<sp/>32<sp/><sp/>#<sp/>Quantisation<sp/>Parameter</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>#<sp/>Initialize<sp/>Model</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>stg1_2<sp/>=<sp/>msecnn.MseCnnStg1(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>stg3<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>stg4<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>stg5<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>stg6<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>model<sp/>=<sp/>(stg1_2,<sp/>stg3,<sp/>stg4,<sp/>stg5,<sp/>stg6)</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&gt;&gt;&gt;<sp/>model<sp/>=<sp/>train_model_utils.load_model_parameters_eval(model,<sp/>path_to_folder_with_model_params,<sp/>device)<sp/><sp/>#<sp/>Load<sp/>for<sp/>all<sp/>of<sp/>the<sp/>stages</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+    </programlisting>
+    <location file="pages_doxygen/modelcoefpage.md"/>
+  </compounddef>
+</doxygen>

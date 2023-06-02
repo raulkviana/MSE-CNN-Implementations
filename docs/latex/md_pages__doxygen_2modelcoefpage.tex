@@ -1,0 +1,26 @@
+\chapter{Model coeficients}
+\hypertarget{md_pages__doxygen_2modelcoefpage}{}\label{md_pages__doxygen_2modelcoefpage}\index{Model coeficients@{Model coeficients}}
+\label{md_pages__doxygen_2modelcoefpage_autotoc_md30}%
+\Hypertarget{md_pages__doxygen_2modelcoefpage_autotoc_md30}%
+Here in this folder you can find the last and best coeficients obtained during training for each stage. To load these coeficients in the following way 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{>>>\ \textcolor{keyword}{import}\ MSECNN}
+\DoxyCodeLine{>>>\ \textcolor{keyword}{import}\ train\_model\_utils}
+\DoxyCodeLine{>>>}
+\DoxyCodeLine{>>>\ \textcolor{comment}{\#\ Initialize\ parameters}}
+\DoxyCodeLine{>>>\ path\_to\_folder\_with\_model\_params\ =\ \textcolor{stringliteral}{"{}model\_coefficients/best\_coefficients"{}}}
+\DoxyCodeLine{>>>\ device\ =\ \textcolor{stringliteral}{"{}cuda:0"{}}}
+\DoxyCodeLine{>>>\ qp\ =\ 32\ \ \textcolor{comment}{\#\ Quantisation\ Parameter}}
+\DoxyCodeLine{>>>\ }
+\DoxyCodeLine{>>>\ \textcolor{comment}{\#\ Initialize\ Model}}
+\DoxyCodeLine{>>>\ stg1\_2\ =\ msecnn.MseCnnStg1(device=device,\ QP=qp).to(device)}
+\DoxyCodeLine{>>>\ stg3\ =\ msecnn.MseCnnStgX(device=device,\ QP=qp).to(device)}
+\DoxyCodeLine{>>>\ stg4\ =\ msecnn.MseCnnStgX(device=device,\ QP=qp).to(device)}
+\DoxyCodeLine{>>>\ stg5\ =\ msecnn.MseCnnStgX(device=device,\ QP=qp).to(device)}
+\DoxyCodeLine{>>>\ stg6\ =\ msecnn.MseCnnStgX(device=device,\ QP=qp).to(device)}
+\DoxyCodeLine{>>>\ model\ =\ (stg1\_2,\ stg3,\ stg4,\ stg5,\ stg6)}
+\DoxyCodeLine{>>>}
+\DoxyCodeLine{>>>\ model\ =\ train\_model\_utils.load\_model\_parameters\_eval(model,\ path\_to\_folder\_with\_model\_params,\ device)\ \ \textcolor{comment}{\#\ Load\ for\ all\ of\ the\ stages}}
+
+\end{DoxyCode}
+ 

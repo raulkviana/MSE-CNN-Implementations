@@ -184,9 +184,6 @@
   <compound refid="namespaceadd___c_t_u__v3" kind="namespace"><name>add_CTU_v3</name>
     <member refid="namespaceadd___c_t_u__v3_1a8cc2c3ffcf9d0ca1ba5041e821e390c4" kind="function"><name>main</name></member>
   </compound>
-  <compound refid="namespaceadd__docs__to__files" kind="namespace"><name>add_docs_to_files</name>
-    <member refid="namespaceadd__docs__to__files_1ac06e66a9652aa6a95b453bc0247468d7" kind="function"><name>main</name></member>
-  </compound>
   <compound refid="namespacebalance__data" kind="namespace"><name>balance_data</name>
     <member refid="namespacebalance__data_1a2980b0f1363955e8a4c86a5d4f97c6e1" kind="function"><name>main</name></member>
   </compound>
@@ -444,7 +441,15 @@
     <member refid="namespacetrain__stg6_1a5fa206f76e13ffd9683dd8aa096079f7" kind="function"><name>train_test</name></member>
     <member refid="namespacetrain__stg6_1a566754db3d002de3c456576aa51619fc" kind="function"><name>main</name></member>
   </compound>
+  <compound refid="dataset_8md" kind="file"><name>dataset.md</name>
+  </compound>
+  <compound refid="exampledatapage_8md" kind="file"><name>exampledatapage.md</name>
+  </compound>
   <compound refid="mainpage_8md" kind="file"><name>mainpage.md</name>
+  </compound>
+  <compound refid="modelcoefpage_8md" kind="file"><name>modelcoefpage.md</name>
+  </compound>
+  <compound refid="processing__data__code_8md" kind="file"><name>processing_data_code.md</name>
   </compound>
   <compound refid="____init_____8py" kind="file"><name>__init__.py</name>
   </compound>
@@ -459,8 +464,6 @@
   <compound refid="train__model__utils_8py" kind="file"><name>train_model_utils.py</name>
   </compound>
   <compound refid="add___c_t_u__v3_8py" kind="file"><name>add_CTU_v3.py</name>
-  </compound>
-  <compound refid="add__docs__to__files_8py" kind="file"><name>add_docs_to_files.py</name>
   </compound>
   <compound refid="balance__data_8py" kind="file"><name>balance_data.py</name>
   </compound>
@@ -488,9 +491,19 @@
   </compound>
   <compound refid="utils_8py" kind="file"><name>utils.py</name>
   </compound>
+  <compound refid="md_pages__doxygen_2dataset" kind="page"><name>md_pages__doxygen_2dataset</name>
+  </compound>
+  <compound refid="md_pages__doxygen_2exampledatapage" kind="page"><name>md_pages__doxygen_2exampledatapage</name>
+  </compound>
+  <compound refid="md_pages__doxygen_2modelcoefpage" kind="page"><name>md_pages__doxygen_2modelcoefpage</name>
+  </compound>
+  <compound refid="md_pages__doxygen_2processing__data__code" kind="page"><name>md_pages__doxygen_2processing__data__code</name>
+  </compound>
   <compound refid="md_src_2msecnn__raulkviana_2useful__scripts_2_r_e_a_d_m_e" kind="page"><name>md_src_2msecnn__raulkviana_2useful__scripts_2_r_e_a_d_m_e</name>
   </compound>
   <compound refid="dir_940fdb39b62cfdd78aaec39f274a0c2a" kind="dir"><name>src/msecnn_raulkviana</name>
+  </compound>
+  <compound refid="dir_5ffd4d331eea507d6bc15324971aec14" kind="dir"><name>pages_doxygen</name>
   </compound>
   <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
   </compound>

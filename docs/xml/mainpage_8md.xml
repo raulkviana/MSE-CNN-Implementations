@@ -160,6 +160,8 @@
 <codeline></codeline>
 <codeline><highlight class="normal">Multi-Stage<sp/>Exit<sp/>Convolutional<sp/>Neural<sp/>Network<sp/>(MSE-CNN)<sp/>is<sp/>a<sp/>DL<sp/>model<sp/>that<sp/>seeks<sp/>to<sp/>forecast<sp/>CUs<sp/>in<sp/>a<sp/>waterfall<sp/>architecture<sp/>(top-down<sp/>manner),<sp/>it<sp/>integrates<sp/>.<sp/>This<sp/>structure<sp/>takes<sp/>a<sp/>CTU<sp/>as<sp/>input,<sp/>extracts<sp/>features<sp/>from<sp/>it,<sp/>splits<sp/>the<sp/>CU<sp/>into<sp/>one<sp/>of<sp/>at<sp/>most<sp/>six<sp/>possible<sp/>partitions<sp/>(Non-split,<sp/>QT,<sp/>HBT,<sp/>VBT,<sp/>HTT,<sp/>and<sp/>VTT),<sp/>and<sp/>then<sp/>sends<sp/>it<sp/>to<sp/>the<sp/>next<sp/>stage.<sp/>This<sp/>model<sp/>has<sp/>CTUs<sp/>as<sp/>inputs<sp/>in<sp/>the<sp/>first<sp/>stage,<sp/>either<sp/>in<sp/>the<sp/>chroma<sp/>or<sp/>luma<sp/>channel,<sp/>and<sp/>feature<sp/>maps<sp/>in<sp/>the<sp/>subsequent<sp/>stages.<sp/>Furthermore,<sp/>it<sp/>generates<sp/>feature<sp/>maps<sp/>and<sp/>a<sp/>split<sp/>decision<sp/>at<sp/>each<sp/>level.<sp/>In<sp/>the<sp/>event<sp/>that<sp/>one<sp/>of<sp/>the<sp/>models<sp/>returns<sp/>the<sp/>split<sp/>decision<sp/>as<sp/>Non-Split,<sp/>the<sp/>partitioning<sp/>of<sp/>the<sp/>CU<sp/>is<sp/>ended<sp/>immediately.</highlight></codeline>
 <codeline></codeline>
+<codeline><highlight class="normal">**Note**:<sp/>Details<sp/>about<sp/>how<sp/>to<sp/>load<sp/>model<sp/>coefficients<sp/>can<sp/>be<sp/>found<sp/>[here](modelcoefpage.md).</highlight></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">####<sp/>2.2.1<sp/>Architecture</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">This<sp/>model<sp/>is<sp/>composed<sp/>by<sp/>the<sp/>following<sp/>blocks:</highlight></codeline>
@@ -251,7 +253,7 @@
 <codeline></codeline>
 <codeline><highlight class="normal">##<sp/>3.<sp/>Dataset</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">Please<sp/>see<sp/>this<sp/>[page](dataset/README.md)<sp/>to<sp/>understand<sp/>better<sp/>the<sp/>dataset<sp/>and<sp/>also<sp/>access<sp/>it.</highlight></codeline>
+<codeline><highlight class="normal">Please<sp/>see<sp/>this<sp/>[page](dataset.md)<sp/>to<sp/>understand<sp/>better<sp/>the<sp/>dataset<sp/>and<sp/>also<sp/>access<sp/>it.<sp/>To<sp/>see<sp/>example<sp/>data<sp/>go<sp/>to<sp/>follow<sp/>[this](exampledatapage.md).</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">##<sp/>4.<sp/>Results</highlight></codeline>
 <codeline></codeline>
@@ -351,14 +353,14 @@
 <codeline><highlight class="normal">2.<sp/>Install<sp/>the<sp/>package<sp/>using<sp/>one<sp/>of<sp/>the<sp/>following<sp/>methods:</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Install<sp/>the<sp/>source<sp/>distribution:</highlight></codeline>
-<codeline><highlight class="normal">```shell</highlight></codeline>
-<codeline><highlight class="normal">pip<sp/>install<sp/>dist/.tar.gz</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```shell</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>pip<sp/>install<sp/>dist/msecnn_raulkviana-1.0.tar.gz</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Install<sp/>the<sp/>wheel<sp/>distribution:</highlight></codeline>
-<codeline><highlight class="normal">```shell</highlight></codeline>
-<codeline><highlight class="normal">pip<sp/>install<sp/>dist/.whl</highlight></codeline>
-<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```shell</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>pip<sp/>install<sp/>dist/msecnn_raulkviana-1.0.whl</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">3.<sp/>Once<sp/>the<sp/>package<sp/>is<sp/>installed,<sp/>you<sp/>can<sp/>import<sp/>and<sp/>use<sp/>its<sp/>functionalities<sp/>in<sp/>your<sp/>Python<sp/>code.</highlight></codeline>
 <codeline></codeline>
@@ -388,6 +390,6 @@
 <codeline></codeline>
 <codeline></codeline>
     </programlisting>
-    <location file="mainpage.md"/>
+    <location file="pages_doxygen/mainpage.md"/>
   </compounddef>
 </doxygen>

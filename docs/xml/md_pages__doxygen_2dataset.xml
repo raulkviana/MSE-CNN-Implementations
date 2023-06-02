@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="md_pages__doxygen_2dataset" kind="page">
+    <compoundname>md_pages__doxygen_2dataset</compoundname>
+    <title>Data</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md_pages__doxygen_2dataset_1autotoc_md0"/> This folder contains all of the data used in this work. To train a supervised ML model, annotated data must be created. Given that a trained network has inputs and outputs with specifications, the data supplied to the model must be modified to meet those. This modification entails certain data processing steps to generate data that can directly aid network training/evaluation. A five-step method was designed to process the data, as shown in the diagram below.</para>
+<para><image type="html" name="../../imgs/labels_gen_method.png" alt="labels_gen" inline="yes"></image>
+</para>
+<para>You can learn more about the code inside each step from the above image in <ref refid="md_pages__doxygen_2processing__data__code" kindref="compound">processing_data_code.md</ref></para>
+<sect1 id="md_pages__doxygen_2dataset_1autotoc_md1">
+<title>Available data</title>
+<para><table rows="8" cols="2"><row>
+<entry thead="yes"><para>Type of data   </para>
+</entry><entry thead="yes"><para>Description    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ulink url="https://uapt33090-my.sharepoint.com/:f:/g/personal/raulviana_ua_pt/ErGMPFUtH7BMkdNu3KiTz1sBcqiW78JDAcoymWU5HKgbug?e=fKNfdy">Images</ulink>   </para>
+</entry><entry thead="no"><para>Images from gathered by Tianyi Li et al that can be used to obtain labels.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ulink url="https://uapt33090-my.sharepoint.com/:f:/g/personal/raulviana_ua_pt/EmmY3sQqrcBGuPyIoWncQdkB8DpEqZAqCsO0kIR8_9nuEw?e=vnve6T">Videos</ulink>   </para>
+</entry><entry thead="no"><para>Videos from gathered by Tianyi Li et al that can be used to obtain labels.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ulink url="https://uapt33090-my.sharepoint.com/:f:/g/personal/raulviana_ua_pt/Eo0u_LRfxlNDqdK2Q4rPXfkBI_FQzUMW2DiJpkfpTy9kZQ?e=DYmam3">Entire Encoded Images with a QP of 32</ulink>   </para>
+</entry><entry thead="no"><para>All RAISE images encoded using the encoder <ulink url="https://github.com/tianyili2017/CPIV/blob/master/VTM-7.0_Data.zip">VTM-7.0</ulink>. This tool encodes the database and determines the best method for partitioning the sequences contained within it, while also indicating the RD cost for each of these partitions.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para><ulink url="https://uapt33090-my.sharepoint.com/:f:/g/personal/raulviana_ua_pt/EpF90NJ8QNdGhpc5rjJfQygBrQ9GD8D77gDAXiib4mDZiw?e=LNXU2L">Structured data</ulink>   </para>
+</entry><entry thead="no"><para>Because the encoded data consists of a large number of files containing information about specific CUs with no correlation, the data must be structured. This structure contains information about the CU&apos;s location, size, file name, picture order count (POC), and optimal split mode. The data is in the luma channel.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Data with real CTUs   </para>
+</entry><entry thead="no"><para>Because the MSE-input CNN&apos;s is a CTU, this information must be added to the labels. A new property called &quot;real CTU&quot; is added to the sequence structure, which includes the actual CTU splitting structure from the images. The data is in the luma channel.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Filtered data for training each stage   </para>
+</entry><entry thead="no"><para>It is proposed in the original paper that this network be trained stage by stage and with specific CU types. This means that not all CUs will be required at the same time during training. To organise the data in this manner, a search of the previous step&apos;s data is performed, and changes are made to the data structure containing the sequences. The data is in the luma channel.    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Balanced dataset   </para>
+</entry><entry thead="no"><para>The data up to this point is imbalanced and not suitable for training because there are different numbers of split modes. The mode may not be able to learn how to predict underrepresented partitions if this data is fed to it. Because of this, the network assumes that each class will be the one with the highest representation in the dataset. To balance the data, the sample size has been reduced. The data is in the luma channel.   </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="pages_doxygen/dataset.md"/>
+  </compounddef>
+</doxygen>
