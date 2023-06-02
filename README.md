@@ -351,14 +351,14 @@ This command exits the virtual environment and returns you to your normal comman
 2. Install the package using one of the following methods:
 
    - Install the source distribution:
-```shell
-pip install dist/.tar.gz
-```
+   ```shell
+   pip install dist/.tar.gz
+   ```
 
    - Install the wheel distribution:
-```shell
-pip install dist/.whl
-```
+   ```shell
+   pip install dist/.whl
+   ```
 
 3. Once the package is installed, you can import and use its functionalities in your Python code.
 
