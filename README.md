@@ -104,10 +104,11 @@ tensor(2.7419, grad_fn=<MeanBackward1>)
   - [6. Installation of dependencies](#6-installation-of-dependencies)
     - [Requirements](#requirements)
     - [Package Distributions](#package-distributions)
-  - [7. Contributions](#7-contributions)
-  - [8. License](#8-license)
-  - [9. TODO](#9-todo)
-  - [10. References](#10-references)
+  - [7. Documentation](#7-documentation)
+  - [8. Contributions](#8-contributions)
+  - [9. License](#9-license)
+  - [10. TODO](#10-todo)
+  - [11. References](#11-references)
 
 
 ## 1. Introduction
@@ -361,21 +362,25 @@ pip install dist/.whl
 
 3. Once the package is installed, you can import and use its functionalities in your Python code.
 
-## 7. Contributions
+## 7. Documentation
+
+Organize documentation can be found by opening in your browser the file [index.html](doc/html/index.html)
+
+## 8. Contributions
 
 Feel free to contact me through this [email](raulviana@ua.pt) or create either a issue or pull request to contribute to this project ^^.
 
-## 8. License
+## 9. License
 
 This project license is under the [MIT License](LICENSE).
 
-## 9. TODO
+## 10. TODO
 
 |Task| Description| Status (d - doing, w - waiting, f- finished)|
 |-----|-----|-----|
 | Implement code to test functions| Use a library, such as Pytest, to test some functions from the many modules developed | w |
 
-## 10. References
+## 11. References
 [1] T. Li, M. Xu, R. Tang, Y. Chen, and Q. Xing, [“DeepQTMT: A Deep Learning Approach for Fast QTMT-Based CU Partition of Intra-Mode VVC,”](https://arxiv.org/abs/2006.13125) IEEE Transactions on Image Processing, vol. 30, pp. 5377–5390, 2021, doi: 10.1109/tip.2021.3083447.
 [2] R. K. Viana, “Deep learning architecture for fast intra-mode CUs partitioning in VVC,” Universidade de Aveiro, Nov. 2022.
 <div align="center">
