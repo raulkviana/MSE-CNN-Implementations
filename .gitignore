@@ -1,6 +1,3 @@
 env/
-get_functions_used_in_each_script.py
+env2/
 *.pyc
-get_functions_used_in_each_script.py
-src/useful_scripts/add_docs_to_files.py
-src/msecnn_raulkviana.egg-info
