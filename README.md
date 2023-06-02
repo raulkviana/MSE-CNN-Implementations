@@ -352,12 +352,12 @@ This command exits the virtual environment and returns you to your normal comman
 
    - Install the source distribution:
    ```shell
-   pip install dist/.tar.gz
+   pip install dist/msecnn_raulkviana-1.0.tar.gz
    ```
 
    - Install the wheel distribution:
    ```shell
-   pip install dist/.whl
+   pip install dist/msecnn_raulkviana-1.0.whl
    ```
 
 3. Once the package is installed, you can import and use its functionalities in your Python code.
