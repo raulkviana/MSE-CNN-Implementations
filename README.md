@@ -2,7 +2,6 @@
 
 # MSE-CNN Implementation
 ![versions](https://badgen.net/badge/python-version/3.8.10/:color?color=yellow)
-![build](https://badgen.net/badge/repo-status/developing/:color?color=yellow)
 ![size](https://img.shields.io/github/repo-size/raulkviana/MSE-CNN-Implementations)
 ![license](https://img.shields.io/github/license/raulkviana/MSE-CNN-Implementations)
 ![status](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
