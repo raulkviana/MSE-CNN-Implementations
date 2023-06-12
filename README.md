@@ -334,7 +334,7 @@ In order to explore this project, it is needed to first install of the libraries
 
 ### Requirements
 For this please follow the below steps:
-1. Create a virtual environment to do install the libraries; follow this [link](https://www.geeksforgeeks.org/creating-python-virtual-environment-windows-linux/) in case you don't know how to do it; you possibly need to install [pip](https://www.makeuseof.com/tag/install-pip-for-python/), if you don't have it installed
+1. Create a virtual environment to install the libraries; follow this [link](https://www.geeksforgeeks.org/creating-python-virtual-environment-windows-linux/) in case you don't know how to do it; you possibly need to install [pip](https://www.makeuseof.com/tag/install-pip-for-python/)
 2. Run the following command: <br> <code>pip install -r requirements.txt</code> <br>
 This will install all of the libraries references in the requirements.txt file.
 4. When you have finished using the package or working on your project, you can deactivate the virtual environment:
