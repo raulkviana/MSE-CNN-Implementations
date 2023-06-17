@@ -72,11 +72,11 @@ torch.Size([1, 16, 64, 64])
 >>> 
 >>> # Compute the loss
 >>> loss, loss_CE, loss_RD = loss_fn(pred1_2, split_label, RDs)
->> loss
+>>> loss
 tensor(177.1340, grad_fn=<AddBackward0>)
->> loss_CE
+>>> loss_CE
 tensor(174.3921, grad_fn=<NegBackward0>)
->> loss_RD
+>>> loss_RD
 tensor(2.7419, grad_fn=<MeanBackward1>)
 ```
 
