@@ -445,8 +445,9 @@ def multi_thresholding(rs, preds):
     (1/5) * sum(rs) >= 0.4, then τ2 ≥ τ6 ≥ τ3 ≈ τ4 ≈ τ5.
     • Case 2 (better RD performance): if the average threshold
     (1/5) * sum(rs) < 0.4, then τ2 ≥ τ4 ≈ τ3 ≈ τ5 ≥ τ6.
+
     @brief Implementation of the multi-threshold for MSE-CNN
-    @param [in] rs: Constant to control the minimum amount of thr probabilities
+    @param [in] rs: Constant to control the minimum amount of threshold probabilities
     @param [in] preds: Predictions made by the MSE-CNN
     @param [out] search_RD: Vector with the information of which modes to compute the RD cost and make a decision regarding in which split to make
     """
