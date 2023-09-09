@@ -26,7 +26,6 @@
 - VideoCaptureYUV
  
 @section functions_dataset_utils Functions
-- bgr2yuv(matrix)
 - extract_content(f)
 - file_stats(path)
 - show_bin_content(path, num_records=100)
@@ -170,11 +169,17 @@ import threading
 # ==============================================================
 
 class VideoCaptureYUV:
-    def __init__(self, filename, size):
+    """
+    Object to contain the YUV files
+    """
+    def __init__(self, img, size):
         self.height, self.width = size
         self.y_len = self.width * self.height
         self.frame_len = int(self.y_len * 3 / 2)
-        self.f = open(filename, 'rb')
+        if type(img) is str:
+            self.f = open(img, 'rb')
+        else:
+            self.f = img  # this variable has to be in the YUV format
         self.shape = (int(self.height), int(self.width))
 
     def read_raw(self, frame_num=None):
@@ -201,22 +206,63 @@ class VideoCaptureYUV:
             return ret, yuv
         # bgr = cv2.cvtColor(yuv, cv2.COLOR_YUV2BGR_I420)#cv2.COLOR_YUV2BGR_NV21)
         return ret, yuv
+    
+
+class VideoCaptureYUVV2:
+    """
+    Object to contain the YUV files. In this version the actual YUV420 image is passed to the object.
+    """
+    def __init__(self, img, size):
+        self.height, self.width = size
+        self.y_len = self.width * self.height
+        self.frame_len = int(self.y_len * 3 / 2)
+        self.yuv = img  # this variable has to be in the YUV format
+        self.shape = (int(self.height), int(self.width))
+
+    def read_raw(self):
+        try:
+            flat_yuv = self.yuv.flatten()
+            y = flat_yuv[:self.y_len].reshape(self.shape)
+            uv = flat_yuv[self.y_len:].reshape((int(self.height), int(self.width / 2)))
+            u = uv[:int(self.height/2), :]
+            v = uv[int(self.height/2):, :]
+
+        except Exception as e:
+            print(str(e))
+            return False, None
+        return True, self.yuv, y, u, v
+
+    def read(self):
+        return self.yuv
 
 
 # ==============================================================
 # Functions
 # ==============================================================
 
+def yuv2bgr(matrix):
+    """!
+    Converts yuv matrix to bgr matrix
+
+    @param [in] matrix: Yuv matrix
+    @param [out] bgr: Bgr conversion
+    """
+
+    # Convert from yuv to bgr
+    bgr = cv2.cvtColor(matrix, cv2.COLOR_YUV2BGR_I420) 
+
+    return bgr
+
 def bgr2yuv(matrix):
     """!
-    @brief Converts BGR matrix to YUV matrix
+    Converts BGR matrix to YUV matrix
 
     @param [in] matrix: BGR matrix
     @param [out] YUV: YUV conversion
     """
 
     # Convert from bgr to yuv
-    YUV = cv2.cvtColor(matrix, cv2.COLOR_BGR2YUV_I420)  # cv2.COLOR_YUV2BGR_NV21)
+    YUV = cv2.cvtColor(matrix, cv2.COLOR_BGR2YUV_I420) 
 
     return YUV
 
