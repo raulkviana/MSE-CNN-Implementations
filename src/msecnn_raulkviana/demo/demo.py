@@ -174,12 +174,11 @@ def draw_partition(img, split, cu_pos, cu_size):
     elif split == 2:
         line1_start = (cu_pos[0]+ver_line_length//2, cu_pos[1])
         line1_end = (cu_pos[0]+ver_line_length//2, cu_pos[1]+hor_line_length)
-        assert line1_start[0]-line1_end[0] == 0 or line1_start[1]-line1_end[1] == 0
+        # assert line1_start[0]-line1_end[0] == 0 or line1_start[1]-line1_end[1] == 0  # Make sure that the lines are either horizontal or vertical
         img = cv.line(img, line1_start, line1_end, COLOR, LINE_THICKNESS)
     elif split == 3:
         line1_start = (cu_pos[0], cu_pos[1]+hor_line_length//2)
         line1_end = (cu_pos[0]+ver_line_length, cu_pos[1]+hor_line_length//2)
-        # assert line1_start[0]-line1_end[0] == 0 or line1_start[1]-line1_end[1] == 0
         img = cv.line(img, line1_start, line1_end, COLOR, LINE_THICKNESS)
     elif split == 4:
         line1_start = (cu_pos[0]+ver_line_length//3, cu_pos[1])
