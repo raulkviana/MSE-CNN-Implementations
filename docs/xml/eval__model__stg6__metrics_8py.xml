@@ -278,11 +278,11 @@
 <codeline lineno="268"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="namespaceeval__model__stg6__metrics_1ae17ef904e073c0011cb665feee920429" kindref="member">main</ref>():</highlight></codeline>
 <codeline lineno="269"><highlight class="normal"></highlight></codeline>
 <codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Initialize<sp/>Model</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>stg1_2<sp/>=<sp/>msecnn.MseCnnStg_1(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
-<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>stg3<sp/>=<sp/>msecnn.MseCnnStg_x(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
-<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>stg4<sp/>=<sp/>msecnn.MseCnnStg_x(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
-<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>stg5<sp/>=<sp/>msecnn.MseCnnStg_x(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
-<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>stg6<sp/>=<sp/>msecnn.MseCnnStg_x(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/>stg1_2<sp/>=<sp/>msecnn.MseCnnStg1(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>stg3<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>stg4<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/>stg5<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>stg6<sp/>=<sp/>msecnn.MseCnnStgX(device=device,<sp/>QP=qp).to(device)</highlight></codeline>
 <codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/>model<sp/>=<sp/>(stg1_2,<sp/>stg3,<sp/>stg4,<sp/>stg5,<sp/>stg6)</highlight></codeline>
 <codeline lineno="277"><highlight class="normal"></highlight></codeline>
 <codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>ans<sp/>=<sp/>str(input(</highlight><highlight class="stringliteral">&apos;Do<sp/>you<sp/>want<sp/>to<sp/>load<sp/>any<sp/>existing<sp/>model?<sp/>Y/N<sp/>\n&apos;</highlight><highlight class="normal">))</highlight></codeline>
@@ -302,6 +302,6 @@
 <codeline lineno="292"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceeval__model__stg6__metrics_1ae17ef904e073c0011cb665feee920429" kindref="member">main</ref>()</highlight></codeline>
     </programlisting>
-    <location file="src/msecnn_raulkviana/useful_scripts/eval_model_stg6_metrics.py"/>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/eval_model_stg6_metrics.py"/>
   </compounddef>
 </doxygen>

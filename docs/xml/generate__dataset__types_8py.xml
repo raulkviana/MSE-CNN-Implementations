@@ -74,6 +74,6 @@
 <codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacegenerate__dataset__types_1a4de5a96ec62a2d29421be776c710fa12" kindref="member">main</ref>()</highlight></codeline>
     </programlisting>
-    <location file="src/msecnn_raulkviana/useful_scripts/generate_dataset_types.py"/>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/generate_dataset_types.py"/>
   </compounddef>
 </doxygen>

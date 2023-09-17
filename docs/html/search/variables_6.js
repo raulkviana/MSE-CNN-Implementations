@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['index_5flims_0',['index_lims',['../classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_base.html#acc61f551cd087212113d59380356399d',1,'msecnn_raulkviana::custom_dataset::CUDatasetBase']]],
-  ['iterations_1',['iterations',['../namespacetrain__stg6.html#a382be9f56bf6a2335226b70dd5d32290',1,'train_stg6']]]
+  ['height_0',['height',['../classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v.html#a54a4fe8f68b863a2ee6757e3ea14833e',1,'msecnn_raulkviana.dataset_utils.VideoCaptureYUV.height'],['../classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2.html#a38a8b4674e0e48df1d076f2649773547',1,'msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2.height']]]
 ];

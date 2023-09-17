@@ -7,7 +7,7 @@
     </briefdescription>
     <detaileddescription>
 <para><anchor id="md_pages__doxygen_2dataset_1autotoc_md0"/> This folder contains all of the data used in this work. To train a supervised ML model, annotated data must be created. Given that a trained network has inputs and outputs with specifications, the data supplied to the model must be modified to meet those. This modification entails certain data processing steps to generate data that can directly aid network training/evaluation. A five-step method was designed to process the data, as shown in the diagram below.</para>
-<para><image type="html" name="../../imgs/labels_gen_method.png" alt="labels_gen" inline="yes"></image>
+<para><image type="html" name="../labels_gen_method.png" alt="labels_gen" inline="yes"></image>
 </para>
 <para>You can learn more about the code inside each step from the above image in <ref refid="md_pages__doxygen_2processing__data__code" kindref="compound">processing_data_code.md</ref></para>
 <sect1 id="md_pages__doxygen_2dataset_1autotoc_md1">

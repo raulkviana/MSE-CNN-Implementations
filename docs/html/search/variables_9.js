@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['n_5fmod_0',['n_mod',['../namespaceeval__model__stg6.html#a9dd538d776d6fd9e1a28c875568daa64',1,'eval_model_stg6.n_mod'],['../namespaceeval__model__stg6__metrics.html#a885015787b9a18566d0957b4e6169229',1,'eval_model_stg6_metrics.n_mod'],['../namespacetrain__stg6.html#a0dff77c8ca93ddb2f2726de44e8c45bd',1,'train_stg6.n_mod']]],
-  ['none_5fstring_1',['NONE_STRING',['../namespacemsecnn__raulkviana_1_1utils.html#af467d1f6acbc685507ada8101aed8bae',1,'msecnn_raulkviana::utils']]],
-  ['num_5fworkers_2',['num_workers',['../namespaceeval__model__stg6.html#a49f0af65d29ca166fa6cb725c50ef5b5',1,'eval_model_stg6.num_workers'],['../namespaceeval__model__stg6__metrics.html#a79be8651265f22c4df6ee35a42a9bed1',1,'eval_model_stg6_metrics.num_workers'],['../namespacetrain__stg6.html#aec4822b987578d2ae95a71d1ca43f04b',1,'train_stg6.num_workers']]]
+  ['max_5floss_0',['MAX_LOSS',['../classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e.html#ab1b89301074c9fbde31891815cd37ff9',1,'msecnn_raulkviana.msecnn.LossFunctionMSE.MAX_LOSS'],['../classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e___ratios.html#a96cb5d685485450955c21bff8c1b7f54',1,'msecnn_raulkviana.msecnn.LossFunctionMSE_Ratios.MAX_LOSS']]],
+  ['max_5frd_1',['MAX_RD',['../classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e.html#aa01b44a53e8b450a63f486f3ca5fe800',1,'msecnn_raulkviana.msecnn.LossFunctionMSE.MAX_RD'],['../classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e___ratios.html#a0fc14247072ee3d6ee7a02c6c1589573',1,'msecnn_raulkviana.msecnn.LossFunctionMSE_Ratios.MAX_RD']]],
+  ['model_2',['model',['../namespacedemo.html#afdaa6b6d6a72de879b40e4d6824a0c35',1,'demo']]]
 ];

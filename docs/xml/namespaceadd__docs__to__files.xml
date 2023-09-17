@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/add_docs_to_files.py" line="52" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/add_docs_to_files.py" bodystart="52" bodyend="65"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/add_docs_to_files.py" line="53" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/add_docs_to_files.py" bodystart="53" bodyend="66"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -28,12 +28,12 @@
 @brief Add initial docstring to a directory with files 
  
 @section libraries_add_docs_to_files Libraries 
-- sys
-- os
 - utils
+- os
 
 @section classes_add_docs_to_files Classes 
 - None 
+
 @section functions_add_docs_to_files Functions 
 - main()
  
@@ -64,9 +64,9 @@ SOFTWARE.
 
 @section author_add_docs_to_files Author(s)
 - Created by Raul Kevin Viana
-- Last time modified is 2023-01-29 22:23:10.668041
+- Last time modified is 2022-12-02 18:21:21.101255
 </verbatim> </para>
     </detaileddescription>
-    <location file="src/msecnn_raulkviana/useful_scripts/add_docs_to_files.py" line="1" column="1"/>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/add_docs_to_files.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

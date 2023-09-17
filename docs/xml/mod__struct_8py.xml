@@ -88,6 +88,6 @@
 <codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemod__struct_1ac059d24de1928807b415e4b1712151c3" kindref="member">main</ref>()</highlight></codeline>
     </programlisting>
-    <location file="src/msecnn_raulkviana/useful_scripts/mod_struct.py"/>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/mod_struct.py"/>
   </compounddef>
 </doxygen>

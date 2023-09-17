@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/custom_dataset.py" line="899" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="899" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" line="934" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" bodystart="934" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -65,7 +65,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/custom_dataset.py" line="828" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="828" bodyend="835"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" line="863" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" bodystart="863" bodyend="870"/>
       </memberdef>
       <memberdef kind="function" id="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg3_compl_1a8c3c124d57f3948358f57c85dcf9b00f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -101,7 +101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/custom_dataset.py" line="836" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="836" bodyend="902"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" line="871" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" bodystart="871" bodyend="937"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -147,7 +147,7 @@
         <label>Dataset</label>
       </node>
     </collaborationgraph>
-    <location file="src/msecnn_raulkviana/custom_dataset.py" line="822" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="822" bodyend="902"/>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" line="857" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" bodystart="857" bodyend="937"/>
     <listofallmembers>
       <member refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg3_compl_1a276e7662ff73acc3bb0960be5c495e8c" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::custom_dataset::CUDatasetStg3Compl</scope><name>__init__</name></member>
       <member refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_stg3_compl_1a8f3d2893dd870eaed72ffa5a90e68cdc" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::custom_dataset::CUDatasetStg3Compl</scope><name>channel</name></member>

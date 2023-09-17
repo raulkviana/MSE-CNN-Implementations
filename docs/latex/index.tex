@@ -2,10 +2,61 @@
 \hypertarget{index}{}\label{index}\index{MSE-\/CNN Implementation@{MSE-\/CNN Implementation}}
 \label{index_md_pages__doxygen_2mainpage}%
 \Hypertarget{index_md_pages__doxygen_2mainpage}%
-   
+
+
+   ~\newline
+ ~\newline
+
 
 Code database with an implementation of MSE-\/\+CNN \mbox{[}1\mbox{]}. Besides the code, the dataset and coefficients obtained after training are provided.
 
+
+\begin{DoxyItemize}
+\item MSE-\/\+CNN Implementation
+\begin{DoxyItemize}
+\item \doxylink{namespacedemo}{Demo}
+\item Quickstart
+\item 1. Introduction
+\item 2. Theorectical Background
+\begin{DoxyItemize}
+\item 2.1 Partitioning in VVC
+\item 2.2 MSE-\/\+CNN
+\begin{DoxyItemize}
+\item 2.2.1 Architecture
+\item 2.2.2 Loss Function
+\item 2.2.3 Training
+\item 2.2.4 Implementation remarks
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item 3. Dataset
+\item 4. Results
+\begin{DoxyItemize}
+\item 4.1 F1-\/score, Recall and Precision with test data
+\item 4.2 Confusion matrices
+\begin{DoxyItemize}
+\item 4.2.1 Stages 2 and 3
+\item 4.2.2 Stages 4 and 5
+\item 4.2.3 Stage 6
+\end{DoxyItemize}
+\item 4.3 Y-\/\+PSNR, Complexity Reduction and Bitrate with test data
+\end{DoxyItemize}
+\item 5. Relevant Folders and files
+\begin{DoxyItemize}
+\item 5.1 Folders
+\item 5.2 Files in src folder
+\end{DoxyItemize}
+\item 6. Installation of dependencies
+\begin{DoxyItemize}
+\item Requirements
+\item Package Distributions
+\end{DoxyItemize}
+\item 7. Contributions
+\item 8. License
+\item 9. TODO
+\item 10. References
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{Demo}{Demo}}\label{index_autotoc_md4}
+Apply the MSE-\/\+CNN in your own pictures with its demo here\+: \href{https://kevinmevin-demo-mse-cnn.hf.space}{\texttt{ https\+://kevinmevin-\/demo-\/mse-\/cnn.\+hf.\+space}}\hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{Quickstart}{Quickstart}}\label{index_autotoc_md5}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{>>>\ \textcolor{keyword}{import}\ torch}
@@ -68,52 +119,7 @@ Code database with an implementation of MSE-\/\+CNN \mbox{[}1\mbox{]}. Besides t
 \DoxyCodeLine{tensor(2.7419,\ grad\_fn=<MeanBackward1>)}
 
 \end{DoxyCode}
-
-
-
-\begin{DoxyItemize}
-\item MSE-\/\+CNN Implementation
-\begin{DoxyItemize}
-\item 1. Introduction
-\item 2. Theorectical Background
-\begin{DoxyItemize}
-\item 2.1 Partitioning in VVC
-\item 2.2 MSE-\/\+CNN
-\begin{DoxyItemize}
-\item 2.2.1 Architecture
-\item 2.2.2 Loss Function
-\item 2.2.3 Training
-\item 2.2.4 Implementation remarks
-\end{DoxyItemize}
-\end{DoxyItemize}
-\item 3. Dataset
-\item 4. Results
-\begin{DoxyItemize}
-\item 4.1 F1-\/score, Recall and Precision with test data
-\item 4.2 Confusion matrices
-\begin{DoxyItemize}
-\item 4.2.1 Stages 2 and 3
-\item 4.2.2 Stages 4 and 5
-\item 4.2.3 Stage 6
-\end{DoxyItemize}
-\item 4.3 Y-\/\+PSNR, Complexity Reduction and Bitrate with test data
-\end{DoxyItemize}
-\item 5. Relevant Folders and files
-\begin{DoxyItemize}
-\item 5.1 Folders
-\item 5.2 Files in src folder
-\end{DoxyItemize}
-\item 6. Installation of dependencies
-\begin{DoxyItemize}
-\item Requirements
-\item Package Distributions
-\end{DoxyItemize}
-\item 7. Contributions
-\item 8. License
-\item 9. TODO
-\item 10. References
-\end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{1. Introduction}{1. Introduction}}\label{index_autotoc_md4}
+\hypertarget{index_autotoc_md6}{}\doxysection{\texorpdfstring{1. Introduction}{1. Introduction}}\label{index_autotoc_md6}
 The emergence of new technologies that provide creative audiovisual experiences, such as 360-\/degree films, virtual reality, augmented reality, 4K, 8K UHD, 16K, and also with the rise of video traffic on the web, shows the current demand for video data in the modern world. Because of this tension, Versatile Video Coding (VVC) was developed due to the the necessity for the introduction of new coding standards. Despite the advancements achieved with the introduction of this standard, its complexity has increased very much. The new partitioning technique is responsible for majority of the increase in encoding time. This extended duration is linked with the optimization of the Rate-\/\+Distortion cost (RD cost). Although VVC offers higher compression rates, the complexity of its encoding is high.
 
   
@@ -128,8 +134,8 @@ In light of this, the Multi-\/\+Stage Exit Convolutional Neural Nework (MSE-\/\+
 
 Fig. 2\+: MSE-\/\+CNN benefits
 
- \hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{2. Theorectical Background}{2. Theorectical Background}}\label{index_autotoc_md5}
-\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{2.\+1 Partitioning in VVC}{2.1 Partitioning in VVC}}\label{index_autotoc_md6}
+ \hypertarget{index_autotoc_md7}{}\doxysection{\texorpdfstring{2. Theorectical Background}{2. Theorectical Background}}\label{index_autotoc_md7}
+\hypertarget{index_autotoc_md8}{}\doxysubsection{\texorpdfstring{2.\+1 Partitioning in VVC}{2.1 Partitioning in VVC}}\label{index_autotoc_md8}
 The key objective of partitioning is to divide frames into pieces in a way that results in a reduction of the RD cost. To achieve a perfect balance of quality and bitrate, numerous image fragments combinations must be tested, which is computationally expensive. Due to the intensive nature of this process, a high compression rate can be attained. Partitioning contributes heavily to both the complexity and compression gains in VVC. H.\+266 (VVC), organize a video sequence in many frames that are divided into smaller pieces. First, pictures are split into coding tree units (CTUs), and then they are divided into coding units (CUs). For the luma channel, the largest CTU size in VVC is 128x128 and the smallest is 4x4. In VVC, a quad-\/tree (QT) is initially applied to the CTUs in the first level, and then a quad-\/tree with nested multi-\/type tree (QMTT) is applied recursively.
 
   
@@ -152,10 +158,10 @@ The association of BT and TT is named a multi-\/type tree (MTT). The introductio
 
 Fig. 4\+: Partitioning in VVC
 
- \hypertarget{index_autotoc_md7}{}\doxysubsection{\texorpdfstring{2.\+2 MSE-\/\+CNN}{2.2 MSE-CNN}}\label{index_autotoc_md7}
+ \hypertarget{index_autotoc_md9}{}\doxysubsection{\texorpdfstring{2.\+2 MSE-\/\+CNN}{2.2 MSE-CNN}}\label{index_autotoc_md9}
 Multi-\/\+Stage Exit Convolutional Neural Network (MSE-\/\+CNN) is a DL model that seeks to forecast CUs in a waterfall architecture (top-\/down manner), it integrates . This structure takes a CTU as input, extracts features from it, splits the CU into one of at most six possible partitions (Non-\/split, QT, HBT, VBT, HTT, and VTT), and then sends it to the next stage. This model has CTUs as inputs in the first stage, either in the chroma or luma channel, and feature maps in the subsequent stages. Furthermore, it generates feature maps and a split decision at each level. In the event that one of the models returns the split decision as Non-\/\+Split, the partitioning of the CU is ended immediately.
 
-{\bfseries{Note}}\+: Details about how to load model coefficients can be found \doxysectlink{md_pages__doxygen_2modelcoefpage}{here}{0}.\hypertarget{index_autotoc_md8}{}\doxysubsubsection{\texorpdfstring{2.\+2.\+1 Architecture}{2.2.1 Architecture}}\label{index_autotoc_md8}
+{\bfseries{Note}}\+: Details about how to load model coefficients can be found \doxysectlink{md_pages__doxygen_2modelcoefpage}{here}{0}.\hypertarget{index_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{2.\+2.\+1 Architecture}{2.2.1 Architecture}}\label{index_autotoc_md10}
 This model is composed by the following blocks\+:
 
 
@@ -191,7 +197,7 @@ Fig. 7\+: Sub-\/networks
 
  
 
-Note\+: For more details regarding these layers check \mbox{[}1\mbox{]}\hypertarget{index_autotoc_md9}{}\doxysubsubsection{\texorpdfstring{2.\+2.\+2 Loss Function}{2.2.2 Loss Function}}\label{index_autotoc_md9}
+Note\+: For more details regarding these layers check \mbox{[}1\mbox{]}\hypertarget{index_autotoc_md11}{}\doxysubsubsection{\texorpdfstring{2.\+2.\+2 Loss Function}{2.2.2 Loss Function}}\label{index_autotoc_md11}
 The loss developed for the MSE-\/\+CNN is the result of two other functions, as defined in the following expression\+:
 
 \$\$ L = L\+\_\+\{CE\}+\textbackslash{}beta L\+\_\+\{RD\}\$\$
@@ -214,7 +220,7 @@ In the above equation, the RD costs \$r\+\_\+\{n, m\}\$ uses the same notation f
 
   
 
-ensures that CU\textquotesingle{}s partitions with greater erroneously predicted probability values or greater RD cost values \$r\+\_\+\{n, m\}\$ are more penalised. In \$\textbackslash{}frac\{r\+\_\+\{n, m\}\}\{r\+\_\+\{n, min\}\} -\/ 1\$, the ideal partition has a normalised RD cost of zero, but the other partitions do not. Therefore, the only way for the loss to equal zero is if the probability for all other modes also equals zero. Consequently, the learning algorithm must assign a greater probability to the optimal split mode while reducing the probabilities for the rest. {\bfseries{Experimentally it was verified that this function wasn\textquotesingle{}t able to contribute to the training of the MSE-\/\+CNN, this contradicted the remarks made in \mbox{[}1\mbox{]}}}.\hypertarget{index_autotoc_md10}{}\doxysubsubsection{\texorpdfstring{2.\+2.\+3 Training}{2.2.3 Training}}\label{index_autotoc_md10}
+ensures that CU\textquotesingle{}s partitions with greater erroneously predicted probability values or greater RD cost values \$r\+\_\+\{n, m\}\$ are more penalised. In \$\textbackslash{}frac\{r\+\_\+\{n, m\}\}\{r\+\_\+\{n, min\}\} -\/ 1\$, the ideal partition has a normalised RD cost of zero, but the other partitions do not. Therefore, the only way for the loss to equal zero is if the probability for all other modes also equals zero. Consequently, the learning algorithm must assign a greater probability to the optimal split mode while reducing the probabilities for the rest. {\bfseries{Experimentally it was verified that this function wasn\textquotesingle{}t able to contribute to the training of the MSE-\/\+CNN, this contradicted the remarks made in \mbox{[}1\mbox{]}}}.\hypertarget{index_autotoc_md12}{}\doxysubsubsection{\texorpdfstring{2.\+2.\+3 Training}{2.2.3 Training}}\label{index_autotoc_md12}
 The strategy used to train the MSE-\/\+CNN was very similar to the one used in \mbox{[}1\mbox{]}. The first parts of the model to be trained were the first and second stages, in which 64x64 CUs were passed through the second depth. Afterwards, transfer learning was used to pass certain coefficients of the second stage to the third. Then, the third stage was trained with 32x32 CUs flowing through it. After this step, a similar process was done to the following stages. It is worth noting that, beginning with stage 4, various CUs forms are at the models\textquotesingle{} input. This means that these stages were fed different kinds of CUs. ~\newline
 
 
@@ -224,7 +230,7 @@ Fig. 8\+: Training flow used
 
  
 
-At the end of training, 6 models were obtained one for each partitioning depth in the luma channel. Although models for the luma and chroma channels could be created for all the shapes of CUs that are possible, rather than just for each depth, only six were trained for the sake of assessing the model behaviour in a simpler and more understandable configuration.\hypertarget{index_autotoc_md11}{}\doxysubsubsection{\texorpdfstring{2.\+2.\+4 Implementation remarks}{2.2.4 Implementation remarks}}\label{index_autotoc_md11}
+At the end of training, 6 models were obtained one for each partitioning depth in the luma channel. Although models for the luma and chroma channels could be created for all the shapes of CUs that are possible, rather than just for each depth, only six were trained for the sake of assessing the model behaviour in a simpler and more understandable configuration.\hypertarget{index_autotoc_md13}{}\doxysubsubsection{\texorpdfstring{2.\+2.\+4 Implementation remarks}{2.2.4 Implementation remarks}}\label{index_autotoc_md13}
 Due to the deterministic nature of the first stage, where CTUs are always partitioned with a QT, it was implemented together with the second stage. If it was done separately, the training for the first two stages would have to be done at the same time. Consequently, two distinct optimisers would need to be employed, which could result in unpredictable training behaviour. ~\newline
 
 
@@ -236,9 +242,9 @@ Fig. 9\+: 32 minimum axis size sub-\/networks
 
 When implementing the sub-\/networks on code, those that were meant to cater for varying CU sizes were further implemented separately. For example, in the case of the sub-\/network utilised when the minimum width or height is 32, two variants of the first two layers were built. This was done because 64x32 and 32x32 CUs can flow across this block. Because of this, the first two layers were implemented separately from the entire block. Then, they were used in conjunction with the remaining layers based on the dimensions of the input CU. The same procedures were followed for the other types of sub-\/networks.
 
-When the network was being trained, some of the RD costs from the input data had very high values. Consequently, the RD loss function value skyrocketed, resulting in extremely huge gradients during training. As a result, the maximum RD cost was hard coded at \$10\texorpdfstring{$^\wedge$}{\string^}\{10\}\$. This amount is large enough to be more than the best partition\textquotesingle{}s RD cost and small enough to address this issue.\hypertarget{index_autotoc_md12}{}\doxysection{\texorpdfstring{3. Dataset}{3. Dataset}}\label{index_autotoc_md12}
-Please see this \doxysectlink{md_pages__doxygen_2dataset}{page}{0} to understand better the dataset and also access it. To see example data go to follow \doxysectlink{md_pages__doxygen_2exampledatapage}{this}{0}.\hypertarget{index_autotoc_md13}{}\doxysection{\texorpdfstring{4. Results}{4. Results}}\label{index_autotoc_md13}
-Since it was verified that the Rate-\/\+Distortion Loss. \$\+L\+\_\+\{RD\}\$, could contribute for better results, the metrics presented here were obtained with a model trained only with the modified cross-\/entropy loss.\hypertarget{index_autotoc_md14}{}\doxysubsection{\texorpdfstring{4.\+1 F1-\/score, Recall and Precision with test data}{4.1 F1-score, Recall and Precision with test data}}\label{index_autotoc_md14}
+When the network was being trained, some of the RD costs from the input data had very high values. Consequently, the RD loss function value skyrocketed, resulting in extremely huge gradients during training. As a result, the maximum RD cost was hard coded at \$10\texorpdfstring{$^\wedge$}{\string^}\{10\}\$. This amount is large enough to be more than the best partition\textquotesingle{}s RD cost and small enough to address this issue.\hypertarget{index_autotoc_md14}{}\doxysection{\texorpdfstring{3. Dataset}{3. Dataset}}\label{index_autotoc_md14}
+Please see this \doxysectlink{md_pages__doxygen_2dataset}{page}{0} to understand better the dataset and also access it. To see example data go to follow \doxysectlink{md_pages__doxygen_2exampledatapage}{this}{0}.\hypertarget{index_autotoc_md15}{}\doxysection{\texorpdfstring{4. Results}{4. Results}}\label{index_autotoc_md15}
+Since it was verified that the Rate-\/\+Distortion Loss. \$\+L\+\_\+\{RD\}\$, could contribute for better results, the metrics presented here were obtained with a model trained only with the modified cross-\/entropy loss.\hypertarget{index_autotoc_md16}{}\doxysubsection{\texorpdfstring{4.\+1 F1-\/score, Recall and Precision with test data}{4.1 F1-score, Recall and Precision with test data}}\label{index_autotoc_md16}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
 \hline
@@ -257,23 +263,23 @@ Stage 6   &0.\+7282   &0.\+7411   &0.\+7311   \\\cline{1-4}
 \end{longtabu}
 
 
-Results with weighted average for F1-\/score, recall and precision.\hypertarget{index_autotoc_md15}{}\doxysubsection{\texorpdfstring{4.\+2 Confusion matrices}{4.2 Confusion matrices}}\label{index_autotoc_md15}
-\hypertarget{index_autotoc_md16}{}\doxysubsubsection{\texorpdfstring{4.\+2.\+1 Stages 2 and 3}{4.2.1 Stages 2 and 3}}\label{index_autotoc_md16}
+Results with weighted average for F1-\/score, recall and precision.\hypertarget{index_autotoc_md17}{}\doxysubsection{\texorpdfstring{4.\+2 Confusion matrices}{4.2 Confusion matrices}}\label{index_autotoc_md17}
+\hypertarget{index_autotoc_md18}{}\doxysubsubsection{\texorpdfstring{4.\+2.\+1 Stages 2 and 3}{4.2.1 Stages 2 and 3}}\label{index_autotoc_md18}
    
 
 Fig. 10\+: Confusion matrix results with the testing data in stages 2 and 3
 
- \hypertarget{index_autotoc_md17}{}\doxysubsubsection{\texorpdfstring{4.\+2.\+2 Stages 4 and 5}{4.2.2 Stages 4 and 5}}\label{index_autotoc_md17}
+ \hypertarget{index_autotoc_md19}{}\doxysubsubsection{\texorpdfstring{4.\+2.\+2 Stages 4 and 5}{4.2.2 Stages 4 and 5}}\label{index_autotoc_md19}
    
 
 Fig. 11\+: Confusion matrix results with the testing data in stages 4 and 5
 
- \hypertarget{index_autotoc_md18}{}\doxysubsubsection{\texorpdfstring{4.\+2.\+3 Stage 6}{4.2.3 Stage 6}}\label{index_autotoc_md18}
+ \hypertarget{index_autotoc_md20}{}\doxysubsubsection{\texorpdfstring{4.\+2.\+3 Stage 6}{4.2.3 Stage 6}}\label{index_autotoc_md20}
   
 
 Fig. 12\+: Confusion matrix results with the testing data in stage 6
 
- \hypertarget{index_autotoc_md19}{}\doxysubsection{\texorpdfstring{4.\+3 Y-\/\+PSNR, Complexity Reduction and Bitrate with test data}{4.3 Y-PSNR, Complexity Reduction and Bitrate with test data}}\label{index_autotoc_md19}
+ \hypertarget{index_autotoc_md21}{}\doxysubsection{\texorpdfstring{4.\+3 Y-\/\+PSNR, Complexity Reduction and Bitrate with test data}{4.3 Y-PSNR, Complexity Reduction and Bitrate with test data}}\label{index_autotoc_md21}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
 \hline
@@ -290,8 +296,8 @@ Complexity   &1792.\+88 s   &1048.\+95 s   &-\/41.\+49\%   \\\cline{1-4}
 \end{longtabu}
 
 
-{\bfseries{These results were obtained with the \"{}medium\"{} configuration for the multi-\/thresholding method.}}\hypertarget{index_autotoc_md20}{}\doxysection{\texorpdfstring{5. Relevant Folders and files}{5. Relevant Folders and files}}\label{index_autotoc_md20}
-\hypertarget{index_autotoc_md21}{}\doxysubsection{\texorpdfstring{5.\+1 Folders}{5.1 Folders}}\label{index_autotoc_md21}
+{\bfseries{These results were obtained with the \"{}medium\"{} configuration for the multi-\/thresholding method.}}\hypertarget{index_autotoc_md22}{}\doxysection{\texorpdfstring{5. Relevant Folders and files}{5. Relevant Folders and files}}\label{index_autotoc_md22}
+\hypertarget{index_autotoc_md23}{}\doxysubsection{\texorpdfstring{5.\+1 Folders}{5.1 Folders}}\label{index_autotoc_md23}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
 \hline
@@ -307,7 +313,7 @@ Complexity   &1792.\+88 s   &1048.\+95 s   &-\/41.\+49\%   \\\cline{1-4}
 \href{/model_coefficients}{\texttt{ model\+\_\+coefficients}}   &The last coefficient obtained during training, as well as the best one in terms of the best F1-\/score obtained in testing data    \\\cline{1-2}
 \href{/src}{\texttt{ src}}   &Source code with the implementation of the MSE-\/\+CNN and also useful code and examples   \\\cline{1-2}
 \end{longtabu}
-\hypertarget{index_autotoc_md22}{}\doxysubsection{\texorpdfstring{5.\+2 Files in src folder}{5.2 Files in src folder}}\label{index_autotoc_md22}
+\hypertarget{index_autotoc_md24}{}\doxysubsection{\texorpdfstring{5.\+2 Files in src folder}{5.2 Files in src folder}}\label{index_autotoc_md24}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
 \hline
@@ -325,8 +331,8 @@ Complexity   &1792.\+88 s   &1048.\+95 s   &-\/41.\+49\%   \\\cline{1-4}
 \doxylink{train__model__utils_8py}{train\+\_\+model\+\_\+utils.\+py}   &Usefull functions to be used during training or evaluation of the artificial neural network    \\\cline{1-2}
 \doxylink{utils_8py}{utils.\+py}   &Other functions that are usefull not directly to the model but for the code implementation itself   \\\cline{1-2}
 \end{longtabu}
-\hypertarget{index_autotoc_md23}{}\doxysection{\texorpdfstring{6. Installation of dependencies}{6. Installation of dependencies}}\label{index_autotoc_md23}
-In order to explore this project, it is needed to first install of the libraries used in it.\hypertarget{index_autotoc_md24}{}\doxysubsection{\texorpdfstring{Requirements}{Requirements}}\label{index_autotoc_md24}
+\hypertarget{index_autotoc_md25}{}\doxysection{\texorpdfstring{6. Installation of dependencies}{6. Installation of dependencies}}\label{index_autotoc_md25}
+In order to explore this project, it is needed to first install of the libraries used in it.\hypertarget{index_autotoc_md26}{}\doxysubsection{\texorpdfstring{Requirements}{Requirements}}\label{index_autotoc_md26}
 For this please follow the below steps\+:
 \begin{DoxyEnumerate}
 \item Create a virtual environment to do install the libraries; follow this \href{https://www.geeksforgeeks.org/creating-python-virtual-environment-windows-linux/}{\texttt{ link}} in case you don\textquotesingle{}t know how to do it; you possibly need to install \href{https://www.makeuseof.com/tag/install-pip-for-python/}{\texttt{ pip}}, if you don\textquotesingle{}t have it installed
@@ -347,7 +353,7 @@ For this please follow the below steps\+:
 \end{DoxyEnumerate}
 \begin{DoxyEnumerate}
 \item Enjoy! \+:)
-\end{DoxyEnumerate}\hypertarget{index_autotoc_md25}{}\doxysubsection{\texorpdfstring{Package Distributions}{Package Distributions}}\label{index_autotoc_md25}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md27}{}\doxysubsection{\texorpdfstring{Package Distributions}{Package Distributions}}\label{index_autotoc_md27}
 
 \begin{DoxyEnumerate}
 \item Locate the {\ttfamily dist} folder in your project\textquotesingle{}s root directory. This folder contains the package distributions, including the source distribution ({\ttfamily \texorpdfstring{$\ast$}{*}.tar.\+gz} file) and the wheel distribution ({\ttfamily \texorpdfstring{$\ast$}{*}.whl} file).
@@ -367,9 +373,9 @@ For this please follow the below steps\+:
 
 \end{DoxyItemize}
 \item Once the package is installed, you can import and use its functionalities in your Python code.
-\end{DoxyEnumerate}\hypertarget{index_autotoc_md26}{}\doxysection{\texorpdfstring{7. Contributions}{7. Contributions}}\label{index_autotoc_md26}
-Feel free to contact me through this \href{raulviana@ua.pt}{\texttt{ email}} or create either a issue or pull request to contribute to this project \texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}.\hypertarget{index_autotoc_md27}{}\doxysection{\texorpdfstring{8. License}{8. License}}\label{index_autotoc_md27}
-This project license is under the \mbox{[}MIT License\mbox{]}(LICENSE).\hypertarget{index_autotoc_md28}{}\doxysection{\texorpdfstring{9. TODO}{9. TODO}}\label{index_autotoc_md28}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md28}{}\doxysection{\texorpdfstring{7. Contributions}{7. Contributions}}\label{index_autotoc_md28}
+Feel free to contact me through this \href{raulviana@ua.pt}{\texttt{ email}} or create either a issue or pull request to contribute to this project \texorpdfstring{$^\wedge$}{\string^}\texorpdfstring{$^\wedge$}{\string^}.\hypertarget{index_autotoc_md29}{}\doxysection{\texorpdfstring{8. License}{8. License}}\label{index_autotoc_md29}
+This project license is under the \mbox{[}MIT License\mbox{]}(LICENSE).\hypertarget{index_autotoc_md30}{}\doxysection{\texorpdfstring{9. TODO}{9. TODO}}\label{index_autotoc_md30}
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
 \hline
@@ -382,7 +388,7 @@ This project license is under the \mbox{[}MIT License\mbox{]}(LICENSE).\hypertar
 \endhead
 Implement code to test functions   &Use a library, such as Pytest, to test some functions from the many modules developed   &w   \\\cline{1-3}
 \end{longtabu}
-\hypertarget{index_autotoc_md29}{}\doxysection{\texorpdfstring{10. References}{10. References}}\label{index_autotoc_md29}
+\hypertarget{index_autotoc_md31}{}\doxysection{\texorpdfstring{10. References}{10. References}}\label{index_autotoc_md31}
 \mbox{[}1\mbox{]} T. Li, M. Xu, R. Tang, Y. Chen, and Q. Xing, \href{https://arxiv.org/abs/2006.13125}{\texttt{ “\+Deep\+QTMT\+: A Deep Learning Approach for Fast QTMT-\/\+Based CU Partition of Intra-\/\+Mode VVC,”}} IEEE Transactions on Image Processing, vol. 30, pp. 5377–5390, 2021, doi\+: 10.\+1109/tip.2021.\+3083447. \mbox{[}2\mbox{]} R. K. Viana, “\+Deep learning architecture for fast intra-\/mode CUs partitioning in VVC,” Universidade de Aveiro, Nov. 2022.
 
   

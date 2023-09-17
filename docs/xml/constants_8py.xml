@@ -9,7 +9,7 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1" refid="namespacemsecnn__raulkviana_1_1constants" refkind="compound"><highlight class="stringliteral">&quot;&quot;&quot;@package<sp/>docstring<sp/></highlight></codeline>
+<codeline lineno="1" refid="namespacemsecnn__raulkviana" refkind="compound"><highlight class="stringliteral">&quot;&quot;&quot;@package<sp/>docstring<sp/></highlight></codeline>
 <codeline lineno="2"><highlight class="stringliteral"></highlight></codeline>
 <codeline lineno="3"><highlight class="stringliteral">@file<sp/>constants.py<sp/></highlight></codeline>
 <codeline lineno="4"><highlight class="stringliteral"></highlight></codeline>
@@ -98,6 +98,6 @@
 <codeline lineno="87"><highlight class="stringliteral">PATH_BEST_PARAMS_stg6<sp/>=<sp/>&quot;Params_8x4_luma_best_stg6&quot;</highlight></codeline>
 <codeline lineno="88"><highlight class="stringliteral">PATH_LAST_PARAMS_stg6<sp/>=<sp/>&quot;Params_8x4_luma_last_stg6&quot;</highlight></codeline>
     </programlisting>
-    <location file="src/msecnn_raulkviana/constants.py"/>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/constants.py"/>
   </compounddef>
 </doxygen>

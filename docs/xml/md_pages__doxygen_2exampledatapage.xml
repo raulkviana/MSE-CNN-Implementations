@@ -6,7 +6,7 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para><anchor id="md_pages__doxygen_2exampledatapage_1autotoc_md2"/> The data in this folder is used by the scripts in the <ulink url="../src/msecnn_raulkviana/usefull_scripts/">usefull_scripts</ulink> folder. The data in this folder is unbalanced. To load this data into the custom data class, you can follow this sample of code</para>
+<para><anchor id="md_pages__doxygen_2exampledatapage_1autotoc_md2"/> The data in this folder is used by the scripts in the <ulink url="../../src/msecnn_raulkviana/usefull_scripts/">usefull_scripts</ulink> folder. The data in this folder is unbalanced. To load this data into the custom data class, you can follow this sample of code</para>
 <para><programlisting filename=".py"><codeline><highlight class="keyword">import</highlight><highlight class="normal"><sp/>custom_dataset</highlight></codeline>
 <codeline><highlight class="normal"></highlight></codeline>
 <codeline><highlight class="normal"></highlight><highlight class="comment">#<sp/>Path<sp/>to<sp/>already<sp/>processed<sp/>data</highlight><highlight class="normal"></highlight></codeline>

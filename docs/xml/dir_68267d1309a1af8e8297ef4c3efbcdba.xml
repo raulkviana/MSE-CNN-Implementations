@@ -1,12 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
   <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
-    <compoundname>src</compoundname>
-    <innerdir refid="dir_940fdb39b62cfdd78aaec39f274a0c2a">src/msecnn_raulkviana</innerdir>
+    <compoundname>C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src</compoundname>
+    <innerdir refid="dir_940fdb39b62cfdd78aaec39f274a0c2a">C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana</innerdir>
+    <innerdir refid="dir_905c15a42d042b8d186b31fa9e50b682">C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana.egg-info</innerdir>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="src/"/>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/"/>
   </compounddef>
 </doxygen>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="description_8md" kind="file" language="Markdown">
+    <compoundname>description.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">With<sp/>this<sp/>demo<sp/>you<sp/>will<sp/>be<sp/>able<sp/>to<sp/>understand<sp/>better<sp/>how<sp/>the<sp/>MSE-CNN<sp/>works<sp/>and<sp/>its<sp/>goal!<sp/>:D</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;center&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;img<sp/>src=&quot;file/msecnn_model.png&quot;<sp/>width=500<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/center&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Tutorial</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>use<sp/>this<sp/>demo<sp/>follow<sp/>these<sp/>steps<sp/>;)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Load<sp/>an<sp/>image<sp/>from<sp/>your<sp/>PC.<sp/>Since<sp/>the<sp/>model<sp/>needs<sp/>to<sp/>be<sp/>fed<sp/>128x128<sp/>images,<sp/>if<sp/>your<sp/>image<sp/>is<sp/>larger<sp/>than<sp/>that,<sp/>then<sp/>the<sp/>128<sp/>by<sp/>128<sp/>area<sp/>within<sp/>your<sp/>image<sp/>top<sp/>left<sp/>will<sp/>be<sp/>loaded.<sp/>Additionally,<sp/>you<sp/>can<sp/>tell<sp/>the<sp/>app<sp/>the<sp/>coordinates<sp/>of<sp/>the<sp/>area<sp/>of<sp/>the<sp/>snapshot<sp/>you<sp/>want<sp/>to<sp/>see.<sp/>The<sp/>coordinates<sp/>are<sp/>related<sp/>to<sp/>the<sp/>image&apos;s<sp/>upper-left<sp/>corner,<sp/>therefore<sp/>position<sp/>0,0<sp/>refers<sp/>to<sp/>that<sp/>particular<sp/>area.<sp/>Furthermore,<sp/>you<sp/>must<sp/>first<sp/>specify<sp/>the<sp/>height<sp/>position<sp/>(y<sp/>axis)<sp/>and<sp/>then<sp/>the<sp/>width<sp/>position<sp/>(x<sp/>axis).</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Click<sp/>&quot;Submit&quot;<sp/>to<sp/>pass<sp/>the<sp/>image<sp/>through<sp/>the<sp/>model.<sp/></highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>After<sp/>the<sp/>previous<sp/>step,<sp/>an<sp/>image<sp/>will<sp/>be<sp/>displayed<sp/>with<sp/>the<sp/>best<sp/>way,<sp/>according<sp/>with<sp/>the<sp/>model,<sp/>to<sp/>partition<sp/>that<sp/>section<sp/>of<sp/>the<sp/>image.<sp/>The<sp/>possible<sp/>ways<sp/>to<sp/>partition<sp/>an<sp/>block<sp/>(coding<sp/>unit,<sp/>CU)<sp/>in<sp/>VVC<sp/>is<sp/>in<sp/>Quartenary<sp/>Tree<sp/>(QT),<sp/>Binary<sp/>Tree<sp/>Horizontal<sp/>or<sp/>Vertical<sp/>(BTH<sp/>or<sp/>BTV),<sp/>Ternary<sp/>Tree<sp/>Horizontal<sp/>or<sp/>Vertical<sp/>(TTH,<sp/>TTV)<sp/>and<sp/>Non-split.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Note**:<sp/>This<sp/>demo<sp/>implementation<sp/>has<sp/>some<sp/>limitations,<sp/>such<sp/>as<sp/>the<sp/>fact<sp/>that<sp/>the<sp/>model<sp/>occasionally<sp/>makes<sp/>illogical<sp/>predictions.<sp/>For<sp/>instance,<sp/>splitting<sp/>a<sp/>16x32<sp/>CU<sp/>using<sp/>VTT<sp/>is<sp/>incorrect.<sp/>This<sp/>occurs<sp/>as<sp/>a<sp/>result<sp/>of<sp/>the<sp/>model&apos;s<sp/>inherent<sp/>constraints<sp/>as<sp/>well<sp/>as<sp/>the<sp/>fact<sp/>that<sp/>only<sp/>the<sp/>best<sp/>split<sp/>is<sp/>being chosen.<sp/>One<sp/>way<sp/>to<sp/>reduce<sp/>this<sp/>behaviour<sp/>is<sp/>to<sp/>evaluate<sp/>not<sp/>only<sp/>the<sp/>optimal<sp/>split<sp/>but<sp/>also<sp/>alternate<sp/>splits.<sp/>This<sp/>can<sp/>be<sp/>accomplished<sp/>by,<sp/>for<sp/>instance,<sp/>applying<sp/>the<sp/>multi-thresholding<sp/>method<sp/>to<sp/>the<sp/>model&apos;s<sp/>forecasts and<sp/>determining<sp/>the<sp/>splits<sp/>that<sp/>are<sp/>most<sp/>likely<sp/>to<sp/>occur.<sp/>Additionally,<sp/>when unreasonable splits<sp/>are<sp/>predicted,<sp/>the<sp/>code<sp/>immediately<sp/>halts<sp/>the<sp/>partitioning<sp/>of<sp/>that<sp/>particular<sp/>block.</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/demo/description.md"/>
+  </compounddef>
+</doxygen>

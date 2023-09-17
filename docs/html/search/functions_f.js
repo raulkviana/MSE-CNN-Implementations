@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['test_0',['test',['../namespaceeval__model__stg6.html#a2b677f1eb8ebd600925b54755ceb837b',1,'eval_model_stg6.test()'],['../namespaceeval__model__stg6__metrics.html#ae27be79f8771354863a7e29e82b955c0',1,'eval_model_stg6_metrics.test()'],['../namespacetrain__stg6.html#af5a4441c56dc8502731a1c3c0d99316a',1,'train_stg6.test(dataloader, model, loss_fn, device, loss_name)']]],
-  ['train_1',['train',['../namespacetrain__stg6.html#acdea602488f368d2634836e2d4140f92',1,'train_stg6']]],
-  ['train_5ftest_2',['train_test',['../namespacetrain__stg6.html#a5fa206f76e13ffd9683dd8aa096079f7',1,'train_stg6']]],
-  ['transform_5fcreate_5fstruct_5ffaster_5fv2_5fmod_5fdivs_3',['transform_create_struct_faster_v2_mod_divs',['../namespacemsecnn__raulkviana_1_1dataset__utils.html#af51f5b85407e8b3f81adbca64b1d72e9',1,'msecnn_raulkviana::dataset_utils']]],
-  ['transform_5fcreate_5fstruct_5ffaster_5fv3_4',['transform_create_struct_faster_v3',['../namespacemsecnn__raulkviana_1_1dataset__utils.html#ab5e4697acb7b7684aa9290f0910032bb',1,'msecnn_raulkviana::dataset_utils']]],
-  ['transform_5fraw_5fdataset_5',['transform_raw_dataset',['../namespacemsecnn__raulkviana_1_1dataset__utils.html#a5015f5adc38f4b380784eea7f4e73dfa',1,'msecnn_raulkviana::dataset_utils']]],
-  ['tuple2list_6',['tuple2list',['../namespacemsecnn__raulkviana_1_1dataset__utils.html#a18efe69dd25da8e59ae2b0f13ce06781',1,'msecnn_raulkviana::dataset_utils']]]
+  ['save_5fmodel_0',['save_model',['../namespacemsecnn__raulkviana_1_1train__model__utils.html#af861829fd2bb377d08cf101471987aa5',1,'msecnn_raulkviana::train_model_utils']]],
+  ['save_5fmodel_5fparameters_1',['save_model_parameters',['../namespacemsecnn__raulkviana_1_1train__model__utils.html#adb76e5e1e7fb9398be537a21810f4fcf',1,'msecnn_raulkviana::train_model_utils']]],
+  ['select_5fentry_2',['select_entry',['../classmsecnn__raulkviana_1_1custom__dataset_1_1_c_u_dataset_base.html#a4c653575f0acf7e33ca6d4b29b8097c9',1,'msecnn_raulkviana::custom_dataset::CUDatasetBase']]],
+  ['setup_5fmodel_3',['setup_model',['../namespacedemo.html#a17011f58771c2514a5eda7f101c3692b',1,'demo']]],
+  ['show_5fall_5fcus_4',['show_all_CUs',['../namespacemsecnn__raulkviana_1_1custom__dataset.html#ada43d6f9f3fe6cdc9822a80428213a07',1,'msecnn_raulkviana::custom_dataset']]],
+  ['show_5fbin_5fcontent_5',['show_bin_content',['../namespacemsecnn__raulkviana_1_1dataset__utils.html#ac7246ea082350e97d972e7e3f22a41f4',1,'msecnn_raulkviana::dataset_utils']]],
+  ['show_5fcu_6',['show_CU',['../namespacemsecnn__raulkviana_1_1custom__dataset.html#ae0eac8f315472938410c9498dc507807',1,'msecnn_raulkviana::custom_dataset']]],
+  ['split_7',['split',['../classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg1.html#ab79608194b3a41cbcd8963f21cf3ca4e',1,'msecnn_raulkviana.msecnn.MseCnnStg1.split()'],['../namespacemsecnn__raulkviana_1_1dataset__utils.html#a81a7fcccb9018a9220c6065966c8847c',1,'msecnn_raulkviana.dataset_utils.split()']]],
+  ['split_5ffm_8',['split_fm',['../namespacedemo.html#adc15d43f2886217e33a93d362cadf0da',1,'demo']]]
 ];

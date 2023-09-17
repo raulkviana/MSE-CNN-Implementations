@@ -4,10 +4,14 @@
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v}{Video\+Capture\+YUV}}
+\item 
+class \mbox{\hyperlink{classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2}{Video\+Capture\+YUVV2}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1dataset__utils_aed8e8d1d72e52eded4eecbd2d2848712}{yuv2bgr}} (matrix)
+\begin{DoxyCompactList}\small\item\em Converts yuv matrix to bgr matrix. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacemsecnn__raulkviana_1_1dataset__utils_ad77955814433f58f58b0513a6127a239}{bgr2yuv}} (matrix)
 \begin{DoxyCompactList}\small\item\em Converts BGR matrix to YUV matrix. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacemsecnn__raulkviana_1_1dataset__utils_a593e830c4a93c93728539b1a59e52ff9}{extract\+\_\+content}} (f)
@@ -213,7 +217,6 @@ class \mbox{\hyperlink{classmsecnn__raulkviana_1_1dataset__utils_1_1_video_captu
 - VideoCaptureYUV
  
 @section functions_dataset_utils Functions
-- bgr2yuv(matrix)
 - extract_content(f)
 - file_stats(path)
 - show_bin_content(path, num_records=100)
@@ -1697,5 +1700,22 @@ This version, follows a stage oriented approach. Uses just the specified color c
 \mbox{\texttt{ in}}  & {\em n\+\_\+output\+\_\+file} & Name for the output file \\
 \hline
 \mbox{\texttt{ in}}  & {\em color\+\_\+ch} & Color channel \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacemsecnn__raulkviana_1_1dataset__utils_aed8e8d1d72e52eded4eecbd2d2848712}\label{namespacemsecnn__raulkviana_1_1dataset__utils_aed8e8d1d72e52eded4eecbd2d2848712} 
+\index{msecnn\_raulkviana.dataset\_utils@{msecnn\_raulkviana.dataset\_utils}!yuv2bgr@{yuv2bgr}}
+\index{yuv2bgr@{yuv2bgr}!msecnn\_raulkviana.dataset\_utils@{msecnn\_raulkviana.dataset\_utils}}
+\doxysubsubsection{\texorpdfstring{yuv2bgr()}{yuv2bgr()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+dataset\+\_\+utils.\+yuv2bgr (\begin{DoxyParamCaption}\item[{}]{matrix }\end{DoxyParamCaption})}
+
+
+
+Converts yuv matrix to bgr matrix. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em matrix} & Yuv matrix \\
+\hline
+\mbox{\texttt{ out}}  & {\em bgr} & Bgr conversion \\
 \hline
 \end{DoxyParams}

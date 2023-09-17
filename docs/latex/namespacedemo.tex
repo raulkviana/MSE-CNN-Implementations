@@ -1,0 +1,325 @@
+\doxysection{demo Namespace Reference}
+\hypertarget{namespacedemo}{}\label{namespacedemo}\index{demo@{demo}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacedemo_a17011f58771c2514a5eda7f101c3692b}{setup\+\_\+model}} ()
+\begin{DoxyCompactList}\small\item\em Initializes and load the parameters of the MSE-\/\+CNN. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedemo_a17944feff814fff559d662b0f204ba0e}{int2label}} (split)
+\begin{DoxyCompactList}\small\item\em Obtain the string that corresponds to an integer value of the split. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedemo_ab8600c64de65acea972fc88b9f2243c7}{draw\+\_\+partition}} (img, split, cu\+\_\+pos, cu\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Draw partition in image based in the split outputed by the model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedemo_adc15d43f2886217e33a93d362cadf0da}{split\+\_\+fm}} (cu, cu\+\_\+pos, split)
+\begin{DoxyCompactList}\small\item\em Splits feature maps in specific way. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedemo_aef29d63c9c71d261da8eaff42f5f55af}{partition\+\_\+img}} (img, img\+\_\+yuv)
+\begin{DoxyCompactList}\small\item\em Partitions a full 128x128 CTU and draws the partition in the original image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedemo_a5a73f194ee64b84d4b8b0ce645f42983}{pipeline}} (img, text)
+\begin{DoxyCompactList}\small\item\em Pipeline to implement the functionalities to demonstrate the potential of the MSE-\/\+CNN. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedemo_a9a7eee49297dfd617496f5bb2914b837}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacedemo_a1ffe6e3cd2dc1ac0f02221e6a602076e}{PATH\+\_\+\+TO\+\_\+\+COEFFS}} = \"{}../../../model\+\_\+coefficients/best\+\_\+coefficients\"{}
+\item 
+str \mbox{\hyperlink{namespacedemo_a4ae3993910053aa131604b676b2b9b5b}{LOAD\+\_\+\+IMAGE\+\_\+\+ERROR}} = \"{}load\+\_\+image\+\_\+error.\+png\"{}
+\item 
+list \mbox{\hyperlink{namespacedemo_a2bc429d4870d31c755fb116740d1ce98}{EXAMPLE\+\_\+\+IMGS}} = \mbox{[}\"{}example\+\_\+img\+\_\+1.\+jpeg\"{}, \"{}example\+\_\+img\+\_\+2.\+jpeg\"{}\mbox{]}
+\item 
+tuple \mbox{\hyperlink{namespacedemo_adf10c69ec4657142f4f267187d122a6c}{CTU\+\_\+\+SIZE}} = (128, 128)
+\item 
+\mbox{\hyperlink{namespacedemo_a1594ea1937c3d920662fa9cfc3dbb270}{FIRST\+\_\+\+CU\+\_\+\+POS}} = torch.\+tensor(\mbox{[}0, 0\mbox{]}).reshape(shape=(-\/1, 2))
+\item 
+\mbox{\hyperlink{namespacedemo_a34b51838a0c3c81063aef8f9681a8713}{FIRST\+\_\+\+CU\+\_\+\+SIZE}} = torch.\+tensor(\mbox{[}64, 64\mbox{]}).reshape(shape=(-\/1, 2))
+\item 
+str \mbox{\hyperlink{namespacedemo_a15b916246f9a785f3f6245992c5d977a}{DEV}} = \"{}cuda\"{} if torch.\+cuda.\+is\+\_\+available() else \"{}cpu\"{}
+\item 
+int \mbox{\hyperlink{namespacedemo_a1df2470ebb2a9b35a525161c2eadc7b6}{QP}} = 32
+\item 
+\mbox{\hyperlink{namespacedemo_afdaa6b6d6a72de879b40e4d6824a0c35}{model}} = None
+\item 
+tuple \mbox{\hyperlink{namespacedemo_abdabd8cda08cf10aa7685de8f0649d8d}{COLOR}} = (0, 247, 255)
+\item 
+int \mbox{\hyperlink{namespacedemo_ac2603db04f1bfc85f8fa64e342951507}{LINE\+\_\+\+THICKNESS}} = 1
+\item 
+str \mbox{\hyperlink{namespacedemo_a34fa5992eca6d94863dfbf9e9d88bdaf}{DEFAULT\+\_\+\+TEXT\+\_\+\+FOR\+\_\+\+COORDS}} = \"{}Insert CTU position in the image...\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}@package docstring 
+
+@file demo.py 
+
+@brief Demonstration of the application of the MSE-CNN 
+
+Note: In order to run this script, you have to do it inside the folder
+
+@section libraries_demo Libraries 
+- msecnn
+- train_model_utils
+- cv2
+- dataset_utils
+- re
+- sys
+- numpy
+- gradio
+- torch
+- custom_dataset
+- PIL
+ 
+@section classes_demo Classes 
+- None 
+
+@section functions_demo Functions 
+- setup_model()
+- int2label(split)
+- draw_partition(img, split, cu_pos, cu_size)
+- split_fm(cu, cu_pos, split)
+- partition_img(img, img_yuv)
+- pipeline(img, text)
+- main()
+
+@section global_vars_demo Global Variables 
+- PATH_TO_COEFFS
+- LOAD_IMAGE_ERROR
+- EXAMPLE_IMGS
+- CTU_SIZE
+- FIRST_CU_POS
+- FIRST_CU_SIZE
+- DEV
+- QP
+- model
+- COLOR
+- LINE_THICKNESS
+- DEFAULT_TEXT_FOR_COORDS
+
+@section todo_demo TODO 
+- Instead of obtaining the best split, do the thresholding and then split it until you find the right type of split 
+
+@section license License 
+MIT License 
+Copyright (c) 2022 Raul Kevin do Espirito Santo Viana
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+@section author_demo Author(s)
+- Created by Raul Kevin Viana
+- Last time modified is 2023-09-10 21:00:10.225508
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacedemo_ab8600c64de65acea972fc88b9f2243c7}\label{namespacedemo_ab8600c64de65acea972fc88b9f2243c7} 
+\index{demo@{demo}!draw\_partition@{draw\_partition}}
+\index{draw\_partition@{draw\_partition}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{draw\_partition()}{draw\_partition()}}
+{\footnotesize\ttfamily demo.\+draw\+\_\+partition (\begin{DoxyParamCaption}\item[{}]{img,  }\item[{}]{split,  }\item[{}]{cu\+\_\+pos,  }\item[{}]{cu\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Draw partition in image based in the split outputed by the model. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em img} & User\textquotesingle{}s input image \\
+\hline
+\mbox{\texttt{ in}}  & {\em cu\+\_\+pos} & CU position \\
+\hline
+\mbox{\texttt{ in}}  & {\em cu\+\_\+size} & CU size \\
+\hline
+\mbox{\texttt{ in}}  & {\em split} & Integer number representing the split that the model chose \\
+\hline
+\mbox{\texttt{ out}}  & {\em str\+\_\+split} & Name of the corresponding split \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacedemo_a17944feff814fff559d662b0f204ba0e}\label{namespacedemo_a17944feff814fff559d662b0f204ba0e} 
+\index{demo@{demo}!int2label@{int2label}}
+\index{int2label@{int2label}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{int2label()}{int2label()}}
+{\footnotesize\ttfamily demo.\+int2label (\begin{DoxyParamCaption}\item[{}]{split }\end{DoxyParamCaption})}
+
+
+
+Obtain the string that corresponds to an integer value of the split. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em split} & Integer number representing the split tht the model chose \\
+\hline
+\mbox{\texttt{ out}}  & {\em str\+\_\+split} & Name of the corresponding split \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacedemo_a9a7eee49297dfd617496f5bb2914b837}\label{namespacedemo_a9a7eee49297dfd617496f5bb2914b837} 
+\index{demo@{demo}!main@{main}}
+\index{main@{main}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily demo.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacedemo_aef29d63c9c71d261da8eaff42f5f55af}\label{namespacedemo_aef29d63c9c71d261da8eaff42f5f55af} 
+\index{demo@{demo}!partition\_img@{partition\_img}}
+\index{partition\_img@{partition\_img}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{partition\_img()}{partition\_img()}}
+{\footnotesize\ttfamily demo.\+partition\+\_\+img (\begin{DoxyParamCaption}\item[{}]{img,  }\item[{}]{img\+\_\+yuv }\end{DoxyParamCaption})}
+
+
+
+Partitions a full 128x128 CTU and draws the partition in the original image. 
+
+TODO\+: Instead of obtaining the best split, do the thresholding and then split it until you find the right type of split
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em img} & Image in BGR \\
+\hline
+\mbox{\texttt{ in}}  & {\em img\+\_\+yuv} & Image in YUV \\
+\hline
+\mbox{\texttt{ in}}  & {\em stg} & Current stage being partitioned \\
+\hline
+\mbox{\texttt{ in}}  & {\em cu\+\_\+pos} & Current stage being partitioned \\
+\hline
+\mbox{\texttt{ in}}  & {\em cu\+\_\+size} & Current stage being partitioned \\
+\hline
+\mbox{\texttt{ out}}  & {\em img} & Image in with partitions drawn to it \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacedemo_a5a73f194ee64b84d4b8b0ce645f42983}\label{namespacedemo_a5a73f194ee64b84d4b8b0ce645f42983} 
+\index{demo@{demo}!pipeline@{pipeline}}
+\index{pipeline@{pipeline}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{pipeline()}{pipeline()}}
+{\footnotesize\ttfamily demo.\+pipeline (\begin{DoxyParamCaption}\item[{}]{img,  }\item[{}]{text }\end{DoxyParamCaption})}
+
+
+
+Pipeline to implement the functionalities to demonstrate the potential of the MSE-\/\+CNN. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em img} & Image in RGB \\
+\hline
+\mbox{\texttt{ out}}  & {\em mod\+\_\+img} & Modified image with drawings into it in RGB \\
+\hline
+\mbox{\texttt{ out}}  & {\em best\+\_\+split} & Best split (BTV, BTH, TTV, TTH, Non-\/split, QT) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacedemo_a17011f58771c2514a5eda7f101c3692b}\label{namespacedemo_a17011f58771c2514a5eda7f101c3692b} 
+\index{demo@{demo}!setup\_model@{setup\_model}}
+\index{setup\_model@{setup\_model}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{setup\_model()}{setup\_model()}}
+{\footnotesize\ttfamily demo.\+setup\+\_\+model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes and load the parameters of the MSE-\/\+CNN. 
+
+\Hypertarget{namespacedemo_adc15d43f2886217e33a93d362cadf0da}\label{namespacedemo_adc15d43f2886217e33a93d362cadf0da} 
+\index{demo@{demo}!split\_fm@{split\_fm}}
+\index{split\_fm@{split\_fm}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{split\_fm()}{split\_fm()}}
+{\footnotesize\ttfamily demo.\+split\+\_\+fm (\begin{DoxyParamCaption}\item[{}]{cu,  }\item[{}]{cu\+\_\+pos,  }\item[{}]{split }\end{DoxyParamCaption})}
+
+
+
+Splits feature maps in specific way. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cu} & Input to the model \\
+\hline
+\mbox{\texttt{ in}}  & {\em cu\+\_\+pos} & Coordinate of the CU \\
+\hline
+\mbox{\texttt{ in}}  & {\em split} & Way to split CU \\
+\hline
+\mbox{\texttt{ out}}  & {\em cu\+\_\+out} & New Feature maps \\
+\hline
+\mbox{\texttt{ out}}  & {\em cu\+\_\+pos\+\_\+out} & Position of the new CUs \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacedemo_abdabd8cda08cf10aa7685de8f0649d8d}\label{namespacedemo_abdabd8cda08cf10aa7685de8f0649d8d} 
+\index{demo@{demo}!COLOR@{COLOR}}
+\index{COLOR@{COLOR}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{COLOR}{COLOR}}
+{\footnotesize\ttfamily tuple demo.\+COLOR = (0, 247, 255)}
+
+\Hypertarget{namespacedemo_adf10c69ec4657142f4f267187d122a6c}\label{namespacedemo_adf10c69ec4657142f4f267187d122a6c} 
+\index{demo@{demo}!CTU\_SIZE@{CTU\_SIZE}}
+\index{CTU\_SIZE@{CTU\_SIZE}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{CTU\_SIZE}{CTU\_SIZE}}
+{\footnotesize\ttfamily tuple demo.\+CTU\+\_\+\+SIZE = (128, 128)}
+
+\Hypertarget{namespacedemo_a34fa5992eca6d94863dfbf9e9d88bdaf}\label{namespacedemo_a34fa5992eca6d94863dfbf9e9d88bdaf} 
+\index{demo@{demo}!DEFAULT\_TEXT\_FOR\_COORDS@{DEFAULT\_TEXT\_FOR\_COORDS}}
+\index{DEFAULT\_TEXT\_FOR\_COORDS@{DEFAULT\_TEXT\_FOR\_COORDS}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_TEXT\_FOR\_COORDS}{DEFAULT\_TEXT\_FOR\_COORDS}}
+{\footnotesize\ttfamily str demo.\+DEFAULT\+\_\+\+TEXT\+\_\+\+FOR\+\_\+\+COORDS = \"{}Insert CTU position in the image...\"{}}
+
+\Hypertarget{namespacedemo_a15b916246f9a785f3f6245992c5d977a}\label{namespacedemo_a15b916246f9a785f3f6245992c5d977a} 
+\index{demo@{demo}!DEV@{DEV}}
+\index{DEV@{DEV}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{DEV}{DEV}}
+{\footnotesize\ttfamily str demo.\+DEV = \"{}cuda\"{} if torch.\+cuda.\+is\+\_\+available() else \"{}cpu\"{}}
+
+\Hypertarget{namespacedemo_a2bc429d4870d31c755fb116740d1ce98}\label{namespacedemo_a2bc429d4870d31c755fb116740d1ce98} 
+\index{demo@{demo}!EXAMPLE\_IMGS@{EXAMPLE\_IMGS}}
+\index{EXAMPLE\_IMGS@{EXAMPLE\_IMGS}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{EXAMPLE\_IMGS}{EXAMPLE\_IMGS}}
+{\footnotesize\ttfamily list demo.\+EXAMPLE\+\_\+\+IMGS = \mbox{[}\"{}example\+\_\+img\+\_\+1.\+jpeg\"{}, \"{}example\+\_\+img\+\_\+2.\+jpeg\"{}\mbox{]}}
+
+\Hypertarget{namespacedemo_a1594ea1937c3d920662fa9cfc3dbb270}\label{namespacedemo_a1594ea1937c3d920662fa9cfc3dbb270} 
+\index{demo@{demo}!FIRST\_CU\_POS@{FIRST\_CU\_POS}}
+\index{FIRST\_CU\_POS@{FIRST\_CU\_POS}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{FIRST\_CU\_POS}{FIRST\_CU\_POS}}
+{\footnotesize\ttfamily demo.\+FIRST\+\_\+\+CU\+\_\+\+POS = torch.\+tensor(\mbox{[}0, 0\mbox{]}).reshape(shape=(-\/1, 2))}
+
+\Hypertarget{namespacedemo_a34b51838a0c3c81063aef8f9681a8713}\label{namespacedemo_a34b51838a0c3c81063aef8f9681a8713} 
+\index{demo@{demo}!FIRST\_CU\_SIZE@{FIRST\_CU\_SIZE}}
+\index{FIRST\_CU\_SIZE@{FIRST\_CU\_SIZE}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{FIRST\_CU\_SIZE}{FIRST\_CU\_SIZE}}
+{\footnotesize\ttfamily demo.\+FIRST\+\_\+\+CU\+\_\+\+SIZE = torch.\+tensor(\mbox{[}64, 64\mbox{]}).reshape(shape=(-\/1, 2))}
+
+\Hypertarget{namespacedemo_ac2603db04f1bfc85f8fa64e342951507}\label{namespacedemo_ac2603db04f1bfc85f8fa64e342951507} 
+\index{demo@{demo}!LINE\_THICKNESS@{LINE\_THICKNESS}}
+\index{LINE\_THICKNESS@{LINE\_THICKNESS}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{LINE\_THICKNESS}{LINE\_THICKNESS}}
+{\footnotesize\ttfamily int demo.\+LINE\+\_\+\+THICKNESS = 1}
+
+\Hypertarget{namespacedemo_a4ae3993910053aa131604b676b2b9b5b}\label{namespacedemo_a4ae3993910053aa131604b676b2b9b5b} 
+\index{demo@{demo}!LOAD\_IMAGE\_ERROR@{LOAD\_IMAGE\_ERROR}}
+\index{LOAD\_IMAGE\_ERROR@{LOAD\_IMAGE\_ERROR}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{LOAD\_IMAGE\_ERROR}{LOAD\_IMAGE\_ERROR}}
+{\footnotesize\ttfamily str demo.\+LOAD\+\_\+\+IMAGE\+\_\+\+ERROR = \"{}load\+\_\+image\+\_\+error.\+png\"{}}
+
+\Hypertarget{namespacedemo_afdaa6b6d6a72de879b40e4d6824a0c35}\label{namespacedemo_afdaa6b6d6a72de879b40e4d6824a0c35} 
+\index{demo@{demo}!model@{model}}
+\index{model@{model}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily demo.\+model = None}
+
+\Hypertarget{namespacedemo_a1ffe6e3cd2dc1ac0f02221e6a602076e}\label{namespacedemo_a1ffe6e3cd2dc1ac0f02221e6a602076e} 
+\index{demo@{demo}!PATH\_TO\_COEFFS@{PATH\_TO\_COEFFS}}
+\index{PATH\_TO\_COEFFS@{PATH\_TO\_COEFFS}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{PATH\_TO\_COEFFS}{PATH\_TO\_COEFFS}}
+{\footnotesize\ttfamily str demo.\+PATH\+\_\+\+TO\+\_\+\+COEFFS = \"{}../../../model\+\_\+coefficients/best\+\_\+coefficients\"{}}
+
+\Hypertarget{namespacedemo_a1df2470ebb2a9b35a525161c2eadc7b6}\label{namespacedemo_a1df2470ebb2a9b35a525161c2eadc7b6} 
+\index{demo@{demo}!QP@{QP}}
+\index{QP@{QP}!demo@{demo}}
+\doxysubsubsection{\texorpdfstring{QP}{QP}}
+{\footnotesize\ttfamily int demo.\+QP = 32}
+

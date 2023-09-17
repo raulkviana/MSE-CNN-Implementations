@@ -1,0 +1,51 @@
+\doxysection{C\+:/\+Users/\+Raul/\+Documents/\+Git\+Hub/\+MSE-\/\+CNN-\/\+Implementations/src/msecnn\+\_\+raulkviana/demo/demo.py File Reference}
+\hypertarget{demo_8py}{}\label{demo_8py}\index{C:/Users/Raul/Documents/GitHub/MSE-\/CNN-\/Implementations/src/msecnn\_raulkviana/demo/demo.py@{C:/Users/Raul/Documents/GitHub/MSE-\/CNN-\/Implementations/src/msecnn\_raulkviana/demo/demo.py}}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacedemo}{demo}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacedemo_a17011f58771c2514a5eda7f101c3692b}{demo.\+setup\+\_\+model}} ()
+\begin{DoxyCompactList}\small\item\em Initializes and load the parameters of the MSE-\/\+CNN. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedemo_a17944feff814fff559d662b0f204ba0e}{demo.\+int2label}} (split)
+\begin{DoxyCompactList}\small\item\em Obtain the string that corresponds to an integer value of the split. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedemo_ab8600c64de65acea972fc88b9f2243c7}{demo.\+draw\+\_\+partition}} (img, split, cu\+\_\+pos, cu\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Draw partition in image based in the split outputed by the model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedemo_adc15d43f2886217e33a93d362cadf0da}{demo.\+split\+\_\+fm}} (cu, cu\+\_\+pos, split)
+\begin{DoxyCompactList}\small\item\em Splits feature maps in specific way. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedemo_aef29d63c9c71d261da8eaff42f5f55af}{demo.\+partition\+\_\+img}} (img, img\+\_\+yuv)
+\begin{DoxyCompactList}\small\item\em Partitions a full 128x128 CTU and draws the partition in the original image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedemo_a5a73f194ee64b84d4b8b0ce645f42983}{demo.\+pipeline}} (img, text)
+\begin{DoxyCompactList}\small\item\em Pipeline to implement the functionalities to demonstrate the potential of the MSE-\/\+CNN. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedemo_a9a7eee49297dfd617496f5bb2914b837}{demo.\+main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+str \mbox{\hyperlink{namespacedemo_a1ffe6e3cd2dc1ac0f02221e6a602076e}{demo.\+PATH\+\_\+\+TO\+\_\+\+COEFFS}} = \"{}../../../model\+\_\+coefficients/best\+\_\+coefficients\"{}
+\item 
+str \mbox{\hyperlink{namespacedemo_a4ae3993910053aa131604b676b2b9b5b}{demo.\+LOAD\+\_\+\+IMAGE\+\_\+\+ERROR}} = \"{}load\+\_\+image\+\_\+error.\+png\"{}
+\item 
+list \mbox{\hyperlink{namespacedemo_a2bc429d4870d31c755fb116740d1ce98}{demo.\+EXAMPLE\+\_\+\+IMGS}} = \mbox{[}\"{}example\+\_\+img\+\_\+1.\+jpeg\"{}, \"{}example\+\_\+img\+\_\+2.\+jpeg\"{}\mbox{]}
+\item 
+tuple \mbox{\hyperlink{namespacedemo_adf10c69ec4657142f4f267187d122a6c}{demo.\+CTU\+\_\+\+SIZE}} = (128, 128)
+\item 
+\mbox{\hyperlink{namespacedemo_a1594ea1937c3d920662fa9cfc3dbb270}{demo.\+FIRST\+\_\+\+CU\+\_\+\+POS}} = torch.\+tensor(\mbox{[}0, 0\mbox{]}).reshape(shape=(-\/1, 2))
+\item 
+\mbox{\hyperlink{namespacedemo_a34b51838a0c3c81063aef8f9681a8713}{demo.\+FIRST\+\_\+\+CU\+\_\+\+SIZE}} = torch.\+tensor(\mbox{[}64, 64\mbox{]}).reshape(shape=(-\/1, 2))
+\item 
+str \mbox{\hyperlink{namespacedemo_a15b916246f9a785f3f6245992c5d977a}{demo.\+DEV}} = \"{}cuda\"{} if torch.\+cuda.\+is\+\_\+available() else \"{}cpu\"{}
+\item 
+int \mbox{\hyperlink{namespacedemo_a1df2470ebb2a9b35a525161c2eadc7b6}{demo.\+QP}} = 32
+\item 
+\mbox{\hyperlink{namespacedemo_afdaa6b6d6a72de879b40e4d6824a0c35}{demo.\+model}} = None
+\item 
+tuple \mbox{\hyperlink{namespacedemo_abdabd8cda08cf10aa7685de8f0649d8d}{demo.\+COLOR}} = (0, 247, 255)
+\item 
+int \mbox{\hyperlink{namespacedemo_ac2603db04f1bfc85f8fa64e342951507}{demo.\+LINE\+\_\+\+THICKNESS}} = 1
+\item 
+str \mbox{\hyperlink{namespacedemo_a34fa5992eca6d94863dfbf9e9d88bdaf}{demo.\+DEFAULT\+\_\+\+TEXT\+\_\+\+FOR\+\_\+\+COORDS}} = \"{}Insert CTU position in the image...\"{}
+\end{DoxyCompactItemize}

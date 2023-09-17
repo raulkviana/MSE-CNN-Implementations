@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2" kind="class" language="Python" prot="public">
+    <compoundname>msecnn_raulkviana::dataset_utils::VideoCaptureYUVV2</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a38a8b4674e0e48df1d076f2649773547" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2.height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="216" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a89c164e3c31e8075597f1b079f2a2f82" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2.width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="216" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="216" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a037bf1c841b630189c00e64b43a5faf0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2::y_len</definition>
+        <argsstring></argsstring>
+        <name>y_len</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2.y_len</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="217" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="217" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a5801f461810d84d50b023e3d4abaf608" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2::frame_len</definition>
+        <argsstring></argsstring>
+        <name>frame_len</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2.frame_len</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="218" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a7ab93ed10a6ea41ee9f277ea65c3fcef" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2::yuv</definition>
+        <argsstring></argsstring>
+        <name>yuv</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2.yuv</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="219" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a7eef1afe1d411cb1b4d0c8e9e0fb3c50" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2::shape</definition>
+        <argsstring></argsstring>
+        <name>shape</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2.shape</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="220" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1ac7aacd678e766df9e4f89b09e21ed716" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2.__init__</definition>
+        <argsstring>(self, img, size)</argsstring>
+        <name>__init__</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2.__init__</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>img</type>
+          <defname>img</defname>
+        </param>
+        <param>
+          <type>size</type>
+          <defname>size</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="215" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="215" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a729e5837166e73ab6dc1498fe86b586f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2.read_raw</definition>
+        <argsstring>(self)</argsstring>
+        <name>read_raw</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2.read_raw</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="222" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="222" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1ae71a17c220e54e1b0529fc2b6b4cf43b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2.read</definition>
+        <argsstring>(self)</argsstring>
+        <name>read</name>
+        <qualifiedname>msecnn_raulkviana.dataset_utils.VideoCaptureYUVV2.read</qualifiedname>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="235" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="235" bodyend="242"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Object to contain the YUV files. In this version the actual YUV420 image is passed to the object.
+</verbatim> </para>
+    </detaileddescription>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="211" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="211" bodyend="242"/>
+    <listofallmembers>
+      <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1ac7aacd678e766df9e4f89b09e21ed716" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::dataset_utils::VideoCaptureYUVV2</scope><name>__init__</name></member>
+      <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a5801f461810d84d50b023e3d4abaf608" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::dataset_utils::VideoCaptureYUVV2</scope><name>frame_len</name></member>
+      <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a38a8b4674e0e48df1d076f2649773547" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::dataset_utils::VideoCaptureYUVV2</scope><name>height</name></member>
+      <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1ae71a17c220e54e1b0529fc2b6b4cf43b" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::dataset_utils::VideoCaptureYUVV2</scope><name>read</name></member>
+      <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a729e5837166e73ab6dc1498fe86b586f" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::dataset_utils::VideoCaptureYUVV2</scope><name>read_raw</name></member>
+      <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a7eef1afe1d411cb1b4d0c8e9e0fb3c50" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::dataset_utils::VideoCaptureYUVV2</scope><name>shape</name></member>
+      <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a89c164e3c31e8075597f1b079f2a2f82" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::dataset_utils::VideoCaptureYUVV2</scope><name>width</name></member>
+      <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a037bf1c841b630189c00e64b43a5faf0" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::dataset_utils::VideoCaptureYUVV2</scope><name>y_len</name></member>
+      <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a7ab93ed10a6ea41ee9f277ea65c3fcef" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::dataset_utils::VideoCaptureYUVV2</scope><name>yuv</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

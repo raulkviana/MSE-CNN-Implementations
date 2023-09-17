@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="md__c_1_2_users_2_raul_2_documents_2_git_hub_2_m_s_e-_c_n_n-_implementations_2src_2msecnn__raulkb2081978c2269a6588b7e9312b2df998" kind="page">
+    <compoundname>md__c_1_2_users_2_raul_2_documents_2_git_hub_2_m_s_e-_c_n_n-_implementations_2src_2msecnn__raulkviana_2useful__scripts_2_r_e_a_d_m_e</compoundname>
+    <title>Usefull code</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md__c_1_2_users_2_raul_2_documents_2_git_hub_2_m_s_e-_c_n_n-_implementations_2src_2msecnn__raulkb2081978c2269a6588b7e9312b2df998_1autotoc_md42"/>Examples of how to process the data and how to train and evaluate the model. </para>
+    </detaileddescription>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/README.md"/>
+  </compounddef>
+</doxygen>

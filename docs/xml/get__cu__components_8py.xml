@@ -80,6 +80,6 @@
 <codeline lineno="70"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceget__cu__components_1a6e2fa8d6568bdffc7e677958da3d395c" kindref="member">main</ref>()</highlight></codeline>
     </programlisting>
-    <location file="src/msecnn_raulkviana/useful_scripts/get_cu_components.py"/>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/get_cu_components.py"/>
   </compounddef>
 </doxygen>

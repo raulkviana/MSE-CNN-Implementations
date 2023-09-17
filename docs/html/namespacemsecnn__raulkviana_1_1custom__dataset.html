@@ -124,6 +124,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aa5aba8e9511dd561b4a9c78ba1a973fb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemsecnn__raulkviana_1_1custom__dataset.html#aa5aba8e9511dd561b4a9c78ba1a973fb">get_cu</a> (f_path, f_size, cu_pos, cu_size, frame_number)</td></tr>
 <tr class="memdesc:aa5aba8e9511dd561b4a9c78ba1a973fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get CU from image.  <br /></td></tr>
 <tr class="separator:aa5aba8e9511dd561b4a9c78ba1a973fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d97a5b8f484d90bb890c729c1a65817"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemsecnn__raulkviana_1_1custom__dataset.html#a3d97a5b8f484d90bb890c729c1a65817">get_cu_v2</a> (img, f_size, cu_pos, cu_size)</td></tr>
+<tr class="memdesc:a3d97a5b8f484d90bb890c729c1a65817"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get CU from image.  <br /></td></tr>
+<tr class="separator:a3d97a5b8f484d90bb890c729c1a65817"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6dd132332ce4a3bc700a89d4a18f6723"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemsecnn__raulkviana_1_1custom__dataset.html#a6dd132332ce4a3bc700a89d4a18f6723">get_file_size</a> (name)</td></tr>
 <tr class="memdesc:a6dd132332ce4a3bc700a89d4a18f6723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves information about the YUV file info (width and height)  <br /></td></tr>
 <tr class="separator:a6dd132332ce4a3bc700a89d4a18f6723"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -281,6 +284,63 @@ SOFTWARE.
     <tr><td class="paramdir">[in]</td><td class="paramname">cu_pos</td><td>Tuple with the position of the CU (y position (height), x position (width)) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cu_size</td><td>Tuple with the size of the CU (y position (height), x position (width)) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">frame_number</td><td>Number of the frame containing the CU </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">CU</td><td>CU with all the information from all the components(Luminance and Chroma) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">CU_Y</td><td>CU with the Luminance component </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">CU_U</td><td>CU with the Chroma (Blue) component </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">CU_V</td><td>CU with the Chroma (Red) component </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">frame_CU</td><td>specified frame that contains the CU </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3d97a5b8f484d90bb890c729c1a65817" name="a3d97a5b8f484d90bb890c729c1a65817"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d97a5b8f484d90bb890c729c1a65817">&#9670;&#160;</a></span>get_cu_v2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">msecnn_raulkviana.custom_dataset.get_cu_v2 </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>img</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>f_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cu_pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cu_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get CU from image. </p>
+<p>In this version, an YUV420 image is passed instead of a path.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">img</td><td>Image in YUV420 format </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">f_size</td><td>YUV image dimensions (height, width) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cu_pos</td><td>Tuple with the position of the CU (y position (height), x position (width)) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cu_size</td><td>Tuple with the size of the CU (y position (height), x position (width)) </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">CU</td><td>CU with all the information from all the components(Luminance and Chroma) </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">CU_Y</td><td>CU with the Luminance component </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">CU_U</td><td>CU with the Chroma (Blue) component </td></tr>

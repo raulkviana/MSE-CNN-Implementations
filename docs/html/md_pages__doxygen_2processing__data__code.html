@@ -80,8 +80,8 @@ $(function() {
   <div class="headertitle"><div class="title">Code to process the images/videos into labels</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md31"></a>All of the code bellow can be found in this <a href="../src/msecnn_raulkviana/useful_scripts">folder</a>.</p>
-<h2><a class="anchor" id="autotoc_md32"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md33"></a>All of the code bellow can be found in this <a href="../../../src/msecnn_raulkviana/useful_scripts">folder</a>.</p>
+<h2><a class="anchor" id="autotoc_md34"></a>
 Encoding</h2>
 <div class="fragment"><div class="line"> python</div>
 <div class="line">import dataset_utils</div>
@@ -100,7 +100,7 @@ Encoding</h2>
 <div class="line">e_path = &quot;path_to_encoder&quot; # Example for windows</div>
 <div class="line"> </div>
 <div class="line">dataset_utils.encode_dataset(d_path=d_path, e_path=e_path, ts=ts, QP=QP) # The result is saved in the encoder folder</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md33"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md35"></a>
 Generate data structures</h2>
 <div class="fragment"><div class="line"> python</div>
 <div class="line">import dataset_utils</div>
@@ -109,7 +109,7 @@ Generate data structures</h2>
 <div class="line">d_path = &quot;path_of_output_directory_of_the_previous_step&quot;</div>
 <div class="line"> </div>
 <div class="line">dataset_utils.unite_labels_v6_mod(dir_path_l=d_path, n_output_file=&quot;modifier_of_the_output_files_name&quot;)  # The result is saved in the same folder</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md34"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md36"></a>
 Add real CTUs</h2>
 <div class="fragment"><div class="line"> python</div>
 <div class="line">import dataset_utils</div>
@@ -206,7 +206,7 @@ Add real CTUs</h2>
 <div class="line"> </div>
 <div class="line">    # Reset counter</div>
 <div class="line">    ctu_count = 0</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md35"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md37"></a>
 Retrieve essential data</h2>
 <p>Retrieve essential data for the for stage 6</p>
 <div class="fragment"><div class="line"> python</div>
@@ -217,7 +217,7 @@ Retrieve essential data</h2>
 <div class="line">print(&quot;Modifying struct from:&quot;, path_dir_l)</div>
 <div class="line"> </div>
 <div class="line">dataset_utils.change_struct_no_dupl_stg_6_complexity_v4(path_dir_l)</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md36"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md38"></a>
 Balacing data</h2>
 <div class="fragment"><div class="line"> python</div>
 <div class="line">import dataset_utils</div>

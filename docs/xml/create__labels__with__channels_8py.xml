@@ -73,6 +73,6 @@
 <codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacecreate__labels__with__channels_1a6cade27f45af9b76c4edb6bc3e4175a6" kindref="member">main</ref>()</highlight></codeline>
     </programlisting>
-    <location file="src/msecnn_raulkviana/useful_scripts/create_labels_with_channels.py"/>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/create_labels_with_channels.py"/>
   </compounddef>
 </doxygen>

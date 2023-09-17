@@ -6,8 +6,8 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para><anchor id="md_pages__doxygen_2processing__data__code_1autotoc_md31"/>All of the code bellow can be found in this <ulink url="../src/msecnn_raulkviana/useful_scripts">folder</ulink>.</para>
-<sect2 id="md_pages__doxygen_2processing__data__code_1autotoc_md32">
+<para><anchor id="md_pages__doxygen_2processing__data__code_1autotoc_md33"/>All of the code bellow can be found in this <ulink url="../../../src/msecnn_raulkviana/useful_scripts">folder</ulink>.</para>
+<sect2 id="md_pages__doxygen_2processing__data__code_1autotoc_md34">
 <title>Encoding</title>
 <para><programlisting><codeline><highlight class="normal"><sp/>python</highlight></codeline>
 <codeline><highlight class="normal">import<sp/>dataset_utils</highlight></codeline>
@@ -28,7 +28,7 @@
 <codeline><highlight class="normal">dataset_utils.encode_dataset(d_path=d_path,<sp/>e_path=e_path,<sp/>ts=ts,<sp/>QP=QP)<sp/>#<sp/>The<sp/>result<sp/>is<sp/>saved<sp/>in<sp/>the<sp/>encoder<sp/>folder</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md_pages__doxygen_2processing__data__code_1autotoc_md33">
+<sect2 id="md_pages__doxygen_2processing__data__code_1autotoc_md35">
 <title>Generate data structures</title>
 <para><programlisting><codeline><highlight class="normal"><sp/>python</highlight></codeline>
 <codeline><highlight class="normal">import<sp/>dataset_utils</highlight></codeline>
@@ -39,7 +39,7 @@
 <codeline><highlight class="normal">dataset_utils.unite_labels_v6_mod(dir_path_l=d_path,<sp/>n_output_file=&quot;modifier_of_the_output_files_name&quot;)<sp/><sp/>#<sp/>The<sp/>result<sp/>is<sp/>saved<sp/>in<sp/>the<sp/>same<sp/>folder</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md_pages__doxygen_2processing__data__code_1autotoc_md34">
+<sect2 id="md_pages__doxygen_2processing__data__code_1autotoc_md36">
 <title>Add real CTUs</title>
 <para><programlisting><codeline><highlight class="normal"><sp/>python</highlight></codeline>
 <codeline><highlight class="normal">import<sp/>dataset_utils</highlight></codeline>
@@ -138,7 +138,7 @@
 <codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ctu_count<sp/>=<sp/>0</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md_pages__doxygen_2processing__data__code_1autotoc_md35">
+<sect2 id="md_pages__doxygen_2processing__data__code_1autotoc_md37">
 <title>Retrieve essential data</title>
 <para>Retrieve essential data for the for stage 6</para>
 <para><programlisting><codeline><highlight class="normal"><sp/>python</highlight></codeline>
@@ -151,7 +151,7 @@
 <codeline><highlight class="normal">dataset_utils.change_struct_no_dupl_stg_6_complexity_v4(path_dir_l)</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md_pages__doxygen_2processing__data__code_1autotoc_md36">
+<sect2 id="md_pages__doxygen_2processing__data__code_1autotoc_md38">
 <title>Balacing data</title>
 <para><programlisting><codeline><highlight class="normal"><sp/>python</highlight></codeline>
 <codeline><highlight class="normal">import<sp/>dataset_utils</highlight></codeline>

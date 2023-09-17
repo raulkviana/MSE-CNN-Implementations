@@ -5,6 +5,8 @@
 \item 
 \mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_afeee7ef82714dbc67d42e0c748e99114}{model\+\_\+statistics}} (J\+\_\+history, predicted, ground\+\_\+truth, pred\+\_\+vector, gt\+\_\+vector, f1\+\_\+list, recall\+\_\+list, precision\+\_\+list, accuracy\+\_\+list, train\+\_\+or\+\_\+val=\"{}train\"{})
 \begin{DoxyCompactList}\small\item\em Evaluates model with metrics, such as accuracy and f1\+\_\+score. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_aaba41048718e061e48e3fef373b9f546}{right\+\_\+size}} (CUs)
+\item 
 \mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a22037a90eee86799850c3a765e4da26f}{compute\+\_\+conf\+\_\+matrix}} (predicted, ground\+\_\+truth)
 \begin{DoxyCompactList}\small\item\em Computes the confusion matrix. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacemsecnn__raulkviana_1_1train__model__utils_a9208690996ff3dc9692f9e77f6e176a0}{compute\+\_\+top\+\_\+k\+\_\+accuracy}} (pred\+\_\+vector, gt\+\_\+vector, topk)
@@ -480,7 +482,18 @@ Prints the parameters from the state dictionaries of the model and optimizer.
 \mbox{\texttt{ in}}  & {\em optimizer} & Optimizer that the parameters will be printed \\
 \hline
 \end{DoxyParams}
-\Hypertarget{namespacemsecnn__raulkviana_1_1train__model__utils_af861829fd2bb377d08cf101471987aa5}\label{namespacemsecnn__raulkviana_1_1train__model__utils_af861829fd2bb377d08cf101471987aa5} 
+\Hypertarget{namespacemsecnn__raulkviana_1_1train__model__utils_aaba41048718e061e48e3fef373b9f546}\label{namespacemsecnn__raulkviana_1_1train__model__utils_aaba41048718e061e48e3fef373b9f546} 
+\index{msecnn\_raulkviana.train\_model\_utils@{msecnn\_raulkviana.train\_model\_utils}!right\_size@{right\_size}}
+\index{right\_size@{right\_size}!msecnn\_raulkviana.train\_model\_utils@{msecnn\_raulkviana.train\_model\_utils}}
+\doxysubsubsection{\texorpdfstring{right\_size()}{right\_size()}}
+{\footnotesize\ttfamily msecnn\+\_\+raulkviana.\+train\+\_\+model\+\_\+utils.\+right\+\_\+size (\begin{DoxyParamCaption}\item[{}]{CUs }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@brief Verify if the CU as the right size: height as to be lower than width
+
+@param [in] CUs: Feature maps
+@param [out] Boolean value indicating the right size
+\end{DoxyVerb}
+ \Hypertarget{namespacemsecnn__raulkviana_1_1train__model__utils_af861829fd2bb377d08cf101471987aa5}\label{namespacemsecnn__raulkviana_1_1train__model__utils_af861829fd2bb377d08cf101471987aa5} 
 \index{msecnn\_raulkviana.train\_model\_utils@{msecnn\_raulkviana.train\_model\_utils}!save\_model@{save\_model}}
 \index{save\_model@{save\_model}!msecnn\_raulkviana.train\_model\_utils@{msecnn\_raulkviana.train\_model\_utils}}
 \doxysubsubsection{\texorpdfstring{save\_model()}{save\_model()}}

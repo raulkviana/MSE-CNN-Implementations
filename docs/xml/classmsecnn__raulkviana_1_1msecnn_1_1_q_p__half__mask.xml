@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/msecnn.py" line="95" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="95" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/msecnn.py" line="95" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/msecnn.py" bodystart="95" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/msecnn.py" line="91" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="91" bodyend="96"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/msecnn.py" line="91" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/msecnn.py" bodystart="91" bodyend="96"/>
       </memberdef>
       <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_q_p__half__mask_1af1af20212f9c1da1dbf2683f9cd92d8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -82,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/msecnn.py" line="97" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="97" bodyend="108"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/msecnn.py" line="97" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/msecnn.py" bodystart="97" bodyend="108"/>
       </memberdef>
       <memberdef kind="function" id="classmsecnn__raulkviana_1_1msecnn_1_1_q_p__half__mask_1a7fda000b6e52250f38283dda2a54303b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -123,7 +123,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/msecnn.py" line="109" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="109" bodyend="132"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/msecnn.py" line="109" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/msecnn.py" bodystart="109" bodyend="131"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -152,7 +152,7 @@
         <label>nn.Module</label>
       </node>
     </collaborationgraph>
-    <location file="src/msecnn_raulkviana/msecnn.py" line="90" column="1" bodyfile="src/msecnn_raulkviana/msecnn.py" bodystart="90" bodyend="132"/>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/msecnn.py" line="90" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/msecnn.py" bodystart="90" bodyend="131"/>
     <listofallmembers>
       <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_q_p__half__mask_1a9fa2ca246d162363ad21c6fabfdad3d8" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::QP_half_mask</scope><name>__init__</name></member>
       <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_q_p__half__mask_1a7fda000b6e52250f38283dda2a54303b" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::msecnn::QP_half_mask</scope><name>forward</name></member>

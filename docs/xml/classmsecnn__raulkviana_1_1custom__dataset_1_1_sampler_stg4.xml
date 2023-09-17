@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/custom_dataset.py" line="1020" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="1020" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" line="1055" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" bodystart="1055" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmsecnn__raulkviana_1_1custom__dataset_1_1_sampler_stg4_1ac10215bc1b0aa6c55f6da88dd8c213fc" prot="public" static="no" mutable="no">
         <type></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/custom_dataset.py" line="1021" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="1021" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" line="1056" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" bodystart="1056" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -77,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/custom_dataset.py" line="1013" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="1013" bodyend="1023"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" line="1048" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" bodystart="1048" bodyend="1058"/>
       </memberdef>
       <memberdef kind="function" id="classmsecnn__raulkviana_1_1custom__dataset_1_1_sampler_stg4_1a00ae4b85e9274cc7543f8859b4879081" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -95,7 +95,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/custom_dataset.py" line="1024" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="1024" bodyend="1063"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" line="1059" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" bodystart="1059" bodyend="1098"/>
       </memberdef>
       <memberdef kind="function" id="classmsecnn__raulkviana_1_1custom__dataset_1_1_sampler_stg4_1a6b1c9fe3ea444e74b52c89b26ac1be63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/custom_dataset.py" line="1064" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="1064" bodyend="1068"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" line="1099" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" bodystart="1099" bodyend="1103"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -142,7 +142,7 @@
         <label>torch::utils::data::Sampler</label>
       </node>
     </collaborationgraph>
-    <location file="src/msecnn_raulkviana/custom_dataset.py" line="1012" column="1" bodyfile="src/msecnn_raulkviana/custom_dataset.py" bodystart="1012" bodyend="1068"/>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" line="1047" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py" bodystart="1047" bodyend="1103"/>
     <listofallmembers>
       <member refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_sampler_stg4_1af50231da8f33524ce22053ed8a44a974" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::custom_dataset::SamplerStg4</scope><name>__init__</name></member>
       <member refid="classmsecnn__raulkviana_1_1custom__dataset_1_1_sampler_stg4_1a00ae4b85e9274cc7543f8859b4879081" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::custom_dataset::SamplerStg4</scope><name>__iter__</name></member>

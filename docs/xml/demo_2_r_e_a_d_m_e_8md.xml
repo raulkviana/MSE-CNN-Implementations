@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="demo_2_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline><highlight class="normal">title:<sp/>Demo_MSE-CNN</highlight></codeline>
+<codeline><highlight class="normal">app_file:<sp/>demo.py</highlight></codeline>
+<codeline><highlight class="normal">sdk:<sp/>gradio</highlight></codeline>
+<codeline><highlight class="normal">sdk_version:<sp/>3.37.0</highlight></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/demo/README.md"/>
+  </compounddef>
+</doxygen>

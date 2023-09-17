@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="107" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="107" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="107" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="107" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1aee09b2b19a5e9459161ba0e5aab9f448" prot="public" static="no" mutable="no">
         <type></type>
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="108" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="108" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="108" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="108" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1ad6051bea47954365c5df019db1f467a7" prot="public" static="no" mutable="no">
         <type></type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="120" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="120" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="120" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="120" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1aae7d3de08fc2b18c6c20eb072e1f1eef" prot="public" static="no" mutable="no">
         <type></type>
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="123" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="123" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="123" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="123" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1a02d7476d43ccb35ad29a6d510f1dfc0f" prot="public" static="no" mutable="no">
         <type></type>
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="124" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="124" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="124" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="124" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1a022370d28d736cf2cf8a652b4b9ddbaf" prot="public" static="no" mutable="no">
         <type></type>
@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="125" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="125" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="125" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="125" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1ac8c6bed499d363f0c037f03bd48d42d2" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -105,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="126" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="126" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="126" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="126" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1ac0b01e55c83c14b34ac05672499fc18b" prot="public" static="no" mutable="no">
         <type></type>
@@ -120,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="127" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="127" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="127" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="127" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1a382be9f56bf6a2335226b70dd5d32290" prot="public" static="no" mutable="no">
         <type></type>
@@ -135,7 +135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="128" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="128" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="128" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="128" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1a40298b18adedb8a9e2adcc7346dab322" prot="public" static="no" mutable="no">
         <type>float</type>
@@ -150,7 +150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="129" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="129" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="129" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="129" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1af7cb7c0ad6debc62b15f83642144160d" prot="public" static="no" mutable="no">
         <type></type>
@@ -165,7 +165,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="130" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="130" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="130" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="130" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1aa074b45b6a5b2a792e9cf4d32c584f03" prot="public" static="no" mutable="no">
         <type></type>
@@ -180,7 +180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="131" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="131" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="131" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="131" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1aec4822b987578d2ae95a71d1ca43f04b" prot="public" static="no" mutable="no">
         <type></type>
@@ -195,7 +195,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="132" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="132" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="132" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="132" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1a0dff77c8ca93ddb2f2726de44e8c45bd" prot="public" static="no" mutable="no">
         <type></type>
@@ -210,7 +210,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="133" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="133" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="133" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="133" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1a2c5351fbebdd0b2d10ea7dfe2f94f2ff" prot="public" static="no" mutable="no">
         <type></type>
@@ -225,7 +225,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="134" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="134" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="134" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="134" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1ad2bbe6b373146be8485eff2781f9d647" prot="public" static="no" mutable="no">
         <type></type>
@@ -240,7 +240,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="135" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="135" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="135" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="135" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1a647a876ab1e371eb01ad57aa73f96733" prot="public" static="no" mutable="no">
         <type></type>
@@ -255,7 +255,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="140" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="140" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="140" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="140" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1a7778cd52531340f1a8ddb8574e96d0f0" prot="public" static="no" mutable="no">
         <type>str</type>
@@ -270,7 +270,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="143" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="143" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="143" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="143" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1afae04f92d4dcebbf51a6a1e3f4f42413" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -285,7 +285,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="146" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="146" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="146" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="146" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1a0dbd019c2ed881812b82733aa6040931" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -300,7 +300,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="147" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="147" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="147" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="147" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacetrain__stg6_1a9b0f16715f4b76e7ef8234800f5557fe" prot="public" static="no" mutable="no">
         <type>int</type>
@@ -315,7 +315,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="148" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="148" bodyend="-1"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="148" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="148" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -353,7 +353,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="150" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="150" bodyend="252"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="150" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="150" bodyend="252"/>
       </memberdef>
       <memberdef kind="function" id="namespacetrain__stg6_1af5a4441c56dc8502731a1c3c0d99316a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -387,7 +387,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="253" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="253" bodyend="359"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="253" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="253" bodyend="359"/>
       </memberdef>
       <memberdef kind="function" id="namespacetrain__stg6_1a5fa206f76e13ffd9683dd8aa096079f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -433,7 +433,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="360" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="360" bodyend="487"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="360" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="360" bodyend="487"/>
       </memberdef>
       <memberdef kind="function" id="namespacetrain__stg6_1a566754db3d002de3c456576aa51619fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -447,7 +447,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="488" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="488" bodyend="538"/>
+        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="488" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" bodystart="488" bodyend="538"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -534,6 +534,6 @@ SOFTWARE.
 - Last time modified is 2023-01-29 22:23:10.689038
 </verbatim> </para>
     </detaileddescription>
-    <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="1" column="1"/>
+    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

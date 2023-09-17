@@ -122,7 +122,7 @@
   <option  id='WARN_LOGFILE' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='INPUT' default='no' type='stringlist'>
     <value><![CDATA[pages_doxygen]]></value>
-    <value><![CDATA[src]]></value>
+    <value><![CDATA[C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src]]></value>
   </option>
   <option  id='INPUT_ENCODING' default='yes' type='string'><value><![CDATA[UTF-8]]></value></option>
   <option  id='INPUT_FILE_ENCODING' default='yes' type='stringlist'>

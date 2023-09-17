@@ -7,7 +7,15 @@ var searchData=
   ['dataset_5futils_2epy_4',['dataset_utils.py',['../dataset__utils_8py.html',1,'']]],
   ['decay_5',['decay',['../namespacetrain__stg6.html#a40298b18adedb8a9e2adcc7346dab322',1,'train_stg6']]],
   ['decay_5fcontroler_6',['decay_controler',['../namespacetrain__stg6.html#af7cb7c0ad6debc62b15f83642144160d',1,'train_stg6']]],
-  ['device_7',['device',['../namespaceeval__model__stg6.html#ab38362ec446378cd8a021189c74e5bce',1,'eval_model_stg6.device'],['../namespaceeval__model__stg6__metrics.html#a9ae3489b3d7a394012278bffa5bb1972',1,'eval_model_stg6_metrics.device'],['../namespacetrain__stg6.html#aa074b45b6a5b2a792e9cf4d32c584f03',1,'train_stg6.device']]],
-  ['docstring_5fbeginning_5fcreate_8',['DOCSTRING_BEGINNING_CREATE',['../namespacemsecnn__raulkviana_1_1utils.html#a0a4104404a48b8bd52b5f9c7822c17d6',1,'msecnn_raulkviana::utils']]],
-  ['docstring_5fbeginning_5fupdate_9',['DOCSTRING_BEGINNING_UPDATE',['../namespacemsecnn__raulkviana_1_1utils.html#a1c6f2fb8ee5b94fb9ba0eea72c5cad1f',1,'msecnn_raulkviana::utils']]]
+  ['default_5ftext_5ffor_5fcoords_7',['DEFAULT_TEXT_FOR_COORDS',['../namespacedemo.html#a34fa5992eca6d94863dfbf9e9d88bdaf',1,'demo']]],
+  ['demo_8',['demo',['../namespacedemo.html',1,'']]],
+  ['demo_2epy_9',['demo.py',['../demo_8py.html',1,'']]],
+  ['dependency_5flinks_2etxt_10',['dependency_links.txt',['../dependency__links_8txt.html',1,'']]],
+  ['description_11',['description',['../md__c_1_2_users_2_raul_2_documents_2_git_hub_2_m_s_e-_c_n_n-_implementations_2src_2msecnn__raulkviana_2demo_2description.html',1,'']]],
+  ['description_2emd_12',['description.md',['../description_8md.html',1,'']]],
+  ['dev_13',['DEV',['../namespacedemo.html#a15b916246f9a785f3f6245992c5d977a',1,'demo']]],
+  ['device_14',['device',['../namespaceeval__model__stg6.html#ab38362ec446378cd8a021189c74e5bce',1,'eval_model_stg6.device'],['../namespaceeval__model__stg6__metrics.html#a9ae3489b3d7a394012278bffa5bb1972',1,'eval_model_stg6_metrics.device'],['../namespacetrain__stg6.html#aa074b45b6a5b2a792e9cf4d32c584f03',1,'train_stg6.device']]],
+  ['docstring_5fbeginning_5fcreate_15',['DOCSTRING_BEGINNING_CREATE',['../namespacemsecnn__raulkviana_1_1utils.html#a0a4104404a48b8bd52b5f9c7822c17d6',1,'msecnn_raulkviana::utils']]],
+  ['docstring_5fbeginning_5fupdate_16',['DOCSTRING_BEGINNING_UPDATE',['../namespacemsecnn__raulkviana_1_1utils.html#a1c6f2fb8ee5b94fb9ba0eea72c5cad1f',1,'msecnn_raulkviana::utils']]],
+  ['draw_5fpartition_17',['draw_partition',['../namespacedemo.html#ab8600c64de65acea972fc88b9f2243c7',1,'demo']]]
 ];

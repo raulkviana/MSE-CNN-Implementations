@@ -92,9 +92,14 @@ $(function() {
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v.html">VideoCaptureYUV</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2.html">VideoCaptureYUVV2</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aed8e8d1d72e52eded4eecbd2d2848712"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemsecnn__raulkviana_1_1dataset__utils.html#aed8e8d1d72e52eded4eecbd2d2848712">yuv2bgr</a> (matrix)</td></tr>
+<tr class="memdesc:aed8e8d1d72e52eded4eecbd2d2848712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts yuv matrix to bgr matrix.  <br /></td></tr>
+<tr class="separator:aed8e8d1d72e52eded4eecbd2d2848712"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad77955814433f58f58b0513a6127a239"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemsecnn__raulkviana_1_1dataset__utils.html#ad77955814433f58f58b0513a6127a239">bgr2yuv</a> (matrix)</td></tr>
 <tr class="memdesc:ad77955814433f58f58b0513a6127a239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts BGR matrix to YUV matrix.  <br /></td></tr>
 <tr class="separator:ad77955814433f58f58b0513a6127a239"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -381,7 +386,6 @@ Functions</h2></td></tr>
 - VideoCaptureYUV
  
 @section functions_dataset_utils Functions
-- bgr2yuv(matrix)
 - extract_content(f)
 - file_stats(path)
 - show_bin_content(path, num_records=100)
@@ -3270,6 +3274,33 @@ SOFTWARE.
     <tr><td class="paramdir">[in]</td><td class="paramname">dir_path_l</td><td>Path with all the labels (.dat files) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">n_output_file</td><td>Name for the output file </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">color_ch</td><td>Color channel </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aed8e8d1d72e52eded4eecbd2d2848712" name="aed8e8d1d72e52eded4eecbd2d2848712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed8e8d1d72e52eded4eecbd2d2848712">&#9670;&#160;</a></span>yuv2bgr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">msecnn_raulkviana.dataset_utils.yuv2bgr </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>matrix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts yuv matrix to bgr matrix. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">matrix</td><td>Yuv matrix </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">bgr</td><td>Bgr conversion </td></tr>
   </table>
   </dd>
 </dl>

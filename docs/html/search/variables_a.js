@@ -1,27 +1,6 @@
 var searchData=
 [
-  ['parser_0',['parser',['../namespaceeval__model__stg6.html#a7080058b4c891881c4a20159beac7aae',1,'eval_model_stg6.parser'],['../namespaceeval__model__stg6__metrics.html#ac3ce6332e700a187e5567ccc9df0439e',1,'eval_model_stg6_metrics.parser'],['../namespacetrain__stg6.html#a61b826ea595cc74f81fa538392d1f7d0',1,'train_stg6.parser']]],
-  ['path_5fbest_5fparams_5fstg2_1',['PATH_BEST_PARAMS_stg2',['../namespacemsecnn__raulkviana_1_1constants.html#a5867e8af71b45cabc856d2114f959578',1,'msecnn_raulkviana::constants']]],
-  ['path_5fbest_5fparams_5fstg3_2',['PATH_BEST_PARAMS_stg3',['../namespacemsecnn__raulkviana_1_1constants.html#abc0b14e68241c92bd1489af5b166a37a',1,'msecnn_raulkviana::constants']]],
-  ['path_5fbest_5fparams_5fstg4_3',['PATH_BEST_PARAMS_stg4',['../namespacemsecnn__raulkviana_1_1constants.html#a824fdc5204a0779602fade0cad3666e6',1,'msecnn_raulkviana::constants']]],
-  ['path_5fbest_5fparams_5fstg4_5f2_4',['PATH_BEST_PARAMS_stg4_2',['../namespacemsecnn__raulkviana_1_1constants.html#aa6c90357103c89d5d298366762811c0c',1,'msecnn_raulkviana::constants']]],
-  ['path_5fbest_5fparams_5fstg5_5',['PATH_BEST_PARAMS_stg5',['../namespacemsecnn__raulkviana_1_1constants.html#aa8ddea3407cd69d05f46e415dd00ec80',1,'msecnn_raulkviana::constants']]],
-  ['path_5fbest_5fparams_5fstg5_5f2_6',['PATH_BEST_PARAMS_stg5_2',['../namespacemsecnn__raulkviana_1_1constants.html#ac74f3668801bb9e47695f83ad322eb51',1,'msecnn_raulkviana::constants']]],
-  ['path_5fbest_5fparams_5fstg5_5f3_7',['PATH_BEST_PARAMS_stg5_3',['../namespacemsecnn__raulkviana_1_1constants.html#a4932331798a7b13e6d783cd671074e38',1,'msecnn_raulkviana::constants']]],
-  ['path_5fbest_5fparams_5fstg6_8',['PATH_BEST_PARAMS_stg6',['../namespacemsecnn__raulkviana_1_1constants.html#ab57cf8a673fcc7d4a95592ee0ac7ddb5',1,'msecnn_raulkviana::constants']]],
-  ['path_5fbest_5fparams_5fstg6_5f2_9',['PATH_BEST_PARAMS_stg6_2',['../namespacemsecnn__raulkviana_1_1constants.html#a2d1600ca87c29d00eca0e7a17012105b',1,'msecnn_raulkviana::constants']]],
-  ['path_5fbest_5fparams_5fstg6_5f3_10',['PATH_BEST_PARAMS_stg6_3',['../namespacemsecnn__raulkviana_1_1constants.html#a64694ef221b0aa29e838f83a7eb9afe4',1,'msecnn_raulkviana::constants']]],
-  ['path_5fbest_5fparams_5fstg6_5f4_11',['PATH_BEST_PARAMS_stg6_4',['../namespacemsecnn__raulkviana_1_1constants.html#a67c766a6764a8d2ec42a53d5e2ce8062',1,'msecnn_raulkviana::constants']]],
-  ['path_5flast_5fparams_5fstg2_12',['PATH_LAST_PARAMS_stg2',['../namespacemsecnn__raulkviana_1_1constants.html#a33930d06ae8ebe83ca7a227c0b0a77a7',1,'msecnn_raulkviana::constants']]],
-  ['path_5flast_5fparams_5fstg3_13',['PATH_LAST_PARAMS_stg3',['../namespacemsecnn__raulkviana_1_1constants.html#a89040cbef64dd73744f9d672840f67c0',1,'msecnn_raulkviana::constants']]],
-  ['path_5flast_5fparams_5fstg4_14',['PATH_LAST_PARAMS_stg4',['../namespacemsecnn__raulkviana_1_1constants.html#ad10bf97d114df9a12de76744d6c2da4b',1,'msecnn_raulkviana::constants']]],
-  ['path_5flast_5fparams_5fstg4_5f2_15',['PATH_LAST_PARAMS_stg4_2',['../namespacemsecnn__raulkviana_1_1constants.html#a8091a2d3a8eb258bd1a485058e853b66',1,'msecnn_raulkviana::constants']]],
-  ['path_5flast_5fparams_5fstg5_16',['PATH_LAST_PARAMS_stg5',['../namespacemsecnn__raulkviana_1_1constants.html#a3c5b7a2332976438338444c57dbba82a',1,'msecnn_raulkviana::constants']]],
-  ['path_5flast_5fparams_5fstg5_5f2_17',['PATH_LAST_PARAMS_stg5_2',['../namespacemsecnn__raulkviana_1_1constants.html#a378029d15e7f70223e25f852283e54f4',1,'msecnn_raulkviana::constants']]],
-  ['path_5flast_5fparams_5fstg5_5f3_18',['PATH_LAST_PARAMS_stg5_3',['../namespacemsecnn__raulkviana_1_1constants.html#a4270254adeb121b570fb2a27f0a77235',1,'msecnn_raulkviana::constants']]],
-  ['path_5flast_5fparams_5fstg6_19',['PATH_LAST_PARAMS_stg6',['../namespacemsecnn__raulkviana_1_1constants.html#a067bac02d9bd69370cdf7a33a2227c1b',1,'msecnn_raulkviana::constants']]],
-  ['path_5flast_5fparams_5fstg6_5f2_20',['PATH_LAST_PARAMS_stg6_2',['../namespacemsecnn__raulkviana_1_1constants.html#a9b3305840812df36dba532d86404bed9',1,'msecnn_raulkviana::constants']]],
-  ['path_5flast_5fparams_5fstg6_5f3_21',['PATH_LAST_PARAMS_stg6_3',['../namespacemsecnn__raulkviana_1_1constants.html#a720ff4ba5d44df1d8f94ae4065a1e773',1,'msecnn_raulkviana::constants']]],
-  ['path_5flast_5fparams_5fstg6_5f4_22',['PATH_LAST_PARAMS_stg6_4',['../namespacemsecnn__raulkviana_1_1constants.html#a2a19e22b595470288fcf73de4767d078',1,'msecnn_raulkviana::constants']]],
-  ['pm_23',['pm',['../classmsecnn__raulkviana_1_1msecnn_1_1_loss_function_m_s_e___ratios.html#a9c60162b2cfa81ffe874b3aad06390f2',1,'msecnn_raulkviana::msecnn::LossFunctionMSE_Ratios']]]
+  ['n_5fmod_0',['n_mod',['../namespaceeval__model__stg6.html#a9dd538d776d6fd9e1a28c875568daa64',1,'eval_model_stg6.n_mod'],['../namespaceeval__model__stg6__metrics.html#a885015787b9a18566d0957b4e6169229',1,'eval_model_stg6_metrics.n_mod'],['../namespacetrain__stg6.html#a0dff77c8ca93ddb2f2726de44e8c45bd',1,'train_stg6.n_mod']]],
+  ['none_5fstring_1',['NONE_STRING',['../namespacemsecnn__raulkviana_1_1utils.html#af467d1f6acbc685507ada8101aed8bae',1,'msecnn_raulkviana::utils']]],
+  ['num_5fworkers_2',['num_workers',['../namespaceeval__model__stg6.html#a49f0af65d29ca166fa6cb725c50ef5b5',1,'eval_model_stg6.num_workers'],['../namespaceeval__model__stg6__metrics.html#a79be8651265f22c4df6ee35a42a9bed1',1,'eval_model_stg6_metrics.num_workers'],['../namespacetrain__stg6.html#aec4822b987578d2ae95a71d1ca43f04b',1,'train_stg6.num_workers']]]
 ];

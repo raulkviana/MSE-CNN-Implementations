@@ -6,7 +6,7 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para><anchor id="md_pages__doxygen_2modelcoefpage_1autotoc_md30"/>Here in this folder you can find the last and best coeficients obtained during training for each stage. To load these coeficients in the following way <programlisting filename=".py"><codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>MSECNN</highlight></codeline>
+<para><anchor id="md_pages__doxygen_2modelcoefpage_1autotoc_md32"/>Here in this folder you can find the last and best coeficients obtained during training for each stage. To load these coeficients in the following way <programlisting filename=".py"><codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>MSECNN</highlight></codeline>
 <codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>train_model_utils</highlight></codeline>
 <codeline><highlight class="normal">&gt;&gt;&gt;</highlight></codeline>
 <codeline><highlight class="normal">&gt;&gt;&gt;<sp/></highlight><highlight class="comment">#<sp/>Initialize<sp/>parameters</highlight><highlight class="normal"></highlight></codeline>

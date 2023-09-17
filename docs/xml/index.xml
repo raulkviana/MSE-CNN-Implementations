@@ -141,7 +141,7 @@
     <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg_x_1a075f20c421fd05daa08de644ef66377f" kind="function"><name>residual_unit_stg2</name></member>
     <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg_x_1a3428600bced8335a1700fc195dff7981" kind="function"><name>residual_unit</name></member>
     <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg_x_1a6e7af3563445f5615d12ff17f15e48ad" kind="function"><name>pass_through_subnet</name></member>
-    <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg_x_1a9351eb93b3a089d36c559da6f013c70e" kind="function"><name>forward</name></member>
+    <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_mse_cnn_stg_x_1ad455fc6c1571a94981008d68f64ed347" kind="function"><name>forward</name></member>
   </compound>
   <compound refid="classmsecnn__raulkviana_1_1msecnn_1_1_q_p__half__mask" kind="class"><name>msecnn_raulkviana::msecnn::QP_half_mask</name>
     <member refid="classmsecnn__raulkviana_1_1msecnn_1_1_q_p__half__mask_1ab160647a0e293598d7e53725b0828530" kind="variable"><name>QP</name></member>
@@ -177,12 +177,26 @@
     <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1a3d634c8a0df6e21178f4681f475cbb15" kind="variable"><name>frame_len</name></member>
     <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1a413609f10622711e43f527cebe9d7c4f" kind="variable"><name>f</name></member>
     <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1a325cc4cf1c9735c7fddc7b29762278b8" kind="variable"><name>shape</name></member>
-    <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1aafdf339eb17f8754a2a7fd6cf9edae59" kind="function"><name>__init__</name></member>
+    <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1af66d78ef26e1a38c46da34f5101bb87b" kind="function"><name>__init__</name></member>
     <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1a96f63a8a4a0f97466db68672604108db" kind="function"><name>read_raw</name></member>
     <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1a1118f7b2fb2d5b8a0116242ec30c1612" kind="function"><name>read</name></member>
   </compound>
+  <compound refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2" kind="class"><name>msecnn_raulkviana::dataset_utils::VideoCaptureYUVV2</name>
+    <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a38a8b4674e0e48df1d076f2649773547" kind="variable"><name>height</name></member>
+    <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a89c164e3c31e8075597f1b079f2a2f82" kind="variable"><name>width</name></member>
+    <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a037bf1c841b630189c00e64b43a5faf0" kind="variable"><name>y_len</name></member>
+    <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a5801f461810d84d50b023e3d4abaf608" kind="variable"><name>frame_len</name></member>
+    <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a7ab93ed10a6ea41ee9f277ea65c3fcef" kind="variable"><name>yuv</name></member>
+    <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a7eef1afe1d411cb1b4d0c8e9e0fb3c50" kind="variable"><name>shape</name></member>
+    <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1ac7aacd678e766df9e4f89b09e21ed716" kind="function"><name>__init__</name></member>
+    <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1a729e5837166e73ab6dc1498fe86b586f" kind="function"><name>read_raw</name></member>
+    <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_v2_1ae71a17c220e54e1b0529fc2b6b4cf43b" kind="function"><name>read</name></member>
+  </compound>
   <compound refid="namespaceadd___c_t_u__v3" kind="namespace"><name>add_CTU_v3</name>
     <member refid="namespaceadd___c_t_u__v3_1a8cc2c3ffcf9d0ca1ba5041e821e390c4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="namespaceadd__docs__to__files" kind="namespace"><name>add_docs_to_files</name>
+    <member refid="namespaceadd__docs__to__files_1ac06e66a9652aa6a95b453bc0247468d7" kind="function"><name>main</name></member>
   </compound>
   <compound refid="namespacebalance__data" kind="namespace"><name>balance_data</name>
     <member refid="namespacebalance__data_1a2980b0f1363955e8a4c86a5d4f97c6e1" kind="function"><name>main</name></member>
@@ -192,6 +206,27 @@
   </compound>
   <compound refid="namespacecreate__labels__with__channels" kind="namespace"><name>create_labels_with_channels</name>
     <member refid="namespacecreate__labels__with__channels_1a6cade27f45af9b76c4edb6bc3e4175a6" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="namespacedemo" kind="namespace"><name>demo</name>
+    <member refid="namespacedemo_1a1ffe6e3cd2dc1ac0f02221e6a602076e" kind="variable"><name>PATH_TO_COEFFS</name></member>
+    <member refid="namespacedemo_1a4ae3993910053aa131604b676b2b9b5b" kind="variable"><name>LOAD_IMAGE_ERROR</name></member>
+    <member refid="namespacedemo_1a2bc429d4870d31c755fb116740d1ce98" kind="variable"><name>EXAMPLE_IMGS</name></member>
+    <member refid="namespacedemo_1adf10c69ec4657142f4f267187d122a6c" kind="variable"><name>CTU_SIZE</name></member>
+    <member refid="namespacedemo_1a1594ea1937c3d920662fa9cfc3dbb270" kind="variable"><name>FIRST_CU_POS</name></member>
+    <member refid="namespacedemo_1a34b51838a0c3c81063aef8f9681a8713" kind="variable"><name>FIRST_CU_SIZE</name></member>
+    <member refid="namespacedemo_1a15b916246f9a785f3f6245992c5d977a" kind="variable"><name>DEV</name></member>
+    <member refid="namespacedemo_1a1df2470ebb2a9b35a525161c2eadc7b6" kind="variable"><name>QP</name></member>
+    <member refid="namespacedemo_1afdaa6b6d6a72de879b40e4d6824a0c35" kind="variable"><name>model</name></member>
+    <member refid="namespacedemo_1abdabd8cda08cf10aa7685de8f0649d8d" kind="variable"><name>COLOR</name></member>
+    <member refid="namespacedemo_1ac2603db04f1bfc85f8fa64e342951507" kind="variable"><name>LINE_THICKNESS</name></member>
+    <member refid="namespacedemo_1a34fa5992eca6d94863dfbf9e9d88bdaf" kind="variable"><name>DEFAULT_TEXT_FOR_COORDS</name></member>
+    <member refid="namespacedemo_1a17011f58771c2514a5eda7f101c3692b" kind="function"><name>setup_model</name></member>
+    <member refid="namespacedemo_1a17944feff814fff559d662b0f204ba0e" kind="function"><name>int2label</name></member>
+    <member refid="namespacedemo_1ab8600c64de65acea972fc88b9f2243c7" kind="function"><name>draw_partition</name></member>
+    <member refid="namespacedemo_1adc15d43f2886217e33a93d362cadf0da" kind="function"><name>split_fm</name></member>
+    <member refid="namespacedemo_1aef29d63c9c71d261da8eaff42f5f55af" kind="function"><name>partition_img</name></member>
+    <member refid="namespacedemo_1a5a73f194ee64b84d4b8b0ce645f42983" kind="function"><name>pipeline</name></member>
+    <member refid="namespacedemo_1a9a7eee49297dfd617496f5bb2914b837" kind="function"><name>main</name></member>
   </compound>
   <compound refid="namespaceencode__dataset" kind="namespace"><name>encode_dataset</name>
     <member refid="namespaceencode__dataset_1acd153f162fafcb1a31809edd0d5f9e73" kind="function"><name>main</name></member>
@@ -270,12 +305,14 @@
     <member refid="namespacemsecnn__raulkviana_1_1custom__dataset_1a59377f998d1ca74684b3fbf38b625d0d" kind="function"><name>yuv2bgr</name></member>
     <member refid="namespacemsecnn__raulkviana_1_1custom__dataset_1a3abd31f0bedab3b24fde027be6cc23a6" kind="function"><name>bgr2yuv</name></member>
     <member refid="namespacemsecnn__raulkviana_1_1custom__dataset_1aa5aba8e9511dd561b4a9c78ba1a973fb" kind="function"><name>get_cu</name></member>
+    <member refid="namespacemsecnn__raulkviana_1_1custom__dataset_1a3d97a5b8f484d90bb890c729c1a65817" kind="function"><name>get_cu_v2</name></member>
     <member refid="namespacemsecnn__raulkviana_1_1custom__dataset_1a6dd132332ce4a3bc700a89d4a18f6723" kind="function"><name>get_file_size</name></member>
     <member refid="namespacemsecnn__raulkviana_1_1custom__dataset_1a1143ed2a2717e8eb9ecfdc7b06ba6b5c" kind="function"><name>resize</name></member>
     <member refid="namespacemsecnn__raulkviana_1_1custom__dataset_1ae0eac8f315472938410c9498dc507807" kind="function"><name>show_CU</name></member>
     <member refid="namespacemsecnn__raulkviana_1_1custom__dataset_1ada43d6f9f3fe6cdc9822a80428213a07" kind="function"><name>show_all_CUs</name></member>
   </compound>
   <compound refid="namespacemsecnn__raulkviana_1_1dataset__utils" kind="namespace"><name>msecnn_raulkviana::dataset_utils</name>
+    <member refid="namespacemsecnn__raulkviana_1_1dataset__utils_1aed8e8d1d72e52eded4eecbd2d2848712" kind="function"><name>yuv2bgr</name></member>
     <member refid="namespacemsecnn__raulkviana_1_1dataset__utils_1ad77955814433f58f58b0513a6127a239" kind="function"><name>bgr2yuv</name></member>
     <member refid="namespacemsecnn__raulkviana_1_1dataset__utils_1a593e830c4a93c93728539b1a59e52ff9" kind="function"><name>extract_content</name></member>
     <member refid="namespacemsecnn__raulkviana_1_1dataset__utils_1ac6ae8db4b242935eeec705bec8633e54" kind="function"><name>file_stats</name></member>
@@ -370,6 +407,7 @@
   </compound>
   <compound refid="namespacemsecnn__raulkviana_1_1train__model__utils" kind="namespace"><name>msecnn_raulkviana::train_model_utils</name>
     <member refid="namespacemsecnn__raulkviana_1_1train__model__utils_1afeee7ef82714dbc67d42e0c748e99114" kind="function"><name>model_statistics</name></member>
+    <member refid="namespacemsecnn__raulkviana_1_1train__model__utils_1aaba41048718e061e48e3fef373b9f546" kind="function"><name>right_size</name></member>
     <member refid="namespacemsecnn__raulkviana_1_1train__model__utils_1a22037a90eee86799850c3a765e4da26f" kind="function"><name>compute_conf_matrix</name></member>
     <member refid="namespacemsecnn__raulkviana_1_1train__model__utils_1a9208690996ff3dc9692f9e77f6e176a0" kind="function"><name>compute_top_k_accuracy</name></member>
     <member refid="namespacemsecnn__raulkviana_1_1train__model__utils_1ad9aeb6ce29f45cc766ba7320d34670c1" kind="function"><name>compute_num_splits_sent</name></member>
@@ -451,6 +489,14 @@
   </compound>
   <compound refid="processing__data__code_8md" kind="file"><name>processing_data_code.md</name>
   </compound>
+  <compound refid="dependency__links_8txt" kind="file"><name>dependency_links.txt</name>
+  </compound>
+  <compound refid="requires_8txt" kind="file"><name>requires.txt</name>
+  </compound>
+  <compound refid="_s_o_u_r_c_e_s_8txt" kind="file"><name>SOURCES.txt</name>
+  </compound>
+  <compound refid="top__level_8txt" kind="file"><name>top_level.txt</name>
+  </compound>
   <compound refid="____init_____8py" kind="file"><name>__init__.py</name>
   </compound>
   <compound refid="constants_8py" kind="file"><name>constants.py</name>
@@ -459,11 +505,21 @@
   </compound>
   <compound refid="dataset__utils_8py" kind="file"><name>dataset_utils.py</name>
   </compound>
+  <compound refid="demo_8py" kind="file"><name>demo.py</name>
+  </compound>
+  <compound refid="description_8md" kind="file"><name>description.md</name>
+  </compound>
+  <compound refid="demo_2_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="useful__scripts_2_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
   <compound refid="msecnn_8py" kind="file"><name>msecnn.py</name>
   </compound>
   <compound refid="train__model__utils_8py" kind="file"><name>train_model_utils.py</name>
   </compound>
   <compound refid="add___c_t_u__v3_8py" kind="file"><name>add_CTU_v3.py</name>
+  </compound>
+  <compound refid="add__docs__to__files_8py" kind="file"><name>add_docs_to_files.py</name>
   </compound>
   <compound refid="balance__data_8py" kind="file"><name>balance_data.py</name>
   </compound>
@@ -485,8 +541,6 @@
   </compound>
   <compound refid="obtain__cch_8py" kind="file"><name>obtain_cch.py</name>
   </compound>
-  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
-  </compound>
   <compound refid="train__stg6_8py" kind="file"><name>train_stg6.py</name>
   </compound>
   <compound refid="utils_8py" kind="file"><name>utils.py</name>
@@ -499,15 +553,21 @@
   </compound>
   <compound refid="md_pages__doxygen_2processing__data__code" kind="page"><name>md_pages__doxygen_2processing__data__code</name>
   </compound>
-  <compound refid="md_src_2msecnn__raulkviana_2useful__scripts_2_r_e_a_d_m_e" kind="page"><name>md_src_2msecnn__raulkviana_2useful__scripts_2_r_e_a_d_m_e</name>
+  <compound refid="md__c_1_2_users_2_raul_2_documents_2_git_hub_2_m_s_e-_c_n_n-_implementations_2src_2msecnn__raulkviana_2demo_2description" kind="page"><name>md__c_1_2_users_2_raul_2_documents_2_git_hub_2_m_s_e-_c_n_n-_implementations_2src_2msecnn__raulkviana_2demo_2description</name>
   </compound>
-  <compound refid="dir_940fdb39b62cfdd78aaec39f274a0c2a" kind="dir"><name>src/msecnn_raulkviana</name>
+  <compound refid="md__c_1_2_users_2_raul_2_documents_2_git_hub_2_m_s_e-_c_n_n-_implementations_2src_2msecnn__raulkb2081978c2269a6588b7e9312b2df998" kind="page"><name>md__c_1_2_users_2_raul_2_documents_2_git_hub_2_m_s_e-_c_n_n-_implementations_2src_2msecnn__raulkviana_2useful__scripts_2_r_e_a_d_m_e</name>
   </compound>
-  <compound refid="dir_5ffd4d331eea507d6bc15324971aec14" kind="dir"><name>pages_doxygen</name>
+  <compound refid="dir_3f6f7139bac2dfa7898872ac46ce7666" kind="dir"><name>C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/demo</name>
   </compound>
-  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  <compound refid="dir_940fdb39b62cfdd78aaec39f274a0c2a" kind="dir"><name>C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana</name>
   </compound>
-  <compound refid="dir_8c611ac9c43c654102e511c1f09a5321" kind="dir"><name>src/msecnn_raulkviana/useful_scripts</name>
+  <compound refid="dir_905c15a42d042b8d186b31fa9e50b682" kind="dir"><name>C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana.egg-info</name>
+  </compound>
+  <compound refid="dir_d79918e02632aa8445c313c4fee1a685" kind="dir"><name>pages_doxygen</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src</name>
+  </compound>
+  <compound refid="dir_8c611ac9c43c654102e511c1f09a5321" kind="dir"><name>C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts</name>
   </compound>
   <compound refid="indexpage" kind="page"><name>index</name>
   </compound>

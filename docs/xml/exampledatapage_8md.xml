@@ -9,7 +9,7 @@
     <programlisting>
 <codeline><highlight class="normal">#<sp/>Example<sp/>data</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">The<sp/>data<sp/>in<sp/>this<sp/>folder<sp/>is<sp/>used<sp/>by<sp/>the<sp/>scripts<sp/>in<sp/>the<sp/>[usefull_scripts](../src/msecnn_raulkviana/usefull_scripts/)<sp/>folder.<sp/>The<sp/>data<sp/>in<sp/>this<sp/>folder<sp/>is<sp/>unbalanced.<sp/>To<sp/>load<sp/>this<sp/>data<sp/>into<sp/>the<sp/>custom<sp/>data<sp/>class,<sp/>you<sp/>can<sp/>follow<sp/>this<sp/>sample<sp/>of<sp/>code</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>data<sp/>in<sp/>this<sp/>folder<sp/>is<sp/>used<sp/>by<sp/>the<sp/>scripts<sp/>in<sp/>the<sp/>[usefull_scripts](../../src/msecnn_raulkviana/usefull_scripts/)<sp/>folder.<sp/>The<sp/>data<sp/>in<sp/>this<sp/>folder<sp/>is<sp/>unbalanced.<sp/>To<sp/>load<sp/>this<sp/>data<sp/>into<sp/>the<sp/>custom<sp/>data<sp/>class,<sp/>you<sp/>can<sp/>follow<sp/>this<sp/>sample<sp/>of<sp/>code</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">```python</highlight></codeline>
 <codeline><highlight class="normal">import<sp/>custom_dataset</highlight></codeline>
