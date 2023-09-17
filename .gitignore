@@ -1,3 +1,4 @@
 env/
 env2/
 *.pyc
+gen_docs/*
