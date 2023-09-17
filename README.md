@@ -22,6 +22,7 @@ Code database with an implementation of MSE-CNN [1]. Besides the code, the datas
 
 
 - [MSE-CNN Implementation](#mse-cnn-implementation)
+  - [Demo](#demo)
   - [Quickstart](#quickstart)
   - [1. Introduction](#1-introduction)
   - [2. Theorectical Background](#2-theorectical-background)
@@ -50,6 +51,16 @@ Code database with an implementation of MSE-CNN [1]. Besides the code, the datas
   - [9. License](#9-license)
   - [10. TODO](#10-todo)
   - [11. References](#11-references)
+
+## Demo
+
+<script
+	type="module"
+	src="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/gradio.js"
+></script>
+
+<gradio-app src="https://kevinmevin-demo-mse-cnn.hf.space"></gradio-app>
+
 
 ## Quickstart
 
