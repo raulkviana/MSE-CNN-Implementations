@@ -10,7 +10,7 @@
 <!----![Jokes Card](https://readme-jokes.vercel.app/api)---->
 
 <div align="center">
-  <img src="msecnn_model.png?raw=true" width=800 />
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/msecnn_model.png" width=800 />
   <!----<p>MSE-CNN model</p>--->
 </div>
 <br>
@@ -115,7 +115,7 @@ tensor(2.7419, grad_fn=<MeanBackward1>)
 The emergence of new technologies that provide creative audiovisual experiences, such as 360-degree films, virtual reality, augmented reality, 4K, 8K UHD, 16K, and also with the rise of video traffic on the web, shows the current demand for video data in the modern world. Because of this tension, Versatile Video Coding (VVC) was developed due to the the necessity for the introduction of new coding standards. Despite the advancements achieved with the introduction of this standard, its complexity has increased very much. The new partitioning technique is responsible for majority of the increase in encoding time. This extended duration is linked with the optimization of the Rate-Distortion cost (RD cost). Although VVC offers higher compression rates, the complexity of its encoding is high.
 
 <div align="center">
-  <img src="imgs/funny_memes_about_this_work/72rrr9.jpg" width=300 />
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/funny_memes_about_this_work/72rrr9.jpg" width=300 />
   <p>Fig. 1: VVC Complexity</p>
 </div>
 
@@ -123,7 +123,7 @@ In light of this, the Multi-Stage Exit Convolutional
 Neural Nework (MSE-CNN) was developed. This Deep Learning-based model is organised in a sequential structure with several stages. Each stage, which represents a different partition depth, encompasses a set of layers for extracting features from a Coding Tree Unit (CTU) and deciding how to partition it. Instead of using recursive approaches to determine the optimal way to fragment an image, this model allows VVC to estimate the most appropriate way of doing it. **This work presents a model of the MSE-CNN that employs training procedures distinct from the original implementation of this network, as well as the ground-thruth to train and validate the model and an interpretation of the work done by the MSE-CNN’s original creators**.
 
 <div align="center">
-  <img src="imgs/funny_memes_about_this_work/72roie.jpg" width=400 />
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/funny_memes_about_this_work/72roie.jpg" width=400 />
   <p>Fig. 2: MSE-CNN benefits</p>
 </div>
 
@@ -139,7 +139,7 @@ to both the complexity and compression gains in VVC. H.266 (VVC), organize a vid
 VVC is 128x128 and the smallest is 4x4. In VVC, a quad-tree (QT) is initially applied to the CTUs in the first level, and then a quad-tree with nested multi-type tree (QMTT) is applied recursively. 
 
 <div align="center">
-  <img src="imgs/vvc_parti_real.png" />
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/vvc_parti_real.png" />
   <p>Fig. 3: Types of partitions in VVC</p>
 </div>
 
@@ -153,7 +153,7 @@ The association of BT and TT is named a multi-type tree (MTT). The introduction 
 an image more efficiently, allowing better predictions and higher compressing abilities. Although this standard now have these advantages, as a downside it takes longer to encode.
 
 <div align="center">
-  <img src="imgs/partitioning_image.png" />
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/partitioning_image.png" />
   <p>Fig. 4: Partitioning in VVC</p>
 </div>
 
@@ -170,14 +170,14 @@ This model is composed by the following blocks:
 from it; this is accomplished by utilising simple convolutional layers. 
 
 <div align="center">
-  <img src="imgs/over_con_block.drawio.png" />
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/over_con_block.drawio.png" />
   <p>Fig. 5: Overlapping convolution layer</p>
 </div>
 
 * To extract more characteristics from the data, the information is then passed through a series of convolutional layers; these layers were named Conditional Convolution. 
   
 <div align="center">
-  <img src="imgs/resnet_mse.png" />
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/resnet_mse.png" />
   <p>Fig. 6: Conditional Convolution</p>
 </div>
 
@@ -187,7 +187,7 @@ optimal manner of partitioning the CU. This layer is a blend of fully connected 
 layers.
 
 <div align="center">
-  <img src="imgs/sub_networks.png" />
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/sub_networks.png" />
   <p>Fig. 7: Sub-networks</p>
 </div>
 
@@ -221,7 +221,7 @@ $$\frac{r_{n, m}}{r_{n, min}} - 1$$
 is a normalised RD cost. As a relevant note, $r_{n, min}$ is equal to the RD cost of the best partition mode. Consequently, the result of
 
 <div align="center">
-  <img src="imgs/formula.png" />
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/formula.png" />
 </div>
 
 ensures that CU's partitions with greater erroneously predicted probability values or greater RD cost values $r_{n, m}$ are more penalised. In $\frac{r_{n, m}}{r_{n, min}} - 1$, the ideal partition has a normalised RD cost of zero, but the other partitions do not. Therefore, the only way for the loss to equal zero is if the probability for all other modes also equals zero. Consequently, the learning algorithm must assign a greater probability to the optimal split mode while reducing the probabilities for the rest. **Experimentally it was verified that this function wasn't able to contribute to the training of the MSE-CNN, this contradicted the remarks made in [1]**.
@@ -231,7 +231,7 @@ ensures that CU's partitions with greater erroneously predicted probability valu
 The strategy used to train the MSE-CNN was very similar to the one used in [1]. The first parts of the model to be trained were the first and second stages, in which 64x64 CUs were passed through the second depth. Afterwards, transfer learning was used to pass certain coefficients of the second stage to the third. Then, the third stage was trained with 32x32 CUs flowing through it. After this step, a similar process was done to the following stages. It is worth noting that, beginning with stage 4, various CUs forms are at the models' input. This means that these stages were fed different kinds of CUs.  
 
 <div align="center">
-  <img src="imgs/training_steps.png" width=300/>
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/training_steps.png" width=300/>
   <p>Fig. 8: Training flow used</p>
 </div>
 
@@ -242,8 +242,8 @@ At the end of training, 6 models were obtained one for each partitioning depth i
 Due to the deterministic nature of the first stage, where CTUs are always partitioned with a QT, it was implemented together with the second stage. If it was done separately, the training for the first two stages would have to be done at the same time. Consequently, two distinct optimisers would need to be employed, which could result in unpredictable training behaviour. <br>
 
 <div align="center">
-  <img src="imgs/subnet_min_32_1.drawio.png" width=300/>
-  <img src="imgs/subnet_min_32_2.drawio.png" width=300/>
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/subnet_min_32_1.drawio.png" width=300/>
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/subnet_min_32_2.drawio.png" width=300/>
   <p>Fig. 9: 32 minimum axis size sub-networks</p>
 </div>
 
@@ -275,21 +275,21 @@ Results with weighted average for F1-score, recall and precision.
 
 #### 4.2.1 Stages 2 and 3
 <div align="center">
-  <img src="imgs/conf_mat_val_stg2.png" width=300 />
-  <img src="imgs/conf_mat_val_v2_stg3.png" width=300 />
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/conf_mat_val_stg2.png" width=300 />
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/conf_mat_val_v2_stg3.png" width=300 />
   <p>Fig. 10: Confusion matrix results with the testing data in stages 2 and 3</p>
 </div>
 
 #### 4.2.2 Stages 4 and 5
 <div align="center">
-  <img src="imgs/conf_mat_val_stg4.png" width=300 />
-  <img src="imgs/conf_mat_val_stg5.png" width=300 />
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/conf_mat_val_stg4.png" width=300 />
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/conf_mat_val_stg5.png" width=300 />
   <p>Fig. 11: Confusion matrix results with the testing data in stages 4 and 5</p>
 </div>
 
 #### 4.2.3 Stage 6
 <div align="center">
-  <img src="imgs/conf_mat_val_stg6.png" width=300 />
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/conf_mat_val_stg6.png" width=300 />
   <p>Fig. 12: Confusion matrix results with the testing data in stage 6</p>
 </div>
 
