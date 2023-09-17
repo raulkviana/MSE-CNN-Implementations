@@ -10,7 +10,7 @@
 <!----![Jokes Card](https://readme-jokes.vercel.app/api)---->
 
 <div align="center">
-  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/msecnn_model.png" width=800 />
+  <img src="./msecnn_model.png?raw=true" width=800 />
   <!----<p>MSE-CNN model</p>--->
 </div>
 <br>
