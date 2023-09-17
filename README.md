@@ -54,12 +54,12 @@ Code database with an implementation of MSE-CNN [1]. Besides the code, the datas
 
 ## Demo
 
-<script
-	type="module"
-	src="https://gradio.s3-us-west-2.amazonaws.com/3.37.0/gradio.js"
-></script>
-
-<gradio-app src="https://kevinmevin-demo-mse-cnn.hf.space"></gradio-app>
+<iframe
+	src="https://kevinmevin-demo-mse-cnn.hf.space"
+	frameborder="0"
+	width="850"
+	height="450"
+></iframe>
 
 
 ## Quickstart
