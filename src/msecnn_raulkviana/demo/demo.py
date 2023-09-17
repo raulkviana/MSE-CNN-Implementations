@@ -32,18 +32,18 @@ Note: In order to run this script, you have to do it inside the folder
 - main()
 
 @section global_vars_demo Global Variables 
-- PATH_TO_COEFFS = "../../../model_coefficients/best_coefficients"
-- LOAD_IMAGE_ERROR = "load_image_error.png"
-- EXAMPLE_IMGS = ["example_img_1.jpeg", "example_img_2.jpeg"]
-- CTU_SIZE = (128, 128)
-- FIRST_CU_POS = torch.tensor([0, 0]).reshape(shape=(-1, 2))
-- FIRST_CU_SIZE = torch.tensor([64, 64]).reshape(shape=(-1, 2))
-- DEV = "cuda" if torch.cuda.is_available() else "cpu"
-- QP = 32
-- model = None
-- COLOR = (0, 247, 255)
-- LINE_THICKNESS = 1
-- DEFAULT_TEXT_FOR_COORDS = "Insert CTU position in the image..."
+- PATH_TO_COEFFS
+- LOAD_IMAGE_ERROR
+- EXAMPLE_IMGS
+- CTU_SIZE
+- FIRST_CU_POS
+- FIRST_CU_SIZE
+- DEV
+- QP
+- model
+- COLOR
+- LINE_THICKNESS
+- DEFAULT_TEXT_FOR_COORDS
 
 @section todo_demo TODO 
 - Instead of obtaining the best split, do the thresholding and then split it until you find the right type of split 
