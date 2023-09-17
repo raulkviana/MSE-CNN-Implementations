@@ -4,6 +4,8 @@
 
 @brief Demonstration of the application of the MSE-CNN 
 
+Note: In order to run this script, you have to do it inside the folder
+
 @section libraries_demo Libraries 
 - msecnn
 - train_model_utils
