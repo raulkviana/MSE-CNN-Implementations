@@ -11,14 +11,54 @@
 <!----![Jokes Card](https://readme-jokes.vercel.app/api)---->
 
 <div align="center">
+<video width="720" height="480" autoplay loop controls>
+  <source src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/demo_mse_cnn.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</div>
+<br>
+
+Code database with an implementation of MSE-CNN [1]. Besides the code, the dataset and coefficients obtained after training are provided.
+
+<div align="center">
   <img src="imgs/msecnn_model.png" width=800 />
   <!----<p>MSE-CNN model</p>--->
 </div>
 <br>
 <br>
 
-Code database with an implementation of MSE-CNN [1]. Besides the code, the dataset and coefficients obtained after training are provided.
 
+- [MSE-CNN Implementation](#mse-cnn-implementation)
+  - [Quickstart](#quickstart)
+  - [1. Introduction](#1-introduction)
+  - [2. Theorectical Background](#2-theorectical-background)
+    - [2.1 Partitioning in VVC](#21-partitioning-in-vvc)
+    - [2.2 MSE-CNN](#22-mse-cnn)
+      - [2.2.1 Architecture](#221-architecture)
+      - [2.2.2 Loss Function](#222-loss-function)
+      - [2.2.3 Training](#223-training)
+      - [2.2.4 Implementation remarks](#224-implementation-remarks)
+  - [3. Dataset](#3-dataset)
+  - [4. Results](#4-results)
+    - [4.1 F1-score, Recall and Precision with test data](#41-f1-score-recall-and-precision-with-test-data)
+    - [4.2 Confusion matrices](#42-confusion-matrices)
+      - [4.2.1 Stages 2 and 3](#421-stages-2-and-3)
+      - [4.2.2 Stages 4 and 5](#422-stages-4-and-5)
+      - [4.2.3 Stage 6](#423-stage-6)
+    - [4.3 Y-PSNR, Complexity Reduction and Bitrate with test data](#43-y-psnr-complexity-reduction-and-bitrate-with-test-data)
+  - [5. Relevant Folders and files](#5-relevant-folders-and-files)
+    - [5.1 Folders](#51-folders)
+    - [5.2 Files in src folder](#52-files-in-src-folder)
+  - [6. Installation of dependencies](#6-installation-of-dependencies)
+    - [Requirements](#requirements)
+    - [Package Distributions](#package-distributions)
+  - [7. Documentation](#7-documentation)
+  - [8. Contributions](#8-contributions)
+  - [9. License](#9-license)
+  - [10. TODO](#10-todo)
+  - [11. References](#11-references)
+
+## Quickstart
 
 ``` python
 >>> import torch
@@ -80,35 +120,6 @@ tensor(174.3921, grad_fn=<NegBackward0>)
 >> loss_RD
 tensor(2.7419, grad_fn=<MeanBackward1>)
 ```
-
-- [MSE-CNN Implementation](#mse-cnn-implementation)
-  - [1. Introduction](#1-introduction)
-  - [2. Theorectical Background](#2-theorectical-background)
-    - [2.1 Partitioning in VVC](#21-partitioning-in-vvc)
-    - [2.2 MSE-CNN](#22-mse-cnn)
-      - [2.2.1 Architecture](#221-architecture)
-      - [2.2.2 Loss Function](#222-loss-function)
-      - [2.2.3 Training](#223-training)
-      - [2.2.4 Implementation remarks](#224-implementation-remarks)
-  - [3. Dataset](#3-dataset)
-  - [4. Results](#4-results)
-    - [4.1 F1-score, Recall and Precision with test data](#41-f1-score-recall-and-precision-with-test-data)
-    - [4.2 Confusion matrices](#42-confusion-matrices)
-      - [4.2.1 Stages 2 and 3](#421-stages-2-and-3)
-      - [4.2.2 Stages 4 and 5](#422-stages-4-and-5)
-      - [4.2.3 Stage 6](#423-stage-6)
-    - [4.3 Y-PSNR, Complexity Reduction and Bitrate with test data](#43-y-psnr-complexity-reduction-and-bitrate-with-test-data)
-  - [5. Relevant Folders and files](#5-relevant-folders-and-files)
-    - [5.1 Folders](#51-folders)
-    - [5.2 Files in src folder](#52-files-in-src-folder)
-  - [6. Installation of dependencies](#6-installation-of-dependencies)
-    - [Requirements](#requirements)
-    - [Package Distributions](#package-distributions)
-  - [7. Documentation](#7-documentation)
-  - [8. Contributions](#8-contributions)
-  - [9. License](#9-license)
-  - [10. TODO](#10-todo)
-  - [11. References](#11-references)
 
 
 ## 1. Introduction
