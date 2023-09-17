@@ -217,6 +217,16 @@ def model_statistics(J_history, predicted, ground_truth, pred_vector, gt_vector,
     plt.savefig(name)
     plt.clf()
 
+def right_size(CUs):
+    """
+    @brief Verify if the CU as the right size: height as to be lower than width
+
+    @param [in] CUs: Feature maps
+    @param [out] Boolean value indicating the right size
+    """
+    
+    return False if CUs.shape[-2] > CUs.shape[-1] else True
+
 def compute_conf_matrix(predicted, ground_truth):
     """!
     @brief Computes the confusion matrix
