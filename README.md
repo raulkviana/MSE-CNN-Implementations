@@ -54,13 +54,7 @@ Code database with an implementation of MSE-CNN [1]. Besides the code, the datas
 
 ## Demo
 
-<iframe
-	src="https://kevinmevin-demo-mse-cnn.hf.space"
-	frameborder="0"
-	width="850"
-	height="450"
-></iframe>
-
+Apply the MSE-CNN in your own pictures with its demo here: https://kevinmevin-demo-mse-cnn.hf.space
 
 ## Quickstart
 
