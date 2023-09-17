@@ -72,7 +72,7 @@ import numpy as np
 from torch.utils.data import Dataset
 import cv2
 import re
-from dataset_utils import VideoCaptureYUV
+from dataset_utils import VideoCaptureYUV, VideoCaptureYUVV2
 import dataset_utils
 import random
 
@@ -106,6 +106,7 @@ def bgr2yuv(matrix):
 
     return YUV
 
+
 def get_cu(f_path, f_size, cu_pos, cu_size, frame_number):
     """!
     Get CU from image
@@ -127,6 +128,40 @@ def get_cu(f_path, f_size, cu_pos, cu_size, frame_number):
 
     # Get the specific frame
     ret, yuv_frame, luma_frame, chr_u, chr_v = yuv_file.read_raw(frame_number)  # Read Frame from File
+
+    # Return false in case a wrongful value is returned
+    if not ret:
+        return False
+
+    # Get region that contain the CU
+    CU_Y = luma_frame[cu_pos[0]: (cu_size[0] + cu_pos[0]), cu_pos[1]: (cu_size[1] + cu_pos[1])]  # CU Luma component
+
+    # Get the CU different components
+    CU_U = chr_u[int(cu_pos[0]/2): int((cu_size[0] + cu_pos[0])/2), int(cu_pos[1]/2): int((cu_size[1] + cu_pos[1])/2)]  # CU Chroma blue component
+    CU_V = chr_v[int(cu_pos[0]/2): int((cu_size[0] + cu_pos[0])/2), int(cu_pos[1]/2): int((cu_size[1] + cu_pos[1])/2)]  # CU Chroma red component
+
+    return yuv_frame, CU_Y, CU_U, CU_V
+
+def get_cu_v2(img, f_size, cu_pos, cu_size):
+    """!
+    Get CU from image. In this version, an YUV420 image is passed instead of a path.
+
+    @param [in] img: Image in YUV420 format
+    @param [in] f_size: YUV image dimensions (height, width)
+    @param [in] cu_pos: Tuple with the position of the CU (y position (height), x position (width))
+    @param [in] cu_size: Tuple with the size of the CU (y position (height), x position (width))
+    @param [out] CU: CU with all the information from all the components(Luminance and Chroma)
+    @param [out] CU_Y: CU with the Luminance component
+    @param [out] CU_U: CU with the Chroma (Blue) component
+    @param [out] CU_V: CU with the Chroma (Red) component
+    @param [out] frame_CU: specified frame that contains the CU
+    """
+
+    # Get file data
+    yuv_file = VideoCaptureYUVV2(img, f_size)
+
+    # Get the specific frame
+    ret, yuv_frame, luma_frame, chr_u, chr_v = yuv_file.read_raw()  # Read Frame from File
 
     # Return false in case a wrongful value is returned
     if not ret:

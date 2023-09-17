@@ -125,7 +125,6 @@ class QP_half_mask(nn.Module):
         half_1, half_2 = torch.split(new_feature_maps, (half_num, half_num), dim_change)
         half_2 = half_2 * q_tilde
         new_feature_maps = torch.cat((half_1, half_2), dim=dim_change)
-        # print("new_feature_maps:",  new_feature_maps[:, 0:(half_num_channels), :, :])
 
         return new_feature_maps
 
@@ -287,7 +286,6 @@ class MseCnnStg1(nn.Module):
         @param [in] ap: Minimum value of the parent input axises
         @param [out] nr: Number of residual units
         """
-
         nr = 0
 
         if (ac != 0):
@@ -317,7 +315,7 @@ class MseCnnStg1(nn.Module):
 
         @param [in] cu: Input to the model
         @param [in] coords: Coordinates of the new CUs
-        @param [in] coords: Size of the new CUs
+        @param [in] size: Size of the new CUs
         @param [in] split: Way to split CU
         @param [out] cu_out: New Feature maps
         """
@@ -693,7 +691,7 @@ class MseCnnStgX(MseCnnStg1):
 
         return logits
 
-    def forward(self, cu, ap, splits, sizes=None, coords=None):
+    def forward(self, cu, ap, splits=None, sizes=None, coords=None):
         """!
         @brief This functions propagates the input to the output
 

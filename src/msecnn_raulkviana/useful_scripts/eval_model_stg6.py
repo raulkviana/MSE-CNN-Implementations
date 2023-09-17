@@ -273,11 +273,11 @@ def val_setup(dataloader_val, model, device):
 
 def main():
     # Initialize Model
-    stg1_2 = msecnn.MseCnnStg_1(device=device, QP=qp).to(device)
-    stg3 = msecnn.MseCnnStg_x(device=device, QP=qp).to(device)
-    stg4 = msecnn.MseCnnStg_x(device=device, QP=qp).to(device)
-    stg5 = msecnn.MseCnnStg_x(device=device, QP=qp).to(device)
-    stg6 = msecnn.MseCnnStg_x(device=device, QP=qp).to(device)
+    stg1_2 = msecnn.MseCnnStg1(device=device, QP=qp).to(device)
+    stg3 = msecnn.MseCnnStgX(device=device, QP=qp).to(device)
+    stg4 = msecnn.MseCnnStgX(device=device, QP=qp).to(device)
+    stg5 = msecnn.MseCnnStgX(device=device, QP=qp).to(device)
+    stg6 = msecnn.MseCnnStgX(device=device, QP=qp).to(device)
     model = (stg1_2, stg3, stg4, stg5, stg6)
 
     ans = str(input('Do you want to load any existing model? Y/N \n'))
