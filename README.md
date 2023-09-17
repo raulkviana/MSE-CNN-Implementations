@@ -10,10 +10,8 @@
 <!----![Jokes Card](https://readme-jokes.vercel.app/api)---->
 
 <div align="center">
-<video width="720" height="480" autoplay loop controls>
-  <source src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/demo_mse_cnn.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+  <source  type="video/mp4">
+<iframe width="560" height="315" src="https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/demo_mse_cnn.mp4" frameborder="0" allowfullscreen></iframe>
 </div>
 <br>
 
