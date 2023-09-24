@@ -377,7 +377,7 @@ This command exits the virtual environment and returns you to your normal comman
 
 ## 7. Documentation
 
-Organize documentation can be found by opening in your browser the file [index.html](doc/html/index.html)
+The documentation can be found by following this [link](https://raulkviana.github.io/msecnn_docs/index.html).
 
 ## 8. Contributions
 
