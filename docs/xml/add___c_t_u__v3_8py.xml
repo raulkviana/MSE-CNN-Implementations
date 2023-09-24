@@ -178,6 +178,6 @@
 <codeline lineno="168"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceadd___c_t_u__v3_1a8cc2c3ffcf9d0ca1ba5041e821e390c4" kindref="member">main</ref>()</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/add_CTU_v3.py"/>
+    <location file="src/msecnn_raulkviana/useful_scripts/add_CTU_v3.py"/>
   </compounddef>
 </doxygen>

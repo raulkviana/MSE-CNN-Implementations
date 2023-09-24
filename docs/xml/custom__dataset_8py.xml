@@ -1119,6 +1119,6 @@
 <codeline lineno="1101"><highlight class="normal"></highlight></codeline>
 <codeline lineno="1102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/custom_dataset.py"/>
+    <location file="src/msecnn_raulkviana/custom_dataset.py"/>
   </compounddef>
 </doxygen>

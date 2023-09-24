@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="176" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="176" bodyend="-1"/>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="176" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="176" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1a1814d9fbad88dc3fbd99a6fc63c3cce1" prot="public" static="no" mutable="no">
         <type></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="176" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="176" bodyend="-1"/>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="176" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="176" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1a0da1854b1e0c156967278539065f01d1" prot="public" static="no" mutable="no">
         <type></type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="177" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="177" bodyend="-1"/>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="177" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="177" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1a3d634c8a0df6e21178f4681f475cbb15" prot="public" static="no" mutable="no">
         <type></type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="178" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="178" bodyend="-1"/>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="178" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="178" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1a413609f10622711e43f527cebe9d7c4f" prot="public" static="no" mutable="no">
         <type></type>
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="180" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="180" bodyend="-1"/>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="180" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="180" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1a325cc4cf1c9735c7fddc7b29762278b8" prot="public" static="no" mutable="no">
         <type></type>
@@ -85,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="183" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="183" bodyend="-1"/>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="183" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="183" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -113,7 +113,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="175" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="175" bodyend="184"/>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="175" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="175" bodyend="184"/>
       </memberdef>
       <memberdef kind="function" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1a96f63a8a4a0f97466db68672604108db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -136,7 +136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="185" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="185" bodyend="202"/>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="185" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="185" bodyend="202"/>
       </memberdef>
       <memberdef kind="function" id="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1a1118f7b2fb2d5b8a0116242ec30c1612" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -154,7 +154,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="203" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="203" bodyend="210"/>
+        <location file="src/msecnn_raulkviana/dataset_utils.py" line="203" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="203" bodyend="210"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -163,7 +163,7 @@
 <para><verbatim>Object to contain the YUV files
 </verbatim> </para>
     </detaileddescription>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" line="171" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/dataset_utils.py" bodystart="171" bodyend="210"/>
+    <location file="src/msecnn_raulkviana/dataset_utils.py" line="171" column="1" bodyfile="src/msecnn_raulkviana/dataset_utils.py" bodystart="171" bodyend="210"/>
     <listofallmembers>
       <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1af66d78ef26e1a38c46da34f5101bb87b" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::dataset_utils::VideoCaptureYUV</scope><name>__init__</name></member>
       <member refid="classmsecnn__raulkviana_1_1dataset__utils_1_1_video_capture_y_u_v_1a413609f10622711e43f527cebe9d7c4f" prot="public" virt="non-virtual"><scope>msecnn_raulkviana::dataset_utils::VideoCaptureYUV</scope><name>f</name></member>

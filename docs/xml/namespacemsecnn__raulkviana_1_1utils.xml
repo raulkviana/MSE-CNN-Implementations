@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" line="69" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" bodystart="69" bodyend="-1"/>
+        <location file="src/msecnn_raulkviana/utils.py" line="69" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="69" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacemsecnn__raulkviana_1_1utils_1a1c6f2fb8ee5b94fb9ba0eea72c5cad1f" prot="public" static="no" mutable="no">
         <type>str</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" line="105" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" bodystart="105" bodyend="-1"/>
+        <location file="src/msecnn_raulkviana/utils.py" line="105" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="105" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacemsecnn__raulkviana_1_1utils_1ab167d6fc73ebbba13a56aeed4f755ef6" prot="public" static="no" mutable="no">
         <type>str</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" line="141" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" bodystart="141" bodyend="-1"/>
+        <location file="src/msecnn_raulkviana/utils.py" line="141" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="141" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacemsecnn__raulkviana_1_1utils_1a58d80305bebd1659fdc6a23a37a902e7" prot="public" static="no" mutable="no">
         <type>str</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" line="142" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" bodystart="142" bodyend="-1"/>
+        <location file="src/msecnn_raulkviana/utils.py" line="142" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="142" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacemsecnn__raulkviana_1_1utils_1a7eec0a89cdc50863882f2c40a8bedb69" prot="public" static="no" mutable="no">
         <type>str</type>
@@ -74,7 +74,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" line="143" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" bodystart="143" bodyend="-1"/>
+        <location file="src/msecnn_raulkviana/utils.py" line="143" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="143" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacemsecnn__raulkviana_1_1utils_1af467d1f6acbc685507ada8101aed8bae" prot="public" static="no" mutable="no">
         <type>str</type>
@@ -89,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" line="144" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" bodystart="144" bodyend="-1"/>
+        <location file="src/msecnn_raulkviana/utils.py" line="144" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="144" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="namespacemsecnn__raulkviana_1_1utils_1a8e8856db05a65acdbbb786f5bbb853cb" prot="public" static="no" mutable="no">
         <type>str</type>
@@ -104,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" line="145" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" bodystart="145" bodyend="-1"/>
+        <location file="src/msecnn_raulkviana/utils.py" line="145" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="145" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -148,7 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" line="151" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" bodystart="151" bodyend="161"/>
+        <location file="src/msecnn_raulkviana/utils.py" line="151" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="151" bodyend="161"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1utils_1afc3702321da27b677de7346b45b2b3e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -177,7 +177,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" line="162" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" bodystart="162" bodyend="413"/>
+        <location file="src/msecnn_raulkviana/utils.py" line="162" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="162" bodyend="413"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1utils_1abccc7d3daba4b0e131d2899ccbad8c44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -208,7 +208,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" line="414" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" bodystart="414" bodyend="438"/>
+        <location file="src/msecnn_raulkviana/utils.py" line="414" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="414" bodyend="438"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1utils_1af2d76375a79e7ceed4bc83342fc4aea9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -243,7 +243,7 @@ of MSE-CNN.
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" line="439" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" bodystart="439" bodyend="470"/>
+        <location file="src/msecnn_raulkviana/utils.py" line="439" column="1" bodyfile="src/msecnn_raulkviana/utils.py" bodystart="439" bodyend="470"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -304,6 +304,6 @@ SOFTWARE.
 - Last time modified is 2023-01-29 22:22:04.157947
 </verbatim> </para>
     </detaileddescription>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py" line="1" column="1"/>
+    <location file="src/msecnn_raulkviana/utils.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

@@ -7,54 +7,16 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
+<codeline></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">#<sp/>MSE-CNN<sp/>Implementation</highlight></codeline>
 <codeline></codeline>
-<codeline></codeline>
 <codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../msecnn_model.png&quot;<sp/>width=800<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/msecnn_model.png&quot;<sp/>width=800<sp/>/&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;br&gt;</highlight></codeline>
-<codeline><highlight class="normal">&lt;br&gt;</highlight></codeline>
-<codeline></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">Code<sp/>database<sp/>with<sp/>an<sp/>implementation<sp/>of<sp/>MSE-CNN<sp/>[1].<sp/>Besides<sp/>the<sp/>code,<sp/>the<sp/>dataset<sp/>and<sp/>coefficients<sp/>obtained<sp/>after<sp/>training<sp/>are<sp/>provided.</highlight></codeline>
 <codeline></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">-<sp/>[MSE-CNN<sp/>Implementation](#mse-cnn-implementation)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>-<sp/>[Demo](#demo)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>-<sp/>[Quickstart](#quickstart)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>-<sp/>[1.<sp/>Introduction](#1-introduction)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>-<sp/>[2.<sp/>Theorectical<sp/>Background](#2-theorectical-background)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[2.1<sp/>Partitioning<sp/>in<sp/>VVC](#21-partitioning-in-vvc)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[2.2<sp/>MSE-CNN](#22-mse-cnn)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[2.2.1<sp/>Architecture](#221-architecture)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[2.2.2<sp/>Loss<sp/>Function](#222-loss-function)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[2.2.3<sp/>Training](#223-training)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[2.2.4<sp/>Implementation<sp/>remarks](#224-implementation-remarks)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>-<sp/>[3.<sp/>Dataset](#3-dataset)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>-<sp/>[4.<sp/>Results](#4-results)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[4.1<sp/>F1-score,<sp/>Recall<sp/>and<sp/>Precision<sp/>with<sp/>test<sp/>data](#41-f1-score-recall-and-precision-with-test-data)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[4.2<sp/>Confusion<sp/>matrices](#42-confusion-matrices)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[4.2.1<sp/>Stages<sp/>2<sp/>and<sp/>3](#421-stages-2-and-3)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[4.2.2<sp/>Stages<sp/>4<sp/>and<sp/>5](#422-stages-4-and-5)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[4.2.3<sp/>Stage<sp/>6](#423-stage-6)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[4.3<sp/>Y-PSNR,<sp/>Complexity<sp/>Reduction<sp/>and<sp/>Bitrate<sp/>with<sp/>test<sp/>data](#43-y-psnr-complexity-reduction-and-bitrate-with-test-data)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>-<sp/>[5.<sp/>Relevant<sp/>Folders<sp/>and<sp/>files](#5-relevant-folders-and-files)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[5.1<sp/>Folders](#51-folders)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[5.2<sp/>Files<sp/>in<sp/>src<sp/>folder](#52-files-in-src-folder)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>-<sp/>[6.<sp/>Installation<sp/>of<sp/>dependencies](#6-installation-of-dependencies)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[Requirements](#requirements)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[Package<sp/>Distributions](#package-distributions)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>-<sp/>[7.<sp/>Contributions](#7-contributions)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>-<sp/>[8.<sp/>License](#8-license)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>-<sp/>[9.<sp/>TODO](#9-todo)</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>-<sp/>[10.<sp/>References](#10-references)</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">##<sp/>Demo</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">Apply<sp/>the<sp/>MSE-CNN<sp/>in<sp/>your<sp/>own<sp/>pictures<sp/>with<sp/>its<sp/>demo<sp/>here:<sp/>https://kevinmevin-demo-mse-cnn.hf.space</highlight></codeline>
-<codeline></codeline>
-<codeline><highlight class="normal">##<sp/>Quickstart</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">```python</highlight></codeline>
 <codeline><highlight class="normal">&gt;&gt;&gt;<sp/>import<sp/>torch</highlight></codeline>
@@ -117,6 +79,36 @@
 <codeline><highlight class="normal">tensor(2.7419,<sp/>grad_fn=&lt;MeanBackward1&gt;)</highlight></codeline>
 <codeline><highlight class="normal">```</highlight></codeline>
 <codeline></codeline>
+<codeline><highlight class="normal">-<sp/>[MSE-CNN<sp/>Implementation](#mse-cnn-implementation)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[1.<sp/>Introduction](#1-introduction)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[2.<sp/>Theorectical<sp/>Background](#2-theorectical-background)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[2.1<sp/>Partitioning<sp/>in<sp/>VVC](#21-partitioning-in-vvc)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[2.2<sp/>MSE-CNN](#22-mse-cnn)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[2.2.1<sp/>Architecture](#221-architecture)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[2.2.2<sp/>Loss<sp/>Function](#222-loss-function)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[2.2.3<sp/>Training](#223-training)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[2.2.4<sp/>Implementation<sp/>remarks](#224-implementation-remarks)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[3.<sp/>Dataset](#3-dataset)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[4.<sp/>Results](#4-results)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[4.1<sp/>F1-score,<sp/>Recall<sp/>and<sp/>Precision<sp/>with<sp/>test<sp/>data](#41-f1-score-recall-and-precision-with-test-data)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[4.2<sp/>Confusion<sp/>matrices](#42-confusion-matrices)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[4.2.1<sp/>Stages<sp/>2<sp/>and<sp/>3](#421-stages-2-and-3)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[4.2.2<sp/>Stages<sp/>4<sp/>and<sp/>5](#422-stages-4-and-5)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>[4.2.3<sp/>Stage<sp/>6](#423-stage-6)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[4.3<sp/>Y-PSNR,<sp/>Complexity<sp/>Reduction<sp/>and<sp/>Bitrate<sp/>with<sp/>test<sp/>data](#43-y-psnr-complexity-reduction-and-bitrate-with-test-data)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[5.<sp/>Relevant<sp/>Folders<sp/>and<sp/>files](#5-relevant-folders-and-files)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[5.1<sp/>Folders](#51-folders)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[5.2<sp/>Files<sp/>in<sp/>src<sp/>folder](#52-files-in-src-folder)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[6.<sp/>Installation<sp/>of<sp/>dependencies](#6-installation-of-dependencies)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[Requirements](#requirements)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>[Package<sp/>Distributions](#package-distributions)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[7.<sp/>Demo](#7-demo)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[8.<sp/>Contributions](#8-contributions)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[9.<sp/>License](#9-license)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[10.<sp/>TODO](#10-todo)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>[11.<sp/>References](#11-references)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
 <codeline><highlight class="normal">##<sp/>1.<sp/>Introduction</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">The<sp/>emergence<sp/>of<sp/>new<sp/>technologies<sp/>that<sp/>provide<sp/>creative<sp/>audiovisual<sp/>experiences,<sp/>such<sp/>as<sp/>360-degree<sp/>films,<sp/>virtual<sp/>reality,<sp/>augmented<sp/>reality,<sp/>4K,<sp/>8K<sp/>UHD,<sp/>16K,<sp/>and<sp/>also<sp/>with<sp/>the<sp/>rise<sp/>of<sp/>video<sp/>traffic<sp/>on<sp/>the<sp/>web,<sp/>shows<sp/>the<sp/>current<sp/>demand<sp/>for<sp/>video<sp/>data<sp/>in<sp/>the<sp/>modern<sp/>world.<sp/>Because<sp/>of<sp/>this<sp/>tension,<sp/>Versatile<sp/>Video<sp/>Coding<sp/>(VVC)<sp/>was<sp/>developed<sp/>due<sp/>to<sp/>the<sp/>the<sp/>necessity<sp/>for<sp/>the<sp/>introduction<sp/>of<sp/>new<sp/>coding<sp/>standards.<sp/>Despite<sp/>the<sp/>advancements<sp/>achieved<sp/>with<sp/>the<sp/>introduction<sp/>of<sp/>this<sp/>standard,<sp/>its<sp/>complexity<sp/>has<sp/>increased<sp/>very<sp/>much.<sp/>The<sp/>new<sp/>partitioning<sp/>technique<sp/>is<sp/>responsible<sp/>for<sp/>majority<sp/>of<sp/>the<sp/>increase<sp/>in<sp/>encoding<sp/>time.<sp/>This<sp/>extended<sp/>duration<sp/>is<sp/>linked<sp/>with<sp/>the<sp/>optimization<sp/>of<sp/>the<sp/>Rate-Distortion<sp/>cost<sp/>(RD<sp/>cost).<sp/>Although<sp/>VVC<sp/>offers<sp/>higher<sp/>compression<sp/>rates,<sp/>the<sp/>complexity<sp/>of<sp/>its<sp/>encoding<sp/>is<sp/>high.</highlight></codeline>
@@ -130,7 +122,7 @@
 <codeline><highlight class="normal">Neural<sp/>Nework<sp/>(MSE-CNN)<sp/>was<sp/>developed.<sp/>This<sp/>Deep<sp/>Learning-based<sp/>model<sp/>is<sp/>organised<sp/>in<sp/>a<sp/>sequential<sp/>structure<sp/>with<sp/>several<sp/>stages.<sp/>Each<sp/>stage,<sp/>which<sp/>represents<sp/>a<sp/>different<sp/>partition<sp/>depth,<sp/>encompasses<sp/>a<sp/>set<sp/>of<sp/>layers<sp/>for<sp/>extracting<sp/>features<sp/>from<sp/>a<sp/>Coding<sp/>Tree<sp/>Unit<sp/>(CTU)<sp/>and<sp/>deciding<sp/>how<sp/>to<sp/>partition<sp/>it.<sp/>Instead<sp/>of<sp/>using<sp/>recursive<sp/>approaches<sp/>to<sp/>determine<sp/>the<sp/>optimal<sp/>way<sp/>to<sp/>fragment<sp/>an<sp/>image,<sp/>this<sp/>model<sp/>allows<sp/>VVC<sp/>to<sp/>estimate<sp/>the<sp/>most<sp/>appropriate<sp/>way<sp/>of<sp/>doing<sp/>it.<sp/>**This<sp/>work<sp/>presents<sp/>a<sp/>model<sp/>of<sp/>the<sp/>MSE-CNN<sp/>that<sp/>employs<sp/>training<sp/>procedures<sp/>distinct<sp/>from<sp/>the<sp/>original<sp/>implementation<sp/>of<sp/>this<sp/>network,<sp/>as<sp/>well<sp/>as<sp/>the<sp/>ground-thruth<sp/>to<sp/>train<sp/>and<sp/>validate<sp/>the<sp/>model<sp/>and<sp/>an<sp/>interpretation<sp/>of<sp/>the<sp/>work<sp/>done<sp/>by<sp/>the<sp/>MSE-CNN’s<sp/>original<sp/>creators**.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../funny_memes_about_this_work/72roie.jpg&quot;<sp/>width=400<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/funny_memes_about_this_work/72roie.jpg&quot;<sp/>width=400<sp/>/&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;p&gt;Fig.<sp/>2:<sp/>MSE-CNN<sp/>benefits&lt;/p&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
 <codeline></codeline>
@@ -146,7 +138,7 @@
 <codeline><highlight class="normal">VVC<sp/>is<sp/>128x128<sp/>and<sp/>the<sp/>smallest<sp/>is<sp/>4x4.<sp/>In<sp/>VVC,<sp/>a<sp/>quad-tree<sp/>(QT)<sp/>is<sp/>initially<sp/>applied<sp/>to<sp/>the<sp/>CTUs<sp/>in<sp/>the<sp/>first<sp/>level,<sp/>and<sp/>then<sp/>a<sp/>quad-tree<sp/>with<sp/>nested<sp/>multi-type<sp/>tree<sp/>(QMTT)<sp/>is<sp/>applied<sp/>recursively.<sp/></highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../vvc_parti_real.png&quot;<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/vvc_parti_real.png&quot;<sp/>/&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;p&gt;Fig.<sp/>3:<sp/>Types<sp/>of<sp/>partitions<sp/>in<sp/>VVC&lt;/p&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
 <codeline></codeline>
@@ -160,7 +152,7 @@
 <codeline><highlight class="normal">an<sp/>image<sp/>more<sp/>efficiently,<sp/>allowing<sp/>better<sp/>predictions<sp/>and<sp/>higher<sp/>compressing<sp/>abilities.<sp/>Although<sp/>this<sp/>standard<sp/>now<sp/>have<sp/>these<sp/>advantages,<sp/>as<sp/>a<sp/>downside<sp/>it<sp/>takes<sp/>longer<sp/>to<sp/>encode.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../partitioning_image.png&quot;<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/partitioning_image.png&quot;<sp/>/&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;p&gt;Fig.<sp/>4:<sp/>Partitioning<sp/>in<sp/>VVC&lt;/p&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
 <codeline></codeline>
@@ -179,14 +171,14 @@
 <codeline><highlight class="normal">from<sp/>it;<sp/>this<sp/>is<sp/>accomplished<sp/>by<sp/>utilising<sp/>simple<sp/>convolutional<sp/>layers.<sp/></highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../over_con_block.drawio.png&quot;<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/over_con_block.drawio.png&quot;<sp/>/&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;p&gt;Fig.<sp/>5:<sp/>Overlapping<sp/>convolution<sp/>layer&lt;/p&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">*<sp/>To<sp/>extract<sp/>more<sp/>characteristics<sp/>from<sp/>the<sp/>data,<sp/>the<sp/>information<sp/>is<sp/>then<sp/>passed<sp/>through<sp/>a<sp/>series<sp/>of<sp/>convolutional<sp/>layers;<sp/>these<sp/>layers<sp/>were<sp/>named<sp/>Conditional<sp/>Convolution.<sp/></highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/></highlight></codeline>
 <codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../resnet_mse.png&quot;<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/resnet_mse.png&quot;<sp/>/&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;p&gt;Fig.<sp/>6:<sp/>Conditional<sp/>Convolution&lt;/p&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
 <codeline></codeline>
@@ -196,7 +188,7 @@
 <codeline><highlight class="normal">layers.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../sub_networks.png&quot;<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/sub_networks.png&quot;<sp/>/&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;p&gt;Fig.<sp/>7:<sp/>Sub-networks&lt;/p&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
 <codeline></codeline>
@@ -230,7 +222,7 @@
 <codeline><highlight class="normal">is<sp/>a<sp/>normalised<sp/>RD<sp/>cost.<sp/>As<sp/>a<sp/>relevant<sp/>note,<sp/>$r_{n,<sp/>min}$<sp/>is<sp/>equal<sp/>to<sp/>the<sp/>RD<sp/>cost<sp/>of<sp/>the<sp/>best<sp/>partition<sp/>mode.<sp/>Consequently,<sp/>the<sp/>result<sp/>of</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../formula.png&quot;<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/formula.png&quot;<sp/>/&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">ensures<sp/>that<sp/>CU&apos;s<sp/>partitions<sp/>with<sp/>greater<sp/>erroneously<sp/>predicted<sp/>probability<sp/>values<sp/>or<sp/>greater<sp/>RD<sp/>cost<sp/>values<sp/>$r_{n,<sp/>m}$<sp/>are<sp/>more<sp/>penalised.<sp/>In<sp/>$\frac{r_{n,<sp/>m}}{r_{n,<sp/>min}}<sp/>-<sp/>1$,<sp/>the<sp/>ideal<sp/>partition<sp/>has<sp/>a<sp/>normalised<sp/>RD<sp/>cost<sp/>of<sp/>zero,<sp/>but<sp/>the<sp/>other<sp/>partitions<sp/>do<sp/>not.<sp/>Therefore,<sp/>the<sp/>only<sp/>way<sp/>for<sp/>the<sp/>loss<sp/>to<sp/>equal<sp/>zero<sp/>is<sp/>if<sp/>the<sp/>probability<sp/>for<sp/>all<sp/>other<sp/>modes<sp/>also<sp/>equals<sp/>zero.<sp/>Consequently,<sp/>the<sp/>learning<sp/>algorithm<sp/>must<sp/>assign<sp/>a<sp/>greater<sp/>probability<sp/>to<sp/>the<sp/>optimal<sp/>split<sp/>mode<sp/>while<sp/>reducing<sp/>the<sp/>probabilities<sp/>for<sp/>the<sp/>rest.<sp/>**Experimentally<sp/>it<sp/>was<sp/>verified<sp/>that<sp/>this<sp/>function<sp/>wasn&apos;t<sp/>able<sp/>to<sp/>contribute<sp/>to<sp/>the<sp/>training<sp/>of<sp/>the<sp/>MSE-CNN,<sp/>this<sp/>contradicted<sp/>the<sp/>remarks<sp/>made<sp/>in<sp/>[1]**.</highlight></codeline>
@@ -240,7 +232,7 @@
 <codeline><highlight class="normal">The<sp/>strategy<sp/>used<sp/>to<sp/>train<sp/>the<sp/>MSE-CNN<sp/>was<sp/>very<sp/>similar<sp/>to<sp/>the<sp/>one<sp/>used<sp/>in<sp/>[1].<sp/>The<sp/>first<sp/>parts<sp/>of<sp/>the<sp/>model<sp/>to<sp/>be<sp/>trained<sp/>were<sp/>the<sp/>first<sp/>and<sp/>second<sp/>stages,<sp/>in<sp/>which<sp/>64x64<sp/>CUs<sp/>were<sp/>passed<sp/>through<sp/>the<sp/>second<sp/>depth.<sp/>Afterwards,<sp/>transfer<sp/>learning<sp/>was<sp/>used<sp/>to<sp/>pass<sp/>certain<sp/>coefficients<sp/>of<sp/>the<sp/>second<sp/>stage<sp/>to<sp/>the<sp/>third.<sp/>Then,<sp/>the<sp/>third<sp/>stage<sp/>was<sp/>trained<sp/>with<sp/>32x32<sp/>CUs<sp/>flowing<sp/>through<sp/>it.<sp/>After<sp/>this<sp/>step,<sp/>a<sp/>similar<sp/>process<sp/>was<sp/>done<sp/>to<sp/>the<sp/>following<sp/>stages.<sp/>It<sp/>is<sp/>worth<sp/>noting<sp/>that,<sp/>beginning<sp/>with<sp/>stage<sp/>4,<sp/>various<sp/>CUs<sp/>forms<sp/>are<sp/>at<sp/>the<sp/>models&apos;<sp/>input.<sp/>This<sp/>means<sp/>that<sp/>these<sp/>stages<sp/>were<sp/>fed<sp/>different<sp/>kinds<sp/>of<sp/>CUs.<sp/><sp/></highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../training_steps.png&quot;<sp/>width=300/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/training_steps.png&quot;<sp/>width=300/&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;p&gt;Fig.<sp/>8:<sp/>Training<sp/>flow<sp/>used&lt;/p&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
 <codeline></codeline>
@@ -251,8 +243,8 @@
 <codeline><highlight class="normal">Due<sp/>to<sp/>the<sp/>deterministic<sp/>nature<sp/>of<sp/>the<sp/>first<sp/>stage,<sp/>where<sp/>CTUs<sp/>are<sp/>always<sp/>partitioned<sp/>with<sp/>a<sp/>QT,<sp/>it<sp/>was<sp/>implemented<sp/>together<sp/>with<sp/>the<sp/>second<sp/>stage.<sp/>If<sp/>it<sp/>was<sp/>done<sp/>separately,<sp/>the<sp/>training<sp/>for<sp/>the<sp/>first<sp/>two<sp/>stages<sp/>would<sp/>have<sp/>to<sp/>be<sp/>done<sp/>at<sp/>the<sp/>same<sp/>time.<sp/>Consequently,<sp/>two<sp/>distinct<sp/>optimisers<sp/>would<sp/>need<sp/>to<sp/>be<sp/>employed,<sp/>which<sp/>could<sp/>result<sp/>in<sp/>unpredictable<sp/>training<sp/>behaviour.<sp/>&lt;br&gt;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../subnet_min_32_1.drawio.png&quot;<sp/>width=300/&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../subnet_min_32_2.drawio.png&quot;<sp/>width=300/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/subnet_min_32_1.drawio.png&quot;<sp/>width=300/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/subnet_min_32_2.drawio.png&quot;<sp/>width=300/&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;p&gt;Fig.<sp/>9:<sp/>32<sp/>minimum<sp/>axis<sp/>size<sp/>sub-networks&lt;/p&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
 <codeline></codeline>
@@ -284,21 +276,21 @@
 <codeline></codeline>
 <codeline><highlight class="normal">####<sp/>4.2.1<sp/>Stages<sp/>2<sp/>and<sp/>3</highlight></codeline>
 <codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../conf_mat_val_stg2.png&quot;<sp/>width=300<sp/>/&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../conf_mat_val_v2_stg3.png&quot;<sp/>width=300<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/conf_mat_val_stg2.png&quot;<sp/>width=300<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/conf_mat_val_v2_stg3.png&quot;<sp/>width=300<sp/>/&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;p&gt;Fig.<sp/>10:<sp/>Confusion<sp/>matrix<sp/>results<sp/>with<sp/>the<sp/>testing<sp/>data<sp/>in<sp/>stages<sp/>2<sp/>and<sp/>3&lt;/p&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">####<sp/>4.2.2<sp/>Stages<sp/>4<sp/>and<sp/>5</highlight></codeline>
 <codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../conf_mat_val_stg4.png&quot;<sp/>width=300<sp/>/&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../conf_mat_val_stg5.png&quot;<sp/>width=300<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/conf_mat_val_stg4.png&quot;<sp/>width=300<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/conf_mat_val_stg5.png&quot;<sp/>width=300<sp/>/&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;p&gt;Fig.<sp/>11:<sp/>Confusion<sp/>matrix<sp/>results<sp/>with<sp/>the<sp/>testing<sp/>data<sp/>in<sp/>stages<sp/>4<sp/>and<sp/>5&lt;/p&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">####<sp/>4.2.3<sp/>Stage<sp/>6</highlight></codeline>
 <codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../conf_mat_val_stg6.png&quot;<sp/>width=300<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/conf_mat_val_stg6.png&quot;<sp/>width=300<sp/>/&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;p&gt;Fig.<sp/>12:<sp/>Confusion<sp/>matrix<sp/>results<sp/>with<sp/>the<sp/>testing<sp/>data<sp/>in<sp/>stage<sp/>6&lt;/p&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
 <codeline></codeline>
@@ -324,7 +316,6 @@
 <codeline><highlight class="normal">|<sp/>[example_data](/example_data)<sp/>|<sp/>Here<sp/>you<sp/>can<sp/>find<sp/>some<sp/>example<sp/>data<sp/>that<sp/>it<sp/>is<sp/>used<sp/>for<sp/>the<sp/>scripts<sp/>in<sp/>usefull_scripts<sp/>folder|</highlight></codeline>
 <codeline><highlight class="normal">|<sp/>[model_coefficients](/model_coefficients)<sp/>|<sp/>The<sp/>last<sp/>coefficient<sp/>obtained<sp/>during<sp/>training,<sp/>as<sp/>well<sp/>as<sp/>the<sp/>best<sp/>one<sp/>in<sp/>terms<sp/>of<sp/>the<sp/>best<sp/>F1-score<sp/>obtained<sp/>in<sp/>testing data<sp/>|</highlight></codeline>
 <codeline><highlight class="normal">|<sp/>[src](/src)<sp/>|<sp/>Source<sp/>code<sp/>with<sp/>the<sp/>implementation<sp/>of<sp/>the<sp/>MSE-CNN<sp/>and<sp/>also<sp/>useful<sp/>code<sp/>and<sp/>examples<sp/>|</highlight></codeline>
-<codeline></codeline>
 <codeline></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">###<sp/>5.2<sp/>Files<sp/>in<sp/>src<sp/>folder</highlight></codeline>
@@ -373,26 +364,29 @@
 <codeline></codeline>
 <codeline><highlight class="normal">3.<sp/>Once<sp/>the<sp/>package<sp/>is<sp/>installed,<sp/>you<sp/>can<sp/>import<sp/>and<sp/>use<sp/>its<sp/>functionalities<sp/>in<sp/>your<sp/>Python<sp/>code.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">##<sp/>7.<sp/>Contributions</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>7.<sp/>Demo</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>8.<sp/>Contributions</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">Feel<sp/>free<sp/>to<sp/>contact<sp/>me<sp/>through<sp/>this<sp/>[email](raulviana@ua.pt)<sp/>or<sp/>create<sp/>either<sp/>a<sp/>issue<sp/>or<sp/>pull<sp/>request<sp/>to<sp/>contribute<sp/>to<sp/>this<sp/>project<sp/>^^.</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">##<sp/>8.<sp/>License</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>9.<sp/>License</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">This<sp/>project<sp/>license<sp/>is<sp/>under<sp/>the<sp/>[MIT<sp/>License](LICENSE).</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">##<sp/>9.<sp/>TODO</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>10.<sp/>TODO</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">|Task|<sp/>Description|<sp/>Status<sp/>(d<sp/>-<sp/>doing,<sp/>w<sp/>-<sp/>waiting,<sp/>f-<sp/>finished)|</highlight></codeline>
 <codeline><highlight class="normal">|-----|-----|-----|</highlight></codeline>
 <codeline><highlight class="normal">|<sp/>Implement<sp/>code<sp/>to<sp/>test<sp/>functions|<sp/>Use<sp/>a<sp/>library,<sp/>such<sp/>as<sp/>Pytest,<sp/>to<sp/>test<sp/>some<sp/>functions<sp/>from<sp/>the<sp/>many<sp/>modules<sp/>developed<sp/>|<sp/>w<sp/>|</highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">##<sp/>10.<sp/>References</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>11.<sp/>References</highlight></codeline>
 <codeline><highlight class="normal">[1]<sp/>T.<sp/>Li,<sp/>M.<sp/>Xu,<sp/>R.<sp/>Tang,<sp/>Y.<sp/>Chen,<sp/>and<sp/>Q.<sp/>Xing,<sp/>[“DeepQTMT:<sp/>A<sp/>Deep<sp/>Learning<sp/>Approach<sp/>for<sp/>Fast<sp/>QTMT-Based<sp/>CU<sp/>Partition<sp/>of<sp/>Intra-Mode<sp/>VVC,”](https://arxiv.org/abs/2006.13125)<sp/>IEEE<sp/>Transactions<sp/>on<sp/>Image<sp/>Processing,<sp/>vol.<sp/>30,<sp/>pp.<sp/>5377–5390,<sp/>2021,<sp/>doi:<sp/>10.1109/tip.2021.3083447.</highlight></codeline>
 <codeline><highlight class="normal">[2]<sp/>R.<sp/>K.<sp/>Viana,<sp/>“Deep<sp/>learning<sp/>architecture<sp/>for<sp/>fast<sp/>intra-mode<sp/>CUs<sp/>partitioning<sp/>in<sp/>VVC,”<sp/>Universidade<sp/>de<sp/>Aveiro,<sp/>Nov.<sp/>2022.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
-<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../funny_memes_about_this_work/72rukf.gif&quot;<sp/>width=450<sp/>/&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;../../img/funny_memes_about_this_work/72rukf.gif&quot;<sp/>width=450<sp/>/&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/>&lt;p&gt;:)&lt;/p&gt;</highlight></codeline>
 <codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
 <codeline></codeline>

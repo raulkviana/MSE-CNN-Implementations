@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
   <compounddef id="dir_940fdb39b62cfdd78aaec39f274a0c2a" kind="dir">
-    <compoundname>C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana</compoundname>
-    <innerdir refid="dir_3f6f7139bac2dfa7898872ac46ce7666">C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/demo</innerdir>
-    <innerdir refid="dir_8c611ac9c43c654102e511c1f09a5321">C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts</innerdir>
+    <compoundname>src/msecnn_raulkviana</compoundname>
+    <innerdir refid="dir_3f6f7139bac2dfa7898872ac46ce7666">src/msecnn_raulkviana/demo</innerdir>
+    <innerdir refid="dir_8c611ac9c43c654102e511c1f09a5321">src/msecnn_raulkviana/useful_scripts</innerdir>
     <innerfile refid="____init_____8py">__init__.py</innerfile>
     <innerfile refid="constants_8py">constants.py</innerfile>
     <innerfile refid="custom__dataset_8py">custom_dataset.py</innerfile>
@@ -15,6 +15,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/"/>
+    <location file="src/msecnn_raulkviana/"/>
   </compounddef>
 </doxygen>

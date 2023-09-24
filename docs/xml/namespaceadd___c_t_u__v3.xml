@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/add_CTU_v3.py" line="73" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/add_CTU_v3.py" bodystart="73" bodyend="167"/>
+        <location file="src/msecnn_raulkviana/useful_scripts/add_CTU_v3.py" line="73" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/add_CTU_v3.py" bodystart="73" bodyend="167"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -72,6 +72,6 @@ SOFTWARE.
 - Last time modified is 2023-01-29 22:23:10.666053
 </verbatim> </para>
     </detaileddescription>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/add_CTU_v3.py" line="1" column="1"/>
+    <location file="src/msecnn_raulkviana/useful_scripts/add_CTU_v3.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

@@ -11,7 +11,7 @@
 <codeline></codeline>
 <codeline><highlight class="normal">This<sp/>folder<sp/>contains<sp/>all<sp/>of<sp/>the<sp/>data<sp/>used<sp/>in<sp/>this<sp/>work.<sp/>To<sp/>train<sp/>a<sp/>supervised<sp/>ML<sp/>model,<sp/>annotated<sp/>data<sp/>must<sp/>be<sp/>created.<sp/>Given<sp/>that<sp/>a<sp/>trained<sp/>network<sp/>has<sp/>inputs<sp/>and<sp/>outputs<sp/>with<sp/>specifications,<sp/>the<sp/>data<sp/>supplied<sp/>to<sp/>the<sp/>model<sp/>must<sp/>be<sp/>modified<sp/>to<sp/>meet<sp/>those.<sp/>This<sp/>modification<sp/>entails<sp/>certain<sp/>data<sp/>processing<sp/>steps<sp/>to<sp/>generate<sp/>data<sp/>that<sp/>can<sp/>directly<sp/>aid<sp/>network<sp/>training/evaluation.<sp/>A<sp/>five-step<sp/>method<sp/>was<sp/>designed<sp/>to<sp/>process<sp/>the<sp/>data,<sp/>as<sp/>shown<sp/>in<sp/>the<sp/>diagram<sp/>below.<sp/></highlight></codeline>
 <codeline></codeline>
-<codeline><highlight class="normal">![labels_gen](../labels_gen_method.png)</highlight></codeline>
+<codeline><highlight class="normal">![labels_gen](../../imgs/labels_gen_method.png)</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">You<sp/>can<sp/>learn<sp/>more<sp/>about<sp/>the<sp/>code<sp/>inside<sp/>each<sp/>step<sp/>from<sp/>the<sp/>above<sp/>image<sp/>in<sp/>[processing_data_code.md](processing_data_code.md)</highlight></codeline>
 <codeline></codeline>

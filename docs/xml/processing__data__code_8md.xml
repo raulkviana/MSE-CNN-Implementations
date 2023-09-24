@@ -9,7 +9,7 @@
     <programlisting>
 <codeline></codeline>
 <codeline><highlight class="normal">#<sp/>Code<sp/>to<sp/>process<sp/>the<sp/>images/videos<sp/>into<sp/>labels</highlight></codeline>
-<codeline><highlight class="normal">All<sp/>of<sp/>the<sp/>code<sp/>bellow<sp/>can<sp/>be<sp/>found<sp/>in<sp/>this<sp/>[folder](../../../src/msecnn_raulkviana/useful_scripts).</highlight></codeline>
+<codeline><highlight class="normal">All<sp/>of<sp/>the<sp/>code<sp/>bellow<sp/>can<sp/>be<sp/>found<sp/>in<sp/>this<sp/>src/msecnn_raulkviana/useful_scripts.</highlight></codeline>
 <codeline></codeline>
 <codeline><highlight class="normal">###<sp/>Encoding</highlight></codeline>
 <codeline><highlight class="normal">```<sp/>python</highlight></codeline>

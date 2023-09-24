@@ -1070,6 +1070,6 @@
 <codeline lineno="1059"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>loss,<sp/>loss_CE,<sp/>loss_RD</highlight></codeline>
 <codeline lineno="1060"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/msecnn.py"/>
+    <location file="src/msecnn_raulkviana/msecnn.py"/>
   </compounddef>
 </doxygen>

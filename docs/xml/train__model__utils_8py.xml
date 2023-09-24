@@ -933,6 +933,6 @@
 <codeline lineno="922"><highlight class="normal"></highlight></codeline>
 <codeline lineno="923"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py"/>
+    <location file="src/msecnn_raulkviana/train_model_utils.py"/>
   </compounddef>
 </doxygen>

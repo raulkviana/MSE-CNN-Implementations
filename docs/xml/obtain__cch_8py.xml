@@ -73,6 +73,6 @@
 <codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceobtain__cch_1a3a49877ab5370ac62d3fa28c0751af32" kindref="member">main</ref>()</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/obtain_cch.py"/>
+    <location file="src/msecnn_raulkviana/useful_scripts/obtain_cch.py"/>
   </compounddef>
 </doxygen>

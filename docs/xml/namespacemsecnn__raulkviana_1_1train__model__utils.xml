@@ -140,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="92" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="94" bodyend="219"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="92" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="94" bodyend="219"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1aaba41048718e061e48e3fef373b9f546" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -163,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="220" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="220" bodyend="229"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="220" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="220" bodyend="229"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1a22037a90eee86799850c3a765e4da26f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -212,7 +212,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="230" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="230" bodyend="256"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="230" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="230" bodyend="256"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1a9208690996ff3dc9692f9e77f6e176a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -273,7 +273,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="257" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="257" bodyend="283"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="257" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="257" bodyend="283"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1ad9aeb6ce29f45cc766ba7320d34670c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -310,7 +310,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="284" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="284" bodyend="298"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="284" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="284" bodyend="298"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1aa3cb64ee0fbaa82878681fac367eadf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -359,7 +359,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="299" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="299" bodyend="317"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="299" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="299" bodyend="317"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1a2538c5927aded1286f7e8220ff22e9cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -414,7 +414,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="318" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="318" bodyend="387"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="318" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="318" bodyend="387"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1a964adadaca962cbcbc5078977779311b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -487,7 +487,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="388" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="388" bodyend="407"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="388" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="388" bodyend="407"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1a993070f8c8fdf03d09c5cc98c0ee31d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -536,7 +536,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="408" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="408" bodyend="430"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="408" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="408" bodyend="430"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1a9a466ae6eaee510daf4fdc575bf380cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -573,7 +573,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="431" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="431" bodyend="443"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="431" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="431" bodyend="443"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1a79494642e232d1c076a7b5fa7466b31e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -623,7 +623,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="444" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="444" bodyend="456"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="444" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="444" bodyend="456"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1a3e657e72d3f33b63fbd784f87e3eb8e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -664,7 +664,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="457" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="457" bodyend="483"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="457" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="457" bodyend="483"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1adb76e5e1e7fb9398be537a21810f4fcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -717,7 +717,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="484" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="484" bodyend="505"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="484" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="484" bodyend="505"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1af861829fd2bb377d08cf101471987aa5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -807,7 +807,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="506" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="506" bodyend="534"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="506" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="506" bodyend="534"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1a6d4bba83279a0482b9d5c1b0d006b18e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -880,7 +880,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="535" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="535" bodyend="585"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="535" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="535" bodyend="585"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1a335386ac8c610e1db1871d3700b6ad98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -941,7 +941,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="586" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="586" bodyend="619"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="586" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="586" bodyend="619"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1a1a11d507d70a0c1706812d23ba767eac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -994,7 +994,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="620" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="620" bodyend="673"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="620" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="620" bodyend="673"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1a7fc7ec27e310efc1d10ea490dd27cddf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1047,7 +1047,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="674" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="674" bodyend="734"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="674" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="674" bodyend="734"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1a02cbf7d191b5968da6f4731d8ae10e6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1100,7 +1100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="735" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="735" bodyend="814"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="735" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="735" bodyend="814"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1a58a16083e57ad4844a6ae858342363d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1153,7 +1153,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="815" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="815" bodyend="911"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="815" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="815" bodyend="911"/>
       </memberdef>
       <memberdef kind="function" id="namespacemsecnn__raulkviana_1_1train__model__utils_1a9f287edd155c2f5ca644e55b1e12f738" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -1168,7 +1168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="912" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" bodystart="912" bodyend="924"/>
+        <location file="src/msecnn_raulkviana/train_model_utils.py" line="912" column="1" bodyfile="src/msecnn_raulkviana/train_model_utils.py" bodystart="912" bodyend="924"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1246,6 +1246,6 @@ SOFTWARE.
 - Last time modified is 2023-01-29 22:22:04.154941
 </verbatim> </para>
     </detaileddescription>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/train_model_utils.py" line="1" column="1"/>
+    <location file="src/msecnn_raulkviana/train_model_utils.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

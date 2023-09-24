@@ -77,6 +77,6 @@
 <codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceadd__docs__to__files_1ac06e66a9652aa6a95b453bc0247468d7" kindref="member">main</ref>()</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/add_docs_to_files.py"/>
+    <location file="src/msecnn_raulkviana/useful_scripts/add_docs_to_files.py"/>
   </compounddef>
 </doxygen>

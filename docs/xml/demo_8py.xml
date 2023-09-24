@@ -449,6 +449,6 @@
 <codeline lineno="439"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="440"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacedemo_1a9a7eee49297dfd617496f5bb2914b837" kindref="member">main</ref>()</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/demo/demo.py"/>
+    <location file="src/msecnn_raulkviana/demo/demo.py"/>
   </compounddef>
 </doxygen>

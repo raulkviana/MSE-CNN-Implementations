@@ -479,6 +479,6 @@
 <codeline lineno="468"><highlight class="normal"></highlight></codeline>
 <codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>search_RD</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/utils.py"/>
+    <location file="src/msecnn_raulkviana/utils.py"/>
   </compounddef>
 </doxygen>

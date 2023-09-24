@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/add_docs_to_files.py" line="53" column="1" bodyfile="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/add_docs_to_files.py" bodystart="53" bodyend="66"/>
+        <location file="src/msecnn_raulkviana/useful_scripts/add_docs_to_files.py" line="53" column="1" bodyfile="src/msecnn_raulkviana/useful_scripts/add_docs_to_files.py" bodystart="53" bodyend="66"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -67,6 +67,6 @@ SOFTWARE.
 - Last time modified is 2022-12-02 18:21:21.101255
 </verbatim> </para>
     </detaileddescription>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/add_docs_to_files.py" line="1" column="1"/>
+    <location file="src/msecnn_raulkviana/useful_scripts/add_docs_to_files.py" line="1" column="1"/>
   </compounddef>
 </doxygen>

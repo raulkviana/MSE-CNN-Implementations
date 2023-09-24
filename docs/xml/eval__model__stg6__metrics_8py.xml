@@ -302,6 +302,6 @@
 <codeline lineno="292"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceeval__model__stg6__metrics_1ae17ef904e073c0011cb665feee920429" kindref="member">main</ref>()</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/eval_model_stg6_metrics.py"/>
+    <location file="src/msecnn_raulkviana/useful_scripts/eval_model_stg6_metrics.py"/>
   </compounddef>
 </doxygen>

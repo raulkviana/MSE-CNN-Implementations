@@ -549,6 +549,6 @@
 <codeline lineno="539"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="540"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacetrain__stg6_1a566754db3d002de3c456576aa51619fc" kindref="member">main</ref>()</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts/train_stg6.py"/>
+    <location file="src/msecnn_raulkviana/useful_scripts/train_stg6.py"/>
   </compounddef>
 </doxygen>

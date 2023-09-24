@@ -98,6 +98,6 @@
 <codeline lineno="87"><highlight class="stringliteral">PATH_BEST_PARAMS_stg6<sp/>=<sp/>&quot;Params_8x4_luma_best_stg6&quot;</highlight></codeline>
 <codeline lineno="88"><highlight class="stringliteral">PATH_LAST_PARAMS_stg6<sp/>=<sp/>&quot;Params_8x4_luma_last_stg6&quot;</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/constants.py"/>
+    <location file="src/msecnn_raulkviana/constants.py"/>
   </compounddef>
 </doxygen>

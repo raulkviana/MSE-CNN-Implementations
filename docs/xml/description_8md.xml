@@ -22,6 +22,6 @@
 <codeline></codeline>
 <codeline><highlight class="normal">**Note**:<sp/>This<sp/>demo<sp/>implementation<sp/>has<sp/>some<sp/>limitations,<sp/>such<sp/>as<sp/>the<sp/>fact<sp/>that<sp/>the<sp/>model<sp/>occasionally<sp/>makes<sp/>illogical<sp/>predictions.<sp/>For<sp/>instance,<sp/>splitting<sp/>a<sp/>16x32<sp/>CU<sp/>using<sp/>VTT<sp/>is<sp/>incorrect.<sp/>This<sp/>occurs<sp/>as<sp/>a<sp/>result<sp/>of<sp/>the<sp/>model&apos;s<sp/>inherent<sp/>constraints<sp/>as<sp/>well<sp/>as<sp/>the<sp/>fact<sp/>that<sp/>only<sp/>the<sp/>best<sp/>split<sp/>is<sp/>being chosen.<sp/>One<sp/>way<sp/>to<sp/>reduce<sp/>this<sp/>behaviour<sp/>is<sp/>to<sp/>evaluate<sp/>not<sp/>only<sp/>the<sp/>optimal<sp/>split<sp/>but<sp/>also<sp/>alternate<sp/>splits.<sp/>This<sp/>can<sp/>be<sp/>accomplished<sp/>by,<sp/>for<sp/>instance,<sp/>applying<sp/>the<sp/>multi-thresholding<sp/>method<sp/>to<sp/>the<sp/>model&apos;s<sp/>forecasts and<sp/>determining<sp/>the<sp/>splits<sp/>that<sp/>are<sp/>most<sp/>likely<sp/>to<sp/>occur.<sp/>Additionally,<sp/>when unreasonable splits<sp/>are<sp/>predicted,<sp/>the<sp/>code<sp/>immediately<sp/>halts<sp/>the<sp/>partitioning<sp/>of<sp/>that<sp/>particular<sp/>block.</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/demo/description.md"/>
+    <location file="src/msecnn_raulkviana/demo/description.md"/>
   </compounddef>
 </doxygen>

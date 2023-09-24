@@ -489,14 +489,6 @@
   </compound>
   <compound refid="processing__data__code_8md" kind="file"><name>processing_data_code.md</name>
   </compound>
-  <compound refid="dependency__links_8txt" kind="file"><name>dependency_links.txt</name>
-  </compound>
-  <compound refid="requires_8txt" kind="file"><name>requires.txt</name>
-  </compound>
-  <compound refid="_s_o_u_r_c_e_s_8txt" kind="file"><name>SOURCES.txt</name>
-  </compound>
-  <compound refid="top__level_8txt" kind="file"><name>top_level.txt</name>
-  </compound>
   <compound refid="____init_____8py" kind="file"><name>__init__.py</name>
   </compound>
   <compound refid="constants_8py" kind="file"><name>constants.py</name>
@@ -553,21 +545,19 @@
   </compound>
   <compound refid="md_pages__doxygen_2processing__data__code" kind="page"><name>md_pages__doxygen_2processing__data__code</name>
   </compound>
-  <compound refid="md__c_1_2_users_2_raul_2_documents_2_git_hub_2_m_s_e-_c_n_n-_implementations_2src_2msecnn__raulkviana_2demo_2description" kind="page"><name>md__c_1_2_users_2_raul_2_documents_2_git_hub_2_m_s_e-_c_n_n-_implementations_2src_2msecnn__raulkviana_2demo_2description</name>
+  <compound refid="md_src_2msecnn__raulkviana_2demo_2description" kind="page"><name>md_src_2msecnn__raulkviana_2demo_2description</name>
   </compound>
-  <compound refid="md__c_1_2_users_2_raul_2_documents_2_git_hub_2_m_s_e-_c_n_n-_implementations_2src_2msecnn__raulkb2081978c2269a6588b7e9312b2df998" kind="page"><name>md__c_1_2_users_2_raul_2_documents_2_git_hub_2_m_s_e-_c_n_n-_implementations_2src_2msecnn__raulkviana_2useful__scripts_2_r_e_a_d_m_e</name>
+  <compound refid="md_src_2msecnn__raulkviana_2useful__scripts_2_r_e_a_d_m_e" kind="page"><name>md_src_2msecnn__raulkviana_2useful__scripts_2_r_e_a_d_m_e</name>
   </compound>
-  <compound refid="dir_3f6f7139bac2dfa7898872ac46ce7666" kind="dir"><name>C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/demo</name>
+  <compound refid="dir_3f6f7139bac2dfa7898872ac46ce7666" kind="dir"><name>src/msecnn_raulkviana/demo</name>
   </compound>
-  <compound refid="dir_940fdb39b62cfdd78aaec39f274a0c2a" kind="dir"><name>C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana</name>
+  <compound refid="dir_940fdb39b62cfdd78aaec39f274a0c2a" kind="dir"><name>src/msecnn_raulkviana</name>
   </compound>
-  <compound refid="dir_905c15a42d042b8d186b31fa9e50b682" kind="dir"><name>C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana.egg-info</name>
+  <compound refid="dir_5ffd4d331eea507d6bc15324971aec14" kind="dir"><name>pages_doxygen</name>
   </compound>
-  <compound refid="dir_d79918e02632aa8445c313c4fee1a685" kind="dir"><name>pages_doxygen</name>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
   </compound>
-  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src</name>
-  </compound>
-  <compound refid="dir_8c611ac9c43c654102e511c1f09a5321" kind="dir"><name>C:/Users/Raul/Documents/GitHub/MSE-CNN-Implementations/src/msecnn_raulkviana/useful_scripts</name>
+  <compound refid="dir_8c611ac9c43c654102e511c1f09a5321" kind="dir"><name>src/msecnn_raulkviana/useful_scripts</name>
   </compound>
   <compound refid="indexpage" kind="page"><name>index</name>
   </compound>
