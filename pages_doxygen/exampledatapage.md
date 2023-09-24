@@ -1,6 +1,6 @@
 # Example data
 
-The data in this folder is used by the scripts in the [usefull_scripts](../src/msecnn_raulkviana/usefull_scripts/) folder. The data in this folder is unbalanced. To load this data into the custom data class, you can follow this sample of code
+The data in this folder is used by the scripts in the src/msecnn_raulkviana/usefull_scripts folder. The data in this folder is unbalanced. To load this data into the custom data class, you can follow this sample of code
 
 ```python
 import custom_dataset
