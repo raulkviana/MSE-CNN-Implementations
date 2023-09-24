@@ -9,7 +9,11 @@
 
 <!----![Jokes Card](https://readme-jokes.vercel.app/api)---->
 
-https://github.com/raulkviana/MSE-CNN-Implementations/assets/34945640/235b4334-28ad-42ed-8e97-1a06ba7a0617
+
+
+https://github.com/raulkviana/MSE-CNN-Implementations/assets/73079422/7cd53944-2e75-4c27-be83-620091f7206d
+
+
 
 Code database with an implementation of MSE-CNN [1]. Besides the code, the dataset and coefficients obtained after training are provided.
 
