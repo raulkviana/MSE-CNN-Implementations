@@ -1,7 +1,6 @@
 env/
 env2/
 *.pyc
-gen_docs/*
 src/msecnn_raulkviana.egg-info/PKG-INFO
 src/msecnn_raulkviana.egg-info/dependency_links.txt
 src/msecnn_raulkviana.egg-info/requires.txt
