@@ -228,7 +228,9 @@ $$L_{CEmod} = -\frac{1}{N}\sum_{n=1}^N \sum_{m\varepsilon Partitions}(\frac{1}{p
 
 Concerning the second member of the MSE-CNN loss function, this constituent gives the network the ability to also make predictions based on the RD Cost.
 
-$$L_{RD} = \frac{1}{N}\sum_{n=1}^N \sum_{m\varepsilon Partitions}\hat{y}_{n, m}\frac{r_{n, m}}{r_{n, min}}-1$$
+![loss_rd](https://github.com/raulkviana/MSE-CNN-Implementations/assets/34945640/f359f573-4a0c-4ad5-b418-33d3c60b4caa)
+
+<!---$$L_{RD} = \frac{1}{N}\sum_{n=1}^N \sum_{m\varepsilon Partitions}\hat{y}_{n, m}\frac{r_{n, m}}{r_{n, min}}-1$$--->
 
 In the above equation, the RD costs $r_{n, m}$ uses the same notation for "n" and "m" as the previous equation. Regarding $r_{n ,min}$, it is the minimal RD cost for the nth CU among all split modes and 
 $$\frac{r_{n, m}}{r_{n, min}} - 1$$
@@ -271,7 +273,7 @@ Please see this [page](dataset/README.md) to understand better the dataset and a
 
 ## 4. Results
 
-Since it was verified that the Rate-Distortion Loss. $L_{RD}$, could contribute for better results, the metrics presented here were obtained with a model trained only with the modified cross-entropy loss.
+Since it was verified that the Rate-Distortion Loss, $L_{RD}$, could not contribute for better results, the metrics presented here were obtained with a model trained only with the modified cross-entropy loss.
 
 ### 4.1 F1-score, Recall and Precision with test data
 
@@ -394,8 +396,8 @@ This project license is under the [MIT License](LICENSE).
 | Implement code to test functions| Use a library, such as Pytest, to test some functions from the many modules developed | w |
 
 ## 11. References
-[1] T. Li, M. Xu, R. Tang, Y. Chen, and Q. Xing, [“DeepQTMT: A Deep Learning Approach for Fast QTMT-Based CU Partition of Intra-Mode VVC,”](https://arxiv.org/abs/2006.13125) IEEE Transactions on Image Processing, vol. 30, pp. 5377–5390, 2021, doi: 10.1109/tip.2021.3083447.
-[2] R. K. Viana, “Deep learning architecture for fast intra-mode CUs partitioning in VVC,” Universidade de Aveiro, Nov. 2022.
+[1] T. Li, M. Xu, R. Tang, Y. Chen, and Q. Xing, [“DeepQTMT: A Deep Learning Approach for Fast QTMT-Based CU Partition of Intra-Mode VVC,”](https://arxiv.org/abs/2006.13125) IEEE Transactions on Image Processing, vol. 30, pp. 5377–5390, 2021, doi: 10.1109/tip.2021.3083447. <br>
+[2] R. K. Viana, [“Deep learning architecture for fast intra-mode CUs partitioning in VVC,”](https://ria.ua.pt/bitstream/10773/38986/1/Documento_Ra%c3%bal%20Viana.pdf) Universidade de Aveiro, Nov. 2022.
 <div align="center">
   <img src="imgs\funny_memes_about_this_work\72rukf.gif" width=450 />
   <p>:)</p>
