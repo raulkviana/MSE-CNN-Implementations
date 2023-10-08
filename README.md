@@ -228,9 +228,11 @@ $$L_{CEmod} = -\frac{1}{N}\sum_{n=1}^N \sum_{m\varepsilon Partitions}(\frac{1}{p
 
 Concerning the second member of the MSE-CNN loss function, this constituent gives the network the ability to also make predictions based on the RD Cost.
 
-![loss_rd](https://github.com/raulkviana/MSE-CNN-Implementations/assets/34945640/f359f573-4a0c-4ad5-b418-33d3c60b4caa)
+<div align="center">
+  <img src="https://github.com/raulkviana/MSE-CNN-Implementations/assets/34945640/f359f573-4a0c-4ad5-b418-33d3c60b4caa" />
+</div>
 
-<!---$$L_{RD} = \frac{1}{N}\sum_{n=1}^N \sum_{m\varepsilon Partitions}\hat{y}_{n, m}\frac{r_{n, m}}{r_{n, min}}-1$$--->
+<!---$$L_{RD} = \frac{1}{N}\sum_{n=1}^N \sum_{m\varepsilon Partitions}\hat{y}_{n, m}\frac{r_{n, m}}{r_{n, min}}-1$$    --->
 
 In the above equation, the RD costs $r_{n, m}$ uses the same notation for "n" and "m" as the previous equation. Regarding $r_{n ,min}$, it is the minimal RD cost for the nth CU among all split modes and 
 $$\frac{r_{n, m}}{r_{n, min}} - 1$$
