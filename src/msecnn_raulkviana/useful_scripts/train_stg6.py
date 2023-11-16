@@ -515,10 +515,10 @@ def main():
             model = train_model_utils.load_model_stg_5_stg_6(model, path, device)
 
     # Prepare training and testing data, Dataset and Dataloader
-    train_data = custom_dataset.CUDatasetStg6(files_path=l_path_train) 
+    train_data = custom_dataset.CUDatasetStg6Compl(files_path=l_path_train) 
     batch_sampler_train = custom_dataset.SamplerStg6(train_data, batch_size)  # Batch Sampler
     dataloader_train = DataLoader(train_data, num_workers=num_workers, batch_sampler=batch_sampler_train)
-    test_data = custom_dataset.CUDatasetStg6(files_path=l_path_test)
+    test_data = custom_dataset.CUDatasetStg6Compl(files_path=l_path_test)
     batch_sampler_test = custom_dataset.SamplerStg6(test_data, batch_size)  # Batch Sampler
     dataloader_test = DataLoader(test_data, num_workers=num_workers, batch_sampler=batch_sampler_test)
     
