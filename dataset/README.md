@@ -2,7 +2,7 @@
 
 This folder contains all of the data used in this work. To train a supervised ML model, annotated data must be created. Given that a trained network has inputs and outputs with specifications, the data supplied to the model must be modified to meet those. This modification entails certain data processing steps to generate data that can directly aid network training/evaluation. A five-step method was designed to process the data, as shown in the diagram below. 
 
-![labels_gen](../imgs/labels_gen_method.png)
+![labels_gen](https://github.com/raulkviana/MSE-CNN-Implementations/blob/assets/labels_gen_method.png)
 
 You can learn more about the code inside each step from the above image in [processing_data_code.md](processing_data_code.md)
 
