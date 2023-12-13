@@ -396,6 +396,7 @@ This project license is under the [MIT License](LICENSE).
 |Task| Description| Status (d - doing, w - waiting, f- finished)|
 |-----|-----|-----|
 | Implement code to test functions| Use a library, such as Pytest, to test some functions from the many modules developed | w |
+| Update documentation regarding training each stage | Create a documentation regarding the training and the data processing pipeline for each stage. Also create a simple script that can automate this steps, for easy of use | w |
 
 ## 11. References
 [1] T. Li, M. Xu, R. Tang, Y. Chen, and Q. Xing, [“DeepQTMT: A Deep Learning Approach for Fast QTMT-Based CU Partition of Intra-Mode VVC,”](https://arxiv.org/abs/2006.13125) IEEE Transactions on Image Processing, vol. 30, pp. 5377–5390, 2021, doi: 10.1109/tip.2021.3083447. <br>
